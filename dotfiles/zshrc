@@ -1,0 +1,55 @@
+# For terminals that need an extra command to turn on 256-colors
+  export TERM="xterm-256color"
+
+# Path to your oh-my-zsh installation.
+  export ZSH=$HOME/.oh-my-zsh
+
+# Env
+  export PATH=$HOME/bin:/usr/local/bin:$PATH
+  export DOTFILES_DIR=$HOME/.dotfiles
+  export LANG=en_US.UTF-8
+  export EDITOR='vim'
+
+# Sourcing Fonts & Themes
+  source $DOTFILES_DIR/fonts/awesome-terminal-fonts/*.sh
+  source $DOTFILES_DIR/.aliases
+
+# Powerlevel9k Configurations
+POWERLEVEL9K_MODE="awesome-fontconfig"
+  source $DOTFILES_DIR/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs)
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+source $DOTFILES_DIR/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

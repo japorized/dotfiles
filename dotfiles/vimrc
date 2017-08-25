@@ -1,0 +1,48 @@
+syntax on
+set background=dark
+set laststatus=2
+set t_Co=256
+set number
+set numberwidth=2
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+set cursorline
+set ruler
+highlight CursorLine cterm=NONE ctermbg=DarkGrey guibg=DarkGrey
+set fillchars+=vert:│
+hi VertSplit ctermbg=NONE guibg=NONE cterm=NONE
+
+if exists('&signcolumn')  " Vim 7.4.2201
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
+set updatetime=250
+
+" netrw Configs
+let g:netrw_liststyle = 3   	" Tree view
+let g:netrw_banner = 0		" Hide Banner by default, use I to toggle
+let g:netrw_browse_split = 3	" Opens new file in a new tab
+let g:netrw_winsize = 25	" netrw to only occupy 25% of the screen
+let g:netrw_altv = 1
+
+" Settings
+set belloff=all           			" Silence terminal bell
+set expandtab                   " Expand tabs to spaces
+set ignorecase                  " Ignore case when searching
+set incsearch                   " Show matches when searching
+set showmatch                   " Show matching bracket
+set shiftwidth=2                " Number of spaces to use for (auto) indent
+set softtabstop=2               " Number of tabs that a <Tab> counts for
+set smartcase                   " Override 'ignorecase' if search has uppercase
+set tabstop=2                   " The number of spaces that a <Tab> counts for
+
+" Pathogen plugin manager
+execute pathogen#infect()
+Helptags
+
+" Gundo configurations
+nnoremap <F5> :GundoToggle<CR>
+let g:gundo_preview_height = 30
+let g:gundo_preview_bottom = 1
+let g:gundo_right = 1
+let g:gundo_return_on_revert = 0

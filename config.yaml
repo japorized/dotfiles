@@ -1,0 +1,47 @@
+config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+dotfiles:
+  d_mpd:
+    dst: ~/.config/mpd
+    src: config/mpd
+  d_templates:
+    dst: ~/.vim/templates
+    src: vim/templates
+  f_aliases:
+    dst: ~/.aliases
+    src: aliases
+  f_bindings:
+    dst: ~/.config/ncmpcpp/bindings
+    src: config/ncmpcpp/bindings
+  f_keymap:
+    dst: ~/.w3m/keymap
+    src: w3m/keymap
+  f_ncmpcpp_config:
+    dst: ~/.config/ncmpcpp/config
+    src: config/ncmpcpp/config
+  f_rc.lua:
+    dst: ~/.config/awesome/rc.lua
+    src: config/awesome/rc.lua
+  f_vimrc:
+    dst: ~/.vimrc
+    src: vimrc
+  f_w3m_config:
+    dst: ~/.w3m/config
+    src: w3m/config
+  f_zshrc:
+    dst: ~/.zshrc
+    src: zshrc
+profiles:
+  japorized:
+  - f_vimrc
+  - f_zshrc
+  - d_templates
+  - d_mpd
+  - f_ncmpcpp_config
+  - f_bindings
+  - f_w3m_config
+  - f_keymap
+  - f_rc.lua
+  - f_aliases

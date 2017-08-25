@@ -1,0 +1,38 @@
+# An attempt to have vi-like keybindings
+
+### Default Key Nullification
+keymap q NULL
+keymap C-q NULL
+keymap H NULL
+keymap SPC NULL
+keymap s NULL
+keymap { NULL
+keymap } NULL
+keymap Q NULL
+keymap B NULL
+keymap b NULL
+keymap m NULL
+
+### Navigation
+keymap f MOVE_LIST_MENU
+keymap F LIST_MENU
+keymap C-d NEXT_PAGE
+keymap C-u PREV_PAGE
+
+### Hyperlink Actions
+keymap C-RET TAB_GOTO
+
+### Tab Controls
+keymap :x CLOSE_TAB
+keymap gt NEXT_TAB
+keymap gT PREV_TAB
+
+### History Navigation
+keymap :h SELECT_MENU
+keymap b BACK
+keymap m NEXT
+
+### Miscellaneous
+keymap :H HELP
+keymap :q QUIT 
+keymap :Q ABORT
