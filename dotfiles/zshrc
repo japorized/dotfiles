@@ -1,25 +1,24 @@
 # For terminals that need an extra command to turn on 256-colors
   export TERM="xterm-256color"
 
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
 
 # Env
-  export PATH=$HOME/bin:/usr/local/bin:$PATH
   export DOTFILES_DIR=$HOME/.dotfiles
   export LANG=en_US.UTF-8
-  export EDITOR='vim'
+  export EDITOR=$(which vim)
+  {%@@ if profile == "Earl-Grey.local" @@%}
+  export PATH=/usr/local/bin:$HOME/Library/Python/2.7/bin:$HOME/bin:$PATH
+  {%@@ elif profile == "japorized" @@%}
+  export PATH=$HOME/bin:/usr/local/bin:$PATH
+  {%@@ endif @@%}
 
 # Sourcing Fonts & Themes
+  {%@@ if profile == "japorized" @@%}
   source $DOTFILES_DIR/fonts/awesome-terminal-fonts/*.sh
-  source $DOTFILES_DIR/.aliases
-
-# Powerlevel9k Configurations
-POWERLEVEL9K_MODE="awesome-fontconfig"
-  source $DOTFILES_DIR/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
-
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs)
+  {%@@ endif @@%}
+  source $HOME/.aliases
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -41,15 +40,137 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
+{%@@ if profile == "Earl-Grey.local" @@%}
+plugins=(git osx thefuck)
+
+# User configuration
+POWERLEVEL9K_MODE='nerdfont-complete'
+ZSH_THEME="powerlevel9k/powerlevel9k"
+{%@@ elif profile == "japorized" @@%}
 plugins=(git)
 
+# Powerlevel9k Configurations
+POWERLEVEL9K_MODE="awesome-fontconfig"
+source $DOTFILES_DIR/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+{%@@ endif @@%}
 source $ZSH/oh-my-zsh.sh
-
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# ZSH Syntax Highlighting configs
+typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]='fg=magenta'
+{%@@ if profile == "Earl-Grey.local" @@%}
+source $HOME/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{%@@ endif @@%}
+
+{%@@ if profile == "Earl-Grey.local" @@%}
+##############################
+# Powerline9k Configs
+##############################
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time custom_internet_signal)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon battery dir rbenv vcs)
+
+# Powerline 9k Prompts
+POWERLEVEL9K_OS_ICON='\uf179'
+POWERLEVEL9K_OS_ICON_BACKGROUND='237'
+POWERLEVEL9K_OS_ICON_FOREGROUND='255'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='57'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='33'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='99'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='255'
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='0'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='0'
+POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M:%S \uf073 %m-%d}"
+
+# Powerline9k Battery Configs
+POWERLEVEL9K_BATTERY_ICON='\uf240 '
+POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND='215'
+POWERLEVEL9K_BATTERY_CHARGING_FOREGROUND='black'
+POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND='39'
+POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND='black'
+POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND='237'
+POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND='250'
+POWERLEVEL9K_BATTERY_LOW_THRESHOLD='25'
+POWERLEVEL9K_BATTERY_LOW_BACKGROUND='197'
+POWERLEVEL9K_BATTERY_VERBOSE=false
+
+# Powerline9k Internet Signal
+POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL="zsh_internet_signal"
+POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL_BACKGROUND="237"
+POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL_FOREGROUND="250"
+
+zsh_internet_signal(){
+  #source on quality levels - http://www.wireless-nets.com/resources/tutorials/define_SNR_values.html
+  #source on signal levels  - http://www.speedguide.net/faq/how-to-read-rssisignal-and-snrnoise-ratings-440
+  local signal=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I | grep agrCtlRSSI | awk '{print $2}' | sed 's/-//g')
+  local noise=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I | grep agrCtlNoise | awk '{print $2}' | sed 's/-//g')
+  local SNR=$(bc <<<"scale=2; $signal / $noise")
+
+  local net=$(curl -D- -o /dev/null -s http://www.google.com | grep HTTP/1.1 | awk '{print $2}')
+  local color='%F{yellow}'
+  local symbol="\uf197"
+
+  # Excellent Signal (5 bars)
+  if [[ ! -z "${signal// }" ]] && [[ $SNR -gt .40 ]] ; 
+    then color='%F{blue}' ; symbol="\uf1eb" ;
+  fi
+
+  # Good Signal (3-4 bars)
+  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .40 ]] && [[ $SNR -gt .25 ]] ; 
+    then color='%F{green}' ; symbol="\uf1eb" ;
+  fi
+
+  # Low Signal (2 bars)
+  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .25 ]] && [[ $SNR -gt .15 ]] ; 
+    then color='%F{yellow}' ; symbol="\uf1eb" ;
+  fi
+
+  # Very Low Signal (1 bar)
+  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .15 ]] && [[ $SNR -gt .10 ]] ; 
+    then color='%F{red}' ; symbol="\uf1eb" ;
+  fi
+
+  # No Signal - No Internet
+  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .10 ]] ; 
+    then color='%F{red}' ; symbol="\uf127";
+  fi
+
+  if [[ -z "${signal// }" ]] && [[ "$net" -ne 200 ]] ; 
+    then color='%F{red}' ; symbol="\uf011" ;
+  fi
+
+  # Ethernet Connection (no wifi, hardline)
+  if [[ -z "${signal// }" ]] && [[ "$net" -eq 200 ]] ; 
+    then color='%F{blue}' ; symbol="\uf197" ;
+  fi
+
+  echo -n "%{$color%}$symbol " # \f1eb is wifi bars
+}
+
+# The Fuck Config
+eval $(thefuck --alias)
+
+source $HOME/.config/zsh/powerline.zsh
+{%@@ elif profile == "japorized" @@%}
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs)
+
 source $DOTFILES_DIR/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{%@@ endif @@%}

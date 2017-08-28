@@ -3,9 +3,6 @@ config:
   create: true
   dotpath: dotfiles
 dotfiles:
-  d_mpd:
-    dst: ~/.config/mpd
-    src: config/mpd
   d_templates:
     dst: ~/.vim/templates
     src: vim/templates
@@ -38,10 +35,17 @@ profiles:
   - f_vimrc
   - f_zshrc
   - d_templates
-  - d_mpd
   - f_ncmpcpp_config
   - f_bindings
   - f_w3m_config
   - f_keymap
   - f_rc.lua
   - f_aliases
+  Earl-Grey.local:
+  - d_templates
+  - f_bindings
+  - f_ncmpcpp_config
+  - f_keymap
+  - f_vimrc
+  - f_w3m_config
+  - f_zshrc

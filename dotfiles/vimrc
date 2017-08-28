@@ -1,5 +1,9 @@
 syntax on
 set background=dark
+{%@@ if profile == "Earl-Grey.local" @@%}
+set rtp+=/Users/JohnsonNg/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
+{%@@ endif @@%}
+set backspace=indent,eol,start
 set laststatus=2
 set t_Co=256
 set number
@@ -10,6 +14,8 @@ set ruler
 highlight CursorLine cterm=NONE ctermbg=DarkGrey guibg=DarkGrey
 set fillchars+=vert:│
 hi VertSplit ctermbg=NONE guibg=NONE cterm=NONE
+set foldmethod=indent
+set fdl=3
 
 if exists('&signcolumn')  " Vim 7.4.2201
   set signcolumn=yes
@@ -46,3 +52,6 @@ let g:gundo_preview_height = 30
 let g:gundo_preview_bottom = 1
 let g:gundo_right = 1
 let g:gundo_return_on_revert = 0
+
+" Indentline Configs
+let g:indentLine_char = '|'
