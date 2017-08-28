@@ -15,9 +15,6 @@
   {%@@ endif @@%}
 
 # Sourcing Fonts & Themes
-  {%@@ if profile == "japorized" @@%}
-  source $DOTFILES_DIR/fonts/awesome-terminal-fonts/*.sh
-  {%@@ endif @@%}
   source $HOME/.aliases
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -58,7 +55,7 @@ plugins=(git)
 
 # Powerlevel9k Configurations
 POWERLEVEL9K_MODE="awesome-fontconfig"
-source $DOTFILES_DIR/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 {%@@ endif @@%}
 source $ZSH/oh-my-zsh.sh
 
@@ -172,5 +169,5 @@ source $HOME/.config/zsh/powerline.zsh
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs)
 
-source $DOTFILES_DIR/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 {%@@ endif @@%}
