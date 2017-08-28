@@ -21,6 +21,9 @@ dotfiles:
   f_rc.lua:
     dst: ~/.config/awesome/rc.lua
     src: config/awesome/rc.lua
+  f_tmux.conf:
+    dst: ~/.tmux.conf
+    src: tmux.conf
   f_vimrc:
     dst: ~/.vimrc
     src: vimrc
@@ -31,6 +34,16 @@ dotfiles:
     dst: ~/.zshrc
     src: zshrc
 profiles:
+  Earl-Grey.local:
+  - d_templates
+  - f_bindings
+  - f_ncmpcpp_config
+  - f_keymap
+  - f_vimrc
+  - f_w3m_config
+  - f_zshrc
+  - f_aliases
+  - f_tmux.conf
   japorized:
   - f_vimrc
   - f_zshrc
@@ -41,12 +54,4 @@ profiles:
   - f_keymap
   - f_rc.lua
   - f_aliases
-  Earl-Grey.local:
-  - d_templates
-  - f_bindings
-  - f_ncmpcpp_config
-  - f_keymap
-  - f_vimrc
-  - f_w3m_config
-  - f_zshrc
-  - f_aliases
+  - f_tmux.conf
