@@ -49,3 +49,4 @@ profiles:
   - f_vimrc
   - f_w3m_config
   - f_zshrc
+  - f_aliases
