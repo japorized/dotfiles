@@ -17,12 +17,12 @@ hi VertSplit ctermbg=NONE guibg=NONE cterm=NONE
 set foldmethod=indent
 set fdl=3
 
-if exists('&signcolumn')  " Vim 7.4.2201
-  set signcolumn=yes
-else
-  let g:gitgutter_sign_column_always = 1
+if has("autocmd")
+  augroup templates
+    autocmd BufNewFile *.sh 0r ~/.vim/templates/shell_template.sh
+    autocmd BufNewFile *.html 0r ~/.vim/templates/html_default_template.sh
+  augroup END
 endif
-set updatetime=250
 
 " netrw Configs
 let g:netrw_liststyle = 3   	" Tree view
@@ -45,6 +45,14 @@ set tabstop=2                   " The number of spaces that a <Tab> counts for
 " Pathogen plugin manager
 execute pathogen#infect()
 Helptags
+
+" GitGutter Config
+if exists('&signcolumn')  " Vim 7.4.2201
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
+set updatetime=250
 
 " Gundo configurations
 nnoremap <F5> :GundoToggle<CR>
