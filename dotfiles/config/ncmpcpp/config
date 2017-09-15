@@ -96,7 +96,7 @@ display_bitrate = "yes"
 
 # Run command on every change of song
 {%@@ if profile == "Earl-Grey.local" @@%}
-execute_on_song_change = "sh ~/bin/ncmpcppNotifyNowPlaying"
+execute_on_song_change = "sh ~/bin/ncmpcpp-notify"
 {%@@ else @@%}
 execute_on_song_change = ""
 {%@@ endif @@%}

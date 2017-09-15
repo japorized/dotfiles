@@ -291,8 +291,8 @@ def_key "d"
 #def_key "7"
 #  show_outputs
 #
-#def_key "8"
-#  show_visualizer
+def_key "7"
+  show_visualizer
 #
 #def_key "="
 #  show_clock

@@ -15,6 +15,9 @@ dotfiles:
   f_keymap:
     dst: ~/.w3m/keymap
     src: w3m/keymap
+  f_mpd.conf:
+    dst: ~/.config/mpd/mpd.conf
+    src: config/mpd/mpd.conf
   f_ncmpcpp_config:
     dst: ~/.config/ncmpcpp/config
     src: config/ncmpcpp/config
@@ -44,6 +47,7 @@ profiles:
   - f_zshrc
   - f_aliases
   - f_tmux.conf
+  - f_mpd.conf
   japorized:
   - f_vimrc
   - f_zshrc
@@ -55,3 +59,4 @@ profiles:
   - f_rc.lua
   - f_aliases
   - f_tmux.conf
+  - f_mpd.conf

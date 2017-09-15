@@ -21,12 +21,13 @@ set conceallevel=2
 hi VertSplit ctermbg=NONE guibg=NONE cterm=NONE
 highlight CursorLine cterm=NONE ctermbg=DarkGrey guibg=DarkGrey
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-highlight Conceal ctermfg=132 guifg=#af5f87
+hi Conceal ctermfg=132 guifg=#af5f87
 
 if has("autocmd")
   augroup templates
     autocmd BufNewFile *.sh 0r ~/.vim/templates/shell_template.sh
     autocmd BufNewFile *.html 0r ~/.vim/templates/html_default_template.sh
+    autocmd BufNewFile *.tex 0r ~/.vim/templates/tex_default.sh
   augroup END
 endif
 
