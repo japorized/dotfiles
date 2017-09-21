@@ -17,7 +17,7 @@ alias vi="vim "
 alias view="vim -R "
 
 ##############################
-# Vim
+# Others
 ##############################
 alias magit="vim -c MagitOnly"
-alias aria2c-rpc="aria2c --enable-rpc --rpc-listen-all "
+alias aria2c-rpc="aria2c --enable-rpc --rpc-listen-all -d=~/Downloads/ "

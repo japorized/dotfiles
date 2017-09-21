@@ -23,6 +23,9 @@ highlight CursorLine cterm=NONE ctermbg=DarkGrey guibg=DarkGrey
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 hi Conceal ctermfg=132 guifg=#af5f87
 
+" Workaround for crontab saving problems
+au FileType crontab setlocal bkc=yes
+
 if has("autocmd")
   augroup templates
     autocmd BufNewFile *.sh 0r ~/.vim/templates/shell_template.sh
@@ -32,6 +35,7 @@ if has("autocmd")
 endif
 
 " netrw Configs
+nmap <F2> :Vexplore<cr>
 let g:netrw_liststyle = 3   	" Tree view
 let g:netrw_banner = 0		" Hide Banner by default, use I to toggle
 let g:netrw_browse_split = 3	" Opens new file in a new tab
@@ -80,3 +84,61 @@ let g:livepreview_previewer = 'open -a Preview'
 {%@@ elif profile == "japorized" @@%}
 let g:livepreview_previewer = 'zathura'
 {%@@ endif @@%}
+
+" Goyo
+nmap <F3> :Goyo<cr>
+let s:save_option = {}
+function! s:goyo_enter()
+  silent !tmux set status off
+  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  if exists(':Limelight') == 2
+    Limelight
+    let s:save_option['limelight'] = 1
+  endif
+endfunction
+
+function! s:goyo_leave()
+  silent !tmux set status on
+  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  set showmode
+  set showcmd
+  set scrolloff=5
+  if get(s:save_option,'limelight', 0)
+    execute 'Limelight!'
+  endif
+endfunction
+augroup goyo_map
+  autocmd! User GoyoEnter nested call <SID>goyo_enter()
+  autocmd! User GoyoLeave nested call <SID>goyo_leave()
+augroup END
+
+" Limelight
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+" Default: 0.5
+let g:limelight_default_coefficient = 0.3
+
+" Number of preceding/following paragraphs to include (default: 0)
+let g:limelight_paragraph_span = 0
+
+" Beginning/end of paragraph
+"   When there's no empty line between the paragraphs
+"   and each paragraph starts with indentation
+let g:limelight_bop = '^\s'
+let g:limelight_eop = '\ze\n^\s'
+
+" Highlighting priority (default: 10)
+"   Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
+
+"Neocomplete configs
+let g:neocomplete#enable_at_startup = 1
