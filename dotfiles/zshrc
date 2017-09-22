@@ -18,6 +18,7 @@
 
 # Sourcing Fonts & Themes
   source $HOME/.aliases
+  source $HOME/.functions
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"

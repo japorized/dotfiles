@@ -18,6 +18,9 @@ dotfiles:
   f_bindings:
     dst: ~/.config/ncmpcpp/bindings
     src: config/ncmpcpp/bindings
+  f_functions:
+    dst: ~/.functions
+    src: functions
   f_keymap:
     dst: ~/.w3m/keymap
     src: w3m/keymap
@@ -56,6 +59,7 @@ profiles:
   - f_mpd.conf
   - d_hammerspoon
   - d_snippets
+  - f_functions
   japorized:
   - f_vimrc
   - f_zshrc
@@ -75,3 +79,4 @@ profiles:
   - f_aliases
   - f_tmux.conf
   - d_snippets
+  - f_functions
