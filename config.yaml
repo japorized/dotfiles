@@ -3,6 +3,12 @@ config:
   create: true
   dotpath: dotfiles
 dotfiles:
+  d_hammerspoon:
+    dst: ~/.config/hammerspoon
+    src: config/hammerspoon
+  d_snippets:
+    dst: ~/.vim/snippets
+    src: vim/snippets
   d_templates:
     dst: ~/.vim/templates
     src: vim/templates
@@ -48,6 +54,8 @@ profiles:
   - f_aliases
   - f_tmux.conf
   - f_mpd.conf
+  - d_hammerspoon
+  - d_snippets
   japorized:
   - f_vimrc
   - f_zshrc
