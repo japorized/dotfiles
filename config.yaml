@@ -68,3 +68,10 @@ profiles:
   - f_aliases
   - f_tmux.conf
   - f_mpd.conf
+  ubuntu1604-002:
+  - f_vimrc
+  - d_templates
+  - f_w3m_config
+  - f_aliases
+  - f_tmux.conf
+  - d_snippets

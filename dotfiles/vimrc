@@ -11,7 +11,7 @@ set number
 set numberwidth=2
 set cursorline
 set ruler
-set fillchars+=vert:│
+set fillchars+=|
 set foldmethod=indent
 set fdl=3
 set concealcursor=""
