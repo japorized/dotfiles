@@ -8,6 +8,7 @@ set backspace=indent,eol,start
 set laststatus=2
 set t_Co=256
 set number
+set relativenumber
 set numberwidth=2
 set cursorline
 set ruler
@@ -139,6 +140,3 @@ let g:limelight_eop = '\ze\n^\s'
 " Highlighting priority (default: 10)
 "   Set it to -1 not to overrule hlsearch
 let g:limelight_priority = -1
-
-"Neocomplete configs
-let g:neocomplete#enable_at_startup = 1

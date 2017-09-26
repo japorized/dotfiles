@@ -5,7 +5,6 @@
   export ZSH=$HOME/.oh-my-zsh
 
 # Env
-  export DOTFILES_DIR=$HOME/.dotfiles
   export LANG=en_US.UTF-8
   export EDITOR=$(which vim)
   {%@@ if profile == "Earl-Grey.local" @@%}

@@ -24,25 +24,25 @@ hs.alert.show("Config loaded")
 --
 --  Hotkey to Launch Frequently Used Applications
 --
-local iterm     = hs.application.find('iTerm')
-local subl      = hs.application.find('Sublime Text')
+local iterm     = 'iTerm'
+local subl      = 'Sublime Text'
 
 hs.hotkey.bind({"cmd"}, "Return", function()
-  hs.application.launchOrFocus('iTerm')
+  hs.application.launchOrFocus(iterm)
 end)
 
-hs.hotkey.bind(mash, "s", function()
-  hs.application.launchOrFocus(subl:name())
+hs.hotkey.bind({"cmd", "alt"}, "s", function()
+  hs.application.launchOrFocus(subl)
 end)
 
 --
 --  MPC commands
 --
-hs.hotkey.bind({"cmd"}, "f7", function() hs.execute("mpc prev", true) end)
-hs.hotkey.bind({"cmd"}, "f8", function() hs.execute("mpc toggle", true) hs.execute("terminal-notifier -message 'MPD Toggle'", true) end)
-hs.hotkey.bind({"cmd"}, "f9", function() hs.execute("mpc next", true) end)
-hs.hotkey.bind({"cmd"}, "f11", function() hs.execute("mpc volume -10", true) end)
-hs.hotkey.bind({"cmd"}, "f12", function() hs.execute("mpc volume +10", true) end)
+hs.hotkey.bind({"cmd"}, "f7", function() hs.execute("/usr/local/bin/mpc prev") end)
+hs.hotkey.bind({"cmd"}, "f8", function() hs.execute("/usr/local/bin/mpc toggle") hs.execute("/usr/local/bin/terminal-notifier -message 'MPD Toggle'") end)
+hs.hotkey.bind({"cmd"}, "f9", function() hs.execute("/usr/local/bin/mpc next") end)
+hs.hotkey.bind({"cmd"}, "f11", function() hs.execute("/usr/local/bin/mpc volume -10") hs.alert.show("mpc " .. hs.execute("/usr/local/bin/mpc volume")) end)
+hs.hotkey.bind({"cmd"}, "f12", function() hs.execute("/usr/local/bin/mpc volume +10") hs.alert.show("mpc " .. hs.execute("/usr/local/bin/mpc volume")) end)
 
 --
 --  Window Resizing Bindings
@@ -94,4 +94,43 @@ end)
 hs.hotkey.bind('alt-shift','tab','Prev window',function()
   switcher_space:previous()
   hs.alert.closeAll(0)
+end)
+
+--
+--  Emoji Chooser
+--
+-- Build the list of emojis to be displayed.
+local choices = {}
+for _, emoji in ipairs(hs.json.decode(io.open("emojis/emojis.json"):read())) do
+    table.insert(choices,
+        {text=emoji['name'],
+            subText=table.concat(emoji['kwds'], ", "),
+            image=hs.image.imageFromPath("emojis/" .. emoji['id'] .. ".png"),
+            chars=emoji['chars']
+        })
+end
+
+-- Focus the last used window.
+local function focusLastFocused()
+    local wf = hs.window.filter
+    local lastFocused = wf.defaultCurrentSpace:getWindows(wf.sortByFocusedLast)
+    if #lastFocused > 0 then lastFocused[1]:focus() end
+end
+
+-- Create the chooser.
+-- On selection, copy the emoji and type it into the focused application.
+local chooser = hs.chooser.new(function(choice)
+    if not choice then focusLastFocused(); return end
+    hs.pasteboard.setContents(choice["chars"])
+    focusLastFocused()
+    hs.eventtap.keyStrokes(hs.pasteboard.getContents())
+end)
+
+chooser:searchSubText(true)
+chooser:choices(choices)
+chooser:rows(5)
+chooser:bgDark(true)
+
+hs.hotkey.bind({"cmd", "alt"}, "E", function()
+  if chooser:isVisible() then chooser:hide() else chooser:show() end
 end)
