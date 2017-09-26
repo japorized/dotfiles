@@ -1,0 +1,10 @@
+amm
+betterzipql
+chromium
+hammerspoon
+handbrake
+knockknock
+lastfm
+onyx
+spotify
+xquartz
