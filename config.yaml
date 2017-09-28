@@ -80,3 +80,4 @@ profiles:
   - f_tmux.conf
   - d_snippets
   - f_functions
+  - f_keymap
