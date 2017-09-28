@@ -47,37 +47,40 @@ dotfiles:
     src: zshrc
 profiles:
   Earl-Grey.local:
-  - d_templates
-  - f_bindings
-  - f_ncmpcpp_config
-  - f_keymap
-  - f_vimrc
-  - f_w3m_config
-  - f_zshrc
-  - f_aliases
-  - f_tmux.conf
-  - f_mpd.conf
-  - d_hammerspoon
-  - d_snippets
-  - f_functions
+    dotfiles:
+    - d_templates
+    - f_bindings
+    - f_ncmpcpp_config
+    - f_keymap
+    - f_vimrc
+    - f_w3m_config
+    - f_zshrc
+    - f_aliases
+    - f_tmux.conf
+    - f_mpd.conf
+    - d_hammerspoon
+    - d_snippets
+    - f_functions
   japorized:
-  - f_vimrc
-  - f_zshrc
-  - d_templates
-  - f_ncmpcpp_config
-  - f_bindings
-  - f_w3m_config
-  - f_keymap
-  - f_rc.lua
-  - f_aliases
-  - f_tmux.conf
-  - f_mpd.conf
+    dotfiles:
+    - f_vimrc
+    - f_zshrc
+    - d_templates
+    - f_ncmpcpp_config
+    - f_bindings
+    - f_w3m_config
+    - f_keymap
+    - f_rc.lua
+    - f_aliases
+    - f_tmux.conf
+    - f_mpd.conf
   ubuntu1604-002:
-  - f_vimrc
-  - d_templates
-  - f_w3m_config
-  - f_aliases
-  - f_tmux.conf
-  - d_snippets
-  - f_functions
-  - f_keymap
+    dotfiles:
+    - f_vimrc
+    - d_templates
+    - f_w3m_config
+    - f_aliases
+    - f_tmux.conf
+    - d_snippets
+    - f_functions
+    - f_keymap

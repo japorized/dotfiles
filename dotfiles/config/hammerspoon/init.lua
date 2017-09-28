@@ -35,6 +35,10 @@ hs.hotkey.bind({"cmd", "alt"}, "s", function()
   hs.application.launchOrFocus(subl)
 end)
 
+hs.hotkey.bind({"cmd", "alt"}, "f", function()
+  hs.application.launchOrFocusByBundleID("org.mozilla.nightly")
+end)
+
 --
 --  MPC commands
 --
@@ -70,7 +74,7 @@ hs.hotkey.bind(mash, "f", function() push(0, 0, 1, 1) end)
 hs.hotkey.bind(mash, "Left", function() push(0, 0, 0.5, 1) end)
 hs.hotkey.bind(mash, "Right", function() push (0.5, 0, 0.5, 1) end)
 hs.hotkey.bind(mash, "Up", function() push(0, 0, 1, 0.5) end)
-hs.hotkey.bind(mash, "Down", function() push(0.5, 0, 1, 0.5) end)
+hs.hotkey.bind(mash, "Down", function() push(0, 0.5, 1, 0.5) end)
 hs.hotkey.bind(mash, "i", function() push(0, 0, 0.5, 0.5) end)
 hs.hotkey.bind(mash, "o", function() push(0.5, 0, 0.5, 0.5) end)
 hs.hotkey.bind(mash, "k", function() push(0, 0.5, 0.5, 0.5) end)

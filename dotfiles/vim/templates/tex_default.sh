@@ -29,13 +29,20 @@
 \theoremstyle{break}
 \newtheorem{thm}{Theorem}[section]
 \newtheorem*{proof}{Proof}
-\newtheorem{crly}{Corollary}[thm]
-\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{crly}{Corollary}[section]
+\newtheorem{lemma}{Lemma}[section]
 \newtheorem{propo}{Proposition}[section]
 \newtheorem*{remark}{Remark}
 \newtheorem*{note}{Note}
 \newtheorem{defn}{Definition}[section]
 \newtheorem{eg}{Example}[section]
+\newtheorem{axiom}{Axiom}[section]
+
+% hyperref - ntheorem workaround
+\AtBeginDocument{\def\chapterautorefname{Lecture}}%
+\providecommand*{\axiomautorefname}{Axiom}
+\providecommand*{\lemmaautorefname}{Lemma}
+\providecommand*{\thmautorefname}{Theorem}
 
 % ntheorem listtheorem style
 \makeatletter
@@ -45,7 +52,7 @@
                    {#4}}
 \@ifpackageloaded{hyperref}{
 \def\thm@@thmline@name#1#2#3#4#5{%
-    \ifx\#5\%
+    \ifx\\#5\\%
         \@dottedtocline{-2}{0em}{2.3em}%
             {\makebox[\widesttheorem][l]{#1 \protect\numberline{#2}}#3}%
             {#4}
@@ -71,17 +78,20 @@
 \theoremlisttype{allname}
 
 % Shortcuts
-\newcommand{\bb}[1]{\mathbb{#1}}			% using bb instead of mathbb
-\newcommand{\floor}[1]{\lfloor #1 \rfloor}	% simplifying the writing of a floor function
-\newcommand{\ceiling}[1]{\lceil #1 \rceil}	% simplifying the writing of a ceiling function
-\newcommand{\dotp}{\, \cdotp}				% dot product to distinguish from \cdot
+\newcommand{\bb}[1]{\mathbb{#1}}                % using bb instead of mathbb
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}      % simplifying the writing of a floor function
+\newcommand{\ceiling}[1]{\lceil #1 \rceil}      % simplifying the writing of a ceiling function
+\newcommand{\dotp}{\, \cdotp}			        % dot product to distinguish from \cdot
+\newcommand{\qed}{\hfill\ensuremath{\square}}   % Q.E.D sign
 
 % Main Body
 \title{Title}
 \author{Johnson Ng}
 
 \begin{document}
+\hypersetup{pageanchor=false}
 \maketitle
+\hypersetup{pageanchor=true}
 \tableofcontents
 
 \chapter*{List of Definitions}
@@ -89,8 +99,8 @@
 \listtheorems{defn}
 
 \chapter*{List of Theorems}
-\theoremlisttype{all}
-\listtheorems{lemma,thm,crly,propo}
+\theoremlisttype{allname}
+\listtheorems{axiom,lemma,thm,crly,propo}
 
 Body
 
