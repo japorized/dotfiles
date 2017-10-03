@@ -45,6 +45,12 @@
 \providecommand*{\thmautorefname}{Theorem}
 
 % ntheorem listtheorem style
+\makeatother
+\newlength\widesttheorem
+\AtBeginDocument{
+  \settowidth{\widesttheorem}{Proposition A.1.1.1\quad}
+}
+
 \makeatletter
 \def\thm@@thmline@name#1#2#3#4{%
         \@dottedtocline{-2}{0em}{2.3em}%
@@ -69,10 +75,30 @@
         \fi
     \fi}
 }
-\makeatother
-\newlength\widesttheorem
-\AtBeginDocument{
-  \settowidth{\widesttheorem}{Proposition A.1.1.1\quad}
+
+\makeatletter
+\def\thm@@thmline@noname#1#2#3#4{%
+        \@dottedtocline{-2}{0em}{5em}%
+                   {{\protect\numberline{#2}}#3}%
+                   {#4}}
+\@ifpackageloaded{hyperref}{
+\def\thm@@thmline@noname#1#2#3#4#5{%
+    \ifx\#5\%
+        \@dottedtocline{-2}{0em}{5em}%
+            {{\protect\numberline{#2}}#3}%
+            {#4}
+    \else
+        \ifHy@linktocpage\relax\relax
+            \@dottedtocline{-2}{0em}{5em}%
+                {{\protect\numberline{#2}}#3}%
+                {\hyper@linkstart{link}{#5}{#4}\hyper@linkend}%
+        \else
+            \@dottedtocline{-2}{0em}{5em}%
+                {\hyper@linkstart{link}{#5}%
+                  {{\protect\numberline{#2}}#3}\hyper@linkend}%
+                    {#4}%
+        \fi
+    \fi}
 }
 
 \theoremlisttype{allname}
@@ -83,6 +109,9 @@
 \newcommand{\ceiling}[1]{\lceil #1 \rceil}      % simplifying the writing of a ceiling function
 \newcommand{\dotp}{\, \cdotp}			        % dot product to distinguish from \cdot
 \newcommand{\qed}{\hfill\ensuremath{\square}}   % Q.E.D sign
+
+% Custom math operator
+% \DeclareMathOperator{\rem}{rem}
 
 % Main Body
 \title{Title}
@@ -102,7 +131,7 @@
 \theoremlisttype{allname}
 \listtheorems{axiom,lemma,thm,crly,propo}
 
-Body
+
 
 \end{document}
 % Document End

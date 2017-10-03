@@ -18,6 +18,9 @@
 # Sourcing Fonts & Themes
   source $HOME/.aliases
   source $HOME/.functions
+  {%@@ if profile == "Earl-Grey.local" @@%}
+  source $HOME/.exports
+  {%@@ endif @@%}
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"

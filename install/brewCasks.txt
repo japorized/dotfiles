@@ -5,6 +5,10 @@ hammerspoon
 handbrake
 knockknock
 lastfm
-onyx
+love
+pomolectron
+skim
 spotify
+twitch
+vlc
 xquartz

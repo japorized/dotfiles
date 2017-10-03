@@ -3,6 +3,7 @@ aria2
 bdw-gc
 boost
 buku
+calc
 coreutils
 cython
 elinks
@@ -35,6 +36,7 @@ libsamplerate
 libsodium
 libtiff
 libtool
+libvorbis
 libyaml
 little-cms2
 lua
@@ -64,12 +66,14 @@ taglib
 terminal-notifier
 texi2html
 thefuck
+theora
 tmux
 utf8proc
 vim
 w3m
 wget
 x264
+x265
 xvid
 xz
 yasm
