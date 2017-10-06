@@ -318,17 +318,17 @@ snippet \{ \{ \}
 	\\{ ${0} \\}
 #delimiter
 snippet lr left right
-	\\left${1} ${0} \\right$1
+	\\left${2} ${1} \\right$2 ${0}
 snippet lr( left( right)
-	\\left( ${0} \\right)
+	\\left( ${1} \\right) ${0}
 snippet lr| left| right|
-	\\left| ${0} \\right|
+	\\left| ${1} \\right| ${0}
 snippet lr{ left\{ right\}
-	\\left\\{ ${0} \\right\\}
+	\\left\\{ ${1} \\right\\} ${0}
 snippet lr[ left[ right]
-	\\left[ ${0} \\right]
+	\\left[ ${1} \\right] ${0}
 snippet lra langle rangle
-	\\langle ${0} \\rangle
+	\\langle ${1} \\rangle ${0}
 # Code listings
 snippet lst
 	\\begin{listing}[language=${1:language}]

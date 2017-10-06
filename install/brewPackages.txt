@@ -1,5 +1,6 @@
 archey
 aria2
+autoconf
 bdw-gc
 boost
 buku
@@ -36,6 +37,7 @@ libsamplerate
 libsodium
 libtiff
 libtool
+libunistring
 libvorbis
 libyaml
 little-cms2
