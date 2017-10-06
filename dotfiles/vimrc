@@ -6,6 +6,7 @@ set rtp+=/Users/JohnsonNg/Library/Python/2.7/lib/python/site-packages/powerline/
 {%@@ endif @@%}
 set backspace=indent,eol,start
 set laststatus=2
+set noshowmode
 set t_Co=256
 set number
 set relativenumber
