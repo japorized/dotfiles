@@ -9,10 +9,12 @@
   export EDITOR=$(which vim)
   {%@@ if profile == "Earl-Grey.local" @@%}
   export PATH=/usr/local/bin:$HOME/Library/Python/2.7/bin:$HOME/bin:$PATH
+  export CONFIG=$HOME/.config
   export DEFAULT_CHEAT_DIR='$HOME/.cheat/'
   export CHEATCOLORS=true
-  {%@@ elif profile == "japorized" @@%}
-  export PATH=$HOME/bin:/usr/local/bin:$PATH
+  {%@@ elif profile == "Camomile" @@%}
+  export PATH=$HOME/.bin:/usr/local/bin:$PATH
+  export CONFIG=$HOME/.config
   {%@@ endif @@%}
 
 # Sourcing Fonts & Themes
@@ -55,7 +57,7 @@ plugins=(git osx thefuck)
 # User configuration
 POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
-{%@@ elif profile == "japorized" @@%}
+{%@@ elif profile == "Camomile" @@%}
 plugins=(git)
 
 # Powerlevel9k Configurations
@@ -170,7 +172,7 @@ zsh_internet_signal(){
 eval $(thefuck --alias)
 
 source $HOME/.config/zsh/powerline.zsh
-{%@@ elif profile == "japorized" @@%}
+{%@@ elif profile == "Camomile" @@%}
 
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs)

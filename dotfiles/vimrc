@@ -80,7 +80,7 @@ let g:tex_conceal="abdgm"
 autocmd Filetype tex setl updatetime=1
 {%@@ if profile == "Earl-Grey.local" @@%}
 let g:livepreview_previewer = 'open -a Preview'
-{%@@ elif profile == "japorized" @@%}
+{%@@ elif profile == "Camomile" @@%}
 let g:livepreview_previewer = 'zathura'
 {%@@ endif @@%}
 

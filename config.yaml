@@ -61,7 +61,7 @@ profiles:
     - d_hammerspoon
     - d_snippets
     - f_functions
-  japorized:
+  Camomile:
     dotfiles:
     - f_vimrc
     - f_zshrc
@@ -70,8 +70,8 @@ profiles:
     - f_bindings
     - f_w3m_config
     - f_keymap
-    - f_rc.lua
     - f_aliases
+    - f_functions
     - f_tmux.conf
     - f_mpd.conf
   ubuntu1604-002:
