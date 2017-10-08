@@ -20,6 +20,7 @@ alias view="vim -R "
 # Others
 ##############################
 alias magit="vim -c MagitOnly"
+alias scrot="import -window root screenshot.jpg"
 {%@@ if profile == "Earl-Grey.local" @@%}
 alias aria2c-rpc="aria2c --enable-rpc --rpc-listen-all -d '/Downloads' "
 {%@@ endif @@%}
