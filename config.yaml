@@ -3,6 +3,9 @@ config:
   create: true
   dotpath: dotfiles
 dotfiles:
+  d_awesome:
+    dst: ~/.config/awesome
+    src: config/awesome
   d_hammerspoon:
     dst: ~/.config/hammerspoon
     src: config/hammerspoon
@@ -30,9 +33,6 @@ dotfiles:
   f_ncmpcpp_config:
     dst: ~/.config/ncmpcpp/config
     src: config/ncmpcpp/config
-  f_rc.lua:
-    dst: ~/.config/awesome/rc.lua
-    src: config/awesome/rc.lua
   f_tmux.conf:
     dst: ~/.tmux.conf
     src: tmux.conf
@@ -46,6 +46,21 @@ dotfiles:
     dst: ~/.zshrc
     src: zshrc
 profiles:
+  Camomile:
+    dotfiles:
+    - f_vimrc
+    - f_zshrc
+    - d_templates
+    - f_ncmpcpp_config
+    - f_bindings
+    - f_w3m_config
+    - f_keymap
+    - f_aliases
+    - f_functions
+    - f_tmux.conf
+    - f_mpd.conf
+    - d_snippets
+    - d_awesome
   Earl-Grey.local:
     dotfiles:
     - d_templates
@@ -61,20 +76,6 @@ profiles:
     - d_hammerspoon
     - d_snippets
     - f_functions
-  Camomile:
-    dotfiles:
-    - f_vimrc
-    - f_zshrc
-    - d_templates
-    - f_ncmpcpp_config
-    - f_bindings
-    - f_w3m_config
-    - f_keymap
-    - f_aliases
-    - f_functions
-    - f_tmux.conf
-    - f_mpd.conf
-    - d_snippets
   ubuntu1604-002:
     dotfiles:
     - f_vimrc
