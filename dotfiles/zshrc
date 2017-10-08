@@ -13,8 +13,9 @@
   export DEFAULT_CHEAT_DIR='$HOME/.cheat/'
   export CHEATCOLORS=true
   {%@@ elif profile == "Camomile" @@%}
-  export PATH=$HOME/.bin:/usr/local/bin:$PATH
+  export PATH=$HOME/.bin:$(ruby -e 'print Gem.user_dir')/bin:/usr/local/bin:$PATH
   export CONFIG=$HOME/.config
+  export GEM_HOME=$(ruby -e 'print Gem.user_dir')
   {%@@ endif @@%}
 
 # Sourcing Fonts & Themes

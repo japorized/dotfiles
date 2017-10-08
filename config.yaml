@@ -74,6 +74,7 @@ profiles:
     - f_functions
     - f_tmux.conf
     - f_mpd.conf
+    - d_snippets
   ubuntu1604-002:
     dotfiles:
     - f_vimrc

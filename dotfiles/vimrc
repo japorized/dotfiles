@@ -78,7 +78,7 @@ let g:indentLine_char='|'
 " Tex configs
 nmap <F12> :LLPStartPreview<cr>
 let g:tex_conceal="abdgm"
-autocmd Filetype tex setl updatetime=1
+autocmd Filetype tex setl updatetime=1000
 {%@@ if profile == "Earl-Grey.local" @@%}
 let g:livepreview_previewer = 'open -a Preview'
 {%@@ elif profile == "Camomile" @@%}
