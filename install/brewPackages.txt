@@ -10,6 +10,7 @@ cython
 elinks
 faad2
 ffmpeg
+fftw
 flac
 fluid-synth
 freetype

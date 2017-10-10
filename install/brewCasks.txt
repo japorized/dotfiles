@@ -1,6 +1,6 @@
 amm
 betterzipql
-chromium
+google-chrome
 hammerspoon
 handbrake
 knockknock
@@ -9,6 +9,5 @@ love
 pomolectron
 skim
 spotify
-twitch
 vlc
 xquartz

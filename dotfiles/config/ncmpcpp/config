@@ -101,14 +101,6 @@ execute_on_song_change = "sh ~/bin/ncmpcpp-notify"
 execute_on_song_change = ""
 {%@@ endif @@%}
 
-# Audio Output
-audio_output {
-    type                    "fifo"
-    name                    "my_fifo"
-    path                    "/tmp/mpd.fifo"
-    format                  "44100:16:2"
-}
-
 # Directories
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.config/ncmpcpp/Lyrics
@@ -120,8 +112,10 @@ mpd_port = 6600
 #mpd_connection_timeout = 5
 
 # Visualizer settings
+{%@@ if profile == "Camomile" @@%}
 visualizer_fifo_path = /tmp/mpd.fifo
 visualizer_output_name = "mpd_fifo"
+{%@@ endif @@%}
 ## If you set format to 44100:16:2, make it 'yes'.
 visualizer_in_stereo = no
 visualizer_sync_interval = 30
