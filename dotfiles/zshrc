@@ -169,14 +169,29 @@ zsh_internet_signal(){
   echo -n "%{$color%}$symbol " # \f1eb is wifi bars
 }
 
-# The Fuck Config
-eval $(thefuck --alias)
-
 source $HOME/.config/zsh/powerline.zsh
 {%@@ elif profile == "Camomile" @@%}
 
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir dir_writable rbenv vcs)
+
+# Powerline 9k Prompts
+POWERLEVEL9K_OS_ICON_BACKGROUND='237'
+POWERLEVEL9K_OS_ICON_FOREGROUND='255'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='038'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='015'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='147'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='015'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='050'
+POWERLEVLE9K_DIR_DEFAULT_FOREGROUND='015'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND='198'
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUNND='015'
+POWERLEVEL9K_DIR_WRITABLE_ICON='\uf023'
+POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S | %m-%d}'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 {%@@ endif @@%}
+
+eval $(thefuck --alias)
