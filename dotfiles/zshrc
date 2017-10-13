@@ -64,7 +64,7 @@ plugins=(git)
 # Powerlevel9k Configurations
 POWERLEVEL9K_MODE="awesome-fontconfig"
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
-{%@@ elif profile == "Wincrap" @@%}
+{%@@ elif profile == "WinCrap" @@%}
 ZSH_THEME="wedisagree"
 plugins=(git)
 
