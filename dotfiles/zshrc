@@ -9,14 +9,16 @@
   export EDITOR=$(which vim)
   {%@@ if profile == "Earl-Grey.local" @@%}
   export PATH=/usr/local/bin:$HOME/Library/Python/2.7/bin:$HOME/bin:$PATH
-  export CONFIG=$HOME/.config
   export DEFAULT_CHEAT_DIR='$HOME/.cheat/'
   export CHEATCOLORS=true
   {%@@ elif profile == "Camomile" @@%}
   export PATH=$HOME/.bin:$(ruby -e 'print Gem.user_dir')/bin:/usr/local/bin:$PATH
-  export CONFIG=$HOME/.config
   export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+  {%@@ elif profile == "WinCrap" @@%}
+  export PATH=$HOME/.bin:$PATH
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   {%@@ endif @@%}
+  export CONFIG=$HOME/.config
 
 # Sourcing Fonts & Themes
   source $HOME/.aliases
