@@ -9,7 +9,7 @@
   export EDITOR=$(which vim)
   {%@@ if profile == "Earl-Grey.local" @@%}
   export PATH=$HOME/.stack/snapshots/x86_64-osx/lts-9.8/8.0.2/bin:$HOME/.stack/programs/x86_64-osx/ghc-8.0.2/bin:$HOME/.local/bin:/usr/local/bin:$HOME/Library/Python/2.7/bin:$HOME/bin:$PATH
-  export CONFIG=$HOME/.config
+  export CONFIG='$HOME/.config'
   export DEFAULT_CHEAT_DIR='$HOME/.cheat/'
   export CHEATCOLORS=true
   {%@@ elif profile == "Camomile" @@%}
