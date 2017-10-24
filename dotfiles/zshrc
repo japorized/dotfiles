@@ -8,13 +8,12 @@
   export LANG=en_US.UTF-8
   export EDITOR=$(which vim)
   {%@@ if profile == "Earl-Grey.local" @@%}
-  export PATH=$HOME/.stack/snapshots/x86_64-osx/lts-9.8/8.0.2/bin:$HOME/.stack/programs/x86_64-osx/ghc-8.0.2/bin:$HOME/.local/bin:/usr/local/bin:$HOME/Library/Python/2.7/bin:$HOME/bin:$PATH
   export CONFIG='$HOME/.config'
   export DEFAULT_CHEAT_DIR='$HOME/.cheat/'
   export CHEATCOLORS=true
   {%@@ elif profile == "Camomile" @@%}
-  export PATH=$HOME/.bin:$(ruby -e 'print Gem.user_dir')/bin:/usr/local/bin:$PATH
   export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+  export PATH=$HOME/.bin:$GEM_HOME/bin:/usr/local/bin:$PATH
   {%@@ elif profile == "WinCrap" @@%}
   export PATH=$HOME/.bin:$PATH
   source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
