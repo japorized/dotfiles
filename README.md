@@ -40,14 +40,10 @@ and be sure to add `$HOME/.bin` to your `.bash_profile` (for bash) or `.zshenv` 
 
 ### macOS
 
-1. Install [Homebrew](https://brew.sh)
-```shell
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-2. Run
-  ```shell
-  sh ~/dotfiles/install/brew-install.sh
-  ```
+Simply run `$HOME/dotfiles/install/mac-bootstrap.sh`
+
+The installation will include [Homebrew](https://brew.sh) and some packages that I use (please see `./install/brewPackages.txt`) and use 
+zsh as the default shell, with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) installed.
   
 ### Arch
 
