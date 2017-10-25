@@ -13,6 +13,8 @@ Check out the tool at https://github.com/deadc0de6/dotdrop.
 
 ## Installation Guide for dotfiles
 
+**Note:** If you are on a completely new machine that does not have pip3 (or pip) do install python using your package manager first.
+
 1. `git clone --recursive https://github.com/japorized/dotfiles ~/dotfiles`
 2. If your system does not have the dependencies for Dotdrop, do
   ```shell
@@ -45,14 +47,6 @@ and be sure to add `$HOME/.bin` to your `.bash_profile` (for bash) or `.zshenv` 
 2. Run
   ```shell
   sh ~/dotfiles/install/brew-install.sh
-  ```
-3. Tap [Homebrew Casks](https://caskroom.github.io)
-```shell
-brew tap caskroom/cask
-```
-4. Run
-  ```shell
-  sh ~/dotfiles/install/brew-casks.sh
   ```
   
 ### Arch

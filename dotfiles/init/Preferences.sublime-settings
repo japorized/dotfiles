@@ -1,0 +1,22 @@
+{
+	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
+	"enable_tab_scrolling": false,
+	"font_face": "Hack",
+	"font_size": 11,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+	],
+	"match_brackets": false,
+	"match_brackets_angle": false,
+	"match_brackets_braces": false,
+	"match_brackets_content": false,
+	"match_brackets_square": false,
+	"match_tags": false,
+	"spacegray_fileicons": true,
+	"spacegray_sidebar_tree_medium": true,
+	"spacegray_tabs_auto_width": true,
+	"spacegray_tabs_font_medium": true,
+	"spacegray_tabs_medium": true,
+	"theme": "Spacegray Eighties.sublime-theme"
+}

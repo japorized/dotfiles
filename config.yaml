@@ -76,16 +76,6 @@ profiles:
     - d_hammerspoon
     - d_snippets
     - f_functions
-  ubuntu1604-002:
-    dotfiles:
-    - f_vimrc
-    - d_templates
-    - f_w3m_config
-    - f_aliases
-    - f_tmux.conf
-    - d_snippets
-    - f_functions
-    - f_keymap
   WinCrap:
     dotfiles:
     - f_vimrc
@@ -97,3 +87,13 @@ profiles:
     - f_functions
     - f_keymap
     - f_zshrc
+  ubuntu1604-002:
+    dotfiles:
+    - f_vimrc
+    - d_templates
+    - f_w3m_config
+    - f_aliases
+    - f_tmux.conf
+    - d_snippets
+    - f_functions
+    - f_keymap

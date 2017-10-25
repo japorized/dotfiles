@@ -1,78 +1,65 @@
 #!/bin/sh
-brew install archey
+
+# brew taps
+brew tap phinze/cask
+brew tap caskroom/cask
+brew tap d12frosted/emacs-plus
+
+# brew installations
 brew install aria2
-brew install bdw-gc
-brew install boost
+brew install awk
 brew install buku
+brew install calc
 brew install coreutils
-brew install cython
 brew install elinks
-brew install faad2
-brew install ffmpeg
-brew install flac
-brew install fluid-synth
-brew install freetype
-brew install gdbm
-brew install gettext
+brew install d12frosted/emacs-plus/emacs-plus
+brew install fftw
 brew install ghostscript
 brew install git
-brew install glib
+brew install haskell-stack
 brew install htop
 brew install icdiff
-brew install icu4c
-brew install id3lib
 brew install id3v2
-brew install imagemagick
-brew install jpeg
+brew install ispell
 brew install kyoto-cabinet
-brew install lame
-brew install libevent
-brew install libffi
-brew install libid3tag
-brew install libmpdclient
-brew install libogg
-brew install libpng
-brew install libsamplerate
 brew install libsodium
-brew install libtiff
-brew install libtool
-brew install libyaml
-brew install little-cms2
-brew install lua
 brew install mpc
 brew install mpd
 brew install mpdscribble
 brew install ncmpcpp
-brew install ncurses
+brew install neofetch
 brew install nmap
-brew install openssl
-brew install openssl@1.1
-brew install opus
+brew install node
 brew install opus-tools
 brew install opusfile
 brew install p7zip
-brew install pcre
 brew install perl
-brew install pkg-config
 brew install python
 brew install python3
-brew install readline
 brew install reattach-to-user-namespace
 brew install ruby
-brew install sqlite
 brew install tag
-brew install taglib
 brew install terminal-notifier
-brew install texi2html
 brew install thefuck
 brew install tmux
 brew install utf8proc
 brew install vim
 brew install w3m
 brew install wget
-brew install x264
-brew install xvid
-brew install xz
-brew install yasm
 brew install youtube-dl
 brew install zsh
+
+# brew casks installations
+brew cask install amm
+brew cask install betterzipql
+brew cask install google-chrome
+brew cask install hammerspoon
+brew cask install handbrake
+brew cask install knockknock
+brew cask install lastfm
+brew cask install love
+brew cask install pomolectron
+brew cask install skim
+brew cask install spotify
+brew cask install vlc
+brew cask install xquartz
