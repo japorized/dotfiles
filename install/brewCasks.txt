@@ -9,5 +9,6 @@ love
 pomolectron
 skim
 spotify
+virtualbox
 vlc
 xquartz
