@@ -57,7 +57,7 @@ header_window_color = cyan
 main_window_color = 40
 current_item_prefix = "$(256_0)$r"
 current_item_suffix = "$/r$(end)"
-progressbar_look = "▁▁▁"
+progressbar_look = "─╼╌"
 progressbar_color = "black"
 progressbar_elapsed_color = "white:b"
 now_playing_prefix = "$b$2▶ "
@@ -104,7 +104,11 @@ execute_on_song_change = ""
 # Directories
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.config/ncmpcpp/Lyrics
+{%@@ if profile == "Earl-Grey.local" @@%}
 mpd_music_dir = "~/Music/Database"
+{%@@ else @@%}
+mpd_music_dir = "~/Music"
+{%@@ endif @@%}
 
 # Connection settings
 mpd_host = 127.0.0.1
