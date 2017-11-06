@@ -156,6 +156,20 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 8)<CR>
 " Airline
 let g:airline_theme='base16_eighties'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tmuxline#enabled = 1   " tmuxline + airline integration
+  " config to start tmux with tmuxline
+let airline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
+
+" Tmuxline
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#W',
+      \'c'    : '#H',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'x'    : '%a',
+      \'y'    : '#W %R',
+      \'z'    : '#H'}
 
 " Setting for terminals that need extra configs for terminal colors
 let base16colorspace=256  " Access colors present in 256 colorspace"
