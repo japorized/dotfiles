@@ -168,6 +168,7 @@ endif
 let g:startify_list_order = ['files', 'dir', 'sessions', 'bookmarks']
 let g:startify_bookmarks = [ 
   \ {'c': '~/dotfiles/dotfiles/vimrc'},
-  \ {'z': '~/dotfiles/dotfiles/zshrc'}
+  \ {'z': '~/dotfiles/dotfiles/zshrc'},
+  \ {'t': '~/dotfiles/dotfiles/tmux.conf'}
   \ ]
 let g:startify_update_oldfiles = 1
