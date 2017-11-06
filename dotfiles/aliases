@@ -2,7 +2,9 @@
 # Navigation
 ##############################
 alias lsdir="ls -d */"
-
+{%@@ if profile == "ubuntu1604-002" @@%}
+alias mc.skin='mc --skin="modarcon16root-defbg"' 
+{%@@ endif @@%}
 
 ##############################
 # Homebrew (MacOS)
