@@ -158,7 +158,7 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 8)<CR>
 let g:airline_theme='base16_eighties'
 {%@@ endif @@%}
 
-{%@@ if profile == "WinCrap" @@%}
+{%@@ if profile =="Camomile" or profile == "WinCrap" @@%}
 " Setting for terminals that need extra configs for terminal colors
 let base16colorspace=256  " Access colors present in 256 colorspace"
 colorscheme base16-default-dark
