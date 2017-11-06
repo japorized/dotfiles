@@ -2,7 +2,7 @@
 syntax on
 set background=dark
 {%@@ if profile == "Earl-Grey.local" @@%}
-set rtp+=/Users/JohnsonNg/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
+" set rtp+=/Users/JohnsonNg/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
 {%@@ endif @@%}
 set backspace=indent,eol,start
 set laststatus=2
@@ -153,16 +153,13 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 4)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 8)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 8)<CR>
 
-{%@@ if profile == "Camomile" or profile == "ubuntu1604-002" or profile == "WinCrap" @@%}
 " Airline
 let g:airline_theme='base16_eighties'
-{%@@ endif @@%}
+let g:airline_powerline_fonts = 1
 
-{%@@ if profile =="Camomile" or profile == "WinCrap" @@%}
 " Setting for terminals that need extra configs for terminal colors
 let base16colorspace=256  " Access colors present in 256 colorspace"
 colorscheme base16-default-dark
-{%@@ endif @@%}
 
 " Startify configs
 if has("autocmd")
