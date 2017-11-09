@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Ensure user has edited config.yaml and the dotfiles for proper installation
+echo "Please edit config.yaml for your machine before proceeding. Is that step complete?"
 read response
 
 if [ "$response" -eq "y" ]; then
@@ -20,7 +21,7 @@ echo 'Installing xcode cli tools'
 CONFIG=$HOME/.config
 
 if [ -d $CONFIG ]; then
-  echo 'Creating $CONFIG'
+  echo "Creating $CONFIG"
   mkdir -p ~/.config/vim ~/.config/mpd ~/.config/ncmpcpp ~/.config/w3m
 fi
 
