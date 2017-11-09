@@ -156,6 +156,7 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 8)<CR>
 " Airline
 let g:airline_theme='base16_eighties'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 1   " tmuxline + airline integration
   " config to start tmux with tmuxline
 let airline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
