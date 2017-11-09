@@ -13,9 +13,11 @@
   source $HOME/.functions
   {%@@ if profile == "Earl-Grey.local" @@%}
   source $HOME/.exports
+  export EDITOR=/usr/local/bin/vim
+  {%@@ else @@%}
+  export EDITOR=$(which vim)
   {%@@ endif @@%}
   export LANG=en_US.UTF-8
-  export EDITOR=/usr/local/bin/vim
   {%@@ if profile == "Earl-Grey.local" @@%}
   export CONFIG='$HOME/.config'
   export DEFAULT_CHEAT_DIR='$HOME/.cheat/'
