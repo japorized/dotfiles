@@ -26,7 +26,6 @@
   export GEM_HOME=$(ruby -e 'print Gem.user_dir')
   export PATH=$HOME/.bin:$GEM_HOME/bin:/usr/local/bin:$PATH
   {%@@ elif profile == "WinCrap" @@%}
-  export PATH=$HOME/.bin:$PATH
   source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   {%@@ endif @@%}
   export CONFIG=$HOME/.config
