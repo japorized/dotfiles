@@ -59,7 +59,7 @@ run_once({ "unclutter -root" }) -- entries must be comma-separated
 -- }}}
 
 -- {{{ Variable definitions
-local chosen_theme = "powerarrow-dark"
+local chosen_theme = "powerarrow"
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "termite"
