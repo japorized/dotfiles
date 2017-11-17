@@ -44,7 +44,7 @@ grub 2:2.02-3
 gzip 1.8-2
 htop 2.0.2-2
 hwinfo 21.38-1
-imagemagick 6.9.9.21-1
+imagemagick 6.9.9.22-1
 inetutils 1.9.4-5
 iproute2 4.13.0-1
 iputils 20161105.1f2bb12-2
@@ -52,7 +52,7 @@ jfsutils 1.1.15-4
 less 487-1
 libtool 2.4.6+40+g6ca5e224-1
 licenses 20171006-1
-linux 4.13.9-1
+linux 4.13.11-1
 logrotate 3.12.3-1
 lvm2 2.02.175-1
 m4 1.4.18-1
@@ -64,10 +64,12 @@ mpc 0.28-1
 mpd 0.20.11-1
 mpdscribble 0.22-13
 nano 2.8.7-1
-ncmpcpp 0.8-2
+ncmpcpp 0.8.1-1
 neofetch-git 3.3.0.r30.g03d07f2-1
 netctl 1.14-1
+nodejs 8.8.1-1
 noto-fonts-emoji 20170825-2
+npm 5.5.1-1
 os-prober 1.76-1
 otf-ipafont 003.03-5
 p7zip 16.02-3
@@ -119,7 +121,7 @@ ttf-symbola 9.17-1
 usbutils 008-1
 util-linux 2.31-1
 vi 1:070224-2
-vim 8.0.1176-1
+vim 8.0.1272-1
 virtualbox-guest-utils 5.2.0-1
 w3m 0.5.3.git20170102-2
 wget 1.19.2-1
