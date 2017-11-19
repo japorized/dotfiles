@@ -22,9 +22,6 @@
   export CONFIG='$HOME/.config'
   export DEFAULT_CHEAT_DIR='$HOME/.cheat/'
   export CHEATCOLORS=true
-  {%@@ elif profile == "Camomile" @@%}
-  export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-  export PATH=$HOME/.bin:$GEM_HOME/bin:/usr/local/bin:$PATH
   {%@@ elif profile == "WinCrap" @@%}
   source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   {%@@ endif @@%}
