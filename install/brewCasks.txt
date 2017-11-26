@@ -3,9 +3,11 @@ betterzipql
 google-chrome
 hammerspoon
 handbrake
+imageoptim
 knockknock
 lastfm
 love
+nox-app-player
 pomolectron
 skim
 spotify

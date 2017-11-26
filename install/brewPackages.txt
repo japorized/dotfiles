@@ -25,10 +25,10 @@ nasm
 ncmpcpp
 neofetch
 nmap
-node
 opus-tools
 opusfile
 p7zip
+ranger
 reattach-to-user-namespace
 tag
 terminal-notifier
@@ -40,6 +40,7 @@ utf8proc
 vim
 w3m
 wget
+yarn
 yasm
 youtube-dl
 zsh
