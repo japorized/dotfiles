@@ -2,12 +2,13 @@ aria2
 autoconf
 awk
 buku
+cabextract
 calc
 coreutils
 cython
 elinks
-d12frosted/emacs-plus/emacs-plus
 fftw
+fontconfig
 ghostscript
 git
 gnu-sed
@@ -15,6 +16,7 @@ haskell-stack
 htop
 icdiff
 id3v2
+imagemagick@6
 ispell
 kyoto-cabinet
 libsodium
@@ -35,11 +37,14 @@ terminal-notifier
 texi2html
 texinfo
 thefuck
+theora
 tmux
+unrar
 utf8proc
 vim
 w3m
 wget
+wine
 yarn
 yasm
 youtube-dl

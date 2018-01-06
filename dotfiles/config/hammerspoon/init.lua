@@ -57,29 +57,29 @@ hs.hotkey.bind({"cmd"}, "f12", function() hs.execute("/usr/local/bin/mpc volume 
 -- For x and y: use 0 to expand fully in that dimension, 0.5 to expand halfway
 -- For w and h: use 1 for full, 0.5 for half
 -------------------------------------------------------------------------------
-function push(x, y, w, h)
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  f.x = max.x + (max.w * x)
-  f.y = max.y + (max.h * y)
-  f.w = max.w * w
-  f.h = max.h * h
-  win:setFrame(f)
-end
-
-hs.hotkey.bind(mash, "f", function() push(0, 0, 1, 1) end)
-hs.hotkey.bind(mash, "Left", function() push(0, 0, 0.5, 1) end)
-hs.hotkey.bind(mash, "Right", function() push (0.5, 0, 0.5, 1) end)
-hs.hotkey.bind(mash, "Up", function() push(0, 0, 1, 0.5) end)
-hs.hotkey.bind(mash, "Down", function() push(0, 0.5, 1, 0.5) end)
-hs.hotkey.bind(mash, "i", function() push(0, 0, 0.5, 0.5) end)
-hs.hotkey.bind(mash, "o", function() push(0.5, 0, 0.5, 0.5) end)
-hs.hotkey.bind(mash, "k", function() push(0, 0.5, 0.5, 0.5) end)
-hs.hotkey.bind(mash, "l", function() push(0.5, 0.5, 0.5, 0.5) end)
-hs.hotkey.bind(mash, "c", function() push(0.1, 0.1, 0.8, 0.8) end)
+-- function push(x, y, w, h)
+--   local win = hs.window.focusedWindow()
+--   local f = win:frame()
+--   local screen = win:screen()
+--   local max = screen:frame()
+-- 
+--   f.x = max.x + (max.w * x)
+--   f.y = max.y + (max.h * y)
+--   f.w = max.w * w
+--   f.h = max.h * h
+--   win:setFrame(f)
+-- end
+-- 
+-- hs.hotkey.bind(mash, "f", function() push(0, 0, 1, 1) end)
+-- hs.hotkey.bind(mash, "Left", function() push(0, 0, 0.5, 1) end)
+-- hs.hotkey.bind(mash, "Right", function() push (0.5, 0, 0.5, 1) end)
+-- hs.hotkey.bind(mash, "Up", function() push(0, 0, 1, 0.5) end)
+-- hs.hotkey.bind(mash, "Down", function() push(0, 0.5, 1, 0.5) end)
+-- hs.hotkey.bind(mash, "i", function() push(0, 0, 0.5, 0.5) end)
+-- hs.hotkey.bind(mash, "o", function() push(0.5, 0, 0.5, 0.5) end)
+-- hs.hotkey.bind(mash, "k", function() push(0, 0.5, 0.5, 0.5) end)
+-- hs.hotkey.bind(mash, "l", function() push(0.5, 0.5, 0.5, 0.5) end)
+-- hs.hotkey.bind(mash, "c", function() push(0.1, 0.1, 0.8, 0.8) end)
 
 --
 --  Window Switcher

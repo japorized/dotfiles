@@ -6,6 +6,9 @@ dotfiles:
   d_awesome:
     dst: ~/.config/awesome
     src: config/awesome
+  d_chunkwm:
+    dst: ~/.config/chunkwm
+    src: config/chunkwm
   d_hammerspoon:
     dst: ~/.config/hammerspoon
     src: config/hammerspoon
@@ -15,6 +18,9 @@ dotfiles:
   d_templates:
     dst: ~/.vim/templates
     src: vim/templates
+  "d_\xFCbersicht":
+    dst: "~/.config/\xDCbersicht"
+    src: "config/\xDCbersicht"
   f_aliases:
     dst: ~/.aliases
     src: aliases
@@ -27,6 +33,12 @@ dotfiles:
   f_keymap:
     dst: ~/.w3m/keymap
     src: w3m/keymap
+  f_khdrc:
+    dst: ~/.config/khdrc
+    src: config/khdrc
+  f_kitty.conf:
+    dst: ~/.config/kitty.conf
+    src: config/kitty.conf
   f_mpd.conf:
     dst: ~/.config/mpd/mpd.conf
     src: config/mpd/mpd.conf
@@ -76,6 +88,10 @@ profiles:
     - d_hammerspoon
     - d_snippets
     - f_functions
+    - d_chunkwm
+    - f_khdrc
+    - "d_\xFCbersicht"
+    - f_kitty.conf
   WinCrap:
     dotfiles:
     - f_vimrc

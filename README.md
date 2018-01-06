@@ -3,6 +3,30 @@ Opinionated configurations for this relatively new and under-educated power user
 
 ---
 
+## Setup
+
+### macOS (current main system)
+
+* WM: [ chunkwm ](https://github.com/koekeishiya/chunkwm)
+* Hotkey daemon: [ khd ](https://github.com/koekeishiya/khd)
+* Terminal: [ iTerm ](https://iterm2.com/), [ kitty ](https://github.com/kovidgoyal/kitty)
+* Utility Bar: [ Übersicht ](http://tracesof.net/uebersicht/) with customized [ nerdbar ](https://github.com/apierz/nerdbar.widget)
+* Other Utilities: Itsycal
+* Package Manager: [ Homebrew ](https://brew.sh)
+
+### Arch (current main VM)
+
+* WM: awesomewm
+* Terminal: [ termite ](https://github.com/thestinger/termite/)
+* AUR Package Manager: cower
+
+### Windows 10 WSL (pluggable and disposable system :P)
+
+* WM: [ i3-gaps ](https://github.com/Airblader/i3)
+* Terminal: termite
+
+---
+
 ## Dotfile Manager
 
 I use Dotdrop to manage my dotfiles across different machines.
