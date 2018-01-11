@@ -1,7 +1,7 @@
 table, span {
     color: #9663ff;
-    font: 12px SFMono-Medium;
-    text-transform: lowercase;
+    font: 12px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 600;
     -webkit-font-smoothing: antialiased;
 }
 .white {

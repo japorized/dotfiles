@@ -6,6 +6,8 @@ google-chrome
 hammerspoon
 handbrake
 imageoptim
+itsycal
+kitty
 knockknock
 lastfm
 love
@@ -13,7 +15,9 @@ nox-app-player
 pomolectron
 skim
 slack
+soundflower
 spotify
+ubersicht
 virtualbox
 vlc
 vox

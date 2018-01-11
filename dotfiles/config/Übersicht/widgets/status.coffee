@@ -4,7 +4,6 @@ refreshFrequency: 10000 # ms
 
 render: (output) ->
   """
-    <link rel="stylesheet" type="text/css" href="./colors.css" />
     <div class="compstatus"></div>
   """
 
@@ -59,15 +58,6 @@ getWifiStatus: (status, netName, netIP) ->
   else
     return "<span class='grey wifi'>&nbsp&nbsp&nbsp</span><span class='white'>--&nbsp&nbsp&nbsp</span>"
 
-###
-# getMailCount: (count) ->
-#   return "<span class='icon'></span><span class=white>#{count}</span>"
-###
-
-getReminders: (reminders) ->
-  return "<span class='reminders'><span class='icon'></span>&nbsp;</span><span class='white'>#{reminders}&nbsp</span>"
-  
-
 update: (output, domEl) ->
 
   # split the output of the script
@@ -80,14 +70,10 @@ update: (output, domEl) ->
   netStatus = values[4].replace /^\s+|\s+$/g, ""
   netName = values[5]
   netIP = values[6]
-#  mail = values[7]
-  reminders = values[7].replace /^\s+|\s+$/g, ""
 
   # create an HTML string to be displayed by the widget
   htmlString = @getWifiStatus(netStatus, netName, netIP) + "<span>" + " ⎢ " + "</span>" +
                @batteryStatus(battery, isCharging) + "<span>" + " ⎢ " + "</span>" +
-#               @getMailCount(mail) + "&nbsp&nbsp" +
-               @getReminders(reminders) + "<span>⎢ </span>" +
                @timeAndDate(date,time) + "<span> ⎢ </span>"
 
   $(domEl).find('.compstatus').html(htmlString)

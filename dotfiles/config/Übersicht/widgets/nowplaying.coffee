@@ -4,7 +4,6 @@ refreshFrequency: '2s' # ms
 
 render: (output) ->
   """
-    <link rel="stylesheet" type="text/css" href="./colors.css" />
     <div class='nowplaying'></div>
   """
 
