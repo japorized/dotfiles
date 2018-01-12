@@ -1,3 +1,11 @@
+{%@@ if profile == "Earl-Grey.local" @@%}
+##############################
+# Eye saving commands
+##############################
+alias day="~/.bin/change-wallpaper ~/Pictures/Wallpaper/konohanakitan_hydrangea.jpg"
+alias night="~/.bin/change-wallpaper ~/Pictures/Wallpaper/powerarrow_bg.png"
+{%@@ endif @@%}
+
 ##############################
 # Navigation
 ##############################
