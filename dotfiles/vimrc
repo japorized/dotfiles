@@ -49,6 +49,8 @@ if has("autocmd")
     autocmd BufNewFile *.html 0r ~/.vim/templates/html_default_template.sh
     autocmd BufNewFile *.tex 0r ~/.vim/templates/tex_default.sh
   augroup END
+
+  autocmd FileType InsertLeave * update
 endif
 
 " netrw Configs
@@ -173,3 +175,6 @@ let g:startify_bookmarks = [
   \ {'t': '~/dotfiles/dotfiles/tmux.conf'}
   \ ]
 let g:startify_update_oldfiles = 1
+
+" Markdown Preview configs
+let vim_markdown_preview_github=1

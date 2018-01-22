@@ -1,7 +1,7 @@
 amm
 betterzipql
 calibre
-firefoxdeveloperedition
+firefox
 google-chrome
 hammerspoon
 handbrake
@@ -12,6 +12,7 @@ knockknock
 lastfm
 love
 nox-app-player
+onyx
 pomolectron
 skim
 slack
@@ -19,7 +20,6 @@ soundflower
 spotify
 ubersicht
 virtualbox
-vlc
 vox
 xquartz
 zerobranestudio

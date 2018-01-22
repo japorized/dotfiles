@@ -3,6 +3,7 @@ autoconf
 awk
 buku
 calc
+cheat
 crisidev/chunkwm/chunkwm
 cmatrix
 coreutils
@@ -24,6 +25,7 @@ libsodium
 mpc
 mpd
 mpdscribble
+mps-youtube
 nasm
 ncmpcpp
 neofetch
@@ -48,6 +50,5 @@ wine
 winetricks
 yarn
 yasm
-youtube-dl
 zegervdv/zathura/zathura-pdf-poppler
 zsh
