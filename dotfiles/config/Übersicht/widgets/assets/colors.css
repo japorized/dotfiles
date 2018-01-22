@@ -75,7 +75,7 @@ table, span {
     top: 1px;
     font: 14px FontAwesome;
 }
-.vol_icon {
+.volume {
    position: relative;
    font: 18px FontAwesome;
 }
