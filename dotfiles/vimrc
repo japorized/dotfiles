@@ -2,7 +2,6 @@
 syntax on
 set background=dark
 {%@@ if profile == "Earl-Grey.local" @@%}
-" set rtp+=/Users/JohnsonNg/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
 {%@@ endif @@%}
 set backspace=indent,eol,start
 set laststatus=2

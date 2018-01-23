@@ -53,12 +53,12 @@ update: (output, domEl) ->
      mpdHtmlString += "●"
 
    mpdHtmlString += "</span>"
-   mpdHtmlString += "<span class='white'>"
+   mpdHtmlString += "<span class='grey'>"
 
    i = 0
    while i <= remainingCounter
      i += 1
-     mpdHtmlString += "◦"
+     mpdHtmlString += "●"
 
    mpdHtmlString += "</span>"
 

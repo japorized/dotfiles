@@ -13,6 +13,7 @@ fftw
 ghostscript
 git
 gnu-sed
+grip
 haskell-stack
 htop
 icdiff

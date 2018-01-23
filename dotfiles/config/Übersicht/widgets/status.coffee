@@ -58,6 +58,12 @@ getWifiStatus: (status, netName, netIP) ->
   else
     return "<span class='grey wifi'>&nbsp&nbsp&nbsp</span><span class='white'>--&nbsp&nbsp&nbsp</span>"
 
+getVolume: (str) ->
+  if str == "muted"
+    return "<span class='volume'>&nbsp;&nbsp;</span>"
+  else
+    return "<span class='volume'>&nbsp;&nbsp;</span><span class='white'>#{str}&nbsp</span>"
+
 update: (output, domEl) ->
 
   # split the output of the script
@@ -70,9 +76,11 @@ update: (output, domEl) ->
   netStatus = values[4].replace /^\s+|\s+$/g, ""
   netName = values[5]
   netIP = values[6]
+  volume = values[7]
 
   # create an HTML string to be displayed by the widget
-  htmlString = @getWifiStatus(netStatus, netName, netIP) + "<span>" + " ⎢ " + "</span>" +
+  htmlString = @getVolume(volume) + "<span>" + " | " + "</span>" + 
+               @getWifiStatus(netStatus, netName, netIP) + "<span>" + " ⎢ " + "</span>" +
                @batteryStatus(battery, isCharging) + "<span>" + " ⎢ " + "</span>" +
                @timeAndDate(date,time) + "<span> ⎢ </span>"
 

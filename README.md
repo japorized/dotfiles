@@ -3,6 +3,14 @@ Opinionated configurations for this relatively new and under-educated power user
 
 ---
 
+## Screenshots
+
+### macOS
+
+![macOS scrot](/screenshots/macos-2018jan22.png?raw=true "macOS Screenshot")
+
+---
+
 ## Setup
 
 ### macOS (current main system)

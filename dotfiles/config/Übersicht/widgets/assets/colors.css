@@ -5,7 +5,8 @@ table, span {
     -webkit-font-smoothing: antialiased;
 }
 .white {
-    color: #f1ebe4;}
+    color: #f1ebe4;
+}
 
 .black {
   color: #292b2e;
@@ -87,7 +88,6 @@ table, span {
 
 .grey {
     color: #b3b9be;
-
 }
 
 .greybg {

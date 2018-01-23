@@ -24,29 +24,29 @@ hs.alert.show("Config loaded")
 --
 --  Hotkey to Launch Frequently Used Applications
 --
-local iterm     = 'iTerm'
-local subl      = 'Sublime Text'
+-- local iterm     = 'iTerm'
+-- local subl      = 'Sublime Text'
 
-hs.hotkey.bind({"cmd"}, "Return", function()
-  hs.application.launchOrFocus(iterm)
-end)
+-- hs.hotkey.bind({"cmd"}, "Return", function()
+--   hs.application.launchOrFocus(iterm)
+-- end)
 
-hs.hotkey.bind({"cmd", "alt"}, "s", function()
-  hs.application.launchOrFocus(subl)
-end)
+-- hs.hotkey.bind({"cmd", "alt"}, "s", function()
+--   hs.application.launchOrFocus(subl)
+-- end)
 
-hs.hotkey.bind({"cmd", "alt"}, "f", function()
-  hs.application.launchOrFocusByBundleID("org.mozilla.nightly")
-end)
+-- hs.hotkey.bind({"cmd", "alt"}, "f", function()
+--   hs.application.launchOrFocusByBundleID("org.mozilla.nightly")
+-- end)
 
 --
 --  MPC commands
 --
-hs.hotkey.bind({"cmd"}, "f7", function() hs.execute("/usr/local/bin/mpc prev") end)
-hs.hotkey.bind({"cmd"}, "f8", function() hs.execute("/usr/local/bin/mpc toggle") hs.execute("/usr/local/bin/terminal-notifier -message 'MPD Toggle'") end)
-hs.hotkey.bind({"cmd"}, "f9", function() hs.execute("/usr/local/bin/mpc next") end)
-hs.hotkey.bind({"cmd"}, "f11", function() hs.execute("/usr/local/bin/mpc volume -10") hs.alert.show("mpc " .. hs.execute("/usr/local/bin/mpc volume")) end)
-hs.hotkey.bind({"cmd"}, "f12", function() hs.execute("/usr/local/bin/mpc volume +10") hs.alert.show("mpc " .. hs.execute("/usr/local/bin/mpc volume")) end)
+-- hs.hotkey.bind({"cmd"}, "f7", function() hs.execute("/usr/local/bin/mpc prev") end)
+-- hs.hotkey.bind({"cmd"}, "f8", function() hs.execute("/usr/local/bin/mpc toggle") hs.execute("/usr/local/bin/terminal-notifier -message 'MPD Toggle'") end)
+-- hs.hotkey.bind({"cmd"}, "f9", function() hs.execute("/usr/local/bin/mpc next") end)
+-- hs.hotkey.bind({"cmd"}, "f11", function() hs.execute("/usr/local/bin/mpc volume -10") hs.alert.show("mpc " .. hs.execute("/usr/local/bin/mpc volume")) end)
+-- hs.hotkey.bind({"cmd"}, "f12", function() hs.execute("/usr/local/bin/mpc volume +10") hs.alert.show("mpc " .. hs.execute("/usr/local/bin/mpc volume")) end)
 
 --
 --  Window Resizing Bindings
