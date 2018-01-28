@@ -87,7 +87,7 @@ nmap <F12> :LLPStartPreview<cr>
 let g:tex_conceal="abdgm"
 autocmd Filetype tex setl updatetime=1000
 {%@@ if profile == "Earl-Grey.local" @@%}
-let g:livepreview_previewer = 'open -a Preview'
+let g:livepreview_previewer = 'open -a Skim'
 {%@@ elif profile == "Camomile" @@%}
 let g:livepreview_previewer = 'zathura'
 {%@@ endif @@%}

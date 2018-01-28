@@ -31,6 +31,7 @@ nasm
 ncmpcpp
 neofetch
 nmap
+openssl@1.1
 opus-tools
 opusfile
 pipes-sh

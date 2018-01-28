@@ -13,6 +13,7 @@ chunkc core::plugin_dir ~/.config/chunkwm/plugins
 #
 
 chunkc core::hotload 1
+# chunkc core::log_level debug
 
 #
 # NOTE: the following are config variables for the chunkwm-tiling plugin.
@@ -49,7 +50,7 @@ chunkc set 4_desktop_offset_gap          20
 chunkc set desktop_padding_step_size     10.0
 chunkc set desktop_gap_step_size         5.0
 
-chunkc set bsp_spawn_left                1
+chunkc set bsp_spawn_left                0
 chunkc set bsp_optimal_ratio             1.618
 chunkc set bsp_split_mode                optimal
 chunkc set bsp_split_ratio               0.5
@@ -57,7 +58,7 @@ chunkc set bsp_split_ratio               0.5
 chunkc set monitor_focus_cycle           1
 chunkc set window_focus_cycle            monitor
 
-chunkc set mouse_follows_focus           1
+chunkc set mouse_follows_focus           all
 chunkc set window_float_next             0
 chunkc set window_float_center           1
 chunkc set window_region_locked          1
@@ -101,7 +102,7 @@ chunkc set focused_border_skip_floating  0
 chunkc core::load border.so
 chunkc core::load tiling.so
 chunkc core::load ffm.so
-chunkc core::load blur.so
+# chunkc core::load blur.so
 
 #
 # NOTE: shell commands require escaped quotes
@@ -110,10 +111,3 @@ chunkc core::load blur.so
 
 chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner \"App Store\" --state float
-
-#
-# Wallpaper Blurring Plugin Configuration
-#
-
-chunkc set wallpaper ~/Pictures/Wallpaper/konohanakitan_hydrangea.jpg
-chunkc set wallpaper_blur 5
