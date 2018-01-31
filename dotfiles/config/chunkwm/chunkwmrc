@@ -46,6 +46,7 @@ chunkc set 4_desktop_offset_bottom       40
 chunkc set 4_desktop_offset_left         40
 chunkc set 4_desktop_offset_right        40
 chunkc set 4_desktop_offset_gap          20
+chunkc set 4_desktop_gap_step_size       20
 
 chunkc set desktop_padding_step_size     10.0
 chunkc set desktop_gap_step_size         5.0

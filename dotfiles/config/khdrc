@@ -32,23 +32,27 @@ shift + cmd - k : chunkc tiling::window --warp north
 shift + cmd - l : chunkc tiling::window --warp east
 
 # make floating window fill screen
-# ctrl + cmd + alt - up     : chunkc tiling::window --grid-layout 1:1:0:0:1:1
+ctrl + cmd + alt - up     : chunkc tiling::window --grid-layout 1:1:0:0:1:1
 
 # make floating window fill left-half of screen
-# ctrl + cmd + alt - left   : chunkc tiling::window --grid-layout 1:2:0:0:1:1
+ctrl + cmd + alt - left   : chunkc tiling::window --grid-layout 1:2:0:0:1:1
 
 # make floating window fill right-half of screen
-# ctrl + cmd + alt - right  : chunkc tiling::window --grid-layout 1:2:1:0:1:1
+ctrl + cmd + alt - right  : chunkc tiling::window --grid-layout 1:2:1:0:1:1
 
 # move floating windows / windows on a grid space
 # 2 x 2 grid
-# ctrl + cmd + alt - i      : chunkc tiling::window -g 2:2:0:0:1:1
-# ctrl + cmd + alt - k      : chunkc tiling::window -g 2:2:0:1:1:1
-# ctrl + cmd + alt - o      : chunkc tiling::window -g 2:2:1:0:1:1
-# ctrl + cmd + alt - l      : chunkc tiling::window -g 2:2:1:1:1:1
+ctrl + cmd + alt - i      : chunkc tiling::window -g 2:2:0:0:1:1
+ctrl + cmd + alt - k      : chunkc tiling::window -g 2:2:0:1:1:1
+ctrl + cmd + alt - o      : chunkc tiling::window -g 2:2:1:0:1:1
+ctrl + cmd + alt - l      : chunkc tiling::window -g 2:2:1:1:1:1
 
 # 10 rows 10 cols grid, windows left and top on 0 grid, and have 5 grid width 5 grid height
 # alt - q : chunkc tiling::window --grid-layout 10:10:0:0:5:5
+
+# move to desktop
+cmd - tab : khd -p 'ctrl - right'
+cmd - 0x32 : khd -p 'ctrl - left'
 
 # send window to desktop
 shift + alt - r : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
