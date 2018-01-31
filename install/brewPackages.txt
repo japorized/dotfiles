@@ -5,6 +5,7 @@ buku
 calc
 cheat
 crisidev/chunkwm/chunkwm
+clojure
 cmatrix
 coreutils
 cython
@@ -22,6 +23,7 @@ imagemagick@6
 ispell
 koekeishiya/formulae/khd
 kyoto-cabinet
+leiningen
 libsodium
 mpc
 mpd

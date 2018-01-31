@@ -18,6 +18,9 @@ dotfiles:
   d_templates:
     dst: ~/.vim/templates
     src: vim/templates
+  d_vis:
+    dst: ~/.config/vis
+    src: config/vis
   "d_\xFCbersicht":
     dst: "~/.config/\xDCbersicht"
     src: "config/\xDCbersicht"
@@ -92,6 +95,7 @@ profiles:
     - f_khdrc
     - "d_\xFCbersicht"
     - f_kitty.conf
+    - d_vis
   WinCrap:
     dotfiles:
     - f_vimrc
