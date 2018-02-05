@@ -6,6 +6,7 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"Vintage"
 	],
 	"match_brackets": false,
 	"match_brackets_angle": false,
@@ -18,5 +19,6 @@
 	"spacegray_tabs_auto_width": true,
 	"spacegray_tabs_font_medium": true,
 	"spacegray_tabs_medium": true,
-	"theme": "Spacegray Eighties.sublime-theme"
+	"theme": "Spacegray Eighties.sublime-theme",
+	"vintageous_use_ctrl_keys": true
 }

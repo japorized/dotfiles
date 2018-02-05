@@ -3,7 +3,7 @@ visualizer.fps=20
 
 ##Sets the audio sources to use. Currently available ones are "mpd" and "alsa"Sets the audio sources to use.
 ##Currently available ones are "mpd", "pulse" and "alsa". Defaults to "mpd".
-# audio.sources=pulse
+audio.sources=mpd
 
 ##vis tries to find the correct pulseaudio sink, however this will not work on all systems.
 ##If pulse audio is not working with vis try switching the audio source. A list can be found by running the
@@ -18,7 +18,7 @@ mpd.fifo.path=/tmp/mpd.fifo
 audio.stereo.enabled=false
 
 ##Specifies how often the visualizer will change in seconds. 0 means do not rotate. Default is 0.
-visualizer.rotation.secs=10
+# visualizer.rotation.secs=10
 
 ##Configures the samples rate and the cutoff frequencies.
 audio.sampling.frequency=44100
@@ -46,7 +46,7 @@ visualizer.spectrum.bar.width=2
 visualizer.spectrum.bar.spacing=1
 
 ##Available smoothing options are monstercat, sgs, none.
-visualizer.spectrum.smoothing.mode=sgs
+visualizer.spectrum.smoothing.mode=monstercat
 
 ##This configures the falloff effect on the spectrum visualizer. Available falloff options are fill,top,none.
 ##Defaults to "fill"
@@ -89,4 +89,4 @@ visualizer.sgs.smoothing.passes=1
 
 ##Specifies the color scheme. The color scheme must be in ~/.config/vis/colors/ directory. The default scheme is "colors".
 # colors.scheme=rainbow
-colors.scheme=violet_dream,cool_cyan,sunset_mountains
+colors.scheme=purple_hydrangea,cool_cyan,sunset_mountains,violet_dream
