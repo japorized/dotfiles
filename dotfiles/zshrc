@@ -93,8 +93,8 @@ source $HOME/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Powerline9k Configs
 ##############################
 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time custom_internet_signal)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon battery dir rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs)
 
 # Powerline 9k Prompts
 POWERLEVEL9K_OS_ICON='\uf179'
