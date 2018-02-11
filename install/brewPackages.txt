@@ -39,6 +39,7 @@ opusfile
 pipes-sh
 ranger
 reattach-to-user-namespace
+rust
 tag
 terminal-notifier
 texi2html

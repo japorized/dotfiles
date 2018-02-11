@@ -138,3 +138,31 @@ chooser:bgDark(true)
 hs.hotkey.bind({"cmd", "alt"}, "E", function()
   if chooser:isVisible() then chooser:hide() else chooser:show() end
 end)
+
+-- Load Seal
+hs.loadSpoon("Seal")
+spoon.Seal:loadPlugins({"apps", "screencapture", "calc", "urls", "useractions"})
+spoon.Seal.plugins.useractions.actions =
+   {
+      ["Hammerspoon docs webpage"] = {
+        url = "http://hammerspoon.org/docs/",
+        icon = hs.image.imageFromName(hs.image.systemImageNames.ApplicationIcon),
+      },
+      ["mpc commands"] = {
+        keyword = "mpc",
+        fn = function(str) hs.execute('/usr/local/bin/mpc ' .. str) end
+      },
+      ["calc & copy to clipboard"] = {
+        keyword = "calc",
+        fn = function(str) hs.execute('/usr/local/bin/calc "' .. str .. '" | tr -d "\t\n" | /usr/bin/pbcopy') end
+      },
+      ["Search on DuckduckGo"] = {
+        url = "http://duckduckgo.com/?q=${query}",
+        icon = 'favicon',
+        keyword = "d",
+      }
+    }
+
+spoon.Seal:bindHotkeys({toggle={{"alt"}, "Space"}})
+spoon.Seal:start()
+
