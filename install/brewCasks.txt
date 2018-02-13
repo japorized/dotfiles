@@ -7,7 +7,7 @@ google-chrome
 hammerspoon
 handbrake
 imageoptim
-itsycal
+inkscape
 kitty
 knockknock
 lastfm

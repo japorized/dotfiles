@@ -4,7 +4,8 @@ cmd + alt + ctrl - r : khd -e "reload"
 # application launching shortcuts
 cmd - return : open -na /Applications/Kitty.app
 # cmd - return : open -na /Applications/iTerm.app
-ctrl + cmd + alt - f: open -a FirefoxNightly
+# ctrl + cmd + alt - f: open -a FirefoxNightly
+ctrl + cmd + alt - f: open -a Firefox
 ctrl + cmd + alt - s: open -na /Applications/Sublime\ Text.app
 
 # focus window
