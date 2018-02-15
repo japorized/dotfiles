@@ -1,9 +1,12 @@
 # For terminals that need an extra command to turn on 256-colors
   export TERM="xterm-256color"
 
+  {%@@ if profile != "Oolong" @@%}
   BASE16_SHELL=$HOME/.config/base16-shell/
   [ -n "$PS1"  ] && [ -s $BASE16_SHELL/profile_helper.sh  ] && eval "$($BASE16_SHELL/profile_helper.sh)"
   base16_eighties
+  {%@@ endif @@%}
+
 
 # Path to oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
@@ -61,12 +64,12 @@ plugins=(git osx thefuck)
 # User configuration
 POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
-{%@@ elif profile == "Camomile" @@%}
+{%@@ elif profile == "Oolong" @@%}
 plugins=(git)
+ZSH_THEME="robbyrussell"
 
-# Powerlevel9k Configurations
-POWERLEVEL9K_MODE="awesome-fontconfig"
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 {%@@ elif profile == "WinCrap" @@%}
 ZSH_THEME="wedisagree"
 plugins=(git)
@@ -129,28 +132,6 @@ POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL_BACKGROUND="237"
 POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL_FOREGROUND="250"
 
 source $HOME/.config/zsh/powerline.zsh
-{%@@ elif profile == "Camomile" @@%}
-
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir dir_writable rbenv vcs)
-
-# Powerline 9k Prompts
-POWERLEVEL9K_OS_ICON_BACKGROUND='237'
-POWERLEVEL9K_OS_ICON_FOREGROUND='255'
-POWERLEVEL9K_DIR_HOME_BACKGROUND='038'
-POWERLEVEL9K_DIR_HOME_FOREGROUND='015'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='147'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='015'
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='050'
-POWERLEVLE9K_DIR_DEFAULT_FOREGROUND='015'
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND='198'
-POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUNND='015'
-POWERLEVEL9K_DIR_WRITABLE_ICON='\uf023'
-POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S | %m-%d}'
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 {%@@ endif @@%}
 
 eval $(thefuck --alias)

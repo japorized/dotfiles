@@ -14,10 +14,12 @@ alias lsdir="ls -d */"
 alias mc.skin='mc --skin="modarcon16root-defbg"' 
 {%@@ endif @@%}
 
+{%@@ if profile == "Earl-Grey.local" @@%}
 ##############################
 # Homebrew (MacOS)
 ##############################
 alias listBrewDependents='brew list -1 | while read cask; do echo -ne "\x1B[1;34m $cask \x1B[0m"; brew uses $cask --installed | awk '\''{printf(" %s ", $0)}'\''; echo ""; done'
+{%@@ endif @@%}
 
 
 ##############################
@@ -37,3 +39,6 @@ alias magit="vim -c MagitOnly"
 alias aria2c-rpc="aria2c --enable-rpc --rpc-listen-all -d './Downloads' "
 {%@@ endif @@%}
 alias gdi="fuck"
+{%@@ if profile == "Oolong" @@%}
+alias volume="pactl set-sink-volume 0 "
+{%@@ endif @@%}

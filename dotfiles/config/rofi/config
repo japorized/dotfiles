@@ -1,0 +1,26 @@
+!=======================================
+!=============  rofi  ==================
+!=======================================
+
+!| you can refer rofi site/screenshot for different configurations
+rofi.location:          0
+rofi.color-enabled:     true
+rofi.color-window:      argb:ee0F3B5F, #CC9752, #CC9752
+rofi.color-normal:      argb:00111111, #E5DBCF, argb:00111111, #CC9752, #0F3B5F
+rofi.color-urgent:      argb:00111111, #af652f, argb:00111111, #af652f, #0F3B5F
+rofi.color-active:      argb:00111111, #70a16c, argb:00111111, #70a16c, #0F3B5F
+rofi.separator-style:   dash
+rofi.fullscreen:        false
+rofi.padding:           2
+rofi.hide-scrollbar:    true
+rofi.line-margin:       5
+rofi.fake-transparency: true
+rofi.yoffset:           -20
+rofi.xoffset:           0
+rofi.width:             70
+rofi.lines:         6
+rofi.terminal:      termite
+rofi.font:          Hack 18
+rofi.fuzzy:         true
+rofi.run-command:   zsh -c "{cmd}"
+rofi.opacity:       75
