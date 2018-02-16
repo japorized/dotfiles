@@ -35,12 +35,21 @@ Wifi() {
 }
 
 Diskspace() {
-  df -akh | grep "/boot" | awk '{print $5}' | tr -d '\n'
+  df -akh | grep "/dev/sda4" | awk '{print $5}' | tr -d '\n'
+  return
+}
+
+Memspace() {
+  meminfo=$(free -m | grep Mem)
+  totalMem=$(echo $meminfo | awk -F " " '{print $2}')
+  usedMem=$(echo $meminfo | awk -F " " '{print $3}')
+  percentUsed=$(echo "scale=1; $usedMem/$totalMem * 100" | bc)
+  echo -n "$percentUsed% used"
   return
 }
  
 while true; do
-  echo -e "%{c}%{F#fafafa}%{B#333333} $(Curvolume)   |      $(Wifi)   |   \uf07b    $(Diskspace) full"
+  echo -e "%{c}%{F#fafafa}%{B#333333} $(Curvolume)   |      $(Wifi)   |   \uf07b    $(Diskspace) full    \uf2db   $(Memspace) "
     sleep 2
     exit
 done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -B "#333333"

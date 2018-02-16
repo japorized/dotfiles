@@ -39,6 +39,3 @@ alias magit="vim -c MagitOnly"
 alias aria2c-rpc="aria2c --enable-rpc --rpc-listen-all -d './Downloads' "
 {%@@ endif @@%}
 alias gdi="fuck"
-{%@@ if profile == "Oolong" @@%}
-alias volume="pactl set-sink-volume 0 "
-{%@@ endif @@%}

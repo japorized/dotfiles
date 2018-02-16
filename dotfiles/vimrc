@@ -88,7 +88,7 @@ let g:tex_conceal=""
 autocmd Filetype tex setl updatetime=1000
 {%@@ if profile == "Earl-Grey.local" @@%}
 let g:livepreview_previewer = 'open -a Skim'
-{%@@ elif profile == "Camomile" @@%}
+{%@@ elif profile == "Oolong" @@%}
 let g:livepreview_previewer = 'zathura'
 {%@@ endif @@%}
 
@@ -169,8 +169,13 @@ if has("autocmd")
 endif
 let g:startify_list_order = ['files', 'dir', 'sessions', 'bookmarks']
 let g:startify_bookmarks = [ 
-  \ {'c': '~/dotfiles/dotfiles/vimrc'},
+  \ {'v': '~/dotfiles/dotfiles/vimrc'},
   \ {'z': '~/dotfiles/dotfiles/zshrc'},
+  {%@@ if profile == "Oolong" @@%}
+  \ {'h': '~/.config/sxhkd/sxhkdrc'},
+  \ {'b': '~/.config/bspwm/bspwmrc'},
+  \ {'s': '~/.config/sublime-text-3/Packages/User/tex.sublime-completions'},
+  {%@@ endif @@%}
   \ {'t': '~/dotfiles/dotfiles/tmux.conf'}
   \ ]
 let g:startify_update_oldfiles = 1
