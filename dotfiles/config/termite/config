@@ -1,3 +1,6 @@
+[options]
+font = xos4 Terminus 12
+
 [colors]
 # Base16 Eighties
 # Author: Chris Kempson (http://chriskempson.com)

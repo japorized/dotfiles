@@ -30,6 +30,13 @@ super + i
 @shift + super + ctrl + 5
   scrot '%Y-%m-%d_$wx$h.png' -ue 'mv $f ~/Pictures/' && ~/.config/lemonbar/scrot-notification.sh
 
+# emoji-keyboard
+@alt + super + e
+  emoji-keyboard -s
+
+@shift + alt + super + e
+  emoji-keyboard -k
+
 # XF86 Keys
 XF86MonBrightnessUp
   xbacklight -inc 5
@@ -40,7 +47,7 @@ XF86MonBrightnessDown
 XF86AudioNext
   mpc next
 
-XF86AudioMedia
+XF86AudioPlay
   mpc toggle
 
 XF86AudioPrev

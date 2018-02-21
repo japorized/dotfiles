@@ -9,29 +9,47 @@ Opinionated configurations for this relatively new and under-educated power user
 
 ![macOS scrot](/screenshots/macos-2018jan22.png?raw=true "macOS Screenshot")
 
+### Antergos (base installation)
+
+![antergos-base scrot](/screenshots/antergos-base_20180220.png?raw=true "antergos-base Screenshot")
+
 ---
 
 ## Setup
 
-### macOS (current main system)
+### Antergos (current main system)
+
+* Installed base package
+* WM: [ bspwm ](https://github.com/baskerville/bspwm)
+* Hotkey daemon: [ sxhkd ](https://github.com/baskerville/sxhkd)
+* Bar: [ lemonbar-xft ](https://github.com/krypt-n/bar) (inspiration from [here](https://www.reddit.com/r/unixporn/comments/6g5vx0/windowchef_comfy/))
+* Terminal: [ termite ](https://github.com/thestinger/termite/)
+* AUR Package Manager: cower
+
+### macOS (secondary system)
 
 * WM: [ chunkwm ](https://github.com/koekeishiya/chunkwm)
 * Hotkey daemon: [ khd ](https://github.com/koekeishiya/khd)
 * Terminal: [ iTerm ](https://iterm2.com/), [ kitty ](https://github.com/kovidgoyal/kitty)
 * Utility Bar: [ Übersicht ](http://tracesof.net/uebersicht/) with customized [ nerdbar ](https://github.com/apierz/nerdbar.widget)
-* Other Utilities: Itsycal
 * Package Manager: [ Homebrew ](https://brew.sh)
-
-### Arch (current main VM)
-
-* WM: awesomewm
-* Terminal: [ termite ](https://github.com/thestinger/termite/)
-* AUR Package Manager: cower
 
 ### Windows 10 WSL (pluggable and disposable system :P)
 
 * WM: [ i3-gaps ](https://github.com/Airblader/i3)
 * Terminal: termite
+
+---
+
+## Applications
+
+Here's a list of my commonly used applications:
+
+* Text Editors: **vim**, Sublime Text
+* Browser: FF
+* Music: mpd + mpc + ncmpcpp
+* Image/Graphics Editing: **Affinity Designer**, Gravit (learning), GIMP (learning; replacing Photoshop)
+* Documents: **LaTeX** (not a pro but I can get by)
 
 ---
 
@@ -77,7 +95,7 @@ Simply run `$HOME/dotfiles/install/mac-bootstrap.sh`
 The installation will include [Homebrew](https://brew.sh) and some packages that I use (please see `./install/brewPackages.txt`) and use 
 zsh as the default shell, with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) installed.
   
-### Arch
+### antergos-base
 
 Since I use [cower](https://aur.archlinux.org/packages/cower/), and I did not manually track packages that I have installed via it, 
 they are, unfortunately, mixed into the list that I have (or shall) generated using [pacman](https://wiki.archlinux.org/index.php/Pacman). 

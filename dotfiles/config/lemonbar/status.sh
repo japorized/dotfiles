@@ -35,7 +35,12 @@ Wifi() {
 }
 
 Diskspace() {
-  df -akh | grep "/dev/sda4" | awk '{print $5}' | tr -d '\n'
+  df -akh | grep "/dev/sda8" | awk '{print $5}' | tr -d '\n'
+  return
+}
+
+Filespace() {
+  df -akh | grep "/dev/sda3" | awk '{print $5}' | tr -d '\n'
   return
 }
 
@@ -49,7 +54,7 @@ Memspace() {
 }
  
 while true; do
-  echo -e "%{c}%{F#fafafa}%{B#333333} $(Curvolume)   |      $(Wifi)   |   \uf07b    $(Diskspace) full    \uf2db   $(Memspace) "
+  echo -e "%{c}%{F#fafafa}%{B#333333} $(Curvolume)   |      $(Wifi)   |   \uf013    $(Diskspace) full    \uf07b    $(Filespace) full   \uf2db   $(Memspace) "
     sleep 2
     exit
 done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -B "#333333"
