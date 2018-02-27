@@ -66,7 +66,7 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 {%@@ elif profile == "Oolong" @@%}
 plugins=(git)
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -76,6 +76,16 @@ plugins=(git)
 
 {%@@ endif @@%}
 source $ZSH/oh-my-zsh.sh
+{%@@ if profile == "Oolong" @@%}
+autoload -U promptinit; promptinit
+PURE_CMD_MAX_EXEC_TIME=10
+PURE_PROMPT_SYMBOL=λ
+PURE_GIT_DOWN_ARROW=⇣
+PURE_GIT_UP_ARROW=⇡
+prompt pure
+prompt_newline='%666v'
+PROMPT=" $PROMPT"
+{%@@ endif @@%}
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
