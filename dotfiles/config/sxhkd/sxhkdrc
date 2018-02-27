@@ -10,61 +10,51 @@ super + Return
 super + r
 	rofi -show run
 
-@ctrl + super + alt + f
-  firefox
-
-@ctrl + super + alt + s
-  subl
+@ctrl + super + alt + {f,s}
+  {firefox,subl}
 
 # status display
 super + i
   sh -c "~/.config/lemonbar/status.sh"
 
 # scrot hotkey
-@shift + super + ctrl + 3
-  scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/' && ~/.config/lemonbar/scrot-notification.sh
-
-@shift + super + ctrl + 4
-  scrot '%Y-%m-%d_$wx$h.png' -se 'mv $f ~/Pictures/' && ~/.config/lemonbar/scrot-notification.sh
-
-@shift + super + ctrl + 5
-  scrot '%Y-%m-%d_$wx$h.png' -ue 'mv $f ~/Pictures/' && ~/.config/lemonbar/scrot-notification.sh
+@shift + super + ctrl + {3,4,5}
+  scrot '%Y-%m-%d_$wx$h.png' -{e,se,ue} 'mv $f ~/Pictures/' && ~/.config/lemonbar/scrot-notification.sh
 
 # emoji-keyboard
-@alt + super + e
-  emoji-keyboard -s
+@alt + {super,alt + super} + e
+  emoji-keyboard -{s,k}
 
-@shift + alt + super + e
-  emoji-keyboard -k
+# XF86 Keys & Context Menu key as modal key for multimedia-key emulation
+  # Context Menu is Menu button for generic keyboards
+  # Press ESC to exit mode
+{XF86MonBrightnessUp,Menu : F2}
+  xbacklight -inc 5 ; ~/.config/lemonbar/brightness.sh
 
-# XF86 Keys
-XF86MonBrightnessUp
-  xbacklight -inc 5
+{XF86MonBrightnessDown,Menu : F1}
+  xbacklight -dec 5 ; ~/.config/lemonbar/brightness.sh
 
-XF86MonBrightnessDown
-  xbacklight -dec 5
-
-XF86AudioNext
+{XF86AudioNext,Menu : F9}
   mpc next
 
-XF86AudioPlay
-  mpc toggle
-
-XF86AudioPrev
+{XF86AudioPrev,Menu : F7}
   mpc prev
 
-XF86AudioRaiseVolume
-  sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +2% && ~/.config/lemonbar/vol.sh"
+{XF86AudioPlay,Menu: F8}
+  mpc toggle
 
-XF86AudioLowerVolume
-  sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -2% && ~/.config/lemonbar/vol.sh"
+{XF86AudioRaiseVolume,Menu : F12}
+  pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +2% && ~/.config/lemonbar/vol.sh
 
-XF86AudioMute
+{XF86AudioLowerVolume,Menu : F11}
+  pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -2% && ~/.config/lemonbar/vol.sh
+
+{XF86AudioMute,Menu : F10}
   sh -c "pactl set-sink-mute 0 toggle ; ~/.config/lemonbar/vol.sh"
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
-
 #
 # bspwm hotkeys
 #
