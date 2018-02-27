@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Options
-width="750"
+width="800"
 height="40"
 font="DejaVu Sans-9"
-ssid="nothing"
+ssid="---"
  
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
@@ -52,9 +52,20 @@ Memspace() {
   echo -n "$percentUsed% used"
   return
 }
+
+CoffeeUp() {
+  caff=$(pidof caffeine-ng)
+  if [[ $caff == '' ]]; then
+    echo -n ""
+    return
+  else
+    echo -n "  |   \uf0f4"
+    return
+  fi
+}
  
 while true; do
-  echo -e "%{c}%{F#fafafa}%{B#333333} $(Curvolume)   |      $(Wifi)   |   \uf013    $(Diskspace) full    \uf07b    $(Filespace) full   \uf2db   $(Memspace) "
+  echo -e "%{c}%{F#fafafa}%{B#333333} $(Curvolume)   |      $(Wifi)   |   \uf013    $(Diskspace) full    \uf07b    $(Filespace) full   \uf2db   $(Memspace) $(CoffeeUp)"
     sleep 2
     exit
 done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -B "#333333"

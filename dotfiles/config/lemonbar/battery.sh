@@ -4,7 +4,6 @@
 width="120"
 height="40"
 font="DejaVu Sans-9"
-ssid="nothing"
 
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
