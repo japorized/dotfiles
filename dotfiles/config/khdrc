@@ -2,20 +2,21 @@
 cmd + alt + ctrl - r : khd -e "reload"
 
 # application launching shortcuts
-cmd - return : open -na /Applications/Kitty.app
+cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --session "/usr/local/lib/kitty/default.session"
+# cmd - return : kitty --config "~/.config/kitty.conf" --session "~/.config/kitty/default.session"
 # cmd - return : open -na /Applications/iTerm.app
 # ctrl + cmd + alt - f: open -a FirefoxNightly
 ctrl + cmd + alt - f: open -a Firefox
 ctrl + cmd + alt - s: open -na /Applications/Sublime\ Text.app
 
 # focus window
-alt - h : chunkc tiling::window --focus west
-alt - j : chunkc tiling::window --focus south
-alt - k : chunkc tiling::window --focus north
-alt - l : chunkc tiling::window --focus east
+cmd - h : chunkc tiling::window --focus west
+cmd - j : chunkc tiling::window --focus south
+cmd - k : chunkc tiling::window --focus north
+cmd - l : chunkc tiling::window --focus east
 
-cmd + alt - j : chunkc tiling::window --focus prev
-cmd + alt - k : chunkc tiling::window --focus next
+# cmd + alt - j : chunkc tiling::window --focus prev
+# cmd + alt - k : chunkc tiling::window --focus next
 
 # equalize size of windows
 shift + alt - 0 : chunkc tiling::desktop --equalize
