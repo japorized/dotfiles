@@ -34,6 +34,12 @@ super + i
 {XF86MonBrightnessDown,Menu : F1}
   xbacklight -dec 5 ; ~/.config/lemonbar/brightness.sh
 
+{XF86KbdBrightnessUp,Menu : F6}
+  xbacklight -ctrl smc::kbd_backlight -inc 5 ; ~/.config/lemonbar/kbd-brightness.sh
+
+{XF86KbdBrightnessDown,Menu : F5}
+  xbacklight -ctrl smc::kbd_backlight -dec 5 ; ~/.config/lemonbar/kbd-brightness.sh
+
 {XF86AudioNext,Menu : F9}
   mpc next
 
