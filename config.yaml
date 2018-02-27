@@ -115,6 +115,7 @@ profiles:
     - d_lemonbar
     - f_rofi_config
     - f_termite_config
+    - d_vis
   WinCrap:
     dotfiles:
     - f_vimrc

@@ -45,8 +45,9 @@ Opinionated configurations for this relatively new and under-educated power user
 
 Here's a list of my commonly used applications:
 
+* Shell: zsh
 * Text Editors: **vim**, Sublime Text
-* Browser: FF
+* Browser: **FF**, qutebrowser
 * Music: mpd + mpc + ncmpcpp
 * Image/Graphics Editing: **Affinity Designer**, Gravit (learning), GIMP (learning; replacing Photoshop)
 * Documents: **LaTeX** (not a pro but I can get by)
