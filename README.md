@@ -116,3 +116,9 @@ With WSL now being a thing, I find it necessary to put this down (to remind myse
 1. `Settings > Updates > Developer > Enable Developer Mode`
 2. `Start > Enable Windows Features > [Tick] Windows Subsystem for Linux (Ubuntu)`
 3. Restart machine
+
+---
+
+### Possibly Relevant Links
+
+1. [Why did you switch to Antergos/Arch Linux?](https://japorized.github.io/technical/2018/02/27/making-the-move-to-linux.html)

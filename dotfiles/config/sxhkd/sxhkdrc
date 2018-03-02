@@ -6,8 +6,11 @@
 super + Return
 	termite -e tmux
 
+shift + super + Return
+  termite
+
 # program launcher
-super + r
+alt + space
 	rofi -show run
 
 @ctrl + super + alt + {f,s}
