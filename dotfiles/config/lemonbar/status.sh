@@ -28,8 +28,8 @@ Curvolume() {
 
 Wifi() {
     ssid=$(iwconfig wlp3s0 |grep ESSID| awk '{print $NF}'|cut -d "\"" -f 2)
-    ip=$(ifconfig wlp3s0|grep 10|grep 'inet addr')
-    ip=$(echo $ip|cut -d " " -f 2 |awk '{gsub("addr:", "");print}')
+    # ip=$(ifconfig wlp3s0|grep 10|grep 'inet addr')
+    # ip=$(echo $ip|cut -d " " -f 2 |awk '{gsub("addr:", "");print}')
     echo -n "$ssid"
     return
 }

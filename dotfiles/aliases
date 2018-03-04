@@ -1,3 +1,10 @@
+{%@@ if profile == "Oolong" @@%}
+##############################
+# Power Management
+##############################
+alias displaysleep="sleep 1 ; xset dpms force off"
+{%@@ endif @@%}
+
 {%@@ if profile == "Earl-Grey.local" @@%}
 ##############################
 # Eye saving commands
@@ -39,3 +46,9 @@ alias magit="vim -c MagitOnly"
 alias aria2c-rpc="aria2c --enable-rpc --rpc-listen-all -d './Downloads' "
 {%@@ endif @@%}
 alias gdi="fuck"
+{%@@ if profile == "Oolong" @@%}
+alias say='echo "$1" | espeak -s 150 2>/dev/null'
+alias say-zh='echo "$1" | espeak -s 150 -v zh 2>/dev/null'
+alias say-ms='echo "$1" | espeak -s 150 -v ms 2>/dev/null'
+{%@@ endif @@%}
+alias slack-term="TERM=xterm slack-term"

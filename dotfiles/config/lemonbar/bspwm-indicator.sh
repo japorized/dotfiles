@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Options
-width="320"
+width="340"
 height="40"
 font="DejaVu Sans-9"
 
@@ -30,25 +30,28 @@ indicator() {
         CHAR="\uf121"
         ;;
       "4")
-        CHAR="\uf085"
+        CHAR="\uf06c"
         ;;
       "5")
         CHAR="\uf04b"
         ;;
+      "6")
+        CHAR="\uf11b"
+        ;;
     esac
-    C=$(( C + 1 ))
     if [[ $SPACE = $(bspc query -D -d) ]]; then
       echo -n "%{F#cd98cd}$CHAR%{F-}     "
     elif [[ $BUSY =~ $SPACE ]]; then
-      echo -n "%{F#6498ce}$CHAR%{F-}     "
+      echo -n "%{A:bspc desktop -f '^$C':}%{F#6498ce}$CHAR%{F-}%{A}     "
     else
-      echo -n "$CHAR     "
+      echo -n "%{A:bspc desktop -f '^$C':}$CHAR%{A}     "
     fi
-    echo -n "${A}"
+    # echo -n "${A}"
+    C=$(( C + 1 ))
   done
 }
 
 while true; do
     echo -e "%{c}%{F#fafafa}%{B#333333}$(indicator)%{F-}%{B-}"
     sleep .5
-done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -B "#333333"
+done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -B "#333333" | while read line; do eval "${line}"; done
