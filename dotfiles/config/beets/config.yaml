@@ -1,0 +1,13 @@
+color: yes
+directory : ~/Music
+library: ~/.config/beets/library.db
+import:
+  copy: no
+plugins: fetchart embedart lastgenre discogs edit
+
+embedart:
+  ifempty: yes
+  maxwidth: 300
+
+lastgenre:
+    count: 3

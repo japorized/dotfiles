@@ -15,6 +15,9 @@ dotfiles:
   d_lemonbar:
     dst: ~/.config/lemonbar
     src: config/lemonbar
+  d_lock-screen:
+    dst: ~/.config/lock-screen
+    src: config/lock-screen
   d_snippets:
     dst: ~/.vim/snippets
     src: vim/snippets
@@ -30,12 +33,21 @@ dotfiles:
   f_aliases:
     dst: ~/.aliases
     src: aliases
+  f_aria2.conf:
+    dst: ~/.config/aria2/aria2.conf
+    src: config/aria2/aria2.conf
   f_bindings:
     dst: ~/.config/ncmpcpp/bindings
     src: config/ncmpcpp/bindings
   f_bspwmrc:
     dst: ~/.config/bspwm/bspwmrc
     src: config/bspwm/bspwmrc
+  f_config.conf:
+    dst: ~/.config/neofetch/config.conf
+    src: config/neofetch/config.conf
+  f_config.yaml:
+    dst: ~/.config/beets/config.yaml
+    src: config/beets/config.yaml
   f_functions:
     dst: ~/.functions
     src: functions
@@ -72,6 +84,9 @@ dotfiles:
   f_w3m_config:
     dst: ~/.w3m/config
     src: w3m/config
+  f_zathurarc:
+    dst: ~/.config/zathura/zathurarc
+    src: config/zathura/zathurarc
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
@@ -116,6 +131,11 @@ profiles:
     - f_rofi_config
     - f_termite_config
     - d_vis
+    - f_aria2.conf
+    - f_config.yaml
+    - d_lock-screen
+    - f_config.conf
+    - f_zathurarc
   WinCrap:
     dotfiles:
     - f_vimrc
