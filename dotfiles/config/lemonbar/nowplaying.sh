@@ -3,7 +3,7 @@
 # Options
 width="800"
 height="40"
-font="Termite-9"
+font="Terminus-9"
  
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
@@ -14,13 +14,41 @@ geometry="${width}x${height}+0+${offset_height}"
  
 mpd_status() {
   status=$(mpc | sed -n 2p | awk -F " " '{print $1}')
+  output1=$(mpc | tail -1 | cut -f1 -d " " --complement )
+  
+  string=""
+  
+  # repeat
+  repeattail=$(echo $output1 | sed 's/^.*repeat/repeat/')
+  repeat=${repeattail% random*}
+  if [[ $repeat == "repeat: on" ]]; then string="$string"r ; else string="$string-" ; fi
+  
+  # random
+  randomtail=$(echo $output1 | sed 's/^.*random/random/')
+  random=${randomtail% single*}
+  if [[ $random == "random: on" ]]; then string="$string z"; else string="$string -" ; fi
+  
+  # single
+  singletail=$(echo $output1 | sed 's/^.*single/single/')
+  single=${singletail% consume*}
+  if [[ $single == "single: on" ]]; then string="$string s" ; else string="$string -" ; fi
+  
+  # consume
+  consume=$(echo $output1 | sed 's/^.*consume/consume/')
+  if [[ $single == "consume: on" ]]; then string="$string c" ; else string="$string -" ; fi
+  
+  # crossfade
+  crossfade=$(mpc crossfade)
+  if [[ "$crossfade" == "crossfade: 0" ]]; then string="$string -" ; else string="$string x" ; fi
+
+  # output
   if [[ $status == '[playing]' ]] ; then
-    nowplaying=$(mpc | sed -n 1p | cut -c -60)
+    nowplaying=$(mpc | sed -n 1p | cut -c -70)
     timer=$(mpc | sed -n 2p | awk -F " " '{print $3}')
-    echo "$nowplaying   %{r}[ $timer ]   "
+    echo "$nowplaying   %{r}[$string -] [ $timer ]   "
   elif [[ $status == '[paused]' ]] ; then
     nowplaying=$(mpc | sed -n 1p | cut -c -60)
-    echo "$nowplaying   %{r}[ paused ]   "
+    echo "$nowplaying   %{r}[$string -] [ paused ]   "
   else
     echo "mpd is not active"
   fi
@@ -44,4 +72,4 @@ while true; do
     echo -e "%{l}%{F#fafafa}%{B#333333}   \uf001    $(mpd_status)"
   fi
   sleep 1
-done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -f "$font" -f "ipagothic-9" -B "#333333"
+done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -f "$font" -f "ipagothic-9" -f "ipamincho-9" -B "#333333"

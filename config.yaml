@@ -60,6 +60,9 @@ dotfiles:
   f_kitty.conf:
     dst: ~/.config/kitty.conf
     src: config/kitty.conf
+  f_libinput-gestures.conf:
+    dst: ~/.config/libinput-gestures.conf
+    src: config/libinput-gestures.conf
   f_mpd.conf:
     dst: ~/.config/mpd/mpd.conf
     src: config/mpd/mpd.conf
@@ -136,6 +139,7 @@ profiles:
     - d_lock-screen
     - f_config.conf
     - f_zathurarc
+    - f_libinput-gestures.conf
   WinCrap:
     dotfiles:
     - f_vimrc

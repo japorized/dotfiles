@@ -40,11 +40,11 @@ indicator() {
         ;;
     esac
     if [[ $SPACE = $(bspc query -D -d) ]]; then
-      echo -n "%{F#cd98cd}$CHAR%{F-}     "
+      echo -n "%{B#cd98cd}%{F#333333}   $CHAR   %{F-}%{B-}"
     elif [[ $BUSY =~ $SPACE ]]; then
-      echo -n "%{A:bspc desktop -f '^$C':}%{F#6498ce}$CHAR%{F-}%{A}     "
+      echo -n "%{A:bspc desktop -f '^$C':}%{F#cd98cd}   $CHAR   %{F-}%{A}"
     else
-      echo -n "%{A:bspc desktop -f '^$C':}$CHAR%{A}     "
+      echo -n "%{A:bspc desktop -f '^$C':}   $CHAR   %{A}"
     fi
     # echo -n "${A}"
     C=$(( C + 1 ))

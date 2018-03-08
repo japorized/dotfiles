@@ -101,7 +101,7 @@ super + ctrl + {x,y,z}
 	bspc node -g {locked,sticky,private}
 
 #
-# focus/swap
+# focus/swap/rotate
 #
 
 # focus the node in the given direction
@@ -133,6 +133,10 @@ super + {o,i}
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# rotate nodes
+super + {_,shift +}r
+  bspc node @/ -R {90,270}
 
 #
 # preselect

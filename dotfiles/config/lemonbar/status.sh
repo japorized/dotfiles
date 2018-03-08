@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # Options
-width="800"
+width="920"
 height="40"
-font="DejaVu Sans-9"
 ssid="---"
  
 # Get monitor width so we can center the bar.
@@ -66,6 +65,6 @@ CoffeeUp() {
  
 while true; do
   echo -e "%{c}%{F#fafafa}%{B#333333} $(Curvolume)   |      $(Wifi)   |   \uf013    $(Diskspace) full    \uf07b    $(Filespace) full   \uf2db   $(Memspace) $(CoffeeUp)"
-    sleep 2
+    sleep 5
     exit
-done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -B "#333333"
+done | lemonbar -g $geometry -f "FontAwesome" -f "Terminus-9" -B "#333333"
