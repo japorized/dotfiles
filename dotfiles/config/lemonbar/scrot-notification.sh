@@ -3,7 +3,7 @@
 # Options
 width="350"
 height="40"
-font="DejaVu Sans-9"
+font="Terminus-9"
  
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
@@ -19,7 +19,7 @@ Scrot() {
 }
  
 while true; do
-    echo -e "%{c}%{F#fafafa}%{B#333333} \uf030  $(Scrot)"
+    echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D} \uf030  $(Scrot)"
     sleep 0.7
     exit
-done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -B "#333333"
+done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -B "#2D2D2D"

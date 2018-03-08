@@ -3,7 +3,6 @@
 # Options
 width="340"
 height="40"
-font="DejaVu Sans-9"
 
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
@@ -40,7 +39,7 @@ indicator() {
         ;;
     esac
     if [[ $SPACE = $(bspc query -D -d) ]]; then
-      echo -n "%{B#cd98cd}%{F#333333}   $CHAR   %{F-}%{B-}"
+      echo -n "%{B#cd98cd}%{F#2D2D2D}   $CHAR   %{F-}%{B-}"
     elif [[ $BUSY =~ $SPACE ]]; then
       echo -n "%{A:bspc desktop -f '^$C':}%{F#cd98cd}   $CHAR   %{F-}%{A}"
     else
@@ -52,6 +51,6 @@ indicator() {
 }
 
 while true; do
-    echo -e "%{c}%{F#fafafa}%{B#333333}$(indicator)%{F-}%{B-}"
+    echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D}$(indicator)%{F-}%{B-}"
     sleep .5
-done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -B "#333333" | while read line; do eval "${line}"; done
+done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -B "#2D2D2D" | while read line; do eval "${line}"; done

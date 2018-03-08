@@ -67,9 +67,9 @@ spotify_status() {
  
 while true; do
   if [[ $(spotify_status) != "Spotify is not active" ]] ; then
-    echo -e "%{c}%{F#fafafa}%{B#333333}\uf1bc    $(spotify_status)"
+    echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D}\uf1bc    $(spotify_status)%{F-}%{B-}"
   elif [[ $(mpd_status) != "mpd is not active" ]] ; then
-    echo -e "%{l}%{F#fafafa}%{B#333333}   \uf001    $(mpd_status)"
+    echo -e "%{l}%{F#D3D0C8}%{B#2D2D2D}   \uf001    $(mpd_status)%{F-}%{B-}"
   fi
   sleep 1
-done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -f "$font" -f "ipagothic-9" -f "ipamincho-9" -B "#333333"
+done | lemonbar -g $geometry -f "FontAwesome" -f "$font" -f "ipagothic-9" -f "ipamincho-9" -B "#2D2D2D"

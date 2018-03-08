@@ -14,6 +14,6 @@ KBD_BRIGHTNESS(){
 }
 
 while true; do
-echo -e "%{l}%{F#fafafa}%{B#333333} \uf11c Brightness: $(KBD_BRIGHTNESS) %{F-}%{B-}" && sleep 1.5 && exit
-done | lemonbar -d -g $geometry -f "FontAwesome-18" -B "#333333"
+echo -e "%{l}%{F#D3D0C8}%{B#2D2D2D} \uf11c Brightness: $(KBD_BRIGHTNESS) %{F-}%{B-}" && sleep 1.5 && exit
+done | lemonbar -d -g $geometry -f "FontAwesome-18" -B "#2D2D2D"
 

@@ -64,7 +64,7 @@ CoffeeUp() {
 }
  
 while true; do
-  echo -e "%{c}%{F#fafafa}%{B#333333} $(Curvolume)   |      $(Wifi)   |   \uf013    $(Diskspace) full    \uf07b    $(Filespace) full   \uf2db   $(Memspace) $(CoffeeUp)"
+  echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D} $(Curvolume)   |      $(Wifi)   |   \uf013    $(Diskspace) full    \uf07b    $(Filespace) full   \uf2db   $(Memspace) $(CoffeeUp)"
     sleep 5
     exit
-done | lemonbar -g $geometry -f "FontAwesome" -f "Terminus-9" -B "#333333"
+done | lemonbar -g $geometry -f "FontAwesome" -f "Terminus-9" -B "#2D2D2D"
