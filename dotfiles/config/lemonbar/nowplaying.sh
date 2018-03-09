@@ -67,7 +67,7 @@ spotify_status() {
  
 while true; do
   if [[ $(spotify_status) != "Spotify is not active" ]] ; then
-    echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D}\uf1bc    $(spotify_status)%{F-}%{B-}"
+    echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D}%{F#98CD97}\uf1bc%{F-}    $(spotify_status)%{F-}%{B-}"
   elif [[ $(mpd_status) != "mpd is not active" ]] ; then
     echo -e "%{l}%{F#D3D0C8}%{B#2D2D2D}   \uf001    $(mpd_status)%{F-}%{B-}"
   fi

@@ -6,6 +6,9 @@ dotfiles:
   d_awesome:
     dst: ~/.config/awesome
     src: config/awesome
+  d_bspwm:
+    dst: ~/.config/bspwm
+    src: config/bspwm
   d_chunkwm:
     dst: ~/.config/chunkwm
     src: config/chunkwm
@@ -39,9 +42,6 @@ dotfiles:
   f_bindings:
     dst: ~/.config/ncmpcpp/bindings
     src: config/ncmpcpp/bindings
-  f_bspwmrc:
-    dst: ~/.config/bspwm/bspwmrc
-    src: config/bspwm/bspwmrc
   f_config.conf:
     dst: ~/.config/neofetch/config.conf
     src: config/neofetch/config.conf
@@ -128,7 +128,6 @@ profiles:
     - f_tmux.conf
     - f_mpd.conf
     - d_snippets
-    - f_bspwmrc
     - f_sxhkdrc
     - d_lemonbar
     - f_rofi_config
@@ -140,6 +139,7 @@ profiles:
     - f_config.conf
     - f_zathurarc
     - f_libinput-gestures.conf
+    - d_bspwm
   WinCrap:
     dotfiles:
     - f_vimrc

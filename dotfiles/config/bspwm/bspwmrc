@@ -3,13 +3,9 @@
 bspc monitor -d I II III IV V VI
 
 bspc config border_width         2
-bspc config window_gap          20
-bspc config top_padding         40
-bspc config bottom_padding      40
-bspc config left_padding       150
-bspc config right_padding      150
+sh -c "~/.config/bspwm/gaps.sh"
 
-bspc config focused_border_color \#8f6ba0
+bspc config focused_border_color "#8f6ba0"
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true

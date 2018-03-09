@@ -85,8 +85,8 @@ super + y
 	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
 
 # swap the current node and the biggest node
-super + g
-	bspc node -s biggest
+super + b
+	bspc node -s biggest.local
 
 #
 # state/flags
@@ -173,3 +173,9 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# Gap control
+#
+super + {_,shift + }g
+  sh -c "~/.config/bspwm/{gaps,sans-gaps}.sh"

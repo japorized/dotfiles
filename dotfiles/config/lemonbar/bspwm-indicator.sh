@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Options
-width="340"
+width="375"
 height="40"
 
 # Get monitor width so we can center the bar.
@@ -39,9 +39,9 @@ indicator() {
         ;;
     esac
     if [[ $SPACE = $(bspc query -D -d) ]]; then
-      echo -n "%{B#cd98cd}%{F#2D2D2D}   $CHAR   %{F-}%{B-}"
+      echo -n "%{B#CD98CD}%{F#2D2D2D}   $CHAR   %{F-}%{B-}"
     elif [[ $BUSY =~ $SPACE ]]; then
-      echo -n "%{A:bspc desktop -f '^$C':}%{F#cd98cd}   $CHAR   %{F-}%{A}"
+      echo -n "%{A:bspc desktop -f '^$C':}%{F#CD98CD}   $CHAR   %{F-}%{A}"
     else
       echo -n "%{A:bspc desktop -f '^$C':}   $CHAR   %{A}"
     fi
@@ -53,4 +53,4 @@ indicator() {
 while true; do
     echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D}$(indicator)%{F-}%{B-}"
     sleep .5
-done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -B "#2D2D2D" | while read line; do eval "${line}"; done
+done | lemonbar -d -g $geometry -f "FontAwesome" -B "#2D2D2D" | while read line; do eval "${line}"; done

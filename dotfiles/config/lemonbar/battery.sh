@@ -17,8 +17,10 @@ Battery() {
   STATUS=$(echo $ACPIBATT | cut -d: -f2 | cut -d, -f1)
   if [[ "$STATUS" == " Charging" ]] ; then
     echo -ne "%{F#98CD97}\uf0e7%{F-}  $BATPERC"
+  elif [[ "$STATUS" == " Full" ]] ; then
+    echo -ne "%{F#98CD97}%{F-} $BATPERC"
   else
-    echo -ne "" "$BATPERC"
+    echo -ne " $BATPERC"
   fi
 }
 
