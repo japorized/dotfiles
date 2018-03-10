@@ -1,39 +1,45 @@
 " General Configurations
-set nocompatible
+if !has('nvim')
+  set nocompatible
+  set backspace=indent,eol,start
+  set belloff=all   " Silence terminal bell
+  set fillchars+=|
+  set incsearch     " Show matches when searching
+  set laststatus=2
+  set ruler
+endif
+
 filetype plugin on
 syntax on
 set background=dark
-{%@@ if profile == "Earl-Grey.local" @@%}
-{%@@ endif @@%}
-set backspace=indent,eol,start
-set laststatus=2
-set noshowmode
-set t_Co=256
-set number
-set relativenumber
-set numberwidth=2
-set cursorline
-set ruler
-set fillchars+=|
-if has("autocmd")
-  autocmd Syntax html,javascript,latex,vim setlocal foldmethod=indent
-endif
-set foldlevelstart=3
 set concealcursor=""
 set conceallevel=2
-set belloff=all   " Silence terminal bell
+set cursorline
 set expandtab     " Expand tabs to spaces
+set foldlevelstart=3
 set ignorecase    " Ignore case when searching
-set incsearch     " Show matches when searching
+set number
+set noshowmode
+set numberwidth=2
+set relativenumber
 set showmatch     " Show matching bracket
-if has("autocmd")
-  filetype plugin indent on
-endif
-set tabstop=2     " The number of spaces that a <Tab> counts for
 set shiftwidth=2  " Number of spaces to use for (auto) indent
-set softtabstop=2 " Number of tabs that a <Tab> counts for
-set expandtab     " Use spaces for tab characters
 set smartcase     " Override 'ignorecase' if search has uppercase
+set softtabstop=2 " Number of tabs that a <Tab> counts for
+set tabstop=2     " The number of spaces that a <Tab> counts for
+set t_Co=256
+
+if has("autocmd")
+  if !has('nvim')
+    filetype plugin indent on
+  endif
+
+  autocmd Syntax html,javascript,latex,vim setlocal foldmethod=indent
+endif
+
+if has('gvim')
+  set guiheadroom=0
+endif
 
 " Highlights
 hi VertSplit ctermbg=NONE guibg=NONE cterm=NONE
@@ -85,13 +91,13 @@ let g:gundo_return_on_revert= 0
 let g:indentLine_char='|'
 
 " Tex configs
-nmap <F12> :LLPStartPreview<cr>
+nmap <F12> :VimtexCompile<cr>
 let g:tex_conceal=""
 autocmd Filetype tex setl updatetime=1000
 {%@@ if profile == "Earl-Grey.local" @@%}
 let g:livepreview_previewer = 'open -a Skim'
 {%@@ elif profile == "Oolong" @@%}
-let g:livepreview_previewer = 'zathura'
+let g:livepreview_previewer = '/usr/bin/zathura'
 {%@@ endif @@%}
 
 {%@@ if profile != "WinCrap" @@%}
@@ -138,7 +144,7 @@ let g:limelight_conceal_guifg = '#777777'
 let g:limelight_default_coefficient = 0.3
 
   " Number of preceding/following paragraphs to include (default: 0)
-let g:limelight_paragraph_span = 0
+let g:limelight_paragraph_span = 2
 
   " Beginning/end of paragraph
   " When there's no empty line between the paragraphs
@@ -150,16 +156,21 @@ let g:limelight_eop = '\ze\n^\s'
   " Set it to -1 not to overrule hlsearch
 let g:limelight_priority = -1
 {%@@ endif @@%}
-" vim-smooth-scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 4)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 4)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 8)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 8)<CR>
 
 " Airline
 let g:airline_theme='base16_eighties'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+if ! has('gui_running')
+    set ttimeout
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
 
 " Setting for terminals that need extra configs for terminal colors
 let base16colorspace=256  " Access colors present in 256 colorspace"
@@ -190,3 +201,26 @@ let g:startify_bookmarks = [
   \ {'t': '~/dotfiles/dotfiles/tmux.conf'}
   \ ]
 let g:startify_update_oldfiles = 1
+
+" Auto-pair configs
+let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','$':'$'}
+
+" Configs for nvim
+if has('nvim')
+
+  " Deoplete
+  " deoplete + neosnippet + autopairs changes 
+  let g:AutoPairsMapCR=0 
+  let g:deoplete#auto_complete_start_length = 1 
+  let g:deoplete#enable_at_startup = 1 
+  let g:deoplete#enable_smart_case = 1 
+  imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>") 
+  imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+  imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+
+  if !exists('g:deoplete#omni#input_patterns')
+      let g:deoplete#omni#input_patterns = {}
+  endif
+  let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+
+endif
