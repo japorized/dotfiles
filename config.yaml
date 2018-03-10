@@ -69,6 +69,9 @@ dotfiles:
   f_ncmpcpp_config:
     dst: ~/.config/ncmpcpp/config
     src: config/ncmpcpp/config
+  f_preferences.sublime-settings:
+    dst: ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+    src: config/sublime-text-3/Packages/User/Preferences.sublime-settings
   f_rofi_config:
     dst: ~/.config/rofi/config
     src: config/rofi/config
@@ -114,6 +117,7 @@ profiles:
     - "d_\xFCbersicht"
     - f_kitty.conf
     - d_vis
+    - f_preferences.sublime-settings
   Oolong:
     dotfiles:
     - f_vimrc
@@ -140,6 +144,7 @@ profiles:
     - f_zathurarc
     - f_libinput-gestures.conf
     - d_bspwm
+    - f_preferences.sublime-settings
   WinCrap:
     dotfiles:
     - f_vimrc
