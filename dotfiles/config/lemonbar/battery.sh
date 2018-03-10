@@ -3,7 +3,7 @@
 #Options
 width="120"
 height="40"
-font="Terminus-9"
+font="Helvetica Neue-9"
 
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"

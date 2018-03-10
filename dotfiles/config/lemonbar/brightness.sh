@@ -14,6 +14,6 @@ Brightness(){
 }
 
 while true; do
-echo -e "%{l}%{F#D3D0C8}%{B#2D2D2D} \uf185 Brightness: $(Brightness) %{F-}%{B-}" && sleep 1.5 && exit
+echo -e "%{l}%{F#D3D0C8}%{B#2D2D2D}  \uf185 Brightness: $(Brightness) %{F-}%{B-}" && sleep 1.5 && exit
 done | lemonbar -d -g $geometry -f "FontAwesome-18" -B "#2D2D2D"
 
