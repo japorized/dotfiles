@@ -203,7 +203,9 @@ let g:startify_bookmarks = [
 let g:startify_update_oldfiles = 1
 
 " Auto-pair configs
-let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','$':'$'}
+if has('autocmd')
+    autocmd FileType tex let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','$':'$'}
+endif
 
 " Configs for nvim
 if has('nvim')

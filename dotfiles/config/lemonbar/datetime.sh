@@ -44,5 +44,5 @@ Clock() {
 
 while true; do
     echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D} \uf073  $(Clock)%{F-}%{B-}"
-    sleep 0.1
+    sleep 0.5
 done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -f "ipagothic-11" -B "#2D2D2D"

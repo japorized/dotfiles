@@ -2,7 +2,7 @@
 
 bspc monitor -d I II III IV V VI
 
-bspc config border_width         2
+bspc config border_width         3
 sh -c "~/.config/bspwm/gaps.sh"
 
 bspc config focused_border_color "#8f6ba0"
@@ -12,12 +12,16 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_follows_pointer true
 
-bspc rule -a Gimp desktop='^4' state=floating follow=on
-bspc rule -a retroarch desktop='^6'
-#bspc rule -a Chromium desktop='^2'
-#bspc rule -a mplayer2 state=floating
-#bspc rule -a Kupfer.py focus=on
-#bspc rule -a Screenkey manage=off
-
+# Rules
 bspc rule -a Firefox desktop='^2'
 bspc rule -a Sublime_text desktop='^3'
+bspc rule -a retroarch desktop='^6'
+
+# Set Desktop 4 to start with floating windows
+FLOATING_DESKTOP_ID=$(bspc query -D -d '^4')
+
+bspc subscribe node_manage | while read -a msg ; do
+   desk_id=${msg[2]}
+   wid=${msg[3]}
+   [ "$FLOATING_DESKTOP_ID" = "$desk_id" ] && bspc node "$wid" -t floating
+done

@@ -62,9 +62,15 @@ CoffeeUp() {
     return
   fi
 }
- 
+
+counter=0
+
 while true; do
   echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D} $(Curvolume)   |      $(Wifi)   |   \uf013    $(Diskspace) full    \uf07b    $(Filespace) full   \uf2db   $(Memspace) $(CoffeeUp)"
-    sleep 5
+  sleep 1
+  if [[ $counter -ge 5 ]]; then
     exit
+  else
+    counter=$(($counter + 1))  
+  fi
 done | lemonbar -d -g $geometry -f "FontAwesome" -f "Helvetica Neue-9" -B "#2D2D2D"

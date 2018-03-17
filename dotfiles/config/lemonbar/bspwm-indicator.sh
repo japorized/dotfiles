@@ -52,5 +52,5 @@ indicator() {
 
 while true; do
     echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D}$(indicator)%{F-}%{B-}"
-    sleep .5
+    sleep .2
 done | lemonbar -d -g $geometry -f "FontAwesome" -B "#2D2D2D" | while read line; do eval "${line}"; done

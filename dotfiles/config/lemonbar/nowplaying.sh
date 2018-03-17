@@ -35,7 +35,7 @@ mpd_status() {
   
   # consume
   consume=$(echo $output1 | sed 's/^.*consume/consume/')
-  if [[ $single == "consume: on" ]]; then string="$string c" ; else string="$string -" ; fi
+  if [[ $consume == 'consume: on' ]]; then string="$string c" ; else string="$string -" ; fi
   
   # crossfade
   crossfade=$(mpc crossfade)
@@ -57,7 +57,7 @@ mpd_status() {
 spotify_status() {
   thispid=$(pidof spotify)
   if [[ -n $thispid ]]; then
-    song=$(dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata' | grep title -A 1 |tail -n 1 |cut -c 43-)
+    song=$(dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata' | grep title -A 1 |tail -n 1 |cut -c 43- | sed 's/"//g' | cut -c -60)
     artist=$(dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata' | grep albumArtist -A 2 | tail -n 1 | cut -c 26- | awk '{gsub("\"", "");print}')
     echo "$artist - $song"
   else
@@ -70,6 +70,8 @@ while true; do
     echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D}%{F#98CD97}\uf1bc%{F-}    $(spotify_status)%{F-}%{B-}"
   elif [[ $(mpd_status) != "mpd is not active" ]] ; then
     echo -e "%{l}%{F#D3D0C8}%{B#2D2D2D}   \uf001    $(mpd_status)%{F-}%{B-}"
+  else
+    echo -en "%{c}%{F#D3D0C8}No music players active%{F-}"
   fi
   sleep 1
-done | lemonbar -g $geometry -f "FontAwesome" -f "$font" -f "ipagothic-9" -f "ipamincho-9" -B "#2D2D2D"
+done | lemonbar -d -g $geometry -f "FontAwesome" -f "$font" -f "ipagothic-9" -f "ipamincho-9" -B "#2D2D2D"

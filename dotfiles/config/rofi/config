@@ -3,6 +3,7 @@
 !=======================================
 
 !| you can refer rofi site/screenshot for different configurations
+rofi.modi:              run,drun,window
 rofi.location:          0
 rofi.color-enabled:     true
 rofi.color-window:      argb:ee2d2d2d, argb:aaD3D0C8, #CD98CD
@@ -18,9 +19,10 @@ rofi.fake-transparency: true
 rofi.yoffset:           -20
 rofi.xoffset:           0
 rofi.width:             50
-rofi.lines:         6
-rofi.terminal:      termite
-rofi.font:          Hack 20
-rofi.fuzzy:         true
-rofi.run-command:   zsh -c "{cmd}"
-rofi.opacity:       75
+rofi.show-icons:        true
+rofi.lines:             6
+rofi.terminal:          termite
+rofi.font:              Hack 20
+rofi.fuzzy:             true
+rofi.run-command:       zsh -c "{cmd}"
+rofi.opacity:           75

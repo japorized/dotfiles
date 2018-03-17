@@ -21,6 +21,8 @@
   {%@@ if profile == "Earl-Grey.local" @@%}
   source $HOME/.exports
   export EDITOR=/usr/local/bin/vim
+  {%@@ elif profile == "Oolong" @@%}
+  export EDITOR=$(which nvim)
   {%@@ else @@%}
   export EDITOR=$(which vim)
   {%@@ endif @@%}

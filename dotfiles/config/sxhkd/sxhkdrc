@@ -25,17 +25,17 @@ super + i
   scrot '%Y-%m-%d_$wx$h.png' -{e,se,ue} 'mv $f ~/Pictures/' && ~/.config/lemonbar/scrot-notification.sh
 
 # emoji-keyboard
-@alt + {super,alt + super} + e
-  emoji-keyboard -{s,k}
+@alt + super + e
+  rofimoji
 
 # XF86 Keys & Context Menu key as modal key for multimedia-key emulation
   # Context Menu is Menu button for generic keyboards
   # Press ESC to exit mode
 {XF86MonBrightnessUp,Menu : F2}
-  xbacklight -inc 5 ; ~/.config/lemonbar/brightness.sh
+  xbacklight -inc 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
 {XF86MonBrightnessDown,Menu : F1}
-  xbacklight -dec 5 ; ~/.config/lemonbar/brightness.sh
+  xbacklight -dec 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
 {XF86KbdBrightnessUp,Menu : F6}
   xbacklight -ctrl smc::kbd_backlight -inc 5 ; ~/.config/lemonbar/kbd-brightness.sh

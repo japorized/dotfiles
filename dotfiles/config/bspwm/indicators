@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+~/.config/lemonbar/datetime.sh &
+~/.config/lemonbar/battery.sh &
+~/.config/lemonbar/nowplaying.sh &
+~/.config/lemonbar/bspwm-indicator.sh
