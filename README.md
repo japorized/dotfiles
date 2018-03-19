@@ -11,7 +11,7 @@ Opinionated configurations for this relatively new and under-educated power user
 
 ### Antergos (base installation)
 
-![antergos-base scrot](/screenshots/antergos-base_2018mar08.png?raw=true "antergos-base Screenshot")
+![antergos-base scrot](/screenshots/antergos-base_2018mar19.png?raw=true "antergos-base Screenshot")
 
 ---
 
@@ -25,6 +25,7 @@ Opinionated configurations for this relatively new and under-educated power user
 * Bar: [ lemonbar-xft ](https://github.com/krypt-n/bar) (inspiration from [here](https://www.reddit.com/r/unixporn/comments/6g5vx0/windowchef_comfy/))
 * Terminal: [ termite ](https://github.com/thestinger/termite/)
 * AUR Package Manager: cower
+* Color scheme: [pywal](https://github.com/dylanaraps/pywal)
 
 ### macOS (secondary system)
 

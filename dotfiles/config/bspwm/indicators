@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env dash
 
 ~/.config/lemonbar/datetime.sh &
 ~/.config/lemonbar/battery.sh &
