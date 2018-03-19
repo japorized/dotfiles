@@ -3,6 +3,7 @@
   export TERM="xterm-256color"
   {%@@ else @@%}
   export TERM="xterm-termite"
+  (cat $HOME/.cache/wal/sequences &)
   {%@@ endif @@%}
   {%@@ if profile != "Oolong" @@%}
 

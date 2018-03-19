@@ -4,10 +4,10 @@
 
 # terminal emulator
 super + Return
-	termite -e tmux
+  termite
 
 shift + super + Return
-  termite
+	termite -e tmux
 
 # program launcher
 alt + space
@@ -22,7 +22,7 @@ super + i
 
 # scrot hotkey
 @shift + super + ctrl + {3,4,5}
-  scrot '%Y-%m-%d_$wx$h.png' -{e,se,ue} 'mv $f ~/Pictures/' && ~/.config/lemonbar/scrot-notification.sh
+  scrot '%Y-%m-%d-%H%M%S_$wx$h.png' -{e,se,ue} 'mv $f ~/Pictures/' && ~/.config/lemonbar/scrot-notification.sh
 
 # emoji-keyboard
 @alt + super + e

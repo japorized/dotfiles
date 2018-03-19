@@ -10,6 +10,7 @@ rofi.color-window:      argb:ee2d2d2d, argb:aaD3D0C8, #CD98CD
 rofi.color-normal:      argb:00111111, #D3D0C8, argb:00111111, #CD98CD, #2D2D2D
 rofi.color-urgent:      argb:00111111, #af652f, argb:00111111, #F47678, #2D2D2D
 rofi.color-active:      argb:00111111, #70a16c, argb:00111111, #98CD97, #2D2D2D
+rofi.theme:             ~/.cache/wal/colors-rofi-dark.rasi
 rofi.separator-style:   none
 rofi.fullscreen:        false
 rofi.padding:           30

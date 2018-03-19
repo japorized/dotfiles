@@ -89,4 +89,4 @@ visualizer.sgs.smoothing.passes=1
 
 ##Specifies the color scheme. The color scheme must be in ~/.config/vis/colors/ directory. The default scheme is "colors".
 # colors.scheme=rainbow
-colors.scheme=purple_hydrangea
+colors.scheme=wal

@@ -14,7 +14,6 @@ syntax on
 set background=dark
 set concealcursor=""
 set conceallevel=2
-set cursorline
 set expandtab     " Expand tabs to spaces
 set foldlevelstart=3
 set ignorecase    " Ignore case when searching
@@ -43,7 +42,6 @@ endif
 
 " Highlights
 hi VertSplit ctermbg=NONE guibg=NONE cterm=NONE
-highlight CursorLine cterm=NONE ctermbg=DarkGrey guibg=DarkGrey
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 hi Conceal ctermfg=132 guifg=#af5f87
 
@@ -158,9 +156,10 @@ let g:limelight_priority = -1
 {%@@ endif @@%}
 
 " Airline
-let g:airline_theme='base16_eighties'
+" let g:airline_theme='base17_eighties'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+colorscheme wal
 
 if ! has('gui_running')
     set ttimeout
@@ -171,10 +170,6 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-
-" Setting for terminals that need extra configs for terminal colors
-let base16colorspace=256  " Access colors present in 256 colorspace"
-colorscheme base16-default-dark
 
 " Startify configs
 if has("autocmd")
