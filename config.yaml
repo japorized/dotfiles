@@ -3,9 +3,6 @@ config:
   create: true
   dotpath: dotfiles
 dotfiles:
-  d_awesome:
-    dst: ~/.config/awesome
-    src: config/awesome
   d_bspwm:
     dst: ~/.config/bspwm
     src: config/bspwm
