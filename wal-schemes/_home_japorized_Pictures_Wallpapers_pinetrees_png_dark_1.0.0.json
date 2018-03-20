@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/japorized/Pictures/Wallpapers/pinetrees.png",
+    "alpha": "100",
+    "special": {
+        "background": "#1c1c1c",
+        "foreground": "#d1d7b6",
+        "cursor": "#d1d7b6"
+    },
+    "colors": {
+        "color0": "#1c1c1c",
+        "color1": "#3baa72",
+        "color2": "#5faa73",
+        "color3": "#4aaa82",
+        "color4": "#64a3a5",
+        "color5": "#55aa92",
+        "color6": "#b4de8b",
+        "color7": "#d1d7b6",
+        "color8": "#8cac6c",
+        "color9": "#3baa72",
+        "color10": "#64a3a5",
+        "color11": "#5faa73",
+        "color12": "#4aaa82",
+        "color13": "#55aa92",
+        "color14": "#b4de8b",
+        "color15": "#d1d7b6"
+    }
+}

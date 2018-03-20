@@ -11,7 +11,7 @@ Opinionated configurations for this relatively new and under-educated power user
 
 ### Antergos (base installation)
 
-![antergos-base scrot](/screenshots/antergos-base_2018mar19.png?raw=true "antergos-base Screenshot")
+![antergos-base scrot](/screenshots/antergos-base_2018mar19.png?raw=true "antergos-base Screenshot with 3 color schemes")
 
 ---
 

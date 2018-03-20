@@ -86,12 +86,13 @@ source $ZSH/oh-my-zsh.sh
 {%@@ if profile == "Oolong" @@%}
 autoload -U promptinit; promptinit
 PURE_CMD_MAX_EXEC_TIME=10
-PURE_PROMPT_SYMBOL=λ
+# PURE_PROMPT_SYMBOL=λ
+PURE_PROMPT_SYMBOL=
 PURE_GIT_DOWN_ARROW=⇣
 PURE_GIT_UP_ARROW=⇡
 prompt pure
 prompt_newline='%666v'
-PROMPT=" $PROMPT"
+PROMPT=' %(?.%F{magenta}λ.%F{red}↯)%f '
 {%@@ endif @@%}
 
 # Compilation flags

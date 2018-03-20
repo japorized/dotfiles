@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/japorized/Pictures/Wallpapers/konohanakitan_hydrangea.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#171b1d",
+        "foreground": "#c1dbdc",
+        "cursor": "#c1dbdc"
+    },
+    "colors": {
+        "color0": "#171b1d",
+        "color1": "#2e7bc5",
+        "color2": "#41A3D1",
+        "color3": "#5AA4EC",
+        "color4": "#6BCEFB",
+        "color5": "#7a90c1",
+        "color6": "#98A7F5",
+        "color7": "#c1dbdc",
+        "color8": "#95989e",
+        "color9": "#2e7bc5",
+        "color10": "#41A3D1",
+        "color11": "#5AA4EC",
+        "color12": "#6BCEFB",
+        "color13": "#7a90c1",
+        "color14": "#98A7F5",
+        "color15": "#c1dbdc"
+    }
+}
