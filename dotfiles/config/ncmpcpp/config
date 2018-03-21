@@ -54,7 +54,7 @@
 colors_enabled = yes
 empty_tag_color = cyan
 header_window_color = cyan
-main_window_color = 40
+main_window_color = cyan
 current_item_prefix = "$(256_0)$r"
 current_item_suffix = "$/r$(end)"
 progressbar_look = "─╼─"
@@ -70,14 +70,14 @@ alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
 #alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
 alternative_header_second_line_format = {{$(blue)$b%a$/b$(end)}{ - $b$(magenta)%b$/b$(end)}}
 #alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
-volume_color = 34
-state_line_color = 34
-state_flags_color = 46:b
+volume_color = magenta
+state_line_color = magenta
+state_flags_color = magenta:b
 #color1 = 82
 #color2 = green
-#statusbar_color = default
-statusbar_time_color = default
-player_state_color = 87
+statusbar_color = default
+statusbar_time_color = magenta
+player_state_color = magenta
 alternative_ui_separator_color = black:b
 #window_border_color = green
 #active_window_border = red
@@ -130,7 +130,7 @@ visualizer_sync_interval = 30
 #visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
 
 # System encoding
-#system_encoding = ""
+system_encoding = "UTF-8"
 
 # Delays #####
 #playlist_disable_highlight_delay = 5

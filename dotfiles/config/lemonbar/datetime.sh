@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Import wal-colors
+. "$HOME/.cache/wal/colors.sh"
+
 # Options
 width="320"
 height="40"
@@ -43,6 +46,6 @@ Clock() {
 }
 
 while true; do
-    echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D} \uf073  $(Clock)%{F-}%{B-}"
+    echo -e "%{c}%{F${foreground}}%{B${background}} \uf073  $(Clock)%{F-}%{B-}"
     sleep 0.5
-done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -f "ipagothic-11" -B "#2D2D2D"
+done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -f "ipagothic-11" -B "${background}"

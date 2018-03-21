@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Import wal-colors
+. "$HOME/.cache/wal/colors.sh"
+
 # Options
 width="375"
 height="40"
@@ -39,9 +42,9 @@ indicator() {
         ;;
     esac
     if [[ $SPACE = $(bspc query -D -d) ]]; then
-      echo -n "%{B#CD98CD}%{F#2D2D2D}   $CHAR   %{F-}%{B-}"
+      echo -n "%{B${color6}}%{F${background}}   $CHAR   %{F-}%{B-}"
     elif [[ $BUSY =~ $SPACE ]]; then
-      echo -n "%{A:bspc desktop -f '^$C':}%{F#CD98CD}   $CHAR   %{F-}%{A}"
+      echo -n "%{A:bspc desktop -f '^$C':}%{F${color6}}   $CHAR   %{F-}%{A}"
     else
       echo -n "%{A:bspc desktop -f '^$C':}   $CHAR   %{A}"
     fi
@@ -51,6 +54,6 @@ indicator() {
 }
 
 while true; do
-    echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D}$(indicator)%{F-}%{B-}"
+    echo -e "%{c}%{F${foreground}}%{B${background}}$(indicator)%{F-}%{B-}"
     sleep .2
-done | lemonbar -d -g $geometry -f "FontAwesome" -B "#2D2D2D" | while read line; do eval "${line}"; done
+done | lemonbar -d -g $geometry -f "FontAwesome" -B "${background}" | while read line; do eval "${line}"; done

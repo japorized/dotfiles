@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Import wal-colors
+. "$HOME/.cache/wal/colors.sh"
+
 # Options
 width="800"
 height="40"
@@ -45,10 +48,10 @@ mpd_status() {
   if [[ $status == '[playing]' ]] ; then
     nowplaying=$(mpc | sed -n 1p | cut -c -70)
     timer=$(mpc | sed -n 2p | awk -F " " '{print $3}')
-    echo "$nowplaying   %{r}[$string -] [ $timer ]   "
+    echo "$nowplaying   %{r}  [$string -] [ $timer ]   "
   elif [[ $status == '[paused]' ]] ; then
     nowplaying=$(mpc | sed -n 1p | cut -c -60)
-    echo "$nowplaying   %{r}[$string -] [ paused ]   "
+    echo "$nowplaying   %{r}  [$string -] [ paused ]   "
   else
     echo "mpd is not active"
   fi
@@ -67,11 +70,11 @@ spotify_status() {
  
 while true; do
   if [[ $(spotify_status) != "Spotify is not active" ]] ; then
-    echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D}%{F#98CD97}\uf1bc%{F-}    $(spotify_status)%{F-}%{B-}"
+    echo -e "%{c}%{F${foreground}}%{B${background}}%{F#98CD97}\uf1bc%{F-}    $(spotify_status)%{F-}%{B-}"
   elif [[ $(mpd_status) != "mpd is not active" ]] ; then
-    echo -e "%{l}%{F#D3D0C8}%{B#2D2D2D}   \uf001    $(mpd_status)%{F-}%{B-}"
+    echo -e "%{l}%{F${foreground}}%{B${background}}   \uf001    $(mpd_status)%{F-}%{B-}"
   else
-    echo -en "%{c}%{F#D3D0C8}No music players active%{F-}"
+    echo -en "%{c}%{F${foreground}}No music players active%{F-}"
   fi
   sleep 1
-done | lemonbar -d -g $geometry -f "FontAwesome" -f "$font" -f "ipagothic-9" -f "ipamincho-9" -B "#2D2D2D"
+done | lemonbar -d -g $geometry -f "FontAwesome" -f "$font" -f "ipagothic-9" -f "ipamincho-9" -B "${background}"

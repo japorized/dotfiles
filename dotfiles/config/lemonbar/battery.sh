@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Import wal-colors
+. "$HOME/.cache/wal/colors.sh"
+
 #Options
 width="120"
 height="40"
@@ -16,15 +19,15 @@ Battery() {
   BATPERC=$(echo $ACPIBATT | cut -d, -f2)
   STATUS=$(echo $ACPIBATT | cut -d: -f2 | cut -d, -f1)
   if [[ "$STATUS" == " Charging" ]] ; then
-    echo -ne "%{F#98CD97}\uf0e7%{F-}  $BATPERC"
+    echo -ne "%{F${color4}}\uf0e7%{F-}  $BATPERC"
   elif [[ "$STATUS" == " Full" ]] ; then
-    echo -ne "%{F#98CD97}%{F-} $BATPERC"
+    echo -ne "%{F${color4}}%{F-} $BATPERC"
   else
     echo -ne " $BATPERC"
   fi
 }
 
 while true; do
-    echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D} $(Battery) %{F-}%{B-}"
+    echo -e "%{c}%{F${foreground}}%{B${background}} $(Battery) %{F-}%{B-}"
     sleep 0.1
-done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -B "#2D2D2D"
+done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -B "${background}"

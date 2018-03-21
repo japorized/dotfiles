@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Import wal-colors
+. "$HOME/.cache/wal/colors.sh"
+
 # Options
 width="350"
 height="40"
@@ -19,7 +22,7 @@ Scrot() {
 }
  
 while true; do
-    echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D} \uf030  $(Scrot)"
+    echo -e "%{c}%{F${foreground}}%{B${background}} \uf030  $(Scrot)"
     sleep 0.7
     exit
-done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -B "#2D2D2D"
+done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -B "${background}"

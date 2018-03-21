@@ -1,6 +1,8 @@
 # Japorized does Dotfiles
 Opinionated configurations for this relatively new and under-educated power user
 
+See also: [`japorized/bin`](https://github.com/japorized/bin)
+
 ---
 
 ## Screenshots

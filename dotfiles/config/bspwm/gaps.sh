@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env dash
 
 bspc config window_gap          20
 bspc config top_padding         40

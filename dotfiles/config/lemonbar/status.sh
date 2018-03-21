@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Import wal-colors
+. "$HOME/.cache/wal/colors.sh"
+
 # Options
 width="920"
 height="40"
@@ -46,9 +49,9 @@ Filespace() {
 Memspace() {
   meminfo=$(free -m | grep Mem)
   totalMem=$(echo $meminfo | awk -F " " '{print $2}')
-  usedMem=$(echo $meminfo | awk -F " " '{print $3}')
-  percentUsed=$(echo "scale=1; $usedMem/$totalMem * 100" | bc)
-  echo -n "$percentUsed% used"
+  freeMem=$(echo $meminfo | awk -F " " '{print $4}')
+  percentUsed=$(echo "scale=1; $freeMem/$totalMem * 100" | bc)
+  echo -n "$percentUsed% free"
   return
 }
 
@@ -66,11 +69,11 @@ CoffeeUp() {
 counter=0
 
 while true; do
-  echo -e "%{c}%{F#D3D0C8}%{B#2D2D2D} $(Curvolume)   |      $(Wifi)   |   \uf013    $(Diskspace) full    \uf07b    $(Filespace) full   \uf2db   $(Memspace) $(CoffeeUp)"
+  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curvolume)   |      $(Wifi)   |   \uf013    $(Diskspace) full    \uf07b    $(Filespace) full   \uf2db   $(Memspace) $(CoffeeUp)"
   sleep 1
   if [[ $counter -ge 5 ]]; then
     exit
   else
     counter=$(($counter + 1))  
   fi
-done | lemonbar -d -g $geometry -f "FontAwesome" -f "Helvetica Neue-9" -B "#2D2D2D"
+done | lemonbar -d -g $geometry -f "FontAwesome" -f "Helvetica Neue-9" -B "${background}"

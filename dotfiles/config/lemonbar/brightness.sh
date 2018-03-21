@@ -1,4 +1,5 @@
 #!/bin/bash
+. "$HOME/.cache/wal/colors.sh"
 width="350"
 height="70"
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
@@ -10,10 +11,10 @@ geometry="${width}x${height}+${offset_width}+${offset_height}"
 
 Brightness(){
     xbacklight -get \
-    |SIZE=9 START="" END="" SEP="" CHAR1="" CHAR2=" " mkb
+    |SIZE=9 START="" END="" SEP="" CHAR1="" CHAR2="%{F${background}}%{F-}" mkb
 }
 
 while true; do
-echo -e "%{l}%{F#D3D0C8}%{B#2D2D2D}  \uf185 Brightness: $(Brightness) %{F-}%{B-}" && sleep 1.5 && exit
-done | lemonbar -d -g $geometry -f "FontAwesome-18" -B "#2D2D2D"
+echo -e "%{c}%{F${foreground}}%{B${background}}  \uf185 Brightness: $(Brightness) %{F-}%{B-}" && sleep 1.5 && exit
+done | lemonbar -d -g $geometry -f "FontAwesome-18" -B "${background}"
 
