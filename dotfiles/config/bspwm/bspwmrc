@@ -1,6 +1,6 @@
 #! /bin/sh
 
-bspc monitor -d I II III IV V VI
+bspc monitor -d I II III IV V VI VII
 
 bspc config border_width         3
 sh -c "~/.config/bspwm/gaps.sh"
@@ -14,7 +14,7 @@ bspc config focus_follows_pointer true
 # Rules
 bspc rule -a Firefox desktop='^2'
 bspc rule -a Sublime_text desktop='^3'
-bspc rule -a retroarch desktop='^6'
+bspc rule -a retroarch desktop='^7'
 
 # Set Desktop 4 to start with floating windows
 FLOATING_DESKTOP_ID=$(bspc query -D -d '^4')

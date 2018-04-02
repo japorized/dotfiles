@@ -22,7 +22,7 @@ Volume(){
 
 while true; do
   if [[ $(Status) == "yes" ]] ; then
-echo -e "%{c}%{F${foreground}}%{B${background}}   \uf026 %{F-}%{B-}" && sleep 1.5 && exit
+echo -e "%{c}%{F${foreground}}%{B${background}}   \uf1f6 %{F-}%{B-}" && sleep 1.5 && exit
   else
 echo -e "%{c}%{F${foreground}}%{B${background}}   \uf028 Volume: $(Volume) %{F-}%{B-}" && sleep 1.5 && exit
   fi

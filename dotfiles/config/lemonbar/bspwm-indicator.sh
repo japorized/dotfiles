@@ -4,7 +4,7 @@
 . "$HOME/.cache/wal/colors.sh"
 
 # Options
-width="375"
+width="425"
 height="40"
 
 # Get monitor width so we can center the bar.
@@ -26,7 +26,7 @@ indicator() {
         CHAR="\uf120"
         ;;
       "2")
-        CHAR="\uf269"
+        CHAR="\uf0ac"
         ;;
       "3")
         CHAR="\uf121"
@@ -35,9 +35,12 @@ indicator() {
         CHAR="\uf06c"
         ;;
       "5")
-        CHAR="\uf04b"
+        CHAR="\uf0b1"
         ;;
       "6")
+        CHAR="\uf025"
+        ;;
+      "7")
         CHAR="\uf11b"
         ;;
     esac

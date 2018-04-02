@@ -21,7 +21,7 @@ Curvolume() {
   vol=$(echo $info | cut -d " " -f1)
   mute=$(echo $info | cut -d " " -f2)
   if [[ $mute == "yes" ]]; then
-    echo -n "\uf026   muted"
+    echo -n "\uf1f6"
   else
     echo -n "\uf028   $vol %"
   fi
@@ -69,7 +69,7 @@ CoffeeUp() {
 counter=0
 
 while true; do
-  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curvolume)   |      $(Wifi)   |   \uf013    $(Diskspace) full    \uf07b    $(Filespace) full   \uf2db   $(Memspace) $(CoffeeUp)"
+  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curvolume)   |      $(Wifi)   |   \uf109   $(Diskspace) full    \uf0a0   $(Filespace) full    \uf2db   $(Memspace) $(CoffeeUp)"
   sleep 1
   if [[ $counter -ge 5 ]]; then
     exit
