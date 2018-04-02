@@ -1,36 +1,62 @@
 # An attempt to have vi-like keybindings
 
 ### Default Key Nullification
+keymap b NULL
+keymap g NULL
+keymap m NULL
 keymap q NULL
-keymap C-q NULL
-keymap H NULL
-keymap SPC NULL
+keymap r NULL
 keymap s NULL
+keymap t NULL
+keymap u NULL
+keymap o NULL
+keymap y NULL
+keymap B NULL
+keymap G NULL
+keymap H NULL
+keymap Q NULL
+keymap O NULL
+keymap T NULL
+keymap Y NULL
+keymap gg NULL
+keymap C-q NULL
+keymap C-t NULL
+keymap SPC NULL
+keymap 0 NULL
+keymap + NULL
+keymap - NULL
 keymap { NULL
 keymap } NULL
-keymap Q NULL
-keymap B NULL
-keymap b NULL
-keymap m NULL
+
+### General
+keymap r RELOAD
 
 ### Navigation
+keymap o GOTO
+keymap O TAB_GOTO
 keymap f MOVE_LIST_MENU
 keymap F LIST_MENU
 keymap C-d NEXT_PAGE
 keymap C-u PREV_PAGE
-
-### Hyperlink Actions
-keymap C-RET TAB_GOTO
+keymap gg BEGIN
+keymap G END
+keymap 0 LINE_BEGIN
 
 ### Tab Controls
-keymap :x CLOSE_TAB
+keymap t NEW_TAB
+keymap T TAB_LINK
+keymap x CLOSE_TAB
 keymap gt NEXT_TAB
 keymap gT PREV_TAB
 
+### URL Peeking (different from vi)
+keymap y PEEK
+keymap Y PEEK_LINK
+
 ### History Navigation
 keymap :h SELECT_MENU
-keymap b BACK
-keymap m NEXT
+keymap H BACK
+keymap L NEXT
 
 ### Miscellaneous
 keymap :H HELP

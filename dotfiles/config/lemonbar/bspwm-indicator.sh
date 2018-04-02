@@ -48,7 +48,6 @@ indicator() {
     else
       echo -n "%{A:bspc desktop -f '^$C':}   $CHAR   %{A}"
     fi
-    # echo -n "${A}"
     C=$(( C + 1 ))
   done
 }
@@ -56,4 +55,4 @@ indicator() {
 while true; do
     echo -e "%{c}%{F${foreground}}%{B${background}}$(indicator)%{F-}%{B-}"
     sleep .2
-done | lemonbar -d -g $geometry -f "FontAwesome" -B "${background}" | while read line; do eval "${line}"; done
+done | lemonbar -d -g $geometry -f "FontAwesome" -F "${foreground}" -B "${background}" | while read line; do eval "${line}"; done

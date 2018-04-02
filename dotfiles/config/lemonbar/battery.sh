@@ -16,14 +16,18 @@ geometry="${width}x${height}+${offset}+50"
 
 Battery() {
   ACPIBATT=$(acpi --battery)
-  BATPERC=$(echo $ACPIBATT | cut -d, -f2)
+  BATPERC=$(echo $ACPIBATT | cut -d, -f2 | tr -d "%")
   STATUS=$(echo $ACPIBATT | cut -d: -f2 | cut -d, -f1)
   if [[ "$STATUS" == " Charging" ]] ; then
-    echo -ne "%{F${color4}}\uf0e7%{F-}  $BATPERC"
+    echo -ne "%{F${color4}}\uf0e7%{F-}  $BATPERC %"
   elif [[ "$STATUS" == " Full" ]] ; then
-    echo -ne "%{F${color4}}%{F-} $BATPERC"
+    echo -ne "%{F${color4}}%{F-} $BATPERC %"
+  elif [[ "$BATPERC" -lt 20 ]]; then
+    echo -ne "%{F#F47678}%{F-} $BATPERC %"
+  elif [[ "$BATPERC" -lt 35 ]]; then
+    echo -ne "%{F#E2B552}%{F-} $BATPERC %"
   else
-    echo -ne " $BATPERC"
+    echo -ne " $BATPERC %"
   fi
 }
 

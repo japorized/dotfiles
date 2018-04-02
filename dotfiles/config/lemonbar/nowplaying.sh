@@ -70,11 +70,11 @@ spotify_status() {
  
 while true; do
   if [[ $(spotify_status) != "Spotify is not active" ]] ; then
-    echo -e "%{c}%{F${foreground}}%{B${background}}%{F#98CD97}\uf1bc%{F-}    $(spotify_status)%{F-}%{B-}"
+    echo -e "%{c}%{F${foreground}}%{F#98CD97}\uf1bc%{F-}    $(spotify_status)%{F-}"
   elif [[ $(mpd_status) != "mpd is not active" ]] ; then
-    echo -e "%{l}%{F${foreground}}%{B${background}}   \uf001    $(mpd_status)%{F-}%{B-}"
+    echo -e "%{l}%{F${foreground}}   \uf001    $(mpd_status)%{F-}"
   else
-    echo -en "%{c}%{F${foreground}}No music players active%{F-}"
+    echo -e "%{c}%{F${foreground}}No music players active%{F-}"
   fi
   sleep 1
 done | lemonbar -d -g $geometry -f "FontAwesome" -f "$font" -f "ipagothic-9" -f "ipamincho-9" -B "${background}"

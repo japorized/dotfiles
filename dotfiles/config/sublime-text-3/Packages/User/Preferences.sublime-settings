@@ -1,4 +1,5 @@
 {
+	"afn_use_keybinding": true,
 	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
 	"detect_indentation": false,
 	"enable_tab_scrolling": false,

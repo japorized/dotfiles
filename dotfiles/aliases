@@ -1,10 +1,3 @@
-{%@@ if profile == "Oolong" @@%}
-##############################
-# Power Management
-##############################
-alias displaysleep="sleep 1 ; xset dpms force off"
-{%@@ endif @@%}
-
 {%@@ if profile == "Earl-Grey.local" @@%}
 ##############################
 # Eye saving commands
