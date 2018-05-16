@@ -5,11 +5,15 @@ buku
 buku_run-git
 caffeine-ng
 cli-visualizer
+discord
 ephifonts
 facetimehd-firmware
 fcitx-mozc-ut2
 i3lock-color
 lemonbar-xft-git
+libc++
+libc++abi
+libc++experimental
 libinput-gestures
 mbpfan-git
 megacmd-bin
@@ -30,5 +34,6 @@ texlive-dummy
 thunar-dropbox
 ttf-emojione-color
 ttf-font-awesome-4
+ttf-impallari-cabin-font
 ttf-roboto-mono
 websockify

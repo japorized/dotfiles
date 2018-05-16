@@ -25,9 +25,10 @@ snippet tab tabular (or arbitrary) environment
 		${0:${VISUAL}}
 	\\end{$1}
 snippet thm thm (or arbitrary) environment with optional argument
-	\\begin[${1:author}]{${2:thm}}
+	\\begin{${1:thm}}[${2:title}]\\label{${3:$1}}
+  \\index{$2}
 		${0:${VISUAL}}
-	\\end{$2}
+	\\end{$1}
 snippet center center environment
 	\\begin{center}
 		${0:${VISUAL}}
@@ -54,16 +55,17 @@ snippet eq equation environment
 		${0:${VISUAL}}
 	\\end{equation}
 # Equation
+snippet equ unnumbered equation environment
+	\\begin{equation${1:*}}
+		${0:${VISUAL}}
+	\\end{equation$1}
+# Equation
 snippet eql Labeled equation environment
 	\\begin{equation}
 		\\label{eq:${1}}
 	${0:${VISUAL}}
 	\\end{equation}
 # Equation
-snippet eq* unnumbered equation environment
-	\\begin{equation*}
-		${0:${VISUAL}}
-	\\end{equation*}
 # Unnumbered Equation
 snippet \ unnumbered equation: \[ ... \]
 	\\[
@@ -131,23 +133,35 @@ snippet part document \part
 # Chapter
 snippet chp \chapter
 	\\chapter{${1:chapter name}}
-	\\label{chp:${2:$1}}
+  \\label{chp:${2:$1}}
+  % chapter $1
+
 	${0}
+
+  % chapter $1 (end)
 # Section
-snippet sect \section
+snippet sec \section
 	\\section{${1:section name}}
-	\\label{sect:${2:$1}}
+	\\label{sec:${2:$1}}
+  % section $1
+
 	${0}
+
+  % section $1 (end)
 # Section without number
-snippet sect* \section*
+snippet sec* \section*
 	\\section*{${1:section name}}
-	\\label{sect:${2:$1}}
+	\\label{sec:${2:$1}}
 	${0}
 # Sub Section
 snippet sub \subsection
 	\\subsection{${1:subsection name}}
 	\\label{sub:${2:$1}}
+  % subsection $1
+
 	${0}
+
+  % subsection $1 (end)
 # Sub Section without number
 snippet sub* \subsection*
 	\\subsection*{${1:subsection name}}
@@ -282,13 +296,21 @@ snippet tikzcd* tikzcd environment in equation*
 snippet stackrel \stackrel{}{}
 	\\stackrel{${1:above}}{${2:below}} ${0}
 snippet frac \frac{}{}
-	\\frac{${1:num}}{${2:denom}} ${0}
+	\\frac{${1:a}}{${2:b}} ${0}
 snippet summ \sum_{}^{}
 	\\sum_{${1:i=1}}^{${2:n}} ${0}
+snippet prod \prod_{}{}^{}
+  \\prod_{${1:k=1}}^{${2:n}} ${0}
 snippet lim \lim_{}
 	\\lim_{${1:n \\to \\infty}} ${0}
 snippet intg \int_{}^{}
 	\\int_{${1:a}}^{${2:b}} ${0}
+snippet dif
+  \\dif{${1:x}}
+snippet pmat
+  \\begin{pmatrix} ${0} \\end{pmatrix}
+snippet bmat
+  \\begin{bmatrix} ${0} \\end{bmatrix}
 snippet frame frame environment
 	\\begin{frame}[${1:t}]{${2:title}}
 		${0:${VISUAL}}
@@ -301,10 +323,10 @@ snippet alert alertblock environment
 	\\begin{alertblock}{${1:title}}
 		${0:${VISUAL}}
 	\\end{alertblock}
-snippet example exampleblock environment
-	\\begin{exampleblock}{${1:title}}
+snippet eg exampleblock environment
+	\\begin{eg}{${1:title}}
 		${0:${VISUAL}}
-	\\end{exampleblock}
+	\\end{eg}
 snippet col2 two-column environment
 	\\begin{columns}
 		\\begin{column}{0.5\\textwidth}
@@ -329,6 +351,8 @@ snippet lr[ left[ right]
 	\\left[ ${1} \\right] ${0}
 snippet lra langle rangle
 	\\langle ${1} \\rangle ${0}
+snippet abs
+  \\abs{${1:z}} ${0}
 # Code listings
 snippet lst
 	\\begin{listing}[language=${1:language}]
@@ -346,3 +370,10 @@ snippet urlc
 	\\url{`@+`} ${0}
 snippet hrefc
 	\\href{`@+`}{${1}} ${0}
+# Personal snippets
+# \\begin{defn}[${1:Definition}]\\label{defn:${2:${1}}}
+snippet defn
+  \\begin{defn}[${1:Definition}]\\label{defn:${1/\W/_/g}}
+  \\index{$1}
+  ${0}
+  \\end{defn}

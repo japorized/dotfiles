@@ -95,6 +95,7 @@ autocmd Filetype tex setl updatetime=1000
 {%@@ if profile == "Earl-Grey.local" @@%}
 let g:livepreview_previewer = 'open -a Skim'
 {%@@ elif profile == "Oolong" @@%}
+let g:vimtex_view_method = 'zathura'
 let g:livepreview_previewer = '/usr/bin/zathura'
 {%@@ endif @@%}
 
@@ -202,6 +203,18 @@ if has('autocmd')
     autocmd FileType tex let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','$':'$'}
 endif
 
+" GitGutter
+let g:gitgutter_sign_added='┃'
+let g:gitgutter_sign_modified='┃'
+let g:gitgutter_sign_removed='◢'
+let g:gitgutter_sign_removed_first_line='◥'
+let g:gitgutter_sign_modified_removed='◢'
+
+" Indent Guides
+nmap <Leader>il :IndentLinesToggle<cr>
+let g:indentLine_enabled = 0
+let g:indentLine_char = '┃'
+
 " Configs for nvim
 if has('nvim')
 
@@ -211,9 +224,16 @@ if has('nvim')
   let g:deoplete#auto_complete_start_length = 1 
   let g:deoplete#enable_at_startup = 1 
   let g:deoplete#enable_smart_case = 1 
-  imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>") 
-  imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-  imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+  call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
+  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>" 
+  inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+  " inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+
+  " Ultisnips
+  let g:UltiSnipsSnippetDirectories = ["UltiSnips", "mysnippets"]
+  let g:UltiSnipsExpandTrigger = "<c-s-j>"
+  let g:UltiSnipsJumpForwardTrigger = "<tab>"
+  let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
   if !exists('g:deoplete#omni#input_patterns')
       let g:deoplete#omni#input_patterns = {}
@@ -221,3 +241,5 @@ if has('nvim')
   let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 
 endif
+
+source ~/.vim/simplenoterc

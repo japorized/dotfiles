@@ -46,11 +46,11 @@ mpd_status() {
 
   # output
   if [[ $status == '[playing]' ]] ; then
-    nowplaying=$(mpc | sed -n 1p | cut -c -70)
+    nowplaying=$(mpc current | cut -c -70)
     timer=$(mpc | sed -n 2p | awk -F " " '{print $3}')
     echo "$nowplaying   %{r}  [$string -] [ $timer ]   "
   elif [[ $status == '[paused]' ]] ; then
-    nowplaying=$(mpc | sed -n 1p | cut -c -60)
+    nowplaying=$(mpc current | cut -c -60)
     echo "$nowplaying   %{r}  [$string -] [ paused ]   "
   else
     echo "mpd is not active"

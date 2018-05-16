@@ -3,6 +3,10 @@
 	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
 	"detect_indentation": false,
 	"enable_tab_scrolling": false,
+	"folder_exclude_patterns":
+	[
+		"node_modules"
+	],
 	"font_face": "Hack",
 	"font_size": 9.5,
 	"highlight_modified_tabs": true,

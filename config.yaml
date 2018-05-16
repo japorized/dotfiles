@@ -18,6 +18,9 @@ dotfiles:
   d_lock-screen:
     dst: ~/.config/lock-screen
     src: config/lock-screen
+  d_mysnippets:
+    dst: ~/.vim/mysnippets
+    src: vim/mysnippets
   d_snippets:
     dst: ~/.vim/snippets
     src: vim/snippets
@@ -128,7 +131,6 @@ profiles:
     - f_functions
     - f_tmux.conf
     - f_mpd.conf
-    - d_snippets
     - f_sxhkdrc
     - d_lemonbar
     - f_rofi_config
@@ -142,6 +144,7 @@ profiles:
     - f_libinput-gestures.conf
     - d_bspwm
     - f_preferences.sublime-settings
+    - d_mysnippets
   WinCrap:
     dotfiles:
     - f_vimrc

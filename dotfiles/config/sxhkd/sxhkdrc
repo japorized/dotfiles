@@ -4,16 +4,16 @@
 
 # terminal emulator
 super + Return
-  termite
+  termite -e termite-tmux
 
 shift + super + Return
-	termite -e tmux
+	termite
 
 # program launcher
 alt + space
 	rofi -show run
 
-super + Tab
+super + grave
   rofi -show window
 
 @ctrl + super + alt + {f,s}
@@ -53,7 +53,7 @@ super + o
   mpc next
 
 {XF86AudioPrev,Menu : F7}
-  mpc prev
+  mpc cdprev
 
 {XF86AudioPlay,Menu: F8}
   mpc toggle
@@ -128,14 +128,17 @@ super + {Left,Right}
 	bspc desktop -f {prev,next}.local
 
 # focus the older or newer node in the focus history
-# super + {o,i}
-# 	bspc wm -h off; \
-# 	bspc node {older,newer} -f; \
-# 	bspc wm -h on
+super + {Tab,shift + Tab}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+super + shift + {Left,Right}
+  bspc node -d {prev,next}
 
 # rotate nodes
 super + {_,shift +}r
