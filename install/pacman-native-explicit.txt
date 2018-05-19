@@ -67,7 +67,6 @@ fzf
 gawk
 gcc
 gcc-libs
-geogebra
 gettext
 gifsicle
 gimp
@@ -165,7 +164,6 @@ reflector
 reiserfsprogs
 retroarch
 retroarch-assets-xmb
-retroarch-autoconfig-udev
 rofi
 rsync
 rxvt-unicode

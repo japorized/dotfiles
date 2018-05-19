@@ -25,11 +25,11 @@ oomox-git
 otf-font-awesome-4
 pulseaudio-ctl
 python-ewmh
+retroarch-autoconfig-udev
 rover
 shantz-xwinwrap-bzr
 simplescreenrecorder-git
 slack-term
-spotify
 texlive-dummy
 thunar-dropbox
 ttf-emojione-color

@@ -1,121 +1,24 @@
 % Document Head
-\documentclass[11pt, oneside]{book}
-\usepackage{geometry}
-\geometry{letterpaper}
-\usepackage[parfill]{parskip}
-\usepackage{graphicx}
+\documentclass[notoc,notitlepage]{tufte-book}
+% \nonstopmode % uncomment to enable nonstopmode
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\renewcommand{\baselinestretch}{1.1}
 
-% Essential Packages
-\usepackage{ragged2e}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{mathrsfs}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage[hyperref]{ntheorem}
+\input{latex-classnotes-preamble.tex}
 
-% Theorem Style Customization
-\setlength\theorempreskipamount{2ex}
-\setlength\theorempostskipamount{3ex}
-
-% hyperref Package Settings
-\usepackage{hyperref}
-\hypersetup{
-	colorlinks = true,
-	linkcolor = magenta
-}
-
-% ntheorem Declarations
-\theoremstyle{break}
-\newtheorem{thm}{Theorem}[section]
-\newtheorem*{proof}{Proof}
-\newtheorem{crly}{Corollary}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{propo}{Proposition}[section]
-\newtheorem*{remark}{Remark}
-\newtheorem*{note}{Note}
-\newtheorem{defn}{Definition}[section]
-\newtheorem{eg}{Example}[section]
-\newtheorem{axiom}{Axiom}[section]
-
-% hyperref - ntheorem workaround
-\AtBeginDocument{\def\chapterautorefname{Lecture}}%
-\providecommand*{\axiomautorefname}{Axiom}
-\providecommand*{\lemmaautorefname}{Lemma}
-\providecommand*{\thmautorefname}{Theorem}
-
-% ntheorem listtheorem style
-\makeatother
-\newlength\widesttheorem
-\AtBeginDocument{
-  \settowidth{\widesttheorem}{Proposition A.1.1.1\quad}
-}
-
-\makeatletter
-\def\thm@@thmline@name#1#2#3#4{%
-        \@dottedtocline{-2}{0em}{2.3em}%
-                   {\makebox[\widesttheorem][l]{#1 \protect\numberline{#2}}#3}%
-                   {#4}}
-\@ifpackageloaded{hyperref}{
-\def\thm@@thmline@name#1#2#3#4#5{%
-    \ifx\\#5\\%
-        \@dottedtocline{-2}{0em}{2.3em}%
-            {\makebox[\widesttheorem][l]{#1 \protect\numberline{#2}}#3}%
-            {#4}
-    \else
-        \ifHy@linktocpage\relax\relax
-            \@dottedtocline{-2}{0em}{2.3em}%
-                {\makebox[\widesttheorem][l]{#1 \protect\numberline{#2}}#3}%
-                {\hyper@linkstart{link}{#5}{#4}\hyper@linkend}%
-        \else
-            \@dottedtocline{-2}{0em}{2.3em}%
-                {\hyper@linkstart{link}{#5}%
-                  {\makebox[\widesttheorem][l]{#1 \protect\numberline{#2}}#3}\hyper@linkend}%
-                    {#4}%
-        \fi
-    \fi}
-}
-
-\makeatletter
-\def\thm@@thmline@noname#1#2#3#4{%
-        \@dottedtocline{-2}{0em}{5em}%
-                   {{\protect\numberline{#2}}#3}%
-                   {#4}}
-\@ifpackageloaded{hyperref}{
-\def\thm@@thmline@noname#1#2#3#4#5{%
-    \ifx\#5\%
-        \@dottedtocline{-2}{0em}{5em}%
-            {{\protect\numberline{#2}}#3}%
-            {#4}
-    \else
-        \ifHy@linktocpage\relax\relax
-            \@dottedtocline{-2}{0em}{5em}%
-                {{\protect\numberline{#2}}#3}%
-                {\hyper@linkstart{link}{#5}{#4}\hyper@linkend}%
-        \else
-            \@dottedtocline{-2}{0em}{5em}%
-                {\hyper@linkstart{link}{#5}%
-                  {{\protect\numberline{#2}}#3}\hyper@linkend}%
-                    {#4}%
-        \fi
-    \fi}
-}
-
-\theoremlisttype{allname}
-
-% Shortcuts
-\newcommand{\bb}[1]{\mathbb{#1}}                % using bb instead of mathbb
-\newcommand{\floor}[1]{\lfloor #1 \rfloor}      % simplifying the writing of a floor function
-\newcommand{\ceiling}[1]{\lceil #1 \rceil}      % simplifying the writing of a ceiling function
-\newcommand{\dotp}{\, \cdotp}			        % dot product to distinguish from \cdot
-\newcommand{\qed}{\hfill\ensuremath{\square}}   % Q.E.D sign
-
-% Custom math operator
-% \DeclareMathOperator{\rem}{rem}
-
-% Main Body
 \title{Title}
 \author{Johnson Ng}
+
+% Header formatting
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\makeatletter
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO]{\textsl{\@title} \enspace \thepage}
+\fancyhead[LE]{\thepage \enspace \textsl{\leftmark \enspace - \enspace \rightmark}}
+\makeatother
 
 \begin{document}
 \hypersetup{pageanchor=false}
@@ -132,6 +35,9 @@
 \listtheorems{axiom,lemma,thm,crly,propo}
 
 
+\nobibliography*
+\bibliography{bibliography}
+
+\printindex
 
 \end{document}
-% Document End

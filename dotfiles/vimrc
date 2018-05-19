@@ -95,7 +95,8 @@ autocmd Filetype tex setl updatetime=1000
 {%@@ if profile == "Earl-Grey.local" @@%}
 let g:livepreview_previewer = 'open -a Skim'
 {%@@ elif profile == "Oolong" @@%}
-let g:vimtex_view_method = 'zathura'
+" let g:vimtex_view_method = 'zathura'
+let g:vimtex_view_general_viewer = '/home/japorized/.bin/tabbed-zathura'
 let g:livepreview_previewer = '/usr/bin/zathura'
 {%@@ endif @@%}
 
@@ -198,11 +199,6 @@ let g:startify_bookmarks = [
   \ ]
 let g:startify_update_oldfiles = 1
 
-" Auto-pair configs
-if has('autocmd')
-    autocmd FileType tex let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','$':'$'}
-endif
-
 " GitGutter
 let g:gitgutter_sign_added='┃'
 let g:gitgutter_sign_modified='┃'
@@ -220,6 +216,7 @@ if has('nvim')
 
   " Deoplete
   " deoplete + neosnippet + autopairs changes 
+  au Filetype tex let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '$':'$'}
   let g:AutoPairsMapCR=0 
   let g:deoplete#auto_complete_start_length = 1 
   let g:deoplete#enable_at_startup = 1 
@@ -230,7 +227,7 @@ if has('nvim')
   " inoremap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
 
   " Ultisnips
-  let g:UltiSnipsSnippetDirectories = ["UltiSnips", "mysnippets"]
+  let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/mysnippets']
   let g:UltiSnipsExpandTrigger = "<c-s-j>"
   let g:UltiSnipsJumpForwardTrigger = "<tab>"
   let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
