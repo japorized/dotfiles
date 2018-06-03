@@ -84,6 +84,9 @@ dotfiles:
   f_termite_config:
     dst: ~/.config/termite/config
     src: config/termite/config
+  f_tint2rc:
+    dst: ~/.config/tint2/tint2rc
+    src: config/tint2/tint2rc
   f_tmux.conf:
     dst: ~/.tmux.conf
     src: tmux.conf
@@ -149,6 +152,7 @@ profiles:
     - d_mysnippets
     - d_nvim
     - f_zathurarc
+    - f_tint2rc
   WinCrap:
     dotfiles:
     - f_vimrc
