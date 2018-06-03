@@ -89,8 +89,10 @@ let g:gundo_return_on_revert= 0
 let g:indentLine_char='|'
 
 " Tex configs
+let g:tex_flavor = 'latex'
 nmap <F12> :VimtexCompile<cr>
 let g:tex_conceal=""
+let g:vimtex_fold_enabled=1
 autocmd Filetype tex setl updatetime=1000
 {%@@ if profile == "Earl-Grey.local" @@%}
 let g:livepreview_previewer = 'open -a Skim'
@@ -210,6 +212,12 @@ let g:gitgutter_sign_modified_removed='◢'
 nmap <Leader>il :IndentLinesToggle<cr>
 let g:indentLine_enabled = 0
 let g:indentLine_char = '┃'
+
+" command-t
+let g:CommandTSuppressMaxFilesWarning=1
+let g:CommandTFileScanner='find'
+let g:CommandTAlwaysShowDotFiles =1
+let g:CommandTAcceptSelectionCommand='CommandTOpen tabe'
 
 " Configs for nvim
 if has('nvim')

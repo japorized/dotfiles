@@ -28,7 +28,6 @@ castget
 chromium
 cifs-utils
 coreutils
-cower
 crda
 cronie
 cryptsetup
@@ -121,6 +120,7 @@ mpg123
 mps-youtube
 mpv
 nano
+ncdu
 ncmpcpp
 neofetch
 neovim
@@ -131,10 +131,12 @@ nodejs
 noto-fonts-cjk
 npm
 ntfs-3g
+obs-studio
 openssh
 otf-ipafont
 p7zip
 pacman
+pacman-contrib
 patch
 pavucontrol
 pciutils
@@ -178,6 +180,7 @@ soundfont-fluid
 splix
 steam
 sublime-text
+subversion
 sudo
 sxhkd
 sysfsutils
@@ -222,6 +225,7 @@ xclip
 xdo
 xf86-video-vesa
 xfsprogs
+xonotic
 xorg-docs
 xorg-fonts-100dpi
 xorg-fonts-75dpi
@@ -242,6 +246,7 @@ xorg-x11perf
 xorg-xauth
 xorg-xcmsdb
 xorg-xcursorgen
+xorg-xdm
 xorg-xdriinfo
 xorg-xev
 xorg-xgamma

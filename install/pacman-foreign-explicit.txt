@@ -1,4 +1,5 @@
 acpilight
+auracle-git
 bash-pipes
 betterlockscreen-git
 buku
@@ -10,10 +11,12 @@ ephifonts
 facetimehd-firmware
 fcitx-mozc-ut2
 i3lock-color
+icdiff
 lemonbar-xft-git
 libc++
 libc++abi
 libc++experimental
+libgcj17-bin
 libinput-gestures
 mbpfan-git
 megacmd-bin
@@ -21,13 +24,17 @@ menu-calc
 minecraft
 mkb-git
 mpdscribble
+nlohmann-json
 oomox-git
 otf-font-awesome-4
+pdftk-bin
 pulseaudio-ctl
 python-ewmh
 retroarch-autoconfig-udev
 rover
+sc-im
 shantz-xwinwrap-bzr
+signal-desktop-bin
 simplescreenrecorder-git
 slack-term
 texlive-dummy
