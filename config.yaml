@@ -21,6 +21,9 @@ dotfiles:
   d_mysnippets:
     dst: ~/.vim/mysnippets
     src: vim/mysnippets
+  d_nvim:
+    dst: ~/.config/nvim
+    src: config/nvim
   d_snippets:
     dst: ~/.vim/snippets
     src: vim/snippets
@@ -140,11 +143,12 @@ profiles:
     - f_config.yaml
     - d_lock-screen
     - f_config.conf
-    - f_zathurarc
     - f_libinput-gestures.conf
     - d_bspwm
     - f_preferences.sublime-settings
     - d_mysnippets
+    - d_nvim
+    - f_zathurarc
   WinCrap:
     dotfiles:
     - f_vimrc
