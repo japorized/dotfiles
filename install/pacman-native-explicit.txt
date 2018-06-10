@@ -1,3 +1,4 @@
+0ad
 acpi
 alsa-utils
 antergos-keyring
@@ -107,6 +108,7 @@ linux-headers
 logrotate
 lvm2
 lxappearance
+lxdm
 m4
 make
 man-db
@@ -142,7 +144,7 @@ pavucontrol
 pciutils
 pcmciautils
 perl
-pkg-config
+pkgconf
 pkgfile
 pngcrush
 powertop
@@ -168,7 +170,6 @@ retroarch
 retroarch-assets-xmb
 rofi
 rsync
-rxvt-unicode
 rxvt-unicode-terminfo
 s-nail
 screenfetch
@@ -201,7 +202,6 @@ ttf-hack
 ttf-inconsolata
 ttf-liberation
 ttf-roboto
-ttf-symbola
 tumbler
 unrar
 unzip
@@ -222,6 +222,7 @@ wireless_tools
 wpa_actiond
 wqy-zenhei
 xclip
+xdm-archlinux
 xdo
 xf86-video-vesa
 xfsprogs

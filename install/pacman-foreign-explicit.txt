@@ -1,7 +1,8 @@
 acpilight
 auracle-git
 bash-pipes
-betterlockscreen-git
+bcwc-pcie-git
+bitwarden-cli
 buku
 buku_run-git
 caffeine-ng
@@ -10,7 +11,6 @@ discord
 ephifonts
 facetimehd-firmware
 fcitx-mozc-ut2
-i3lock-color
 icdiff
 lemonbar-xft-git
 libc++
@@ -18,6 +18,7 @@ libc++abi
 libc++experimental
 libgcj17-bin
 libinput-gestures
+lxdm-themes
 mbpfan-git
 megacmd-bin
 menu-calc
@@ -32,6 +33,7 @@ pulseaudio-ctl
 python-ewmh
 retroarch-autoconfig-udev
 rover
+rxvt-unicode-pixbuf
 sc-im
 shantz-xwinwrap-bzr
 signal-desktop-bin
@@ -43,4 +45,6 @@ ttf-emojione-color
 ttf-font-awesome-4
 ttf-impallari-cabin-font
 ttf-roboto-mono
+ttf-symbola
+waterfox-bin
 websockify

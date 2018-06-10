@@ -306,7 +306,7 @@ button_max_icon_size = 0
 button = new
 button_text = 
 button_tooltip = ncmpcpp
-button_lclick_command = urxvt -e sh -c "ncmpcpp -c $HOME/.config/ncmpcpp/cover-config"
+button_lclick_command = urxvt -e urxvt-ncmpcpp
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 
@@ -355,9 +355,9 @@ button_max_icon_size = 0
 #-------------------------------------
 # Button 9
 button = new
-button_text = 
-button_tooltip = Github
-button_lclick_command = firefox github.com
+button_text = 
+button_tooltip = Gitlab
+button_lclick_command = waterfox gitlab.com
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 

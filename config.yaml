@@ -51,6 +51,9 @@ dotfiles:
   f_config.yaml:
     dst: ~/.config/beets/config.yaml
     src: config/beets/config.yaml
+  f_dunstrc:
+    dst: ~/.config/dunst/dunstrc
+    src: config/dunst/dunstrc
   f_functions:
     dst: ~/.functions
     src: functions
@@ -153,6 +156,7 @@ profiles:
     - d_nvim
     - f_zathurarc
     - f_tint2rc
+    - f_dunstrc
   WinCrap:
     dotfiles:
     - f_vimrc

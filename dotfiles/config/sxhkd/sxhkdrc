@@ -28,7 +28,7 @@ super + o
 
 # scrot hotkey
 @shift + super + ctrl + {3,4,5}
-  scrot '%Y-%m-%d-%H%M%S_$wx$h.png' -{e,se,ue} 'mv $f ~/Pictures/' && ~/.config/lemonbar/scrot-notification.sh
+  sh -c "~/.bin/ss-with-preview.sh {e,se,ue}"
 
 # emoji-keyboard
 @alt + super + e

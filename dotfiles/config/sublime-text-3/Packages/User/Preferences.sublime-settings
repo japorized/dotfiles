@@ -1,5 +1,5 @@
 {
-	"afn_use_keybinding": true,
+	"afn_use_keybinding": false,
 	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
 	"detect_indentation": false,
 	"enable_tab_scrolling": false,
@@ -8,7 +8,7 @@
 		"node_modules"
 	],
 	"font_face": "Hack",
-	"font_size": 9.5,
+	"font_size": 14.5,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
@@ -16,6 +16,17 @@
 		"Vintage",
 		"Vintageous"
 	],
+  "auto_complete_triggers":
+  [
+    {
+       "characters": "<",
+       "selector": "text.html"
+    },
+    {
+       "characters": "/",
+       "selector": "string.quoted.double.html,string.quoted.single.html, source.css"
+    }
+  ],
 	"match_brackets": false,
 	"match_brackets_angle": false,
 	"match_brackets_braces": false,
