@@ -45,5 +45,6 @@ alias gdi="fuck"
 alias say='echo "$1" | espeak -s 150 2>/dev/null'
 alias say-zh='echo "$1" | espeak -s 150 -v zh 2>/dev/null'
 alias say-ms='echo "$1" | espeak -s 150 -v ms 2>/dev/null'
+alias popup-nowplaying="while true ; do /usr/bin/mpc idle >> /dev/null ; $HOME/.bin/tmpshow-nowplaying.sh ; done"
 {%@@ endif @@%}
 alias slack-term="TERM=xterm slack-term"

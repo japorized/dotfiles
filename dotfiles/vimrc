@@ -181,25 +181,32 @@ if has("autocmd")
 endif
 let g:startify_custom_header = [
 \ '',
-\ '      _   ________  ___     __           __  _ ___',
-\ '     | | / /  _/  |/  / __ / /____ _____/ /_(_) _/_ __',
-\ '     | |/ // // /|_/ /(_-</ __/ _ `/ __/ __/ / _/ // /',
-\ '     |___/___/_/  /_/ /__/\__/\_,_/_/  \__/_/_/ \_, /',
-\ '                                               /___/',
+\ '    _   ________  ___     __           __  _ ___      == Markers ==',
+\ '   | | / /  _/  |/  / __ / /____ _____/ /_(_) _/_ __  b: open in same window',
+\ '   | |/ // // /|_/ /(_-</ __/ _ `/ __/ __/ / _/ // /  s: open in split',
+\ '   |___/___/_/  /_/ /__/\__/\_,_/_/  \__/_/_/ \_, /   v: open in vsplit',
+\ '                                             /___/    t: open in new tab',
 \ '',
 \ ]
 let g:startify_list_order = ['files', 'dir', 'sessions', 'bookmarks']
 let g:startify_bookmarks = [ 
-  \ {'v': '~/dotfiles/dotfiles/vimrc'},
+  \ {'m': '~/dotfiles/dotfiles/vimrc'},
   \ {'z': '~/dotfiles/dotfiles/zshrc'},
   {%@@ if profile == "Oolong" @@%}
   \ {'h': '~/.config/sxhkd/sxhkdrc'},
-  \ {'b': '~/.config/bspwm/bspwmrc'},
-  \ {'s': '~/.config/sublime-text-3/Packages/User/tex.sublime-completions'},
+  \ {'w': '~/.config/bspwm/bspwmrc'},
+  \ {'c': '~/.config/sublime-text-3/Packages/User/tex.sublime-completions'},
   {%@@ endif @@%}
-  \ {'t': '~/dotfiles/dotfiles/tmux.conf'}
+  \ {'x': '~/dotfiles/dotfiles/tmux.conf'}
   \ ]
 let g:startify_update_oldfiles = 1
+let g:startify_lists = [
+      \ { 'type': 'sessions',  'header': [   'Sessions']       },
+      \ { 'type': 'dir',       'header': [   'MRU '. getcwd()] },
+      \ { 'type': 'files',     'header': [   'MRU']            },
+      \ { 'type': 'bookmarks', 'header': [   'Bookmarks']      },
+      \ { 'type': 'commands',  'header': [   'Commands']       },
+      \ ]
 
 " GitGutter
 let g:gitgutter_sign_added='┃'
