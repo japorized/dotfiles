@@ -1,6 +1,6 @@
 #!/bin/bash
 . "$HOME/.cache/wal/colors.sh"
-width="350"
+width="400"
 height="70"
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
 monitor_width="${resolution/x*}"
@@ -15,6 +15,5 @@ Brightness(){
 }
 
 while true; do
-echo -e "%{c}%{F${foreground}}%{B${background}}  \uf185 Brightness: $(Brightness) %{F-}%{B-}" && sleep 1.5 && exit
+echo -e "%{l}%{F${foreground}}%{B${background}}  \uf042 Brightness: $(Brightness) %{F-}%{B-}" && sleep 1.5 && exit
 done | lemonbar -d -g $geometry -f "FontAwesome-18" -B "${background}"
-

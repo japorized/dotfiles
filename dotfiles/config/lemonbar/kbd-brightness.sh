@@ -1,6 +1,6 @@
 #!/bin/bash
 . "$HOME/.cache/wal/colors.sh"
-width="350"
+width="400"
 height="70"
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
 monitor_width="${resolution/x*}"

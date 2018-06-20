@@ -1,6 +1,6 @@
 #!/bin/bash
 . "$HOME/.cache/wal/colors.sh"
-width="350"
+width="400"
 height="70"
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
 monitor_width="${resolution/x*}"
@@ -24,6 +24,6 @@ while true; do
   if [[ $(Status) == "yes" ]] ; then
 echo -e "%{c}%{F${foreground}}%{B${background}}   \uf1f6 %{F-}%{B-}" && sleep 1.5 && exit
   else
-echo -e "%{c}%{F${foreground}}%{B${background}}   \uf028 Volume: $(Volume) %{F-}%{B-}" && sleep 1.5 && exit
+echo -e "%{l}%{F${foreground}}%{B${background}}   \uf028 Volume: $(Volume) %{F-}%{B-}" && sleep 1.5 && exit
   fi
 done | lemonbar -d -g $geometry -f "FontAwesome-18" -B "${background}"

@@ -15,6 +15,11 @@ monitor_height="${resolution#*x}"
 offset_width="$((monitor_width / 2 - width / 2))"
 offset_height="$((monitor_height - height - 10))"
 geometry="${width}x${height}+${offset_width}+${offset_height}"
+
+Curbrightness() {
+  lvl=$(xbacklight -get)
+  echo -n "\uf042   $lvl"
+}
  
 Curvolume() {
   info=$(pulseaudio-ctl full-status)
@@ -69,11 +74,11 @@ CoffeeUp() {
 counter=0
 
 while true; do
-  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curvolume)   |      $(Wifi)   |   \uf109   $(Diskspace) full    \uf0a0   $(Filespace) full    \uf2db   $(Memspace) $(CoffeeUp)"
+  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curbrightness)      $(Curvolume)     |      $(Wifi)   |   \uf109   $(Diskspace) full    \uf0a0   $(Filespace) full    \uf2db   $(Memspace) $(CoffeeUp)"
   sleep 1
   if [[ $counter -ge 5 ]]; then
     exit
   else
     counter=$(($counter + 1))  
   fi
-done | lemonbar -d -g $geometry -f "FontAwesome" -f "Helvetica Neue-9" -B "${background}"
+done | lemonbar -d -g $geometry -f "FontAwesome-10" -f "Helvetica Neue-9" -B "${background}"
