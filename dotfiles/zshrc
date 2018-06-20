@@ -1,6 +1,6 @@
 # For terminals that need an extra command to turn on 256-colors
   {%@@ if profile != "Oolong" @@%}
-  export TERM="xterm-256color"
+  # export TERM="xterm-256color"
   {%@@ else @@%}
   export TERM="xterm-termite"
   (cat $HOME/.cache/wal/sequences &)

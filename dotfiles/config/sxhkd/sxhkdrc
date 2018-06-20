@@ -5,6 +5,7 @@
 # terminal emulator
 super + Return
   termite -e termite-tmux
+  # st -e termite-tmux
 
 shift + super + Return
 	termite
@@ -41,16 +42,16 @@ super + p
   # Context Menu is Menu button for generic keyboards
   # Press ESC to exit mode
 {XF86MonBrightnessUp,Menu : F2}
-  xbacklight -inc 5 -fps 30 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
+  xbacklight -inc 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
 {XF86MonBrightnessDown,Menu : F1}
-  xbacklight -dec 5 -fps 30 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
+  xbacklight -dec 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
 {XF86KbdBrightnessUp,Menu : F6}
-  xbacklight -ctrl smc::kbd_backlight -inc 5 -fps 30 ; ~/.config/lemonbar/kbd-brightness.sh
+  xbacklight -ctrl smc::kbd_backlight -inc 5 ; ~/.config/lemonbar/kbd-brightness.sh
 
 {XF86KbdBrightnessDown,Menu : F5}
-  xbacklight -ctrl smc::kbd_backlight -dec 5 -fps 30 ; ~/.config/lemonbar/kbd-brightness.sh
+  xbacklight -ctrl smc::kbd_backlight -dec 5 ; ~/.config/lemonbar/kbd-brightness.sh
 
 {XF86AudioNext,Menu : F9}
   mpc next

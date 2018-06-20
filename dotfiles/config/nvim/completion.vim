@@ -3,6 +3,9 @@
 au Filetype tex let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '$':'$', '`':"'"}
 let g:AutoPairsMapCR=0
 let g:deoplete#auto_complete_start_length = 1 
+" Do not complete too short words
+call deoplete#custom#source(
+\ 'dictionary', 'min_pattern_length', 2)
 let g:deoplete#enable_at_startup = 1 
 let g:deoplete#enable_smart_case = 1 
 call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])

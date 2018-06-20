@@ -6,7 +6,6 @@ bitwarden-cli
 buku
 buku_run-git
 caffeine-ng
-cli-visualizer
 discord
 ephifonts
 facetimehd-firmware
