@@ -72,7 +72,7 @@ border_color_pressed = #000000 100
 
 #-------------------------------------
 # Panel
-panel_items = PP:PPPPPPPPPFPPPP:S
+panel_items = PP:PPPPPPPPPPFPPPP:S
 panel_size = 85% 60
 panel_margin = 0 0
 panel_padding = 8 4 4
@@ -287,6 +287,23 @@ button_max_icon_size = 0
 #-------------------------------------
 # Button 5
 button = new
+button_text = 
+button_tooltip = Mail
+button_lclick_command = chromium --app=https://outlook.office365.com/owa
+button_rclick_command = chromium --app=https://portal.office.com
+button_mclick_command = 
+button_uwheel_command = 
+button_dwheel_command = 
+button_font = FontAwesome 16
+button_font_color = #ededed 100
+button_padding = 17 0
+button_background_id = 1
+button_centered = 1
+button_max_icon_size = 0
+
+#-------------------------------------
+# Button 6
+button = new
 button_text = 
 button_tooltip = Calcurse
 button_lclick_command = termite -e termite-calcurse
@@ -302,11 +319,11 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
-# Button 6
+# Button 7
 button = new
 button_text = 
 button_tooltip = Simplenote
-button_lclick_command = termite -e termite-vim-simplenote
+button_lclick_command = st -e termite-vim-simplenote
 button_rclick_command = surf https://app.simplenote.com
 button_mclick_command = firefox https://app.simplenote.com
 button_uwheel_command = 
@@ -319,7 +336,7 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
-# Button 7
+# Button 8
 button = new
 button_text = 
 button_tooltip = ncmpcpp
@@ -336,7 +353,7 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
-# Button 8
+# Button 9
 button = new
 button_text = 
 button_tooltip = Firefox
@@ -353,7 +370,7 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
-# Button 9
+# Button 10
 button = new
 button_text = 
 button_tooltip = Steam
@@ -370,7 +387,7 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
-# Button 10
+# Button 11
 button = new
 button_text = 
 button_tooltip = Telegram
@@ -387,7 +404,7 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
-# Button 11
+# Button 12
 button = new
 button_text = 
 button_tooltip = Gitlab
@@ -404,7 +421,7 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
-# Button 12
+# Button 13
 button = new
 button_text = 
 button_tooltip = mpc prev
@@ -421,7 +438,7 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
-# Button 13
+# Button 14
 button = new
 button_text = 
 button_tooltip = mpc toggle
@@ -438,7 +455,7 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
-# Button 14
+# Button 15
 button = new
 button_text = 
 button_tooltip = mpc next
@@ -455,7 +472,7 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
-# Button 15
+# Button 16
 button = new
 button_text = 
 button_tooltip = mpc random

@@ -1,6 +1,46 @@
 #!/usr/bin/env dash
 
-~/.config/lemonbar/datetime.sh &
-~/.config/lemonbar/battery.sh &
-~/.config/lemonbar/nowplaying.sh &
-~/.config/lemonbar/bspwm-indicator.sh
+USAGE() {
+  echo "usage: indicators [OPTION]
+
+OPTIONS:
+  <no option>          Show all usual indicators
+  --help, -h           Show this help message
+  --noNowPlaying, -n   Do not show Now Playing lemonbar
+  --noTimeNBat, -t     Do not show Time and Battery lemonbar"
+}
+
+if [ "$1" = '--help' ] || [ "$1" = '-h' ]
+then
+  USAGE
+  exit 0
+fi
+
+param1=$1
+param2=$2
+
+# Defaults
+showNowPlaying=1
+showTimeBat=1
+
+if [ "$param1" = '-n' ] || [ "$param1" = '--noNowPlaying' ] || [ "$param2" = '-n' ] || [ "$param2" = '--noNowPlaying' ]
+then
+  showNowPlaying=0
+fi
+
+if [ "$param1" = "-t" ] || [ "$param1" = '--noTimeNBat' ] || [ "$param2" = "-t" ] || [ "$param2" = '--noTimeNBat' ]
+then
+  showTimeBat=0
+fi
+
+if [ "$showTimeBat" = "1" ]
+then
+  ~/.config/lemonbar/datetime.sh &
+  ~/.config/lemonbar/battery.sh &
+fi
+if [ "$showNowPlaying" = "1" ]
+then
+  ~/.config/lemonbar/nowplaying.sh &
+fi
+~/.config/lemonbar/activeapp.sh &
+~/.config/lemonbar/bspwm-indicator.sh &

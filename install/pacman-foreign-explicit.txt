@@ -27,6 +27,8 @@ mpdscribble
 nlohmann-json
 oomox-git
 otf-font-awesome-4
+pcloud-drive
+pcmciautils
 pdftk-bin
 pulseaudio-ctl
 python-ewmh

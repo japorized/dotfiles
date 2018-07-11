@@ -4,11 +4,12 @@
 
 # terminal emulator
 super + Return
-  termite -e termite-tmux
-  # st -e termite-tmux
+  st -e termite-tmux
+  # termite -e termite-tmux
 
 shift + super + Return
-	termite
+  st
+	# termite
 
 # program launcher
 alt + space

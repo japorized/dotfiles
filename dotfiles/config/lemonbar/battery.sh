@@ -33,5 +33,5 @@ Battery() {
 
 while true; do
     echo -e "%{c}%{F${foreground}}%{B${background}} $(Battery) %{F-}%{B-}"
-    sleep 0.1
+    sleep 1
 done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -B "${background}"

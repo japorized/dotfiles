@@ -142,7 +142,6 @@ pacman-contrib
 patch
 pavucontrol
 pciutils
-pcmciautils
 perl
 pkgconf
 pkgfile
@@ -192,6 +191,7 @@ terminus-font
 termite
 texinfo
 thunar
+thunar-archive-plugin
 thunar-volman
 timidity++
 tint2
@@ -222,6 +222,7 @@ winetricks
 wireless_tools
 wpa_actiond
 wqy-zenhei
+xarchiver
 xclip
 xdm-archlinux
 xdo
@@ -277,7 +278,6 @@ xz
 youtube-dl
 zathura
 zathura-pdf-poppler
-zd1211-firmware
 zip
 zsh
 zsh-syntax-highlighting
