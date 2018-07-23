@@ -26,3 +26,7 @@ bspc subscribe node_manage | while read -a msg ; do
    wid=${msg[3]}
    [ "$FLOATING_DESKTOP_ID" = "$desk_id" ] && bspc node "$wid" -t floating
 done
+
+# starting some applications
+tint2 &
+~/.config/bspwm/indicators &

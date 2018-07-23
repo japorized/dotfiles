@@ -81,6 +81,9 @@ dotfiles:
   f_rofi_config:
     dst: ~/.config/rofi/config
     src: config/rofi/config
+  f_scimrc:
+    dst: ~/.config/scimrc
+    src: config/scimrc
   f_sxhkdrc:
     dst: ~/.config/sxhkd/sxhkdrc
     src: config/sxhkd/sxhkdrc
@@ -157,6 +160,7 @@ profiles:
     - f_zathurarc
     - f_tint2rc
     - f_dunstrc
+    - f_scimrc
   WinCrap:
     dotfiles:
     - f_vimrc

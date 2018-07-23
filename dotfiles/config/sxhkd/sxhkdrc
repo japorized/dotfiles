@@ -45,8 +45,14 @@ super + p
 {XF86MonBrightnessUp,Menu : F2}
   xbacklight -inc 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
+shift + XF86MonBrightnessUp
+  xbacklight -inc 15 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
+
 {XF86MonBrightnessDown,Menu : F1}
   xbacklight -dec 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
+
+shift + XF86MonBrightnessDown
+  xbacklight -dec 15 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
 {XF86KbdBrightnessUp,Menu : F6}
   xbacklight -ctrl smc::kbd_backlight -inc 5 ; ~/.config/lemonbar/kbd-brightness.sh

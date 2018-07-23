@@ -25,8 +25,8 @@ See also: [`japorized/bin`](https://github.com/japorized/bin)
 * WM: [ bspwm ](https://github.com/baskerville/bspwm)
 * Hotkey daemon: [ sxhkd ](https://github.com/baskerville/sxhkd)
 * Bar: [ lemonbar-xft ](https://github.com/krypt-n/bar) (inspiration from [here](https://www.reddit.com/r/unixporn/comments/6g5vx0/windowchef_comfy/))
-* Terminal: [ termite ](https://github.com/thestinger/termite/)
-* AUR Package Manager: cower
+* Terminal: [ st ](https://suckless.org), [ termite ](https://github.com/thestinger/termite/)
+* AUR Package Manager: auracle
 * Color scheme: [pywal](https://github.com/dylanaraps/pywal)
 
 ### macOS (secondary system)
@@ -49,8 +49,8 @@ See also: [`japorized/bin`](https://github.com/japorized/bin)
 Here's a list of my commonly used applications:
 
 * Shell: zsh
-* Text Editors: **vim**, Sublime Text
-* Browser: **FF**, qutebrowser
+* Text Editors: **nvim**, Sublime Text
+* Browser: **FF**, qutebrowser, surf
 * Music: mpd + mpc + ncmpcpp
 * Image/Graphics Editing: **Affinity Designer**, Gravit (learning), GIMP (learning; replacing Photoshop)
 * Documents: **LaTeX** (not a pro but I can get by)
@@ -101,7 +101,7 @@ zsh as the default shell, with [oh-my-zsh](https://github.com/robbyrussell/oh-my
   
 ### antergos-base
 
-Since I use [cower](https://aur.archlinux.org/packages/cower/), and I did not manually track packages that I have installed via it, 
+Since I use [auracle](https://aur.archlinux.org/packages/auracle-git/), and I did not manually track packages that I have installed via it, 
 they are, unfortunately, mixed into the list that I have (or shall) generated using [pacman](https://wiki.archlinux.org/index.php/Pacman). 
 Please install packages via pacman as you would normally do, and just cherry-pick those that throws errors, and then install them via 
 your favorite AUR package manager.
