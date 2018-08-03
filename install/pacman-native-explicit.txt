@@ -203,6 +203,7 @@ ttf-inconsolata
 ttf-liberation
 ttf-roboto
 tumbler
+unclutter
 unrar
 unzip
 usb_modeswitch

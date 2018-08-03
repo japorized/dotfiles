@@ -6,6 +6,7 @@ bitwarden-cli
 buku
 buku_run-git
 caffeine-ng
+cava
 discord
 ephifonts
 facetimehd-firmware
@@ -17,6 +18,7 @@ libc++abi
 libc++experimental
 libgcj17-bin
 libinput-gestures
+libxlsxwriter
 lxdm-themes
 mbpfan-git
 megacmd-bin
@@ -50,3 +52,4 @@ ttf-roboto-mono
 ttf-symbola
 waterfox-bin
 websockify
+xbanish-git

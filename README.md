@@ -25,7 +25,7 @@ See also: [`japorized/bin`](https://github.com/japorized/bin)
 * WM: [ bspwm ](https://github.com/baskerville/bspwm)
 * Hotkey daemon: [ sxhkd ](https://github.com/baskerville/sxhkd)
 * Bar: [ lemonbar-xft ](https://github.com/krypt-n/bar) (inspiration from [here](https://www.reddit.com/r/unixporn/comments/6g5vx0/windowchef_comfy/))
-* Terminal: [ st ](https://suckless.org), [ termite ](https://github.com/thestinger/termite/)
+* Terminal: [ st ](https://suckless.org), [ termite ](https://github.com/thestinger/termite/), urxvt
 * AUR Package Manager: auracle
 * Color scheme: [pywal](https://github.com/dylanaraps/pywal)
 
