@@ -11,6 +11,7 @@ discord
 ephifonts
 facetimehd-firmware
 fcitx-mozc-ut2
+gamehub
 icdiff
 lemonbar-xft-git
 libc++
@@ -29,6 +30,7 @@ mpdscribble
 nlohmann-json
 oomox-git
 otf-font-awesome-4
+pandoc-citeproc-bin
 pcloud-drive
 pcmciautils
 pdftk-bin

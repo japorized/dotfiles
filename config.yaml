@@ -102,6 +102,15 @@ dotfiles:
   f_w3m_config:
     dst: ~/.w3m/config
     src: w3m/config
+  f_xinitrc:
+    dst: ~/.xinitrc
+    src: xinitrc
+  f_xprofile:
+    dst: ~/.xprofile
+    src: xprofile
+  f_xserverrc:
+    dst: ~/.xserverrc
+    src: xserverrc
   f_zathurarc:
     dst: ~/.config/zathura/zathurarc
     src: config/zathura/zathurarc
@@ -161,6 +170,9 @@ profiles:
     - f_tint2rc
     - f_dunstrc
     - f_scimrc
+    - f_xinitrc
+    - f_xserverrc
+    - f_xprofile
   WinCrap:
     dotfiles:
     - f_vimrc

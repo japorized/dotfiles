@@ -68,6 +68,7 @@ gawk
 gcc
 gcc-libs
 gettext
+ghc
 gifsicle
 gimp
 git
@@ -139,6 +140,7 @@ otf-ipafont
 p7zip
 pacman
 pacman-contrib
+pandoc
 patch
 pavucontrol
 pciutils
@@ -161,6 +163,7 @@ python-pyqt5
 python-setuptools
 python2-neovim
 qutebrowser
+r
 raw-thumbnailer
 redshift
 reflector
@@ -178,6 +181,7 @@ shadow
 sharutils
 soundfont-fluid
 splix
+stack
 steam
 sublime-text
 subversion
