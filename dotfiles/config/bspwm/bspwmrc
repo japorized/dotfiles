@@ -28,5 +28,5 @@ bspc subscribe node_manage | while read -a msg ; do
 done
 
 # starting some applications
-tint2 &
 ~/.config/bspwm/indicators &
+tint2 &

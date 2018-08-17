@@ -1,7 +1,7 @@
 # Japorized does Dotfiles
 Opinionated configurations for this relatively new and under-educated power user
 
-See also: [`japorized/bin`](https://github.com/japorized/bin)
+See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 
 ---
 
@@ -69,7 +69,7 @@ Check out the tool at https://github.com/deadc0de6/dotdrop.
 
 **Note:** If you are on a completely new machine that does not have pip3 (or pip) do install python using your package manager first.
 
-1. `git clone --recursive https://github.com/japorized/dotfiles ~/dotfiles`
+1. `git clone --recursive https://gitlab.com/japorized/dotfiles ~/dotfiles`
 2. If your system does not have the dependencies for Dotdrop, do
   ```shell
   cd ~/dotfiles
@@ -124,4 +124,4 @@ With WSL now being a thing, I find it necessary to put this down (to remind myse
 
 ### Possibly Relevant Links
 
-1. [Why did you switch to Antergos/Arch Linux?](https://japorized.github.io/technical/2018/02/27/making-the-move-to-linux.html)
+1. [Why did you switch to Antergos/Arch Linux?](https://japorized.gitlab.io/technical/2018/02/27/making-the-move-to-linux.html)

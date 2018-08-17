@@ -75,6 +75,12 @@ shift + XF86MonBrightnessDown
 {XF86AudioLowerVolume,Menu : F11}
   pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -2% && ~/.config/lemonbar/vol.sh
 
+shift + XF86AudioRaiseVolume
+  pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +10% && ~/.config/lemonbar/vol.sh
+
+shift + XF86AudioLowerVolume
+  pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -10% && ~/.config/lemonbar/vol.sh
+
 {XF86AudioMute,Menu : F10}
   sh -c "pactl set-sink-mute 0 toggle ; ~/.config/lemonbar/vol.sh"
 
