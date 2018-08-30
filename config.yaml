@@ -132,6 +132,7 @@ profiles:
     - f_mpd.conf
     - d_hammerspoon
     - d_snippets
+    - d_mysnippets
     - f_functions
     - d_chunkwm
     - f_khdrc

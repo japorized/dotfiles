@@ -20,7 +20,6 @@ libc++experimental
 libgcj17-bin
 libinput-gestures
 libxlsxwriter
-lxdm-themes
 mbpfan-git
 megacmd-bin
 menu-calc
@@ -36,7 +35,6 @@ pcmciautils
 pdftk-bin
 pulseaudio-ctl
 python-ewmh
-radiotray-ng
 retroarch-autoconfig-udev
 rover
 rxvt-unicode-pixbuf
@@ -52,6 +50,7 @@ ttf-font-awesome-4
 ttf-impallari-cabin-font
 ttf-roboto-mono
 ttf-symbola
+vala-panel-appmenu-translations-git
+vala-panel-appmenu-xfce-git
 waterfox-bin
-websockify
 xbanish-git

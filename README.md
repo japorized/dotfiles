@@ -7,13 +7,13 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 
 ## Screenshots
 
-### macOS
-
-![macOS scrot](/screenshots/macos-2018jan22.png?raw=true "macOS Screenshot")
-
 ### Antergos (base installation)
 
 ![antergos-base scrot](/screenshots/antergos-base.png?raw=true "antergos-base")
+
+### macOS
+
+![macOS scrot](/screenshots/macos-2018jan22.png?raw=true "macOS Screenshot")
 
 ---
 
@@ -37,11 +37,6 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 * Utility Bar: [ Übersicht ](http://tracesof.net/uebersicht/) with customized [ nerdbar ](https://github.com/apierz/nerdbar.widget)
 * Package Manager: [ Homebrew ](https://brew.sh)
 
-### Windows 10 WSL (pluggable and disposable system :P)
-
-* WM: [ i3-gaps ](https://github.com/Airblader/i3)
-* Terminal: termite
-
 ---
 
 ## Applications
@@ -57,7 +52,7 @@ Here's a list of my commonly used applications:
 
 ---
 
-## Dotfile Manager
+## Dotfiles Manager
 
 I use Dotdrop to manage my dotfiles across different machines.
 
@@ -109,16 +104,6 @@ your favorite AUR package manager.
 <sub><sup>Although, if you're not me and using Arch, you wouldn't want my dotfiles anyway :P</sup></sub>
 
 ### Ubuntu (or Windows)
-
-With WSL now being a thing, I find it necessary to put this down (to remind myself how to get things running on WSL).
-
-##### This section is still in the works
-
-#### Enable WSL
-
-1. `Settings > Updates > Developer > Enable Developer Mode`
-2. `Start > Enable Windows Features > [Tick] Windows Subsystem for Linux (Ubuntu)`
-3. Restart machine
 
 ---
 

@@ -14,6 +14,7 @@ chunkc core::plugin_dir ~/.config/chunkwm/plugins
 
 chunkc core::hotload 1
 # chunkc core::log_level debug
+chunkc core::log_file /tmp/chunkwm.log
 
 #
 # NOTE: the following are config variables for the chunkwm-tiling plugin.
@@ -110,5 +111,6 @@ chunkc core::load ffm.so
 #       to pass value containing a whitespace.
 #
 
-chunkc tiling::rule --owner Finder --name Copy --state float
-chunkc tiling::rule --owner \"App Store\" --state float
+chunkc tiling::rule --owner Finder --name Copy --state float &
+chunkc tiling::rule --owner \"App Store\" --state float &
+chunkc tiling::rule --owner Electron --state float &

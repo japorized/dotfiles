@@ -34,10 +34,12 @@ keymap r RELOAD
 ### Navigation
 keymap o GOTO
 keymap O TAB_GOTO
-keymap f MOVE_LIST_MENU
-keymap F LIST_MENU
-keymap C-d NEXT_PAGE
-keymap C-u PREV_PAGE
+keymap f LIST_MENU
+keymap F LIST
+keymap C-f NEXT_PAGE
+keymap C-b PREV_PAGE
+keymap C-d NEXT_HALF_PAGE
+keymap C-u PREV_HALF_PAGE
 keymap gg BEGIN
 keymap G END
 keymap 0 LINE_BEGIN

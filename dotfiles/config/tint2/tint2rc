@@ -72,7 +72,7 @@ border_color_pressed = #000000 100
 
 #-------------------------------------
 # Panel
-panel_items = PP:PPPPPPPPPPFPPPP:S
+panel_items = PP:PPPPPPPPPPFPPPPPP:S
 panel_size = 85% 60
 panel_margin = 0 0
 panel_padding = 8 4 4
@@ -238,7 +238,7 @@ button_max_icon_size = 0
 button = new
 button_text = 
 button_tooltip = Search (DuckduckGo)
-button_lclick_command = duck
+button_lclick_command = /home/japorized/.bin/duck
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 
@@ -254,8 +254,8 @@ button_max_icon_size = 0
 # Button 3
 button = new
 button_text = 
-button_tooltip = Termite
-button_lclick_command = termite
+button_tooltip = st
+button_lclick_command = /home/japorized/.bin/st -e /home/japorized/.bin/wal-tmux
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 
@@ -290,7 +290,7 @@ button = new
 button_text = 
 button_tooltip = Mail
 button_lclick_command = chromium --app=https://outlook.office365.com/owa
-button_rclick_command = chromium --app=https://portal.office.com
+button_rclick_command = chromium --app=https://mail.live.com
 button_mclick_command = 
 button_uwheel_command = 
 button_dwheel_command = 
@@ -306,7 +306,7 @@ button_max_icon_size = 0
 button = new
 button_text = 
 button_tooltip = Calcurse
-button_lclick_command = termite -e termite-calcurse
+button_lclick_command = /home/japorized/.bin/st -e /home/japorized/.bin/wal-calcurse
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 
@@ -323,8 +323,8 @@ button_max_icon_size = 0
 button = new
 button_text = 
 button_tooltip = Simplenote
-button_lclick_command = st -e termite-vim-simplenote
-button_rclick_command = surf https://app.simplenote.com
+button_lclick_command = /home/japorized/.bin/st -e /home/japorized/.bin/wal-vim-simplenote
+button_rclick_command = /home/japorized/.bin/surf https://app.simplenote.com
 button_mclick_command = firefox https://app.simplenote.com
 button_uwheel_command = 
 button_dwheel_command = 
@@ -340,7 +340,7 @@ button_max_icon_size = 0
 button = new
 button_text = 
 button_tooltip = ncmpcpp
-button_lclick_command = urxvt -e urxvt-ncmpcpp
+button_lclick_command = urxvt -e /home/japorized/.bin/urxvt-ncmpcpp
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 
@@ -391,7 +391,7 @@ button_max_icon_size = 0
 button = new
 button_text = 
 button_tooltip = Telegram
-button_lclick_command = surf web.telegram.org
+button_lclick_command = /home/japorized/.bin/surf web.telegram.org
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 
@@ -470,13 +470,47 @@ button_padding = 17 0
 button_background_id = 1
 button_centered = 1
 button_max_icon_size = 0
-
+#
 #-------------------------------------
 # Button 16
+button = new
+button_text = 
+button_tooltip = mpc repeat
+button_lclick_command = mpc repeat
+button_rclick_command = 
+button_mclick_command = 
+button_uwheel_command = 
+button_dwheel_command = 
+button_font = FontAwesome 16
+button_font_color = #ededed 100
+button_padding = 17 0
+button_background_id = 1
+button_centered = 1
+button_max_icon_size = 0
+
+#-------------------------------------
+# Button 17
 button = new
 button_text = 
 button_tooltip = mpc random
 button_lclick_command = mpc random
+button_rclick_command = 
+button_mclick_command = 
+button_uwheel_command = 
+button_dwheel_command = 
+button_font = FontAwesome 16
+button_font_color = #ededed 100
+button_padding = 17 0
+button_background_id = 1
+button_centered = 1
+button_max_icon_size = 0
+
+#-------------------------------------
+# Button 18
+button = new
+button_text = 
+button_tooltip = mpc single
+button_lclick_command = mpc single
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 

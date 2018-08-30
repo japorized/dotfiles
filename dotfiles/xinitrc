@@ -33,10 +33,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # Display env
-systemctl --user import-environment PATH
 systemctl --user import-environment DISPLAY
-systemctl --user import-environment CONFIG
-systemctl --user import-environment BROWSER
 
 # Sourcing xprofile
 [ -f /etc/xprofile ] && . /etc/xprofile
@@ -44,15 +41,3 @@ systemctl --user import-environment BROWSER
 
 xset r rate 270 30
 xset dpms 0 0 1800
-
-# starting programs
-fcitx &
-sxhkd &
-~/.fehbg &
-xbanish -i shift -i mod1 -i mod4 -i control &
-wal -R &
-xss-lock -n /usr/share/doc/xss-lock/dim-screen.sh -- slock &
-libinput-gestures-setup start &
-systemctl --user restart dropbox.service &
-pcloud &
-exec bspwm

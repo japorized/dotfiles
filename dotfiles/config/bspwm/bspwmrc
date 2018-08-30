@@ -17,6 +17,7 @@ bspc rule -a Sublime_text desktop='^3'
 bspc rule -a retroarch desktop='^7'
 bspc rule -a feh state floating
 bspc rule -a tint2 manage=off
+bspc rule -a Oblogout focus=on manage=off
 
 # Set Desktop 4 to start with floating windows
 FLOATING_DESKTOP_ID=$(bspc query -D -d '^4')
@@ -27,6 +28,15 @@ bspc subscribe node_manage | while read -a msg ; do
    [ "$FLOATING_DESKTOP_ID" = "$desk_id" ] && bspc node "$wid" -t floating
 done
 
-# starting some applications
+# starting applications
 ~/.config/bspwm/indicators &
+fcitx &
+sxhkd &
+~/.fehbg &
+xbanish -i shift -i mod1 -i mod4 -i control &
+wal -R &
+xss-lock -n /usr/share/doc/xss-lock/dim-screen.sh -- slock &
+libinput-gestures-setup start &
+pcloud &
 tint2 &
+compton -b

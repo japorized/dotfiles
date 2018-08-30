@@ -4,12 +4,10 @@
 
 # terminal emulator
 super + Return
-  st -e termite-tmux
-  # termite -e termite-tmux
+  st -e wal-tmux
 
 shift + super + Return
   st
-	# termite
 
 # program launcher
 alt + space
@@ -18,8 +16,8 @@ alt + space
 super + grave
   rofi -show window
 
-@ctrl + super + alt + {f,s}
-  {firefox,subl}
+@ctrl + super + alt + {f,s,t}
+  {firefox,subl,thunar}
 
 # status display
 super + i
@@ -38,6 +36,9 @@ super + p
 # emoji-keyboard
 @alt + super + e
   rofimoji
+
+XF86PowerOff
+	oblogout
 
 # XF86 Keys & Context Menu key as modal key for multimedia-key emulation
   # Context Menu is Menu button for generic keyboards

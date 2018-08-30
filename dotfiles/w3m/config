@@ -75,10 +75,10 @@ index_file
 mime_types ~/.mime.types, /usr/local/Cellar/w3m/0.5.3/etc/mime.types
 mailcap ~/.w3m/mailcap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/mailcap
 urimethodmap ~/.w3m/urimethodmap, /usr/local/Cellar/w3m/0.5.3/etc/w3m/urimethodmap
-editor /usr/bin/vim
+editor /usr/bin/nvim
 mailto_options 1
 mailer 
-extbrowser /usr/bin/mozilla
+extbrowser /usr/bin/firefox
 extbrowser2 /usr/bin/qutebrowser
 extbrowser3 
 extbrowser4 

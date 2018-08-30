@@ -16,22 +16,15 @@
 # Env
   source $HOME/.aliases
   source $HOME/.functions
+  export EDITOR=$(which nvim)
   {%@@ if profile == "Earl-Grey.local" @@%}
   source $HOME/.exports
-  export EDITOR=/usr/local/bin/vim
-  {%@@ elif profile == "Oolong" @@%}
-  export EDITOR=$(which nvim)
-  {%@@ else @@%}
-  export EDITOR=$(which vim)
   {%@@ endif @@%}
   export LANG=en_US.UTF-8
   # export LANG=ja_JP.UTF-8
   {%@@ if profile == "Earl-Grey.local" @@%}
-  export CONFIG='$HOME/.config'
   export DEFAULT_CHEAT_DIR='$HOME/.cheat/'
   export CHEATCOLORS=true
-  {%@@ elif profile == "WinCrap" @@%}
-  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   {%@@ endif @@%}
   export CONFIG=$HOME/.config
 
@@ -62,25 +55,16 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-{%@@ if profile == "Earl-Grey.local" @@%}
-plugins=(git osx thefuck)
-
-# User configuration
-POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="powerlevel9k/powerlevel9k"
-{%@@ elif profile == "Oolong" @@%}
 plugins=(git)
 ZSH_THEME=""
 
+{%@@ if profile == "Earl-Grey.local" @@%}
+source $HOME/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{%@@ else @@%}
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-{%@@ elif profile == "WinCrap" @@%}
-ZSH_THEME="wedisagree"
-plugins=(git)
-
 {%@@ endif @@%}
+
 source $ZSH/oh-my-zsh.sh
-{%@@ if profile == "Oolong" @@%}
 autoload -U promptinit; promptinit
 PURE_CMD_MAX_EXEC_TIME=10
 # PURE_PROMPT_SYMBOL=λ
@@ -90,7 +74,6 @@ PURE_GIT_UP_ARROW=⇡
 prompt pure
 prompt_newline='%666v'
 PROMPT=' %(?.%F{magenta}λ.%F{red}↯)%f '
-{%@@ endif @@%}
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -102,51 +85,4 @@ typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]='fg=magenta'
-{%@@ if profile == "Earl-Grey.local" @@%}
-source $HOME/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-{%@@ endif @@%}
-
-{%@@ if profile == "Earl-Grey.local" @@%}
-##############################
-# Powerline9k Configs
-##############################
-
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs)
-
-# Powerline 9k Prompts
-POWERLEVEL9K_OS_ICON='\uf179'
-POWERLEVEL9K_OS_ICON_BACKGROUND='237'
-POWERLEVEL9K_OS_ICON_FOREGROUND='255'
-POWERLEVEL9K_DIR_HOME_BACKGROUND='57'
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='33'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='99'
-POWERLEVEL9K_DIR_HOME_FOREGROUND='255'
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='0'
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_unique"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='0'
-POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M:%S \uf073 %m-%d}"
-
-# Powerline9k Battery Configs
-POWERLEVEL9K_BATTERY_ICON='\uf240 '
-POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND='82'
-POWERLEVEL9K_BATTERY_CHARGING_FOREGROUND='black'
-POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND='39'
-POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND='black'
-POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND='237'
-POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND='250'
-POWERLEVEL9K_BATTERY_LOW_THRESHOLD='25'
-POWERLEVEL9K_BATTERY_LOW_FOREGROUND='black'
-POWERLEVEL9K_BATTERY_LOW_BACKGROUND='197'
-POWERLEVEL9K_BATTERY_VERBOSE=false
-
-# Powerline9k Internet Signal
-POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL="zsh_internet_signal"
-POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL_BACKGROUND="237"
-POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL_FOREGROUND="250"
-
-source $HOME/.config/zsh/powerline.zsh
-{%@@ endif @@%}
-
 eval $(thefuck --alias)
