@@ -1,6 +1,5 @@
 " General Configurations
 if !has('nvim')
-  set nocompatible
   set backspace=indent,eol,start
   set belloff=all   " Silence terminal bell
   set fillchars+=|
@@ -9,6 +8,7 @@ if !has('nvim')
   set ruler
 endif
 
+set nocompatible
 filetype plugin on
 syntax on
 set background=dark
@@ -27,6 +27,9 @@ set smartcase     " Override 'ignorecase' if search has uppercase
 set softtabstop=2 " Number of tabs that a <Tab> counts for
 set tabstop=2     " The number of spaces that a <Tab> counts for
 set t_Co=256
+set timeoutlen=200
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 if has("autocmd")
   if !has('nvim')
@@ -60,6 +63,7 @@ endif
 
 " netrw Configs
 nmap <F1> :Vexplore<cr>
+autocmd FileType netrw nnoremap q :q<CR>
 let g:netrw_liststyle=3    " Tree view
 let g:netrw_banner=0       " Hide Banner by default, use I to toggle
 let g:netrw_browse_split=3 " Opens new file in a new tab
@@ -97,12 +101,10 @@ autocmd Filetype tex setl updatetime=1000
 {%@@ if profile == "Earl-Grey.local" @@%}
 let g:livepreview_previewer = 'open -a Skim'
 {%@@ elif profile == "Oolong" @@%}
-" let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_general_viewer = '/home/japorized/.bin/tabbed-zathura'
 let g:livepreview_previewer = '/usr/bin/zathura'
 {%@@ endif @@%}
 
-{%@@ if profile != "WinCrap" @@%}
 " Goyo
 nmap <F3> :Goyo<cr>
 let s:save_option = {}
@@ -157,7 +159,6 @@ let g:limelight_eop = '\ze\n^\s'
   " Highlighting priority (default: 10)
   " Set it to -1 not to overrule hlsearch
 let g:limelight_priority = -1
-{%@@ endif @@%}
 
 " Lightline
 " Style credits: https://github.com/xero/dotfiles
@@ -219,39 +220,6 @@ if ! has('gui_running')
     augroup END
 endif
 
-" Startify configs
-if has("autocmd")
-  autocmd User Startified setlocal cursorline
-endif
-let g:startify_custom_header = [
-\ '',
-\ '    _   ________  ___     __           __  _ ___      == Markers ==',
-\ '   | | / /  _/  |/  / __ / /____ _____/ /_(_) _/_ __  b: open in same window',
-\ '   | |/ // // /|_/ /(_-</ __/ _ `/ __/ __/ / _/ // /  s: open in split',
-\ '   |___/___/_/  /_/ /__/\__/\_,_/_/  \__/_/_/ \_, /   v: open in vsplit',
-\ '                                             /___/    t: open in new tab',
-\ '',
-\ ]
-let g:startify_list_order = ['files', 'dir', 'sessions', 'bookmarks']
-let g:startify_bookmarks = [ 
-  \ {'m': '~/dotfiles/dotfiles/vimrc'},
-  \ {'z': '~/dotfiles/dotfiles/zshrc'},
-  {%@@ if profile == "Oolong" @@%}
-  \ {'h': '~/.config/sxhkd/sxhkdrc'},
-  \ {'w': '~/.config/bspwm/bspwmrc'},
-  \ {'c': '~/.config/sublime-text-3/Packages/User/tex.sublime-completions'},
-  {%@@ endif @@%}
-  \ {'x': '~/dotfiles/dotfiles/tmux.conf'}
-  \ ]
-let g:startify_update_oldfiles = 1
-let g:startify_lists = [
-      \ { 'type': 'sessions',  'header': [   'Sessions']       },
-      \ { 'type': 'dir',       'header': [   'MRU '. getcwd()] },
-      \ { 'type': 'files',     'header': [   'MRU']            },
-      \ { 'type': 'bookmarks', 'header': [   'Bookmarks']      },
-      \ { 'type': 'commands',  'header': [   'Commands']       },
-      \ ]
-
 " GitGutter
 let g:gitgutter_sign_added='┃'
 let g:gitgutter_sign_modified='┃'
@@ -260,14 +228,17 @@ let g:gitgutter_sign_removed_first_line='◥'
 let g:gitgutter_sign_modified_removed='◢'
 
 " Indent Guides
-nmap <Leader>il :IndentLinesToggle<cr>
 let g:indentLine_enabled = 0
 let g:indentLine_char = '┃'
 
-" command-t
-let g:CommandTSuppressMaxFilesWarning=1
-let g:CommandTFileScanner='find'
-let g:CommandTAlwaysShowDotFiles =1
-let g:CommandTAcceptSelectionCommand='CommandTOpen tabe'
+" vim-multiple-cursors
+let g:multi_cursor_exit_from_insert_mode=0
+
+autocmd VimEnter *
+  \   if !argc()
+  \ |   Startify
+  \ |   Vexplore
+  \ |   wincmd w
+  \ | endif
 
 source /home/japorized/.vim/simplenoterc

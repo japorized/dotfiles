@@ -28,6 +28,10 @@ calcurse
 castget
 chromium
 cifs-utils
+claws-mail
+claws-mail-themes
+clawsker
+compton
 coreutils
 crda
 cronie
@@ -73,6 +77,7 @@ ghc
 gifsicle
 gimp
 git
+glade
 glibc
 gnuplot
 goldendict
@@ -86,6 +91,8 @@ gvfs
 gvfs-afc
 gvim
 gzip
+haskell-gtk
+haskell-gtk2hs-buildtools
 haveged
 hplip
 htop
@@ -128,6 +135,7 @@ mpd
 mpg123
 mps-youtube
 mpv
+muparser
 nano
 ncdu
 ncmpcpp
@@ -140,6 +148,7 @@ nodejs
 noto-fonts-cjk
 npm
 ntfs-3g
+oblogout
 obs-studio
 openssh
 orage
@@ -207,9 +216,6 @@ thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
-thunderbird
-thunderbird-i18n-ja
-thunderbird-i18n-zh-cn
 timidity++
 tint2
 tlp

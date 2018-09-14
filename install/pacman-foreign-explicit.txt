@@ -3,6 +3,7 @@ auracle-git
 bash-pipes
 bcwc-pcie-git
 bitwarden-cli
+browsh-bin
 buku
 buku_run-git
 caffeine-ng
@@ -12,6 +13,8 @@ ephifonts
 facetimehd-firmware
 fcitx-mozc-ut2
 gamehub
+ghostwriter
+goodvibes
 icdiff
 lemonbar-xft-git
 libc++
@@ -30,7 +33,6 @@ nlohmann-json
 oomox-git
 otf-font-awesome-4
 pandoc-citeproc-bin
-pcloud-drive
 pcmciautils
 pdftk-bin
 pulseaudio-ctl
@@ -53,4 +55,5 @@ ttf-symbola
 vala-panel-appmenu-translations-git
 vala-panel-appmenu-xfce-git
 waterfox-bin
+wavebox-bin
 xbanish-git
