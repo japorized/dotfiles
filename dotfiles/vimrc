@@ -94,7 +94,6 @@ let g:indentLine_char='|'
 
 " Tex configs
 let g:tex_flavor = 'latex'
-nmap <F12> :VimtexCompile<cr>
 let g:tex_conceal=""
 let g:vimtex_fold_enabled=1
 autocmd Filetype tex setl updatetime=1000
@@ -241,4 +240,4 @@ autocmd VimEnter *
   \ |   wincmd w
   \ | endif
 
-source /home/japorized/.vim/simplenoterc
+source $HOME/.vim/simplenoterc

@@ -1,7 +1,6 @@
 acpilight
 auracle-git
 bash-pipes
-bcwc-pcie-git
 bitwarden-cli
 browsh-bin
 buku
@@ -13,8 +12,8 @@ ephifonts
 facetimehd-firmware
 fcitx-mozc-ut2
 gamehub
-ghostwriter
 goodvibes
+hfsprogs
 icdiff
 lemonbar-xft-git
 libc++
@@ -54,6 +53,4 @@ ttf-roboto-mono
 ttf-symbola
 vala-panel-appmenu-translations-git
 vala-panel-appmenu-xfce-git
-waterfox-bin
-wavebox-bin
 xbanish-git

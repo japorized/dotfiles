@@ -94,6 +94,7 @@ gzip
 haskell-gtk
 haskell-gtk2hs-buildtools
 haveged
+hledger
 hplip
 htop
 id3v2
@@ -119,6 +120,7 @@ licenses
 linux
 linux-headers
 logrotate
+lsof
 lvm2
 lxappearance
 lxdm-gtk3
@@ -144,6 +146,7 @@ neovim
 netctl
 nfs-utils
 nilfs-utils
+nmap
 nodejs
 noto-fonts-cjk
 npm

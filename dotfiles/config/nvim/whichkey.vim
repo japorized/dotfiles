@@ -55,21 +55,3 @@ let g:which_key_map.s = {
       \ 'd' : 'SDelete',
       \ 'c' : 'SClose',
       \ }
-
-augroup texwhichkey
-  au! BufRead,BufNewFile *.tex nmap <silent> <leader>vCl :VimtexClean<CR>
-  au! BufRead,BufNewFile *.tex nmap <leader>vco :VimtexCompileOutput<CR>
-  au! BufRead,BufNewFile *.tex nmap <leader>vs :VimtexStatus<CR>
-  au! BufRead,BufNewFile *.tex nmap <leader>ve :VimtexErrors<CR>
-  au! BufRead,BufNewFile *.tex nmap <leader>vv :VimtexView<CR>
-  au! BufRead,BufNewFile *.tex nmap <leader>vt :VimtexTocOpen<CR>
-  au! BufRead,BufNewFile *.tex let g:which_key_map.v = {
-                                  \ 'name' : '+vimtex',
-                                  \ 'Cl' : 'VimtexClean',
-                                  \ 'co' : "VimtexCompileOutput",
-                                  \ 's' : 'VimtexStatus',
-                                  \ 'e' : 'VimtexErrors',
-                                  \ 'v' : 'VimtexView',
-                                  \ 't' : 'VimtexTocOpen',
-                                  \ }
-augroup END

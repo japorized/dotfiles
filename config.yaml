@@ -133,6 +133,7 @@ profiles:
     - d_hammerspoon
     - d_snippets
     - d_mysnippets
+    - d_nvim
     - f_functions
     - d_chunkwm
     - f_khdrc

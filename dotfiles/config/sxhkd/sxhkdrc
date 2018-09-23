@@ -46,13 +46,13 @@ XF86PowerOff
 {XF86MonBrightnessUp,Menu : F2}
   xbacklight -inc 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
-shift + XF86MonBrightnessUp
+{shift + XF86MonBrightnessUp,Menu : shift + F2}
   xbacklight -inc 15 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
 {XF86MonBrightnessDown,Menu : F1}
   xbacklight -dec 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
-shift + XF86MonBrightnessDown
+{shift + XF86MonBrightnessDown,Menu : shift + F1}
   xbacklight -dec 15 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
 {XF86KbdBrightnessUp,Menu : F6}
@@ -76,10 +76,10 @@ shift + XF86MonBrightnessDown
 {XF86AudioLowerVolume,Menu : F11}
   pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -2% && ~/.config/lemonbar/vol.sh
 
-shift + XF86AudioRaiseVolume
+{shift + XF86AudioRaiseVolume,Menu: shift + F12}
   pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +10% && ~/.config/lemonbar/vol.sh
 
-shift + XF86AudioLowerVolume
+{shift + XF86AudioLowerVolume,Menu : shift + F11}
   pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -10% && ~/.config/lemonbar/vol.sh
 
 {XF86AudioMute,Menu : F10}
