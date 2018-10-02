@@ -170,6 +170,26 @@ $0
 % subsection $2 (end)
 endsnippet
 
+snippet ssub "Subsubsection" b
+\subsubsection{${1:subsubsection name}}%
+\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+% subsubsection $2
+
+$0
+
+% subsubsection $2 (end)
+endsnippet
+
+snippet ssub* "Subsection" b
+\subsubsection*{${1:subsubsection name}}%
+\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+% subsubsection $2
+
+$0
+
+% subsubsection $2 (end)
+endsnippet
+
 snippet par "Paragraph" b
 \paragraph{${1:paragraph name}}%
 \label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}

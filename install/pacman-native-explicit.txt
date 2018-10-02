@@ -26,6 +26,8 @@ cabextract
 calc
 calcurse
 castget
+certbot
+certbot-apache
 chromium
 cifs-utils
 claws-mail
@@ -181,6 +183,7 @@ python-neovim
 python-pip
 python-pyqt5
 python-setuptools
+python-virtualenv
 python2-neovim
 qutebrowser
 r

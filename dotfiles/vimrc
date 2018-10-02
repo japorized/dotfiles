@@ -17,10 +17,8 @@ set conceallevel=2
 set expandtab     " Expand tabs to spaces
 set foldlevelstart=3
 set ignorecase    " Ignore case when searching
-set number
 set noshowmode
 set numberwidth=2
-set relativenumber
 set showmatch     " Show matching bracket
 set shiftwidth=2  " Number of spaces to use for (auto) indent
 set smartcase     " Override 'ignorecase' if search has uppercase
@@ -63,7 +61,6 @@ endif
 
 " netrw Configs
 nmap <F1> :Vexplore<cr>
-autocmd FileType netrw nnoremap q :q<CR>
 let g:netrw_liststyle=3    " Tree view
 let g:netrw_banner=0       " Hide Banner by default, use I to toggle
 let g:netrw_browse_split=3 " Opens new file in a new tab
