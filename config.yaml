@@ -1,7 +1,11 @@
 config:
   backup: true
+  banner: true
   create: true
   dotpath: dotfiles
+  keepdot: false
+  link_by_default: false
+  longkey: false
 dotfiles:
   d_bspwm:
     dst: ~/.config/bspwm
@@ -15,12 +19,12 @@ dotfiles:
   d_lemonbar:
     dst: ~/.config/lemonbar
     src: config/lemonbar
-  d_lock-screen:
-    dst: ~/.config/lock-screen
-    src: config/lock-screen
   d_mysnippets:
     dst: ~/.vim/mysnippets
     src: vim/mysnippets
+  d_ncmpcpp:
+    dst: ~/.config/ncmpcpp
+    src: config/ncmpcpp
   d_nvim:
     dst: ~/.config/nvim
     src: config/nvim
@@ -42,9 +46,6 @@ dotfiles:
   f_aria2.conf:
     dst: ~/.config/aria2/aria2.conf
     src: config/aria2/aria2.conf
-  f_bindings:
-    dst: ~/.config/ncmpcpp/bindings
-    src: config/ncmpcpp/bindings
   f_config.conf:
     dst: ~/.config/neofetch/config.conf
     src: config/neofetch/config.conf
@@ -72,9 +73,6 @@ dotfiles:
   f_mpd.conf:
     dst: ~/.config/mpd/mpd.conf
     src: config/mpd/mpd.conf
-  f_ncmpcpp_config:
-    dst: ~/.config/ncmpcpp/config
-    src: config/ncmpcpp/config
   f_preferences.sublime-settings:
     dst: ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
     src: config/sublime-text-3/Packages/User/Preferences.sublime-settings
@@ -121,8 +119,7 @@ profiles:
   Earl-Grey.local:
     dotfiles:
     - d_templates
-    - f_bindings
-    - f_ncmpcpp_config
+    - d_ncmpcpp
     - f_keymap
     - f_vimrc
     - f_w3m_config
@@ -146,8 +143,6 @@ profiles:
     - f_vimrc
     - f_zshrc
     - d_templates
-    - f_ncmpcpp_config
-    - f_bindings
     - f_w3m_config
     - f_keymap
     - f_aliases
@@ -161,7 +156,6 @@ profiles:
     - d_vis
     - f_aria2.conf
     - f_config.yaml
-    - d_lock-screen
     - f_config.conf
     - f_libinput-gestures.conf
     - d_bspwm
@@ -175,6 +169,7 @@ profiles:
     - f_xinitrc
     - f_xserverrc
     - f_xprofile
+    - d_ncmpcpp
   WinCrap:
     dotfiles:
     - f_vimrc

@@ -1,3 +1,4 @@
+abiword
 acpi
 alsa-utils
 antergos-keyring
@@ -162,6 +163,7 @@ p7zip
 pacman
 pacman-contrib
 pandoc
+papirus-icon-theme
 parole
 patch
 pavucontrol
@@ -199,6 +201,7 @@ rsync
 rxvt-unicode-terminfo
 s-nail
 screenfetch
+scribus
 scrot
 sed
 shadow

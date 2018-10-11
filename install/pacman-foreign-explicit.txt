@@ -2,7 +2,6 @@ acpilight
 auracle-git
 bash-pipes
 bitwarden-cli
-browsh-bin
 buku
 buku_run-git
 caffeine-ng
@@ -22,6 +21,8 @@ libc++experimental
 libgcj17-bin
 libinput-gestures
 libxlsxwriter
+luv-icon-theme-git
+macos-icon-theme
 mbpfan-git
 megacmd-bin
 menu-calc
@@ -54,3 +55,5 @@ ttf-symbola
 vala-panel-appmenu-translations-git
 vala-panel-appmenu-xfce-git
 xbanish-git
+xenlism-wildfire-icon-theme-git
+zafiro-icon-theme

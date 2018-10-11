@@ -34,6 +34,7 @@ let g:startify_lists = [
       \ ]
 let g:startify_commands = [
     \ {'M': ['Magit', ':MagitOnly']},
+    \ {'S': ['Simplenote', ':SimplenoteList']},
     \ ]
 let g:startify_custom_footer = [
 \'                                ____                    ',

@@ -103,7 +103,7 @@ execute_on_song_change = ""
 
 # Directories
 ncmpcpp_directory = ~/.config/ncmpcpp
-lyrics_directory = ~/.config/ncmpcpp/Lyrics
+lyrics_directory = ~/Music/Lyrics
 {%@@ if profile == "Earl-Grey.local" @@%}
 mpd_music_dir = "~/Music/Database"
 {%@@ else @@%}

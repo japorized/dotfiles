@@ -122,3 +122,18 @@ let g:which_key_map.b.s = {
       \ 'n' : 'buffer-split-next',
       \ 'p' : 'buffer-split-prev',
       \ }
+nmap <silent> <leader>Sl :SimplenoteList<CR>
+nmap <silent> <leader>Sn :SimplenoteNew<CR>
+nmap <silent> <leader>Sd :SimplenoteDelete<CR>
+nmap <silent> <leader>St :SimplenoteTag<CR>
+nmap <silent> <leader>Sp :SimplenotePin<CR>
+nmap <silent> <leader>SP :SimplenoteUnpin<CR>
+let g:which_key_map.S = {
+      \ 'name' : '+Simplenote',
+      \ 'd' : 'simplenote-delete',
+      \ 'l' : 'simplenote-list',
+      \ 'n' : 'simplenote-new',
+      \ 'p' : 'simplenote-pin',
+      \ 'P' : 'simplenote-unpin',
+      \ 't' : 'simplenote-tag',
+      \ }

@@ -173,8 +173,8 @@ let s:magenta = [ '#8181A6', 13 ]
 let s:cyan = [ '#87ceeb', 12 ]
 let s:green = [ '#7A7A57', 3 ]
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
-let s:p.normal.left = [ [ s:base3, s:magenta ], [ s:base3, s:base01 ] ]
-let s:p.normal.right = [ [ s:base3, s:base1 ], [ s:base2, s:base01 ] ]
+let s:p.normal.left = [ [ s:base3, s:magenta ], [ s:base3, s:base02 ] ]
+let s:p.normal.right = [ [ s:base3, s:base1 ], [ s:base2, s:base02 ] ]
 let s:p.inactive.right = [ [ s:base02, s:base00 ], [ s:base0, s:base02 ] ]
 let s:p.inactive.left =  [ [ s:base0, s:base02 ], [ s:base00, s:base02 ] ]
 let s:p.insert.left = [ [ s:base02, s:cyan ], [ s:base3, s:base01 ] ]
@@ -182,7 +182,7 @@ let s:p.replace.left = [ [ s:base02, s:red ], [ s:base3, s:base01 ] ]
 let s:p.visual.left = [ [ s:base02, s:green ], [ s:base3, s:base01 ] ]
 let s:p.normal.middle = [ [ s:base0, s:base02 ] ]
 let s:p.inactive.middle = [ [ s:base00, s:base02 ] ]
-let s:p.tabline.left = [ [ s:base3, s:base01, 'bold' ] ]
+let s:p.tabline.left = [ [ s:base3, s:base02, 'bold' ] ]
 let s:p.tabline.tabsel = [ [ s:base3, s:magenta, 'bold' ] ]
 let s:p.tabline.middle = [ [ s:base00, s:base02 ] ]
 let s:p.tabline.right = copy(s:p.tabline.left)
@@ -237,4 +237,5 @@ autocmd VimEnter *
   \ |   wincmd w
   \ | endif
 
+let g:SimplenoteVertical=1
 source $HOME/.vim/simplenoterc
