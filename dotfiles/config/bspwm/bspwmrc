@@ -39,4 +39,3 @@ xss-lock -n /usr/share/doc/xss-lock/dim-screen.sh -- slock &
 libinput-gestures-setup start &
 pcloud &
 tint2 &
-compton -b

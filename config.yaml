@@ -94,6 +94,9 @@ dotfiles:
   f_tmux.conf:
     dst: ~/.tmux.conf
     src: tmux.conf
+  f_user-dirs.dirs:
+    dst: ~/.config/user-dirs.dirs
+    src: config/user-dirs.dirs
   f_vimrc:
     dst: ~/.vimrc
     src: vimrc
@@ -112,6 +115,9 @@ dotfiles:
   f_zathurarc:
     dst: ~/.config/zathura/zathurarc
     src: config/zathura/zathurarc
+  f_zshenv:
+    dst: ~/.zshenv
+    src: zshenv
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
@@ -170,6 +176,8 @@ profiles:
     - f_xserverrc
     - f_xprofile
     - d_ncmpcpp
+    - f_zshenv
+    - f_user-dirs.dirs
   WinCrap:
     dotfiles:
     - f_vimrc

@@ -84,6 +84,17 @@ let g:which_key_map.c = {
       \ 's' : 'source-vimrc',
       \ }
 
+  " ale linting
+nmap <silent> <Leader>dal :ALELint<cr>
+nmap <silent> <Leader>dap <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>dan <Plug>(ale_next_wrap)
+let g:which_key_map.d.a = {
+      \ 'name' : '+ale-lint',
+      \ 'l' : 'ale-lint',
+      \ 'n' : 'ale-next',
+      \ 'p' : 'ale-prev',
+      \ }
+
   " Startify related
 nmap <Leader>st :Startify<CR>
 nmap <Leader>ss :SSave<CR>
@@ -97,6 +108,7 @@ let g:which_key_map.s = {
       \ 'c' : 'SClose',
       \ }
 
+  " buffer controls
 nmap <Leader>bb :buffer<Space>
 nmap <Leader>bl :ls<CR>
 nmap <Leader>bp :bl<CR>
@@ -122,6 +134,8 @@ let g:which_key_map.b.s = {
       \ 'n' : 'buffer-split-next',
       \ 'p' : 'buffer-split-prev',
       \ }
+
+" Simplenote
 nmap <silent> <leader>Sl :SimplenoteList<CR>
 nmap <silent> <leader>Sn :SimplenoteNew<CR>
 nmap <silent> <leader>Sd :SimplenoteDelete<CR>

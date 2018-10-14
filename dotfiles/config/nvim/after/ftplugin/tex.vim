@@ -1,3 +1,7 @@
+" linters
+let b:ale_fixers = {'latex' : ['chktex', 'proselint']}
+
+" which-keys
 nmap <silent> <leader>vn :VimtexClean<CR>
 nmap <leader>vco :VimtexCompileOutput<CR>
 nmap <leader>vcc :VimtexCompile<CR>
@@ -6,6 +10,7 @@ nmap <leader>vs :VimtexStatus<CR>
 nmap <leader>ve :VimtexErrors<CR>
 nmap <silent> <leader>vv :VimtexView<CR>
 nmap <leader>vt :VimtexTocOpen<CR>
+nmap <leader>vd :VimtexDocPackage<Space>
 let g:which_key_map.v = {
    \ 'name' : '+vimtex',
    \ 's' : 'VimtexStatus',
@@ -13,6 +18,7 @@ let g:which_key_map.v = {
    \ 'e' : 'VimtexErrors',
    \ 'v' : 'VimtexView',
    \ 't' : 'VimtexTocOpen',
+   \ 'd' : 'VimtexDocPackage',
    \ }
 let g:which_key_map.v.c = {
   \ 'name' : '+compile',

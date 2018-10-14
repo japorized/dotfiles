@@ -68,8 +68,9 @@ Check out the tool at https://github.com/deadc0de6/dotdrop.
 2. If your system does not have the dependencies for Dotdrop, do
   ```shell
   cd ~/dotfiles
-  pip3 install -r ./dotdrop/requirements.txt
+  pip3 install --user -r ./dotdrop/requirements.txt
   ```
+  I do prefer to install my pip packages per user.
 3. Get to know the host name of your machine, and add that to the `config.yaml` file, and specify the files that you wish to sync.
 4. Assuming that you are still in the dotfiles directory, do
   ```shell
@@ -102,8 +103,6 @@ Please install packages via pacman as you would normally do, and just cherry-pic
 your favorite AUR package manager.
 
 <sub><sup>Although, if you're not me and using Arch, you wouldn't want my dotfiles anyway :P</sup></sub>
-
-### Ubuntu (or Windows)
 
 ---
 

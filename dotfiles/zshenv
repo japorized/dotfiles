@@ -1,0 +1,36 @@
+export XDG_CONFIG_HOME=$HOME/.config
+
+# RubyGems
+export GEM_HOME=$HOME/.gem
+export PATH=$PATH:$(ruby -e 'print Gem.user_dir')/bin:$GEM_HOME/bin
+
+# pip --user
+export PATH=$PATH:$HOME/.local/bin
+
+# cabal
+export PATH=$PATH:$HOME/.cabal/bin
+
+# Golang
+# export PATH=$PATH:$HOME/go/bin
+
+# fcitx configs
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+# TeXLive
+export PATH=$HOME/.texlive/2018/bin/x86_64-linux:$PATH
+export MANPATH=$MANPATH:$HOME/.texlive/2018/texmf-dist/doc/man
+export INFOPATH=$INFOPATH:/$HOME/.texlive/2018/texmf-dist/doc/info
+
+# npm
+export npm_config_prefix=$HOME/.node_modules
+
+# buku
+export XDG_DATA_HOME=$HOME/.data
+
+# nnn
+export NNN_BMS='doc:~/Documents;D:~/Downloads/;P:~/Pictures/;M:~/Music;tex:~/Documents/TeX_Notes/'
+
+export PATH=$HOME/.bin:$HOME/.node_modules/bin:$PATH
+export fpath=($fpath $HOME/.bin/fpath)
