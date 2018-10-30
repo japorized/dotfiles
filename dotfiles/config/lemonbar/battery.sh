@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Import wal-colors
-. "$HOME/.cache/wal/colors.sh"
+# Import color scheme
+. "$HOME/.cache/wpgtk.color"
 
 #Options
 width="120"
@@ -19,13 +19,13 @@ Battery() {
   BATPERC=$(echo $ACPIBATT | cut -d, -f2 | tr -d "%")
   STATUS=$(echo $ACPIBATT | cut -d: -f2 | cut -d, -f1)
   if [[ "$STATUS" == " Charging" ]] ; then
-    echo -ne "%{F${color4}}\uf0e7%{F-}  %{F${foreground}}$BATPERC % %{F-}"
+    echo -ne "%{F${color14}}\uf0e7%{F-}  %{F${foreground}}$BATPERC % %{F-}"
   elif [[ "$STATUS" == " Full" ]] ; then
-    echo -ne "%{F${color4}}%{F-} %{F${foreground}}$BATPERC % %{F-}"
+    echo -ne "%{F${color5}}%{F-} %{F${foreground}}$BATPERC % %{F-}"
   elif [[ "$BATPERC" -lt 20 ]]; then
-    echo -ne "%{F#F47678}%{F-} %{F${foreground}}$BATPERC % %{F-}"
+    echo -ne "%{F#color1}%{F-} %{F${foreground}}$BATPERC % %{F-}"
   elif [[ "$BATPERC" -lt 35 ]]; then
-    echo -ne "%{F#E2B552}%{F-} %{F${foreground}}$BATPERC % %{F-}"
+    echo -ne "%{F#color9}%{F-} %{F${foreground}}$BATPERC % %{F-}"
   else
     echo -ne " $BATPERC %"
   fi

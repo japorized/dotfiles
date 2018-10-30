@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Import wal-colors
-. "$HOME/.cache/wal/colors.sh"
+. "$HOME/.cache/wpgtk.color"
 
 # Options
 width="320"

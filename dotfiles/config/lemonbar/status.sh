@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Import wal-colors
-. "$HOME/.cache/wal/colors.sh"
+# Import color scheme
+. "$HOME/.cache/wpgtk.color"
 
 # Options
 width="920"
@@ -71,10 +71,20 @@ CoffeeUp() {
   fi
 }
 
+DoNotDisturb() {
+  if [[ -e "/tmp/donotdisturb.lock" ]]; then
+    echo -n "  |   \uf135"
+    return
+  else
+    echo -n ""
+    return
+  fi
+}
+
 counter=0
 
 while true; do
-  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curbrightness)      $(Curvolume)     |      $(Wifi)   |   \uf109   $(Diskspace) full    \uf0a0   $(Filespace) full    \uf2db   $(Memspace) $(CoffeeUp)"
+  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curbrightness)      $(Curvolume)     |      $(Wifi)   |   \uf109   $(Diskspace) full    \uf0a0   $(Filespace) full    \uf2db   $(Memspace) $(CoffeeUp)   $(DoNotDisturb)"
   sleep 1
   if [[ $counter -ge 5 ]]; then
     exit

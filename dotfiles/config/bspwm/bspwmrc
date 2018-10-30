@@ -30,11 +30,12 @@ done
 
 # starting applications
 ~/.config/bspwm/indicators &
+~/.bin/donotdisturb off &
 fcitx &
 sxhkd &
 ~/.fehbg &
 xbanish -i shift -i mod1 -i mod4 -i control &
-wal -R &
+pasystray &
 xss-lock -n /usr/share/doc/xss-lock/dim-screen.sh -- slock &
 libinput-gestures-setup start &
 pcloud &

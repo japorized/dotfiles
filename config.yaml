@@ -37,6 +37,9 @@ dotfiles:
   d_vis:
     dst: ~/.config/vis
     src: config/vis
+  d_wpg:
+    dst: ~/.config/wpg
+    src: config/wpg
   "d_\xFCbersicht":
     dst: "~/.config/\xDCbersicht"
     src: "config/\xDCbersicht"
@@ -169,7 +172,6 @@ profiles:
     - d_mysnippets
     - d_nvim
     - f_zathurarc
-    - f_tint2rc
     - f_dunstrc
     - f_scimrc
     - f_xinitrc
@@ -178,6 +180,8 @@ profiles:
     - d_ncmpcpp
     - f_zshenv
     - f_user-dirs.dirs
+    - d_wpg
+    - f_tint2rc
   WinCrap:
     dotfiles:
     - f_vimrc

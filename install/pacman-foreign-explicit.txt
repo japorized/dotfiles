@@ -8,6 +8,7 @@ caffeine-ng
 cava
 ddgr
 discord
+dmenu-extended-git
 ephifonts
 facetimehd-firmware
 fcitx-mozc-ut2
@@ -37,6 +38,7 @@ otf-font-awesome-4
 pandoc-citeproc-bin
 pcmciautils
 pdftk-bin
+playmymusic
 pulseaudio-ctl
 python-ewmh
 retroarch-autoconfig-udev

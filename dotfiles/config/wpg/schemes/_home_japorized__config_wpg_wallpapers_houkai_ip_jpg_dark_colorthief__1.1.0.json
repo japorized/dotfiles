@@ -1,0 +1,28 @@
+{
+    "wallpaper": "houkai_ip.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#010102",
+        "foreground": "#9b9b9d",
+        "cursor": "#9b9b9d"
+    },
+    "colors": {
+        "color0": "#010102",
+        "color1": "#2f2f33",
+        "color2": "#4a4b54",
+        "color3": "#4b5453",
+        "color4": "#5e5c5a",
+        "color5": "#666874",
+        "color6": "#6b746e",
+        "color7": "#9b9b9d",
+        "color8": "#38383c",
+        "color9": "#2f2f33",
+        "color10": "#4a4b54",
+        "color11": "#4b5453",
+        "color12": "#5e5c5a",
+        "color13": "#666874",
+        "color14": "#6b746e",
+        "color15": "#9b9b9d"
+    }
+}

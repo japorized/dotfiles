@@ -4,20 +4,23 @@
 
 # terminal emulator
 super + Return
-  st -e wal-tmux
+  st
 
 shift + super + Return
-  st
+  st -e wal-tmux
 
 # program launcher
 alt + space
 	rofi -show run
 
+shift + alt + space
+  dmenu_extended_run
+
 super + grave
   rofi -show window
 
-@ctrl + super + alt + {f,s,t}
-  {firefox,subl,thunar}
+@ctrl + super + alt + {f,e,t,r}
+  {firefox,st -e wal-nvim,thunar,wpg -m}
 
 # status display
 super + i

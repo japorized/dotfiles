@@ -90,6 +90,14 @@ snippet fig "Figure environment" b
 \end{figure}
 endsnippet
 
+snippet marfig "Margin figure environment" b
+\begin{marginfigure}
+	\centering
+	$0
+	\caption{$1}\label{fig:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\end{marginfigure}
+endsnippet
+
 snippet enum "Enumerate" b
 \begin{enumerate}
 	\item $0
@@ -234,6 +242,62 @@ endsnippet
 
 snippet scr "mathscr" w
 \mathscr{$1} $0
+endsnippet
+
+snippet hla "highlight color a" w
+\hlnotea{$1} $0
+endsnippet
+
+snippet hlb "highlight color b" w
+\hlnoteb{$1} $0
+endsnippet
+
+snippet hlc "highlight color c" w
+\hlnotec{$1} $0
+endsnippet
+
+snippet hlba "highlight background a" w
+\hlbnotea{$1} $0
+endsnippet
+
+snippet hlbb "highlight background b" w
+\hlbnoteb{$1} $0
+endsnippet
+
+snippet hlbc "highlight background c" w
+\hlbnotec{$1} $0
+endsnippet
+
+snippet hlbd "highlight background c" w
+\hlbnoted{$1} $0
+endsnippet
+
+snippet hld "highlight definition" w
+\hldefn{$1} $0
+endsnippet
+
+snippet hlw "highlight warning" w
+\hlwarn{$1} $0
+endsnippet
+
+snippet hli "highlight important" w
+\hlimpo{$1} $0
+endsnippet
+
+snippet star "level 1 star" w
+\imponote\ $0
+endsnippet
+
+snippet sstar "level 2 star" w
+\vimponote\ $0
+endsnippet
+
+snippet ssstar "level 3 star" w
+\vvimponote\ $0
+endsnippet
+
+snippet ul "underline" w
+\underline{$1} $0
 endsnippet
 
 snippet ac "Acroynm normal" b

@@ -76,12 +76,14 @@ let g:which_key_map.w.t = {
       \ 'n' : 'blank-new-tab',
       \ }
 
-nnoremap <silent> <leader>ce  :tabnew ~/.vimrc<CR>
-nnoremap <silent> <leader>cs  :source ~/.vimrc<CR>
+nnoremap <silent> <leader>ce :tabnew ~/.vimrc<CR>
+nnoremap <silent> <leader>cs :source ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>cd :digraphs<CR>
 let g:which_key_map.c = {
-      \ 'name' : '+config',
+      \ 'name' : '+vim',
       \ 'e' : 'edit-vimrc',
       \ 's' : 'source-vimrc',
+      \ 'd' : 'show-digraphs',
       \ }
 
   " ale linting
@@ -109,7 +111,7 @@ let g:which_key_map.s = {
       \ }
 
   " buffer controls
-nmap <Leader>bb :buffer<Space>
+nmap <Leader>bb :Thumbnail -here<CR>
 nmap <Leader>bl :ls<CR>
 nmap <Leader>bp :bl<CR>
 nmap <Leader>bn :bn<CR>
@@ -119,6 +121,9 @@ nmap <Leader>bsf :sbf<CR>
 nmap <Leader>bsn :sbn<CR>
 nmap <Leader>bsp :sbp<CR>
 nmap <Leader>bd :bdelete<Space>
+nmap <Leader>btt :Thumbnail<CR>
+nmap <Leader>bts :Thumbnail -horizontal<CR>
+nmap <Leader>btv :Thumbnail -vertical<CR>
 let g:which_key_map.b = {
       \ 'name' : '+buffer',
       \ 'b' : 'buffer-goto',
@@ -133,6 +138,12 @@ let g:which_key_map.b.s = {
       \ 'f' : 'buffer-split-first',
       \ 'n' : 'buffer-split-next',
       \ 'p' : 'buffer-split-prev',
+      \ }
+let g:which_key_map.b.t = {
+      \ 'name' : '+buffer-thumbnail',
+      \ 't' : 'buffer-new-tab',
+      \ 's' : 'buffer-split',
+      \ 'v' : 'buffer-vsplit',
       \ }
 
 " Simplenote

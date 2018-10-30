@@ -1,0 +1,28 @@
+{
+    "wallpaper": "pinetrees.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#040908",
+        "foreground": "#a3aba9",
+        "cursor": "#a3aba9"
+    },
+    "colors": {
+        "color0": "#040908",
+        "color1": "#2a534c",
+        "color2": "#365137",
+        "color3": "#2f6748",
+        "color4": "#3b7a64",
+        "color5": "#567544",
+        "color6": "#44925c",
+        "color7": "#a3aba9",
+        "color8": "#475754",
+        "color9": "#2a534c",
+        "color10": "#365137",
+        "color11": "#2f6748",
+        "color12": "#3b7a64",
+        "color13": "#567544",
+        "color14": "#44925c",
+        "color15": "#a3aba9"
+    }
+}

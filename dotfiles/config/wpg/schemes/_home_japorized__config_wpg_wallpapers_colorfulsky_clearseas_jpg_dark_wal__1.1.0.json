@@ -1,0 +1,28 @@
+{
+    "wallpaper": "colorfulsky_clearseas.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0a2a46",
+        "foreground": "#ffecec",
+        "cursor": "#ffecec"
+    },
+    "colors": {
+        "color0": "#0a2a46",
+        "color1": "#52c0e2",
+        "color2": "#6280ab",
+        "color3": "#75a5b8",
+        "color4": "#6baee5",
+        "color5": "#bcaaaa",
+        "color6": "#a580a9",
+        "color7": "#f3ded2",
+        "color8": "#6691b8",
+        "color9": "#54ffff",
+        "color10": "#6ca0ec",
+        "color11": "#81ddfe",
+        "color12": "#73deff",
+        "color13": "#c5d5fe",
+        "color14": "#e192eb",
+        "color15": "#ffecec"
+    }
+}

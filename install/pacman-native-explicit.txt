@@ -26,14 +26,12 @@ cabal-install
 cabextract
 calc
 calcurse
+calibre
 castget
 certbot
 certbot-apache
 chromium
 cifs-utils
-claws-mail
-claws-mail-themes
-clawsker
 compton
 cool-retro-term
 coreutils
@@ -76,6 +74,7 @@ garcon
 gawk
 gcc
 gcc-libs
+geary
 gettext
 ghc
 gifsicle
@@ -87,6 +86,7 @@ gnuplot
 goldendict
 grep
 groff
+grsync
 gsfonts
 gtk-engine-murrine
 gtk-xfce-engine
@@ -167,6 +167,7 @@ pacman-contrib
 pandoc
 papirus-icon-theme
 parole
+pasystray
 patch
 pavucontrol
 pciutils
@@ -205,6 +206,7 @@ s-nail
 screenfetch
 scribus
 scrot
+seahorse
 sed
 shadow
 sharutils

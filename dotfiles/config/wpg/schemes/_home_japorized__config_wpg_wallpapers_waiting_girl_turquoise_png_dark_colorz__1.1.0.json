@@ -1,0 +1,28 @@
+{
+    "wallpaper": "waiting_girl_turquoise.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#c7c8c7",
+        "foreground": "#1f2321",
+        "cursor": "#1f2321"
+    },
+    "colors": {
+        "color0": "#c7c8c7",
+        "color1": "#418e8e",
+        "color2": "#7b9085",
+        "color3": "#69897c",
+        "color4": "#577e72",
+        "color5": "#467c73",
+        "color6": "#367979",
+        "color7": "#7b7f7c",
+        "color8": "#919291",
+        "color9": "#59c3c3",
+        "color10": "#a8c5b6",
+        "color11": "#8fbbaa",
+        "color12": "#77ad9c",
+        "color13": "#5faa9e",
+        "color14": "#49a6a5",
+        "color15": "#1f2321"
+    }
+}

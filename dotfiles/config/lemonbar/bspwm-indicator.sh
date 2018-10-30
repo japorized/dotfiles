@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Import wal-colors
-. "$HOME/.cache/wal/colors.sh"
+# Import color scheme
+. "$HOME/.cache/wpgtk.color"
 
 # Options
 width="425"
@@ -45,9 +45,9 @@ indicator() {
         ;;
     esac
     if [[ $SPACE = $(bspc query -D -d) ]]; then
-      echo -n "%{B${color6}}%{F${background}}   $CHAR   %{F-}%{B-}"
+      echo -n "%{B${color5}}%{F${background}}   $CHAR   %{F-}%{B-}"
     elif [[ $BUSY =~ $SPACE ]]; then
-      echo -n "%{A:bspc desktop -f '^$C':}%{F${color6}}   $CHAR   %{F-}%{A}"
+      echo -n "%{A:bspc desktop -f '^$C':}%{F${color5}}   $CHAR   %{F-}%{A}"
     else
       echo -n "%{A:bspc desktop -f '^$C':}   $CHAR   %{A}"
     fi

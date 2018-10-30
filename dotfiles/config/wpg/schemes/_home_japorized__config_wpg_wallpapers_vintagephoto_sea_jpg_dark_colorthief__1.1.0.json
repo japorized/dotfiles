@@ -1,0 +1,28 @@
+{
+    "wallpaper": "vintagephoto_sea.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0a0c0e",
+        "foreground": "#aeb2b6",
+        "cursor": "#aeb2b6"
+    },
+    "colors": {
+        "color0": "#0a0c0e",
+        "color1": "#36435e",
+        "color2": "#4a748b",
+        "color3": "#66aab3",
+        "color4": "#90a9a4",
+        "color5": "#73b9c4",
+        "color6": "#aab6ab",
+        "color7": "#aeb2b6",
+        "color8": "#5e656d",
+        "color9": "#36435e",
+        "color10": "#4a748b",
+        "color11": "#66aab3",
+        "color12": "#90a9a4",
+        "color13": "#73b9c4",
+        "color14": "#aab6ab",
+        "color15": "#aeb2b6"
+    }
+}

@@ -9,6 +9,7 @@ if !has('nvim')
 endif
 
 set nocompatible
+set encoding=utf-8
 filetype plugin on
 syntax on
 set background=dark
@@ -60,7 +61,8 @@ if has("autocmd")
 endif
 
 " netrw Configs
-nmap <F1> :Vexplore<cr>
+nmap <F1> :Lexplore<cr>
+imap <F1> <C-o>:Lexplore<CR>
 let g:netrw_liststyle=3    " Tree view
 let g:netrw_banner=0       " Hide Banner by default, use I to toggle
 let g:netrw_browse_split=3 " Opens new file in a new tab
@@ -82,8 +84,7 @@ set updatetime=250
 " Gundo configurations
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_preview_height= 30
-let g:gundo_preview_bottom= 1
-let g:gundo_right= 1
+let g:gundo_help = 0
 let g:gundo_return_on_revert= 0
 
 " Indentline Configs
@@ -158,6 +159,7 @@ let g:limelight_priority = -1
 
 " Lightline
 " Style credits: https://github.com/xero/dotfiles
+colorscheme wal
 let s:base03 = [ '#151513', 233 ]
 let s:base02 = [ '#222222', 236 ]
 let s:base01 = [ '#4e4e43', 239 ]
@@ -177,7 +179,7 @@ let s:blue = [ '#0578fc', 12 ]
 let s:cyan = [ '#87ceeb', 14 ]
 let s:green = [ '#7A7A57', 3 ]
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'command': {}, 'tabline': {}}
-let s:p.normal.left = [ [ s:dark, s:magenta ], [ s:light, s:dark ] ]
+let s:p.normal.left = [ [ s:dark, s:magenta ], [ s:magenta, s:dark ] ]
 let s:p.normal.middle = [ [ s:light, s:dark ] ]
 let s:p.normal.right = [ [ s:light, s:base1 ], [ s:base2, s:dark ] ]
 let s:p.inactive.left =  [ [ s:light, s:dark ], [ s:light, s:dark ] ]
@@ -186,7 +188,7 @@ let s:p.inactive.right = [ [ s:dark, s:light ], [ s:light, s:dark ] ]
 let s:p.insert.left = [ [ s:dark, s:cyan ], [ s:light, s:dark ] ]
 let s:p.replace.left = [ [ s:dark, s:red ], [ s:light, s:dark ] ]
 let s:p.visual.left = [ [ s:dark, s:green ], [ s:light, s:dark ] ]
-let s:p.command.left = [ [ s:dark, s:yellow, 'bold' ], [ s:light, s:dark ] ]
+let s:p.command.left = [ [ s:light, s:yellow, 'bold' ], [ s:light, s:dark ] ]
 let s:p.tabline.left = [ [ s:light, s:dark, 'bold' ] ]
 let s:p.tabline.tabsel = [ [ s:light, s:magenta, 'bold' ] ]
 let s:p.tabline.middle = [ [ s:light, s:dark ] ]
@@ -211,17 +213,17 @@ let g:lightline = {
   \ 'subseparator': { 'left': '▒', 'right': '░' }
   \ }
 let g:lightline.mode_map = {
-    \ 'n' : 'N',
-    \ 'i' : 'I',
-    \ 'R' : 'R',
-    \ 'v' : 'v',
-    \ 'V' : 'V',
-    \ "\<C-v>": 'VB',
-    \ 'c' : 'C',
-    \ 's' : 's',
-    \ 'S' : 'S',
-    \ "\<C-s>": 'SB',
-    \ 't': 'T',
+    \ 'n' : ' ',
+    \ 'i' : ' ',
+    \ 'R' : ' ',
+    \ 'v' : ' ',
+    \ 'V' : ' ',
+    \ "\<C-v>": ' ',
+    \ 'c' : ' ',
+    \ 's' : ' ',
+    \ 'S' : ' ',
+    \ "\<C-s>": ' ',
+    \ 't': ' ',
     \ }
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
@@ -236,7 +238,6 @@ let g:lightline.component_type = {
 let g:lightline#ale#indicator_checking = "\uf110 "
 let g:lightline#ale#indicator_warnings = "\uf071 "
 let g:lightline#ale#indicator_errors = "\uf05e "
-colorscheme wal
 
 if ! has('gui_running')
     set ttimeout
@@ -265,7 +266,7 @@ let g:multi_cursor_exit_from_insert_mode=0
 autocmd VimEnter *
   \   if !argc()
   \ |   Startify
-  \ |   Vexplore
+  \ |   Lexplore
   \ |   wincmd w
   \ | endif
 

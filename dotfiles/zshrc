@@ -1,6 +1,7 @@
 # For terminals that need an extra command to turn on 256-colors
   {%@@ if profile == "Oolong" @@%}
-  (cat $HOME/.cache/wal/sequences &)
+  (cat $HOME/.cache/wpgtk-term.color &)
+  clear
   {%@@ endif @@%}
   {%@@ if profile != "Oolong" @@%}
 
@@ -28,34 +29,13 @@
   {%@@ endif @@%}
   export CONFIG=$HOME/.config
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# tmux plugin configs
+ZSH_TMUX_AUTOSTART=true
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
+# oh-my-zsh settings
+DISABLE_AUTO_TITLE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gulp)
+plugins=(git gulp tmux)
 ZSH_THEME=""
 
 {%@@ if profile == "Earl-Grey.local" @@%}
@@ -63,22 +43,17 @@ source $HOME/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 {%@@ else @@%}
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 {%@@ endif @@%}
-
 source $ZSH/oh-my-zsh.sh
+
 autoload -U promptinit; promptinit
 PURE_CMD_MAX_EXEC_TIME=10
-# PURE_PROMPT_SYMBOL=λ
 PURE_PROMPT_SYMBOL=
 PURE_GIT_DOWN_ARROW=⇣
 PURE_GIT_UP_ARROW=⇡
 prompt pure
+prompt_pure_set_title() {}
 prompt_newline='%666v'
 PROMPT=' %(?.%F{magenta}λ.%F{red}↯)%f '
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # ZSH Syntax Highlighting configs
 typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS

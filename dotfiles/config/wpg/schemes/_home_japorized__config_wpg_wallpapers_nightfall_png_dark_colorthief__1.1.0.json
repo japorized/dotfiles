@@ -1,0 +1,28 @@
+{
+    "wallpaper": "nightfall.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#000101",
+        "foreground": "#9a9b9d",
+        "cursor": "#9a9b9d"
+    },
+    "colors": {
+        "color0": "#000101",
+        "color1": "#18436b",
+        "color2": "#1b709d",
+        "color3": "#546d7b",
+        "color4": "#3c8ba7",
+        "color5": "#3199bc",
+        "color6": "#61b1bb",
+        "color7": "#9a9b9d",
+        "color8": "#36373b",
+        "color9": "#18436b",
+        "color10": "#1b709d",
+        "color11": "#546d7b",
+        "color12": "#3c8ba7",
+        "color13": "#3199bc",
+        "color14": "#61b1bb",
+        "color15": "#9a9b9d"
+    }
+}

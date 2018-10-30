@@ -1,0 +1,28 @@
+{
+    "wallpaper": "glass_window_rain.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#1a1e1f",
+        "foreground": "#c5c6c7",
+        "cursor": "#c5c6c7"
+    },
+    "colors": {
+        "color0": "#1a1e1f",
+        "color1": "#aa7e77",
+        "color2": "#a09fa2",
+        "color3": "#9db5be",
+        "color4": "#788daa",
+        "color5": "#6481a9",
+        "color6": "#7da2a9",
+        "color7": "#c5c6c7",
+        "color8": "#767b7c",
+        "color9": "#8c6862",
+        "color10": "#838385",
+        "color11": "#81959c",
+        "color12": "#63748c",
+        "color13": "#526a8b",
+        "color14": "#67858b",
+        "color15": "#c5c6c7"
+    }
+}

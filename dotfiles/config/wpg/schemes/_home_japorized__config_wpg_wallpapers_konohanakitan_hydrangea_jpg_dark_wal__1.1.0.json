@@ -1,0 +1,28 @@
+{
+    "wallpaper": "konohanakitan_hydrangea.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0a0e13",
+        "foreground": "#a4c9ed",
+        "cursor": "#a4c9ed"
+    },
+    "colors": {
+        "color0": "#0a0e13",
+        "color1": "#1D5AA6",
+        "color2": "#5260A6",
+        "color3": "#256FD0",
+        "color4": "#5C70D5",
+        "color5": "#3292E0",
+        "color6": "#41A3D1",
+        "color7": "#a4c9ed",
+        "color8": "#728ca5",
+        "color9": "#1D5AA6",
+        "color10": "#5260A6",
+        "color11": "#256FD0",
+        "color12": "#5C70D5",
+        "color13": "#3292E0",
+        "color14": "#41A3D1",
+        "color15": "#a4c9ed"
+    }
+}
