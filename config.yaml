@@ -1,3 +1,9 @@
+actions:
+  pre:
+    vim-pathogen: mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    wpgtk-install: pip3 install --user wpgtk pywal colorz colorthief
+    beets-install: pip3 install --user beets
+    nvim-python: pip3 install --user neovim-remote
 config:
   backup: true
   banner: true
@@ -6,6 +12,7 @@ config:
   keepdot: false
   link_by_default: false
   longkey: false
+  showdiff: true
 dotfiles:
   d_bspwm:
     dst: ~/.config/bspwm
@@ -28,6 +35,8 @@ dotfiles:
   d_nvim:
     dst: ~/.config/nvim
     src: config/nvim
+    actions:
+      - nvim-python
   d_snippets:
     dst: ~/.vim/snippets
     src: vim/snippets
@@ -40,6 +49,8 @@ dotfiles:
   d_wpg:
     dst: ~/.config/wpg
     src: config/wpg
+    actions:
+      - wpgtk-install
   "d_\xFCbersicht":
     dst: "~/.config/\xDCbersicht"
     src: "config/\xDCbersicht"
@@ -55,6 +66,8 @@ dotfiles:
   f_config.yaml:
     dst: ~/.config/beets/config.yaml
     src: config/beets/config.yaml
+    actions:
+      - beets-install
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
@@ -103,6 +116,8 @@ dotfiles:
   f_vimrc:
     dst: ~/.vimrc
     src: vimrc
+    actions:
+      - vim-pathogen
   f_w3m_config:
     dst: ~/.w3m/config
     src: w3m/config

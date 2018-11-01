@@ -1,2 +1,2 @@
 #!/bin/bash
-wpg -rs konohanakitan_hydrangea.jpg konohanakitan_hydrangea.jpg
+wpg -rs jalokim_smokebg.jpg jalokim_smokebg.jpg

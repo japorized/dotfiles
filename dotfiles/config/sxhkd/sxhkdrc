@@ -19,8 +19,8 @@ shift + alt + space
 super + grave
   rofi -show window
 
-@ctrl + super + alt + {f,e,t,r}
-  {firefox,st -e wal-nvim,thunar,wpg -m}
+@ctrl + super + alt + {f,e,t,r,n}
+  {firefox,st -e wal-nvim,thunar,wpg -m,st -e wal-vim-simplenote}
 
 # status display
 super + i

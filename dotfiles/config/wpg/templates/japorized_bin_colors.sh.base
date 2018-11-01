@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+# sysinfo script
+
+rst="\e[0m"
+blk="\e[1;30m"
+red="\e[1;31m"
+grn="\e[1;32m"
+ylw="\e[1;33m"
+blu="\e[1;34m"
+mgt="\e[1;35m"
+cyn="\e[1;36m"
+wht="\e[1;37m"
+dblk="\e[0;30m"
+dred="\e[0;31m"
+dgrn="\e[0;32m"
+dylw="\e[0;33m"
+dblu="\e[0;34m"
+dmgt="\e[0;35m"
+dcyn="\e[0;36m"
+dwht="\e[0;37m"
+
+echo -e
+echo -e "   ______    ______    __        ______    ______         ______    __  __    "
+echo -e "  /\  ___\  /\  __ \  /\ \      /\  __ \  /\  == \       /\  ___\  /\ \_\ \   "
+echo -e "  \ \ \____ \ \ \/\ \ \ \ \____ \ \ \/\ \ \ \  __<    __ \ \___  \ \ \  __ \  "
+echo -e "   \ \_____\ \ \_____\ \ \_____\ \ \_____\ \ \_\ \_\ /\_\ \/\_____\ \ \_\ \_\ "
+echo -e "    \/_____/  \/_____/  \/_____/  \/_____/  \/_/ /_/ \/_/  \/_____/  \/_/\/_/ "
+echo -e 
+echo -e " ─────────────────────────────────────────────────────────────────────────────"
+echo -e "   BLK       RED       GRN       YEL       BLU       MGT       CYN       WHT  "
+echo -e " ─────────────────────────────────────────────────────────────────────────────"
+echo -e " ${blk}#<COLOR0>   ${red}#<COLOR1>   ${grn}#<COLOR2>   ${ylw}#<COLOR3>   ${blu}#<COLOR4>   ${mgt}#<COLOR5>   ${cyn}#<COLOR6>   ${wht}#<COLOR7>${rst}"
+echo -e " ${dblk}#<COLOR8>   ${dred}#<COLOR9>   ${dgrn}#<COLOR10>   ${dylw}#<COLOR11>   ${dblu}#<COLOR12>   ${dmgt}#<COLOR13>   ${dcyn}#<COLOR14>   ${dwht}#<COLOR15>${rst}"
+echo -e " ${blk}███████   ${red}███████   ${grn}███████   ${ylw}███████   ${blu}███████   ${mgt}███████   ${cyn}███████   ${wht}███████${rst}"
+echo -e " ${dblk}███████   ${dred}███████   ${dgrn}███████   ${dylw}███████   ${dblu}███████   ${dmgt}███████   ${dcyn}███████   ${dwht}███████${rst}"

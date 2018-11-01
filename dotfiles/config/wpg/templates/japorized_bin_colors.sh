@@ -1,0 +1,1 @@
+/home/japorized/.bin/colors.sh
