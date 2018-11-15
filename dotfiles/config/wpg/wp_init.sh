@@ -1,2 +1,2 @@
 #!/bin/bash
-wpg -rs jalokim_smokebg.jpg jalokim_smokebg.jpg
+wpg -rs houkai_ip.jpg houkai_ip.jpg

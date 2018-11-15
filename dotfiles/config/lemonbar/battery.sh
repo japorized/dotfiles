@@ -21,13 +21,17 @@ Battery() {
   if [[ "$STATUS" == " Charging" ]] ; then
     echo -ne "%{F${color14}}\uf0e7%{F-}  %{F${foreground}}$BATPERC % %{F-}"
   elif [[ "$STATUS" == " Full" ]] ; then
-    echo -ne "%{F${color5}}%{F-} %{F${foreground}}$BATPERC % %{F-}"
+    echo -ne "%{F${color5}}\uf240%{F-} %{F${foreground}}$BATPERC % %{F-}"
   elif [[ "$BATPERC" -lt 20 ]]; then
-    echo -ne "%{F#color1}%{F-} %{F${foreground}}$BATPERC % %{F-}"
+    echo -ne "%{F${color1}}\uf244%{F-} %{F${foreground}}$BATPERC % %{F-}"
   elif [[ "$BATPERC" -lt 35 ]]; then
-    echo -ne "%{F#color9}%{F-} %{F${foreground}}$BATPERC % %{F-}"
+    echo -ne "%{F${color9}}\uf243%{F-} %{F${foreground}}$BATPERC % %{F-}"
+  elif [ "$BATPERC" -lt 50 ]; then
+    echo -ne "\uf242$BATPERC %"
+  elif [[ "$BATPERC" -lt 70 ]]; then
+    echo -ne "\uf241$BATPERC %"
   else
-    echo -ne " $BATPERC %"
+    echo -ne "\uf240$BATPERC %"
   fi
 }
 

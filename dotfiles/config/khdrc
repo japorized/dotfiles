@@ -2,9 +2,7 @@
 cmd + alt + ctrl - r : khd -e "reload"
 
 # application launching shortcuts
-cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --session "/usr/local/lib/kitty/default.session"
-# cmd - return : kitty --config "~/.config/kitty.conf" --session "~/.config/kitty/default.session"
-# cmd - return : open -na /Applications/iTerm.app
+cmd - return : open -na /Applications/iTerm.app
 # ctrl + cmd + alt - f: open -a FirefoxNightly
 ctrl + cmd + alt - f: open -a Firefox
 ctrl + cmd + alt - s: open -na /Applications/Sublime\ Text.app

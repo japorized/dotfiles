@@ -4,6 +4,7 @@ alsa-utils
 antergos-keyring
 antergos-midnight-timers
 antergos-mirrorlist
+apparmor
 arc-gtk-theme
 arc-icon-theme
 aria2
@@ -52,6 +53,7 @@ dropbox
 dunst
 e2fsprogs
 efibootmgr
+efitools
 espeak
 exfat-utils
 f2fs-tools
@@ -152,6 +154,7 @@ netctl
 nfs-utils
 nilfs-utils
 nmap
+nnn
 nodejs
 noto-fonts-cjk
 npm
@@ -189,7 +192,10 @@ python-pip
 python-pyqt5
 python-setuptools
 python-virtualenv
+python2-cairocffi
+python2-distutils-extra
 python2-neovim
+qtikz
 qutebrowser
 r
 raw-thumbnailer
@@ -210,6 +216,7 @@ seahorse
 sed
 shadow
 sharutils
+slop
 soundfont-fluid
 splix
 stack
@@ -222,6 +229,7 @@ sysfsutils
 systemd
 systemd-sysvcompat
 tar
+task
 terminus-font
 termite
 texinfo

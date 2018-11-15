@@ -1,5 +1,5 @@
 " linters
-let b:ale_fixers = {'latex' : ['chktex', 'proselint']}
+let b:ale_fixers = {'latex' : ['proselint']}
 
 " which-keys
 nmap <silent> <leader>vn :VimtexClean<CR>
@@ -9,7 +9,8 @@ nmap <leader>vcs :VimtexCompileSS<CR>
 nmap <leader>vs :VimtexStatus<CR>
 nmap <leader>ve :VimtexErrors<CR>
 nmap <silent> <leader>vv :VimtexView<CR>
-nmap <leader>vt :VimtexTocOpen<CR>
+" VimtexTocToggle does not do what you think it should do, for some reason
+nmap <leader>vt :VimtexTocOpen<CR> 
 nmap <leader>vd :VimtexDocPackage<Space>
 let g:which_key_map.v = {
    \ 'name' : '+vimtex',

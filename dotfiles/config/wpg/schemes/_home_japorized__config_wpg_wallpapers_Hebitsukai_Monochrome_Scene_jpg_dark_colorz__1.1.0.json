@@ -1,0 +1,28 @@
+{
+    "wallpaper": "Hebitsukai_Monochrome_Scene.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#fafafa",
+        "foreground": "#222222",
+        "cursor": "#222222"
+    },
+    "colors": {
+        "color0": "#fafafa",
+        "color1": "#909090",
+        "color2": "#8a8a8a",
+        "color3": "#808080",
+        "color4": "#7e7e7e",
+        "color5": "#6f6f6f",
+        "color6": "#555555",
+        "color7": "#707070",
+        "color8": "#acacac",
+        "color9": "#909090",
+        "color10": "#8a8a8a",
+        "color11": "#808080",
+        "color12": "#7e7e7e",
+        "color13": "#6f6f6f",
+        "color14": "#555555",
+        "color15": "#222222"
+    }
+}

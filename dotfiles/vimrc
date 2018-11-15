@@ -45,7 +45,11 @@ endif
 " Highlights
 hi VertSplit ctermbg=NONE guibg=NONE cterm=NONE
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-hi Conceal ctermfg=132 guifg=#af5f87
+hi Conceal ctermfg=132
+highlight Pmenu ctermbg=8  ctermfg=0
+highlight PmenuThumb ctermbg=14 ctermfg=0
+highlight PmenuSel ctermbg=1 ctermfg=15
+highlight PmenuSbar ctermbg=0 ctermfg=15
 
 " Workaround for crontab saving problems
 au FileType crontab setlocal bkc=yes
@@ -59,6 +63,9 @@ if has("autocmd")
 
   autocmd FileType InsertLeave * update
 endif
+
+" terminal configs
+tnoremap <Esc> <C-\><C-n>
 
 " netrw Configs
 nmap <F1> :Lexplore<cr>
@@ -99,7 +106,6 @@ autocmd Filetype tex setl updatetime=1000
 let g:livepreview_previewer = 'open -a Skim'
 {%@@ elif profile == "Oolong" @@%}
 let g:vimtex_view_general_viewer = '/home/japorized/.bin/tabbed-zathura'
-let g:livepreview_previewer = '/usr/bin/zathura'
 {%@@ endif @@%}
 
 " Goyo
@@ -262,6 +268,10 @@ let g:indentLine_char = '┃'
 
 " vim-multiple-cursors
 let g:multi_cursor_exit_from_insert_mode=0
+
+" quick-scoping
+" Trigger a highlight only when pressing f and F.
+let g:qs_highlight_on_keys = ['f', 'F']
 
 autocmd VimEnter *
   \   if !argc()

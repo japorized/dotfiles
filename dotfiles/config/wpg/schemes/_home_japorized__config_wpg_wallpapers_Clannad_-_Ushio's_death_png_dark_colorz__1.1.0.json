@@ -1,0 +1,28 @@
+{
+    "wallpaper": "Clannad_-_Ushio's_death.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#ededed",
+        "foreground": "#010101",
+        "cursor": "#010101"
+    },
+    "colors": {
+        "color0": "#ededed",
+        "color1": "#ff6f59",
+        "color2": "#ba5959",
+        "color3": "#7db9e3",
+        "color4": "#76da9a",
+        "color5": "#a4a425",
+        "color6": "#95507d",
+        "color7": "#6d7298",
+        "color8": "#b1b1b2",
+        "color9": "#d15b49",
+        "color10": "#994949",
+        "color11": "#578fb6",
+        "color12": "#56a773",
+        "color13": "#959529",
+        "color14": "#7a4267",
+        "color15": "#010101"
+    }
+}

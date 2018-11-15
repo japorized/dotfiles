@@ -1,0 +1,169 @@
+hi Normal guifg=#<COLOR15> guibg=#<COLOR0>
+hi NonText guibg=NONE guifg=#<COLOR0>
+hi Comment guibg=NONE guifg=#<COLOR8>
+hi Constant guibg=NONE guifg=#<COLOR3>
+hi Error guibg=#<COLOR1> guifg=#<COLOR7>
+hi Identifier guibg=NONE guifg=#<COLOR1> gui=BOLD
+hi Ignore guibg=#<COLOR8> guifg=#<COLOR0>
+hi PreProc guibg=NONE guifg=#<COLOR3>
+hi Special guibg=NONE guifg=#<COLOR6>
+hi Statement guibg=NONE guifg=#<COLOR1>
+hi String guibg=NONE guifg=#<COLOR2>
+hi Number guibg=NONE guifg=#<COLOR3>
+hi Todo guibg=#<COLOR2> guifg=#<COLOR0>
+hi Type guibg=NONE guifg=#<COLOR3>
+hi Underlined guibg=NONE guifg=#<COLOR1> gui=underline
+hi StatusLine guibg=#<COLOR7> guifg=#<COLOR0>
+hi StatusLineNC guibg=NONE guifg=NONE
+hi TabLine guibg=NONE guifg=#<COLOR8>
+hi TabLineFill guibg=NONE guifg=#<COLOR8>
+hi TabLineSel guibg=#<COLOR4> guifg=#<COLOR0>
+hi TermCursorNC guibg=#<COLOR3> guifg=#<COLOR0>
+hi VertSplit guibg=NONE guifg=NONE
+hi Title guibg=NONE guifg=#<COLOR4>
+hi CursorLine guibg=#<COLOR8> guifg=#<COLOR0>
+hi LineNr guibg=NONE guifg=#<COLOR8>
+hi CursorLineNr guibg=NONE guifg=#<COLOR8>
+hi helpLeadBlank guibg=NONE guifg=#<COLOR7>
+hi helpNormal guibg=NONE guifg=#<COLOR7>
+hi Visual guibg=#<COLOR0> guifg=#<COLOR15> gui=reverse term=reverse
+hi VisualNOS guibg=NONE guifg=#<COLOR1>
+hi Pmenu guibg=#<COLOR8> guifg=#<COLOR7>
+hi PmenuSbar guibg=#<COLOR6> guifg=#<COLOR7>
+hi PmenuSel guibg=#<COLOR4> guifg=#<COLOR0>
+hi PmenuThumb guibg=#<COLOR8> guifg=#<COLOR8>
+hi FoldColumn guibg=NONE guifg=#<COLOR7>
+hi Folded guibg=NONE guifg=#<COLOR8>
+hi WildMenu guibg=#<COLOR2> guifg=#<COLOR0>
+hi SpecialKey guibg=NONE guifg=#<COLOR8>
+hi DiffAdd guibg=NONE guifg=#<COLOR2>
+hi DiffChange guibg=NONE guifg=#<COLOR8>
+hi DiffDelete guibg=NONE guifg=#<COLOR1>
+hi DiffText guibg=NONE guifg=#<COLOR4>
+hi IncSearch guibg=#<COLOR3> guifg=#<COLOR0>
+hi Search guibg=#<COLOR3> guifg=#<COLOR0>
+hi Directory guibg=NONE guifg=#<COLOR4>
+hi MatchParen guibg=#<COLOR8> guifg=#<COLOR0>
+hi ColorColumn guibg=#<COLOR4> guifg=#<COLOR0>
+hi signColumn guibg=NONE guifg=#<COLOR4>
+hi ErrorMsg guibg=NONE guifg=#<COLOR8>
+hi ModeMsg guibg=NONE guifg=#<COLOR2>
+hi MoreMsg guibg=NONE guifg=#<COLOR2>
+hi Question guibg=NONE guifg=#<COLOR4>
+hi WarningMsg guibg=#<COLOR1> guifg=#<COLOR0>
+hi Cursor guibg=NONE guifg=#<COLOR8>
+hi Structure guibg=NONE guifg=#<COLOR5>
+hi CursorColumn guibg=#<COLOR8> guifg=#<COLOR7>
+hi ModeMsg guibg=NONE guifg=#<COLOR7>
+hi SpellBad guibg=NONE guifg=#<COLOR1> gui=underline
+hi SpellCap guibg=NONE guifg=#<COLOR4> gui=underline
+hi SpellLocal guibg=NONE guifg=#<COLOR5> gui=underline
+hi SpellRare guibg=NONE guifg=#<COLOR6> gui=underline
+hi Boolean guibg=NONE guifg=#<COLOR5>
+hi Character guibg=NONE guifg=#<COLOR1>
+hi Conditional guibg=NONE guifg=#<COLOR5>
+hi Define guibg=NONE guifg=#<COLOR5>
+hi Delimiter guibg=NONE guifg=#<COLOR5>
+hi Float guibg=NONE guifg=#<COLOR5>
+hi Include guibg=NONE guifg=#<COLOR4>
+hi Keyword guibg=NONE guifg=#<COLOR5>
+hi Label guibg=NONE guifg=#<COLOR3>
+hi Operator guibg=NONE guifg=#<COLOR7>
+hi Repeat guibg=NONE guifg=#<COLOR3>
+hi SpecialChar guibg=NONE guifg=#<COLOR5>
+hi Tag guibg=NONE guifg=#<COLOR3>
+hi Typedef guibg=NONE guifg=#<COLOR3>
+hi vimUserCommand guibg=NONE guifg=#<COLOR1> gui=BOLD
+    hi link vimMap vimUserCommand
+    hi link vimLet vimUserCommand
+    hi link vimCommand vimUserCommand
+    hi link vimFTCmd vimUserCommand
+    hi link vimAutoCmd vimUserCommand
+    hi link vimNotFunc vimUserCommand
+hi vimNotation guibg=NONE guifg=#<COLOR4>
+hi vimMapModKey guibg=NONE guifg=#<COLOR4>
+hi vimBracket guibg=NONE guifg=#<COLOR7>
+hi vimCommentString guibg=NONE guifg=#<COLOR8>
+hi htmlLink guibg=NONE guifg=#<COLOR1> gui=underline
+hi htmlBold guibg=NONE guifg=#<COLOR3> gui=BOLD
+hi htmlItalic guibg=NONE guifg=#<COLOR5>
+hi htmlEndTag guibg=NONE guifg=#<COLOR7>
+hi htmlTag guibg=NONE guifg=#<COLOR7>
+hi htmlTagName guibg=NONE guifg=#<COLOR1> gui=BOLD
+hi htmlH1 guibg=NONE guifg=#<COLOR7>
+    hi link htmlH2 htmlH1
+    hi link htmlH3 htmlH1
+    hi link htmlH4 htmlH1
+    hi link htmlH5 htmlH1
+    hi link htmlH6 htmlH1
+hi cssMultiColumnAttr guibg=NONE guifg=#<COLOR2>
+    hi link cssFontAttr cssMultiColumnAttr
+    hi link cssFlexibleBoxAttr cssMultiColumnAttr
+hi cssBraces guibg=NONE guifg=#<COLOR7>
+    hi link cssAttrComma cssBraces
+hi cssValueLength guibg=NONE guifg=#<COLOR7>
+hi cssUnitDecorators guibg=NONE guifg=#<COLOR7>
+hi cssValueNumber guibg=NONE guifg=#<COLOR7>
+    hi link cssValueLength cssValueNumber
+hi cssNoise guibg=NONE guifg=#<COLOR8>
+hi cssTagName guibg=NONE guifg=#<COLOR1>
+hi cssFunctionName guibg=NONE guifg=#<COLOR4>
+hi scssSelectorChar guibg=NONE guifg=#<COLOR7>
+hi scssAttribute guibg=NONE guifg=#<COLOR7>
+    hi link scssDefinition cssNoise
+hi sassidChar guibg=NONE guifg=#<COLOR1>
+hi sassClassChar guibg=NONE guifg=#<COLOR5>
+hi sassInclude guibg=NONE guifg=#<COLOR5>
+hi sassMixing guibg=NONE guifg=#<COLOR5>
+hi sassMixinName guibg=NONE guifg=#<COLOR4>
+hi javaScript guibg=NONE guifg=#<COLOR7>
+hi javaScriptBraces guibg=NONE guifg=#<COLOR7>
+hi javaScriptNumber guibg=NONE guifg=#<COLOR5>
+hi markdownH1 guibg=NONE guifg=#<COLOR7>
+    hi link markdownH2 markdownH1
+    hi link markdownH3 markdownH1
+    hi link markdownH4 markdownH1
+    hi link markdownH5 markdownH1
+    hi link markdownH6 markdownH1
+hi markdownAutomaticLink guibg=NONE guifg=#<COLOR2> gui=underline
+    hi link markdownUrl markdownAutomaticLink
+hi markdownError guibg=NONE guifg=#<COLOR7>
+hi markdownCode guibg=NONE guifg=#<COLOR3>
+hi markdownCodeBlock guibg=NONE guifg=#<COLOR3>
+hi markdownCodeDelimiter guibg=NONE guifg=#<COLOR5>
+hi markdownItalic gui=Italic
+hi markdownBold gui=Bold
+hi xdefaultsValue guibg=NONE guifg=#<COLOR7>
+hi rubyInclude guibg=NONE guifg=#<COLOR4>
+hi rubyDefine guibg=NONE guifg=#<COLOR5>
+hi rubyFunction guibg=NONE guifg=#<COLOR4>
+hi rubyStringDelimiter guibg=NONE guifg=#<COLOR2>
+hi rubyInteger guibg=NONE guifg=#<COLOR3>
+hi rubyAttribute guibg=NONE guifg=#<COLOR4>
+hi rubyConstant guibg=NONE guifg=#<COLOR3>
+hi rubyInterpolation guibg=NONE guifg=#<COLOR2>
+hi rubyInterpolationDelimiter guibg=NONE guifg=#<COLOR3>
+hi rubyRegexp guibg=NONE guifg=#<COLOR6>
+hi rubySymbol guibg=NONE guifg=#<COLOR2>
+hi rubyTodo guibg=NONE guifg=#<COLOR8>
+hi rubyRegexpAnchor guibg=NONE guifg=#<COLOR7>
+    hi link rubyRegexpQuantifier rubyRegexpAnchor
+hi pythonOperator guibg=NONE guifg=#<COLOR5>
+hi pythonFunction guibg=NONE guifg=#<COLOR4>
+hi pythonRepeat guibg=NONE guifg=#<COLOR5>
+hi pythonStatement guibg=NONE guifg=#<COLOR1> gui=Bold
+hi pythonBuiltIn guibg=NONE guifg=#<COLOR4>
+hi phpMemberSelector guibg=NONE guifg=#<COLOR7>
+hi phpComparison guibg=NONE guifg=#<COLOR7>
+hi phpParent guibg=NONE guifg=#<COLOR7>
+hi cOperator guibg=NONE guifg=#<COLOR6>
+hi cPreCondit guibg=NONE guifg=#<COLOR5>
+hi SignifySignAdd guibg=NONE guifg=#<COLOR2>
+hi SignifySignChange guibg=NONE guifg=#<COLOR4>
+hi SignifySignDelete guibg=NONE guifg=#<COLOR1>
+hi NERDTreeDirSlash guibg=NONE guifg=#<COLOR4>
+hi NERDTreeExecFile guibg=NONE guifg=#<COLOR7>
+hi ALEErrorSign guibg=NONE guifg=#<COLOR1>
+hi ALEWarningSign guibg=NONE guifg=#<COLOR3>
+hi ALEError guibg=NONE guifg=#<COLOR1>
+hi ALEWarning guibg=NONE guifg=#<COLOR3>

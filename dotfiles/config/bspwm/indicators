@@ -27,8 +27,11 @@ showTimeBat=1
 if [ "$param1" = '-o' ] || [ "$param1" = '--onlyTimeBat' ]
 then
   ~/.config/lemonbar/datetime.sh &
+  echo $! > $HOME/.cache/lemon.pid
   ~/.config/lemonbar/battery.sh &
+  echo $! >> $HOME/.cache/lemon.pid
   ~/.config/lemonbar/bspwm-indicator-simple.sh &
+  echo $! >> $HOME/.cache/lemon.pid
 else
   if [ "$param1" = '-n' ] || [ "$param1" = '--noNowPlaying' ] || [ "$param2" = '-n' ] || [ "$param2" = '--noNowPlaying' ]
   then
@@ -43,13 +46,17 @@ else
   if [ "$showTimeBat" = "1" ]
   then
     ~/.config/lemonbar/datetime.sh &
+    echo $! > $HOME/.cache/lemon.pid
     ~/.config/lemonbar/battery.sh &
+    echo $! >> $HOME/.cache/lemon.pid
   fi
   if [ "$showNowPlaying" = "1" ]
   then
     ~/.config/lemonbar/nowplaying.sh &
+    echo $! >> $HOME/.cache/lemon.pid
   fi
 
   # ~/.config/lemonbar/activeapp.sh &
   ~/.config/lemonbar/bspwm-indicator.sh &
+  echo $! >> $HOME/.cache/lemon.pid
 fi

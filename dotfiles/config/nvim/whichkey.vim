@@ -53,12 +53,12 @@ function! RelNumberToggle()
 endfunction
 
   " Window related
-nnoremap <silent> <leader>wsc  :split<CR>
-nnoremap <silent> <leader>wse  :split<Space>
-nnoremap <silent> <leader>wvc  :vsplit<CR>
-nnoremap <silent> <leader>wve  :vsplit<Space>
-nnoremap <silent> <leader>wte  :tabnew<Space>
-nnoremap <silent> <leader>wtn  :tabnew<CR>
+nnoremap <silent> <leader>wsc :split<CR>
+nnoremap <silent> <leader>wse :split<Space>
+nnoremap <silent> <leader>wvc :vsplit<CR>
+nnoremap <silent> <leader>wve :vsplit<Space>
+nnoremap <silent> <leader>wte :tabnew<Space>
+nnoremap <silent> <leader>wtn :tabnew<CR>
 let g:which_key_map.w = { 'name' : '+window' }
 let g:which_key_map.w.s = {
       \ 'name' : '+split-options',
@@ -76,14 +76,30 @@ let g:which_key_map.w.t = {
       \ 'n' : 'blank-new-tab',
       \ }
 
+  " in-house terminal
+nnoremap <silent> <leader>Tt :tabnew term://zsh<CR>
+nnoremap <silent> <leader>Th :terminal<CR>
+nnoremap <silent> <leader>Ts :split term://zsh<CR>
+nnoremap <silent> <leader>Tv :vsplit term://zsh<CR>
+let g:which_key_map.T = {
+      \ 'name' : '+terminal',
+      \ 'h' : 'terminal-here',
+      \ 's' : 'terminal-split',
+      \ 't' : 'terminal-tab',
+      \ 'v' : 'terminal-vsplit',
+      \ }
+
+  " configs
 nnoremap <silent> <leader>ce :tabnew ~/.vimrc<CR>
 nnoremap <silent> <leader>cs :source ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>ct :tabnew ~/.tmux.conf<CR>
 nnoremap <silent> <leader>cd :digraphs<CR>
 let g:which_key_map.c = {
       \ 'name' : '+vim',
       \ 'e' : 'edit-vimrc',
       \ 's' : 'source-vimrc',
       \ 'd' : 'show-digraphs',
+      \ 't' : 'edit-tmux-conf',
       \ }
 
   " ale linting
