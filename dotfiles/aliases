@@ -1,18 +1,7 @@
-{%@@ if profile == "Earl-Grey.local" @@%}
-##############################
-# Eye saving commands
-##############################
-alias day="~/.bin/change-wallpaper ~/Pictures/Wallpaper/konohanakitan_hydrangea.jpg"
-alias night="~/.bin/change-wallpaper ~/Pictures/Wallpaper/powerarrow_bg.png"
-{%@@ endif @@%}
-
 ##############################
 # Navigation
 ##############################
 alias lsdir="ls -d */"
-{%@@ if profile == "ubuntu1604-002" @@%}
-alias mc.skin='mc --skin="modarcon16root-defbg"' 
-{%@@ endif @@%}
 
 {%@@ if profile == "Earl-Grey.local" @@%}
 ##############################
@@ -25,13 +14,9 @@ alias listBrewDependents='brew list -1 | while read cask; do echo -ne "\x1B[1;34
 ##############################
 # Vim
 ##############################
-{%@@ if profile == "Earl-Grey.local" @@%}
-alias vim="/usr/local/bin/nvim "
-{%@@ elif profile == "Oolong" @@%}
 alias vim="nvim "
-{%@@ endif @@%}
-alias vi="vim "
-alias view="vim -R "
+alias vi="nvim "
+alias view="nvim -R "
 
 ##############################
 # Others
@@ -40,7 +25,6 @@ alias magit="vim -c MagitOnly"
 {%@@ if profile == "Earl-Grey.local" @@%}
 alias aria2c-rpc="aria2c --enable-rpc --rpc-listen-all -d './Downloads' "
 {%@@ endif @@%}
-alias gdi="fuck"
 {%@@ if profile == "Oolong" @@%}
 alias say='echo "$1" | espeak -s 150 2>/dev/null'
 alias say-zh='echo "$1" | espeak -s 150 -v zh 2>/dev/null'

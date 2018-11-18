@@ -35,7 +35,7 @@ ZSH_TMUX_AUTOSTART=true
 # oh-my-zsh settings
 DISABLE_AUTO_TITLE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git gulp tmux taskwarrior)
+plugins=(git gulp)
 ZSH_THEME=""
 
 {%@@ if profile == "Earl-Grey.local" @@%}

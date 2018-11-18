@@ -17,9 +17,13 @@ let g:startify_files_number = 7
 let g:startify_bookmarks = [ 
   \ {'m': '~/dotfiles/dotfiles/vimrc'},
   \ {'z': '~/dotfiles/dotfiles/zshrc'},
+{%@@ if profile == "Oolong" @@%}
   \ {'h': '~/.config/sxhkd/sxhkdrc'},
   \ {'w': '~/.config/bspwm/bspwmrc'},
-  \ {'c': '~/.config/sublime-text-3/Packages/User/tex.sublime-completions'},
+{%@@ elif profile == "Earl-Grey.local" @@%}
+  \ {'h': '~/.config/skhdrc'},
+  \ {'c': '~/.config/chunkwm/chunkwmrc'},
+{%@@ endif @@%}
   \ {'x': '~/dotfiles/dotfiles/tmux.conf'}
   \ ]
 let g:startify_update_oldfiles = 1

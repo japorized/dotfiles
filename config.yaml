@@ -1,18 +1,20 @@
 actions:
   pre:
-    vim-pathogen: mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-    wpgtk-install: pip3 install --user wpgtk pywal colorz colorthief
     beets-install: pip3 install --user beets
     nvim-python: pip3 install --user neovim-remote
+    vim-pathogen: mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    wpgtk-install: pip3 install --user wpgtk pywal colorz colorthief
 config:
   backup: true
   banner: true
   create: true
   dotpath: dotfiles
+  ignoreempty: false
   keepdot: false
   link_by_default: false
   longkey: false
   showdiff: true
+  workdir: ~/.config/dotdrop
 dotfiles:
   d_bspwm:
     dst: ~/.config/bspwm
@@ -33,10 +35,10 @@ dotfiles:
     dst: ~/.config/ncmpcpp
     src: config/ncmpcpp
   d_nvim:
+    actions:
+    - nvim-python
     dst: ~/.config/nvim
     src: config/nvim
-    actions:
-      - nvim-python
   d_snippets:
     dst: ~/.vim/snippets
     src: vim/snippets
@@ -47,10 +49,10 @@ dotfiles:
     dst: ~/.config/vis
     src: config/vis
   d_wpg:
+    actions:
+    - wpgtk-install
     dst: ~/.config/wpg
     src: config/wpg
-    actions:
-      - wpgtk-install
   "d_\xFCbersicht":
     dst: "~/.config/\xDCbersicht"
     src: "config/\xDCbersicht"
@@ -64,10 +66,10 @@ dotfiles:
     dst: ~/.config/neofetch/config.conf
     src: config/neofetch/config.conf
   f_config.yaml:
+    actions:
+    - beets-install
     dst: ~/.config/beets/config.yaml
     src: config/beets/config.yaml
-    actions:
-      - beets-install
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
@@ -77,12 +79,6 @@ dotfiles:
   f_keymap:
     dst: ~/.w3m/keymap
     src: w3m/keymap
-  f_khdrc:
-    dst: ~/.config/khdrc
-    src: config/khdrc
-  f_kitty.conf:
-    dst: ~/.config/kitty.conf
-    src: config/kitty.conf
   f_libinput-gestures.conf:
     dst: ~/.config/libinput-gestures.conf
     src: config/libinput-gestures.conf
@@ -98,6 +94,9 @@ dotfiles:
   f_scimrc:
     dst: ~/.config/scimrc
     src: config/scimrc
+  f_skhdrc:
+    dst: ~/.config/skhdrc
+    src: config/skhdrc
   f_sxhkdrc:
     dst: ~/.config/sxhkd/sxhkdrc
     src: config/sxhkd/sxhkdrc
@@ -114,10 +113,10 @@ dotfiles:
     dst: ~/.config/user-dirs.dirs
     src: config/user-dirs.dirs
   f_vimrc:
+    actions:
+    - vim-pathogen
     dst: ~/.vimrc
     src: vimrc
-    actions:
-      - vim-pathogen
   f_w3m_config:
     dst: ~/.w3m/config
     src: w3m/config
@@ -157,11 +156,10 @@ profiles:
     - d_nvim
     - f_functions
     - d_chunkwm
-    - f_khdrc
     - "d_\xFCbersicht"
-    - f_kitty.conf
     - d_vis
     - f_preferences.sublime-settings
+    - f_skhdrc
   Oolong:
     dotfiles:
     - f_vimrc
@@ -197,17 +195,6 @@ profiles:
     - f_user-dirs.dirs
     - d_wpg
     - f_tint2rc
-  WinCrap:
-    dotfiles:
-    - f_vimrc
-    - d_templates
-    - f_w3m_config
-    - f_aliases
-    - f_tmux.conf
-    - d_snippets
-    - f_functions
-    - f_keymap
-    - f_zshrc
   ubuntu1604-002:
     dotfiles:
     - f_vimrc

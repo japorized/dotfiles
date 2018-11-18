@@ -103,10 +103,11 @@ let g:tex_conceal=""
 let g:vimtex_fold_enabled=1
 autocmd Filetype tex setl updatetime=1000
 {%@@ if profile == "Earl-Grey.local" @@%}
-let g:livepreview_previewer = 'open -a Skim'
+let g:vimtex_view_method='skim'
 {%@@ elif profile == "Oolong" @@%}
 let g:vimtex_view_general_viewer = '/home/japorized/.bin/tabbed-zathura'
 {%@@ endif @@%}
+let g:vimtex_compiler_progname='nvr'
 
 " Goyo
 nmap <F3> :Goyo<cr>
