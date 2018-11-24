@@ -22,9 +22,11 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 ### macOS (current main system)
 
 * WM: [ chunkwm ](https://github.com/koekeishiya/chunkwm)
-* Hotkey daemon: [ khd ](https://github.com/koekeishiya/khd)
-* Terminal: [ iTerm ](https://iterm2.com/), [ kitty ](https://github.com/kovidgoyal/kitty)
+* Hotkey daemon: [ skhd ](https://github.com/koekeishiya/skhd)
+* Terminal: [ alacritty ](https://gitlab.com/jwilm/alacritty), [ iTerm ](https://iterm2.com/)
 * Utility Bar: [ Übersicht ](http://tracesof.net/uebersicht/)
+* Application Launcher: Alfred
+* Other utilities: Hammerspoon (emoji chooser, fontawesome chooser [semi-usable])
 * Package Manager: [ Homebrew ](https://brew.sh)
 
 ### Antergos (forced to retire)
@@ -34,6 +36,7 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 * Hotkey daemon: [ sxhkd ](https://github.com/baskerville/sxhkd)
 * Bar: [ lemonbar-xft ](https://github.com/krypt-n/bar) (inspiration from [here](https://www.reddit.com/r/unixporn/comments/6g5vx0/windowchef_comfy/))
 * Terminal: [ st ](https://suckless.org), [ termite ](https://github.com/thestinger/termite/), urxvt
+* Run dialog, etc: [ Rofi ](https://github.com/DaveDavenport/rofi)
 * AUR Package Manager: auracle
 * Color scheme: [pywal](https://github.com/dylanaraps/pywal)
 
