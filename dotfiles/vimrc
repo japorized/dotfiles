@@ -27,7 +27,7 @@ set softtabstop=2 " Number of tabs that a <Tab> counts for
 set tabstop=2     " The number of spaces that a <Tab> counts for
 set t_Co=256
 set timeoutlen=200
-nnoremap <SPACE> <Nop>
+map <SPACE> <Nop>
 let mapleader=" "
 
 if has("autocmd")
@@ -103,11 +103,22 @@ let g:tex_conceal=""
 let g:vimtex_fold_enabled=1
 autocmd Filetype tex setl updatetime=1000
 {%@@ if profile == "Earl-Grey.local" @@%}
-let g:vimtex_view_method='skim'
+let g:vimtex_view_enabled=0
+let g:vimtex_view_automatic=0
+" let g:vimtex_view_method='skim'
 {%@@ elif profile == "Oolong" @@%}
 let g:vimtex_view_general_viewer = '/home/japorized/.bin/tabbed-zathura'
 {%@@ endif @@%}
 let g:vimtex_compiler_progname='nvr'
+let g:vimtex_quickfix_latexlog = {
+      \ 'overfull' : 0,
+      \ 'underfull' : 0,
+      \ 'font' : 0,
+      \ 'packages' : {
+      \   'natbib' : 0,
+      \ },
+      \}
+let g:vimtex_quickfix_mode=0
 
 " Goyo
 nmap <F3> :Goyo<cr>

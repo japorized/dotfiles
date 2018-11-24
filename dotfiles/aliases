@@ -32,3 +32,4 @@ alias say-ms='echo "$1" | espeak -s 150 -v ms 2>/dev/null'
 alias popup-nowplaying="while true ; do /usr/bin/mpc idle >> /dev/null ; $HOME/.bin/tmpshow-nowplaying.sh ; done"
 {%@@ endif @@%}
 alias slack-term="TERM=xterm slack-term"
+alias mpv="open -na /Applications/mpv.app"

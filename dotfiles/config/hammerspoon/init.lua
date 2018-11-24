@@ -18,36 +18,9 @@ function reloadConfig(files)
         hs.reload()
     end
 end
-myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.config/hammerspoon/", reloadConfig):start()
 hs.alert.show("Config loaded")
-
 --
---  Hotkey to Launch Frequently Used Applications
---
--- local iterm     = 'iTerm'
--- local subl      = 'Sublime Text'
-
--- hs.hotkey.bind({"cmd"}, "Return", function()
---   hs.application.launchOrFocus(iterm)
--- end)
-
--- hs.hotkey.bind({"cmd", "alt"}, "s", function()
---   hs.application.launchOrFocus(subl)
--- end)
-
--- hs.hotkey.bind({"cmd", "alt"}, "f", function()
---   hs.application.launchOrFocusByBundleID("org.mozilla.nightly")
--- end)
-
---
---  MPC commands
---
--- hs.hotkey.bind({"cmd"}, "f7", function() hs.execute("/usr/local/bin/mpc prev") end)
--- hs.hotkey.bind({"cmd"}, "f8", function() hs.execute("/usr/local/bin/mpc toggle") hs.execute("/usr/local/bin/terminal-notifier -message 'MPD Toggle'") end)
--- hs.hotkey.bind({"cmd"}, "f9", function() hs.execute("/usr/local/bin/mpc next") end)
--- hs.hotkey.bind({"cmd"}, "f11", function() hs.execute("/usr/local/bin/mpc volume -10") hs.alert.show("mpc " .. hs.execute("/usr/local/bin/mpc volume")) end)
--- hs.hotkey.bind({"cmd"}, "f12", function() hs.execute("/usr/local/bin/mpc volume +10") hs.alert.show("mpc " .. hs.execute("/usr/local/bin/mpc volume")) end)
-
 --
 --  Window Resizing Bindings
 --
@@ -87,18 +60,18 @@ hs.alert.show("Config loaded")
 
 -- Setting up the windowfilter
 -- switcher = hs.window.switcher.new() -- default windowfilter: only visible windows, all Spaces
-switcher_space = hs.window.switcher.new(hs.window.filter.new():setCurrentSpace(true):setDefaultFilter{}) -- include minimized/hidden windows, current Space only
+-- switcher_space = hs.window.switcher.new(hs.window.filter.new():setCurrentSpace(true):setDefaultFilter{}) -- include minimized/hidden windows, current Space only
 -- switcher_browsers = hs.window.switcher.new{'Safari','Google Chrome'} -- specialized switcher for your dozens of browser windows :)
 
 -- bind to hotkeys; WARNING: at least one modifier key is required!
-hs.hotkey.bind('alt','tab','Next window',function()
-  switcher_space:next()
-  hs.alert.closeAll(0)
-end)
-hs.hotkey.bind('alt-shift','tab','Prev window',function()
-  switcher_space:previous()
-  hs.alert.closeAll(0)
-end)
+-- hs.hotkey.bind('alt','tab','Next window',function()
+--   switcher_space:next()
+--   hs.alert.closeAll(0)
+-- end)
+-- hs.hotkey.bind('alt-shift','tab','Prev window',function()
+--   switcher_space:previous()
+--   hs.alert.closeAll(0)
+-- end)
 
 --
 --  Emoji Chooser
@@ -137,6 +110,35 @@ chooser:bgDark(true)
 
 hs.hotkey.bind({"cmd", "alt"}, "E", function()
   if chooser:isVisible() then chooser:hide() else chooser:show() end
+end)
+
+--
+-- FontAwesome Index
+--
+-- Build the list of Fontawesome icons to be displayed
+local faicons = {}
+for _, icon in ipairs(hs.json.decode(io.open("fa4-icons.json"):read())) do
+  table.insert(faicons,
+    {text=icon['name'],
+      subText=icon['chars'],
+      chars=icon['icon']
+    })
+end
+
+-- Create chooser
+local chooser2 = hs.chooser.new(function(faicons)
+  if not choice then focusLastFocused(); return end
+  hs.pasteboard.setContents(choice["chars"])
+  focusLastFocused()
+  hs.eventtap.keyStrokes(hs.pasteboard.getContents())
+end)
+
+chooser2:choices(faicons)
+chooser2:rows(7)
+chooser2:bgDark(true)
+
+hs.hotkey.bind({"shift", "cmd", "alt"}, "F", function()
+  if chooser2:isVisible() then choose2:hide() else chooser2:show() end
 end)
 
 -- Load Seal

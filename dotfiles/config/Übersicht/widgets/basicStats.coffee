@@ -16,8 +16,8 @@ style: """
   position: absolute
   bottom: 10px
   right: 0
-  color: #aaa
-  background: #2d2d2d
+  color: #efefef
+  background: #1c1c1c
   height: 24px
   width: 150px
   padding: 0 10px

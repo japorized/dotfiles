@@ -2,10 +2,12 @@
 # cmd + alt + ctrl - r : brew services restart skhd
 
 # application launching shortcuts
-cmd - return : open -na /Applications/iTerm.app
+shift + cmd - return : open -na /Applications/iTerm.app
+cmd - return : open -na /Applications/Alacritty.app
 # ctrl + cmd + alt - f: open -a FirefoxNightly
 ctrl + cmd + alt - f: open -a Firefox
 ctrl + cmd + alt - s: open -na /Applications/Sublime\ Text.app
+ctrl + cmd + alt - v: open -na /Applications/VimR.app
 
 # border-ss conflict
 cmd + shift - 4 -> : chunkc border::clear
@@ -166,7 +168,9 @@ alt - p : chunkc tiling::window --toggle sticky;\
 
 # mpd controls
 cmd - f7  : mpc prev
-cmd - f8  : mpc toggle && terminal-notifier -title "MPD" -message "mpc toggled" -sender com.apple.automator.mpd
+cmd - f8  : mpc toggle
 cmd - f9  : mpc next
-cmd - f11 : mpc volume -10
-cmd - f12 : mpc volume +10
+cmd - f11 : mpc volume -5
+shift + cmd - f11 : mpc volume -20
+cmd - f12 : mpc volume +5
+shift + cmd - f12 : mpc volume +20

@@ -7,19 +7,27 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 
 ## Screenshots
 
+### macOS
+
+![macOS scrot](/screenshots/macos-2018nov24.png?raw=true "macOS Screenshot")
+
 ### Antergos (base installation)
 
 ![antergos-base scrot](/screenshots/antergos-base.png?raw=true "antergos-base")
-
-### macOS
-
-![macOS scrot](/screenshots/macos-2018jan22.png?raw=true "macOS Screenshot")
 
 ---
 
 ## Setup
 
-### Antergos (current main system)
+### macOS (current main system)
+
+* WM: [ chunkwm ](https://github.com/koekeishiya/chunkwm)
+* Hotkey daemon: [ khd ](https://github.com/koekeishiya/khd)
+* Terminal: [ iTerm ](https://iterm2.com/), [ kitty ](https://github.com/kovidgoyal/kitty)
+* Utility Bar: [ Übersicht ](http://tracesof.net/uebersicht/)
+* Package Manager: [ Homebrew ](https://brew.sh)
+
+### Antergos (forced to retire)
 
 * Installed base package
 * WM: [ bspwm ](https://github.com/baskerville/bspwm)
@@ -28,14 +36,6 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 * Terminal: [ st ](https://suckless.org), [ termite ](https://github.com/thestinger/termite/), urxvt
 * AUR Package Manager: auracle
 * Color scheme: [pywal](https://github.com/dylanaraps/pywal)
-
-### macOS (secondary system)
-
-* WM: [ chunkwm ](https://github.com/koekeishiya/chunkwm)
-* Hotkey daemon: [ khd ](https://github.com/koekeishiya/khd)
-* Terminal: [ iTerm ](https://iterm2.com/), [ kitty ](https://github.com/kovidgoyal/kitty)
-* Utility Bar: [ Übersicht ](http://tracesof.net/uebersicht/) with customized [ nerdbar ](https://github.com/apierz/nerdbar.widget)
-* Package Manager: [ Homebrew ](https://brew.sh)
 
 ---
 

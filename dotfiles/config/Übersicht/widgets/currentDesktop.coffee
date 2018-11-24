@@ -21,8 +21,8 @@ style: """
   position: absolute
   top: 10px
   font: 12px "Font Awesome 5 Free", "Font Awesome 5 Free Regular", "Font Awesome 5 Free Solid", "Font Awesome 5 Brands", "Font Awesome 5 Brands Regular"
-  color: #aaa
-  background: #2d2d2d
+  color: #efefef
+  background: #1c1c1c
   height: 24px
   width: 280px
   display: flex

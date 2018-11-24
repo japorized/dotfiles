@@ -1,6 +1,7 @@
 " vim-which-key
 call which_key#register('<Space>', "g:which_key_map")
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :WhichKeyVisual '<Space>'<CR>
 let g:which_key_map = {
       \ 'M' : 'Magit',
       \ }
@@ -9,17 +10,41 @@ nmap <Leader>di :IndentLinesToggle<CR>
 nmap <silent> <leader>dt :call TypeWriterToggle()<CR>
 nmap <silent> <leader>dln :call LineNumberToggle()<CR>
 nmap <silent> <leader>dlr :call RelNumberToggle()<CR>
-nnoremap <silent> <leader>dT :Tabularize /
+nmap <silent> <leader>dT :Tabularize /
+vmap <leader>dcch :CamelToHyphenSel<CR>
+vmap <leader>dccs :CamelToSnakeSel<CR>
+vmap <leader>dchc :HyphenToCamelSel<CR>
+vmap <leader>dchs :HyphenToSnakeSel<CR>
+vmap <leader>dcsh :SnakeToHyphenSel<CR>
+vmap <leader>dcsc :SnakeToCamelSel<CR>
 let g:which_key_map.d = {
       \ 'name' : '+document',
       \ 'i' : 'toggle-indentline',
       \ 't' : 'toggle-typewriter-mode',
       \ 'T' : 'Tabularize',
-      \ }
-let g:which_key_map.d.l = {
-      \ 'name' : '+line-number',
-      \ 'n': 'line-number-toggle',
-      \ 'r': 'relative-number-toggle'
+      \ 'l' : {
+        \ 'name' : '+line-number',
+        \ 'n': 'line-number-toggle',
+        \ 'r': 'relative-number-toggle'
+      \   },
+      \ 'c' : {
+        \ 'name' : '+case-convert',
+        \ 'c' : {
+          \ 'name' : '+from-camel',
+          \ 'h' : 'camel-to-hyphen',
+          \ 's' : 'camel-to-snake',
+        \   },
+        \ 'h' : {
+          \ 'name' : '+from-hyphen',
+          \ 'c' : 'hyphen-to-camel',
+          \ 's' : 'hyphen-to-snake',
+        \   },
+        \ 's' : {
+          \ 'name' : '+from-snake',
+          \ 'c' : 'snake-to-camel',
+          \ 'h' : 'snake-to-hyphen',
+        \   },
+      \   },
       \ }
 let g:typewriter_mode = 0
 let g:linenumber_mode = 0
@@ -53,34 +78,36 @@ function! RelNumberToggle()
 endfunction
 
   " Window related
-nnoremap <silent> <leader>wsc :split<CR>
-nnoremap <silent> <leader>wse :split<Space>
-nnoremap <silent> <leader>wvc :vsplit<CR>
-nnoremap <silent> <leader>wve :vsplit<Space>
-nnoremap <silent> <leader>wte :tabnew<Space>
-nnoremap <silent> <leader>wtn :tabnew<CR>
-let g:which_key_map.w = { 'name' : '+window' }
-let g:which_key_map.w.s = {
-      \ 'name' : '+split-options',
-      \ 'c' : 'split-current-buffer',
-      \ 'e' : 'split-buffer-by-file',
-      \ }
-let g:which_key_map.w.v = {
-      \ 'name' : '+vsplit-options',
-      \ 'c' : 'vsplit-current-buffer',
-      \ 'e' : 'vsplit-buffer-by-file',
-      \ }
-let g:which_key_map.w.t = {
-      \ 'name' : '+tabnew-options',
-      \ 'e' : 'open-in-new-tab',
-      \ 'n' : 'blank-new-tab',
+nmap <silent> <leader>wsc :split<CR>
+nmap <silent> <leader>wse :split<Space>
+nmap <silent> <leader>wvc :vsplit<CR>
+nmap <silent> <leader>wve :vsplit<Space>
+nmap <silent> <leader>wte :tabnew<Space>
+nmap <silent> <leader>wtn :tabnew<CR>
+let g:which_key_map.w = { 
+      \'name' : '+window',
+      \ 's' : {
+        \ 'name' : '+split-options',
+        \ 'c' : 'split-current-buffer',
+        \ 'e' : 'split-buffer-by-file',
+      \   },
+      \ 'v' : {
+        \ 'name' : '+vsplit-options',
+        \ 'c' : 'vsplit-current-buffer',
+        \ 'e' : 'vsplit-buffer-by-file',
+      \   },
+      \ 't' : {
+        \ 'name' : '+tabnew-options',
+        \ 'e' : 'open-in-new-tab',
+        \ 'n' : 'blank-new-tab',
+      \   },
       \ }
 
   " in-house terminal
-nnoremap <silent> <leader>Tt :tabnew term://zsh<CR>
-nnoremap <silent> <leader>Th :terminal<CR>
-nnoremap <silent> <leader>Ts :split term://zsh<CR>
-nnoremap <silent> <leader>Tv :vsplit term://zsh<CR>
+nmap <silent> <leader>Tt :tabnew term://zsh<CR>
+nmap <silent> <leader>Th :terminal<CR>
+nmap <silent> <leader>Ts :split term://zsh<CR>
+nmap <silent> <leader>Tv :vsplit term://zsh<CR>
 let g:which_key_map.T = {
       \ 'name' : '+terminal',
       \ 'h' : 'terminal-here',
@@ -147,19 +174,19 @@ let g:which_key_map.b = {
       \ 'd' : 'buffer-delete',
       \ 'n' : 'buffer-next',
       \ 'p' : 'buffer-prev',
-      \ }
-let g:which_key_map.b.s = {
-      \ 'name' : '+split',
-      \ 'l' : 'buffer-split-last',
-      \ 'f' : 'buffer-split-first',
-      \ 'n' : 'buffer-split-next',
-      \ 'p' : 'buffer-split-prev',
-      \ }
-let g:which_key_map.b.t = {
-      \ 'name' : '+buffer-thumbnail',
-      \ 't' : 'buffer-new-tab',
-      \ 's' : 'buffer-split',
-      \ 'v' : 'buffer-vsplit',
+      \ 's' : {
+        \ 'name' : '+split',
+        \ 'l' : 'buffer-split-last',
+        \ 'f' : 'buffer-split-first',
+        \ 'n' : 'buffer-split-next',
+        \ 'p' : 'buffer-split-prev',
+      \   },
+      \ 't' : {
+        \ 'name' : '+buffer-thumbnail',
+        \ 't' : 'buffer-new-tab',
+        \ 's' : 'buffer-split',
+        \ 'v' : 'buffer-vsplit',
+      \   },
       \ }
 
 " Simplenote
