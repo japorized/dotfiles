@@ -2,14 +2,18 @@ aria2
 autoconf
 awk
 buku
+cabal-install
+calc
 cheat
 crisidev/chunkwm/chunkwm
+cmatrix
 coreutils
 cython
 ghostscript
 git
 gnu-sed
 grip
+haskell-stack
 htop
 icdiff
 id3v2
@@ -20,6 +24,7 @@ libass
 libsodium
 lua
 lua@5.1
+m-cli
 mpc
 mpd
 mujs

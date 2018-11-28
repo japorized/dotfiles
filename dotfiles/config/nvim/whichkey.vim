@@ -105,15 +105,11 @@ let g:which_key_map.w = {
 
   " in-house terminal
 nmap <silent> <leader>Tt :tabnew term://zsh<CR>
-nmap <silent> <leader>Th :terminal<CR>
-nmap <silent> <leader>Ts :split term://zsh<CR>
-nmap <silent> <leader>Tv :vsplit term://zsh<CR>
+nmap <silent> <leader>Ts :Nuake<CR>
 let g:which_key_map.T = {
       \ 'name' : '+terminal',
-      \ 'h' : 'terminal-here',
       \ 's' : 'terminal-split',
       \ 't' : 'terminal-tab',
-      \ 'v' : 'terminal-vsplit',
       \ }
 
   " configs

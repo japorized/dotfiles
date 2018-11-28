@@ -174,3 +174,12 @@ cmd - f11 : mpc volume -5
 shift + cmd - f11 : mpc volume -20
 cmd - f12 : mpc volume +5
 shift + cmd - f12 : mpc volume +20
+
+meh - f8 : itunes_toggle
+meh - f7 : m itunes prev
+meh - f9 : m itunes next
+meh - f10 : m volume mute
+meh - f11 : m volume -5
+meh - f12 : m volume +5
+hyper - f12 : m volume +15
+hyper - f11 : m volume -15

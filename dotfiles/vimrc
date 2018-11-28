@@ -27,6 +27,7 @@ set softtabstop=2 " Number of tabs that a <Tab> counts for
 set tabstop=2     " The number of spaces that a <Tab> counts for
 set t_Co=256
 set timeoutlen=200
+set splitbelow
 map <SPACE> <Nop>
 let mapleader=" "
 
@@ -55,17 +56,8 @@ highlight PmenuSbar ctermbg=0 ctermfg=15
 au FileType crontab setlocal bkc=yes
 
 if has("autocmd")
-  augroup templates
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/shell_template.sh
-    autocmd BufNewFile *.html 0r ~/.vim/templates/html_default_template.sh
-    autocmd BufNewFile *.tex 0r ~/.vim/templates/tex_default.sh
-  augroup END
-
   autocmd FileType InsertLeave * update
 endif
-
-" terminal configs
-tnoremap <Esc> <C-\><C-n>
 
 " netrw Configs
 nmap <F1> :Lexplore<cr>
@@ -303,3 +295,6 @@ let g:ale_lint_on_enter = 0
 
 let g:SimplenoteVertical=1
 source $HOME/.vim/simplenoterc
+
+iabbrev taht that
+iabbrev adn and

@@ -2,7 +2,8 @@ actions:
   pre:
     beets-install: pip3 install --user beets
     nvim-python: pip3 install --user neovim-remote
-    vim-pathogen: mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    vim-pathogen: mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim
+      https://tpo.pe/pathogen.vim
     wpgtk-install: pip3 install --user wpgtk pywal colorz colorthief
 config:
   backup: true
@@ -22,6 +23,9 @@ dotfiles:
   d_chunkwm:
     dst: ~/.config/chunkwm
     src: config/chunkwm
+  d_colors:
+    dst: ~/.vim/colors
+    src: vim/colors
   d_hammerspoon:
     dst: ~/.config/hammerspoon
     src: config/hammerspoon
@@ -161,6 +165,7 @@ profiles:
     - d_vis
     - f_preferences.sublime-settings
     - f_skhdrc
+    - d_colors
   Oolong:
     dotfiles:
     - f_vimrc

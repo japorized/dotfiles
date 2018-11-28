@@ -17,6 +17,7 @@ alias listBrewDependents='brew list -1 | while read cask; do echo -ne "\x1B[1;34
 alias vim="nvim "
 alias vi="nvim "
 alias view="nvim -R "
+alias vimdiff="nvim -d "
 
 ##############################
 # Others

@@ -5,6 +5,13 @@ let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 {%@@ endif @@%}
 source ~/.vimrc
+
+" nuake
+let g:nuake_per_tab=1
+nnoremap <F4> :Nuake<CR>
+inoremap <F4> <C-\><C-n>:Nuake<CR>
+tnoremap <F4> <C-\><C-n>:Nuake<CR>
+
 source ~/.config/nvim/completion.vim
 source ~/.config/nvim/startify.vim
 source ~/.config/nvim/whichkey.vim
