@@ -18,6 +18,7 @@ alias vim="nvim "
 alias vi="nvim "
 alias view="nvim -R "
 alias vimdiff="nvim -d "
+alias svim="nvim -u $HOME/.vimrc-slim"
 
 ##############################
 # Others

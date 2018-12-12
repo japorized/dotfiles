@@ -121,6 +121,9 @@ dotfiles:
     - vim-pathogen
     dst: ~/.vimrc
     src: vimrc
+  f_vimrc-slim:
+    dst: ~/.vimrc-slim
+    src: vimrc-slim
   f_w3m_config:
     dst: ~/.w3m/config
     src: w3m/config
@@ -166,6 +169,7 @@ profiles:
     - f_preferences.sublime-settings
     - f_skhdrc
     - d_colors
+    - f_vimrc-slim
   Oolong:
     dotfiles:
     - f_vimrc

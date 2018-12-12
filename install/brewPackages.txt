@@ -5,7 +5,7 @@ buku
 cabal-install
 calc
 cheat
-crisidev/chunkwm/chunkwm
+koekeishiya/formulae/chunkwm
 cmatrix
 coreutils
 cython

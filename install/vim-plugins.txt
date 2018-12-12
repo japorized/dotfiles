@@ -1,4 +1,5 @@
 https://github.com/jiangmiao/auto-pairs
+https://github.com/Shougo/denite.nvim
 https://github.com/Shougo/deoplete.nvim
 https://github.com/junegunn/goyo.vim
 https://github.com/sjl/gundo.vim
@@ -16,6 +17,7 @@ https://github.com/marcweber/vim-addon-mw-utils
 https://github.com/chiedo/vim-case-convert
 https://github.com/tpope/vim-commentary
 https://github.com/airblade/vim-gitgutter
+https://github.com/pangloss/vim-javascript
 https://github.com/terryma/vim-multiple-cursors
 https://github.com/tpope/vim-repeat
 https://github.com/mhinz/vim-startify
@@ -27,4 +29,3 @@ https://github.com/posva/vim-vue
 https://github.com/liuchengxu/vim-which-key.git
 https://github.com/jreybert/vimagit
 https://github.com/lervag/vimtex
-https://github.com/dylanaraps/wal.vim

@@ -52,17 +52,17 @@ if &t_Co >= 256
   hi DiffChange       ctermbg=0    ctermfg=9    cterm=UNDERLINE   guibg=#3c4855 guifg=#d5bc02 gui=UNDERLINE
   hi DiffText         ctermbg=9    ctermfg=0    cterm=NONE        guibg=#d5bc02 guifg=#3c4855 gui=NONE
 
-  hi Pmenu            ctermbg=4    ctermfg=15   cterm=NONE        guibg=#616c72 guifg=#c5d4dd gui=NONE
-  hi PmenuSel         ctermbg=0    ctermfg=15   cterm=REVERSE     guibg=#3c4855 guifg=#c5d4dd gui=REVERSE
-  hi PmenuSbar        ctermbg=4    ctermfg=NONE cterm=NONE        guibg=#616c72 guifg=NONE    gui=NONE
-  hi PmenuThumb       ctermbg=15   ctermfg=NONE cterm=NONE        guibg=#c5d4dd guifg=NONE    gui=NONE
+  hi Pmenu            ctermbg=8    ctermfg=0    cterm=NONE        guibg=#616c72 guifg=#c5d4dd gui=NONE
+  hi PmenuSel         ctermbg=1    ctermfg=15   cterm=REVERSE     guibg=#3c4855 guifg=#c5d4dd gui=REVERSE
+  hi PmenuSbar        ctermbg=0    ctermfg=15   cterm=NONE        guibg=#616c72 guifg=NONE    gui=NONE
+  hi PmenuThumb       ctermbg=14   ctermfg=0    cterm=NONE        guibg=#c5d4dd guifg=NONE    gui=NONE
 
   hi SpellBad         ctermbg=NONE ctermfg=NONE cterm=UNDERCURL   guibg=NONE    guifg=NONE    gui=UNDERCURL
   hi SpellCap         ctermbg=NONE ctermfg=NONE cterm=UNDERCURL   guibg=NONE    guifg=NONE    gui=UNDERCURL
   hi SpellLocal       ctermbg=NONE ctermfg=NONE cterm=UNDERCURL   guibg=NONE    guifg=NONE    gui=UNDERCURL
   hi SpellRare        ctermbg=NONE ctermfg=NONE cterm=UNDERCURL   guibg=NONE    guifg=NONE    gui=UNDERCURL
 
-  hi ErrorMsg         ctermbg=1    ctermfg=4    cterm=NONE        guibg=#db6c6c guifg=#616c72 gui=NONE
+  hi ErrorMsg         ctermbg=1    ctermfg=0    cterm=NONE        guibg=#db6c6c guifg=#616c72 gui=NONE
   hi WarningMsg       ctermbg=NONE ctermfg=1    cterm=NONE        guibg=NONE    guifg=#db6c6c gui=NONE
   hi MoreMsg          ctermbg=NONE ctermfg=3    cterm=NONE        guibg=NONE    guifg=#5bb899 gui=NONE
   hi Question         ctermbg=NONE ctermfg=3    cterm=NONE        guibg=NONE    guifg=#5bb899 gui=NONE
@@ -80,6 +80,7 @@ if &t_Co >= 256
   hi Cursor           ctermbg=15   ctermfg=NONE cterm=NONE        guibg=#ebeae9 guifg=NONE    gui=NONE
   hi CursorColumn     ctermbg=4    ctermfg=NONE cterm=NONE        guibg=#616c72 guifg=NONE    gui=NONE
   hi CursorLine       ctermbg=4    ctermfg=NONE cterm=NONE        guibg=#616c72 guifg=NONE    gui=NONE
+  hi EndOfBuffer      ctermbg=0    ctermfg=0    cterm=NONE        guibg=NONE    guifg=NONE    gui=NONE
 
   hi helpleadblank    ctermbg=NONE ctermfg=NONE cterm=NONE        guibg=NONE    guifg=NONE    gui=NONE
   hi helpnormal       ctermbg=NONE ctermfg=NONE cterm=NONE        guibg=NONE    guifg=NONE    gui=NONE

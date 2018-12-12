@@ -1,5 +1,7 @@
+source $HOME/.config/nvim/commontypos.vim
+
 " linters
-let b:ale_fixers = {'latex' : ['proselint']}
+" let b:ale_fixers = {'latex' : ['proselint']}
 
 " which-keys
 nmap <silent> <leader>vn :VimtexClean<CR>

@@ -169,7 +169,7 @@ let g:limelight_priority = -1
 
 " Lightline
 " Style credits: https://github.com/xero/dotfiles
-colorscheme wal
+colorscheme chaos
 let s:base03 = [ '#151513', 233 ]
 let s:base02 = [ '#222222', 236 ]
 let s:base01 = [ '#4e4e43', 239 ]
@@ -295,6 +295,3 @@ let g:ale_lint_on_enter = 0
 
 let g:SimplenoteVertical=1
 source $HOME/.vim/simplenoterc
-
-iabbrev taht that
-iabbrev adn and

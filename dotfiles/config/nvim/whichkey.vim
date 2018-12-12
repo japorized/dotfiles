@@ -6,10 +6,10 @@ let g:which_key_map = {
       \ 'M' : 'Magit',
       \ }
   " Document Related
-nmap <Leader>di :IndentLinesToggle<CR>
-nmap <silent> <leader>dt :call TypeWriterToggle()<CR>
-nmap <silent> <leader>dln :call LineNumberToggle()<CR>
-nmap <silent> <leader>dlr :call RelNumberToggle()<CR>
+nmap <Leader>dsi :IndentLinesToggle<CR>
+nmap <silent> <leader>dst :call TypeWriterToggle()<CR>
+nmap <silent> <leader>dsn :call LineNumberToggle()<CR>
+nmap <silent> <leader>dsr :call RelNumberToggle()<CR>
 nmap <silent> <leader>dT :Tabularize /
 vmap <leader>dcch :CamelToHyphenSel<CR>
 vmap <leader>dccs :CamelToSnakeSel<CR>
@@ -17,16 +17,17 @@ vmap <leader>dchc :HyphenToCamelSel<CR>
 vmap <leader>dchs :HyphenToSnakeSel<CR>
 vmap <leader>dcsh :SnakeToHyphenSel<CR>
 vmap <leader>dcsc :SnakeToCamelSel<CR>
+nmap <leader>dtg :Denite template<CR>
 let g:which_key_map.d = {
       \ 'name' : '+document',
-      \ 'i' : 'toggle-indentline',
-      \ 't' : 'toggle-typewriter-mode',
-      \ 'T' : 'Tabularize',
-      \ 'l' : {
-        \ 'name' : '+line-number',
-        \ 'n': 'line-number-toggle',
-        \ 'r': 'relative-number-toggle'
+      \ 's' : {
+      \   'name' : '+viewer-styling',
+      \   'i' : 'toggle-indentline',
+      \   't' : 'toggle-typewriter-mode',
+      \   'n': 'line-number-toggle',
+      \   'r': 'relative-number-toggle'
       \   },
+      \ 'T' : 'Tabularize',
       \ 'c' : {
         \ 'name' : '+case-convert',
         \ 'c' : {
@@ -44,6 +45,10 @@ let g:which_key_map.d = {
           \ 'c' : 'snake-to-camel',
           \ 'h' : 'snake-to-hyphen',
         \   },
+      \   },
+      \ 't' : {
+      \   'name' : '+template',
+      \   'g' : 'get-template',
       \   },
       \ }
 let g:typewriter_mode = 0
@@ -116,13 +121,25 @@ let g:which_key_map.T = {
 nnoremap <silent> <leader>ce :tabnew ~/.vimrc<CR>
 nnoremap <silent> <leader>cs :source ~/.config/nvim/init.vim<CR>
 nnoremap <silent> <leader>ct :tabnew ~/.tmux.conf<CR>
+nnoremap <silent> <leader>cy :tabnew ~/.config/nvim/commontypos.vim<CR>
 nnoremap <silent> <leader>cd :digraphs<CR>
+nnoremap <silent> <leader>ccs :Denite colorscheme<CR>
+nnoremap <silent> <leader>cce1 :tabnew ~/.vim/colors/chaos.vim<CR>
 let g:which_key_map.c = {
       \ 'name' : '+vim',
+      \ 'c' : {
+      \   'name' : '+colorscheme',
+      \   's' : 'set-colorscheme',
+      \   'e' : {
+      \     'name' : '+edit-colorscheme',
+      \     '1' : 'chaos',
+      \     },
+      \   },
       \ 'e' : 'edit-vimrc',
       \ 's' : 'source-vimrc',
       \ 'd' : 'show-digraphs',
       \ 't' : 'edit-tmux-conf',
+      \ 'y' : 'edit-commontypos',
       \ }
 
   " ale linting
