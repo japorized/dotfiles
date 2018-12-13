@@ -170,7 +170,7 @@ profiles:
     - f_skhdrc
     - d_colors
     - f_vimrc-slim
-  Oolong:
+  sencha:
     dotfiles:
     - f_vimrc
     - f_zshrc
@@ -185,7 +185,6 @@ profiles:
     - d_lemonbar
     - f_rofi_config
     - f_termite_config
-    - d_vis
     - f_aria2.conf
     - f_config.yaml
     - f_config.conf

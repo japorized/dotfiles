@@ -23,7 +23,7 @@ rofi.width:             50
 rofi.show-icons:        true
 rofi.lines:             6
 rofi.terminal:          st
-rofi.font:              Hack 20
+rofi.font:              Hack 12
 rofi.fuzzy:             true
 rofi.run-command:       zsh -c "{cmd}"
 rofi.opacity:           75

@@ -4,15 +4,15 @@
 . "$HOME/.cache/wpgtk.color"
 
 # Options
-width="800"
-height="40"
+width="500"
+height="30"
 font="Helvetica Neue-9"
  
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
 monitor_width="${resolution/x*}"
 monitor_height="${resolution#*x}"
-offset_height="$((monitor_height - height - 10))"
+offset_height="$((monitor_height - height - 5))"
 geometry="${width}x${height}+0+${offset_height}"
  
 mpd_status() {
@@ -57,23 +57,6 @@ mpd_status() {
   fi
 }
 
-radiotray_status() {
-  thispid=$(pidof radiotray-ng)
-    if [[ -n $thispid ]]; then
-    status=$(qdbus com.github.radiotray_ng /com/github/radiotray_ng com.github.radiotray_ng.get_player_state | grep "state" | awk -F "\"" '{print $4}')
-    if [[ $status == "playing" ]]; then
-      artist=$(qdbus com.github.radiotray_ng /com/github/radiotray_ng com.github.radiotray_ng.get_player_state | grep "artist" | awk -F "\"" '{print $4}')
-      title=$(qdbus com.github.radiotray_ng /com/github/radiotray_ng com.github.radiotray_ng.get_player_state | grep "title" | awk -F "\"" '{print $4}')
-      echo "$artist - $title"
-    else
-      echo "radiotray inactive"
-    fi
-  else
-    echo "radiotray inactive"
-  fi
-
-}
-
 spotify_status() {
   thispid=$(pidof spotify)
   if [[ -n $thispid ]]; then
@@ -87,11 +70,9 @@ spotify_status() {
  
 while true; do
   if [[ $(spotify_status) != "Spotify is not active" ]] ; then
-    echo -e "%{c}%{F${foreground}}%{F#98CD97}\uf1bc%{F-}    $(spotify_status)%{F-}"
-  elif [[ $(radiotray_status) != "radiotray inactive" ]]; then
-    echo -e "%{l}%{F${foreground}}   \uf012    $(radiotray_status) %{F-}"
+    echo -e "%{c}%{F${foreground}}%{F#98CD97}%{F-}    $(spotify_status)%{F-}"
   elif [[ $(mpd_status) != "mpd is not active" ]] ; then
-    echo -e "%{l}%{F${foreground}}   \uf001    $(mpd_status)%{F-}"
+    echo -e "%{l}%{F${foreground}}       $(mpd_status)%{F-}"
   else
     echo -e "%{c}%{F${foreground}}No music players active%{F-}"
   fi

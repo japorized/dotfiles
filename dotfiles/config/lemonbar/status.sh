@@ -4,8 +4,8 @@
 . "$HOME/.cache/wpgtk.color"
 
 # Options
-width="920"
-height="40"
+width="600"
+height="30"
 ssid="---"
  
 # Get monitor width so we can center the bar.
@@ -13,12 +13,12 @@ resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
 monitor_width="${resolution/x*}"
 monitor_height="${resolution#*x}"
 offset_width="$((monitor_width / 2 - width / 2))"
-offset_height="$((monitor_height - height - 10))"
+offset_height="$((monitor_height - height - 5))"
 geometry="${width}x${height}+${offset_width}+${offset_height}"
 
 Curbrightness() {
   lvl=$(xbacklight -get)
-  echo -n "\uf042   $lvl"
+  echo -n "   $lvl"
 }
  
 Curvolume() {
@@ -26,15 +26,15 @@ Curvolume() {
   vol=$(echo $info | cut -d " " -f1)
   mute=$(echo $info | cut -d " " -f2)
   if [[ $mute == "yes" ]]; then
-    echo -n "\uf1f6"
+    echo -n ""
   else
-    echo -n "\uf028   $vol %"
+    echo -n "   $vol %"
   fi
   return
 }
 
 Wifi() {
-    ssid=$(iwconfig wlp3s0 |grep ESSID| awk '{print $NF}'|cut -d "\"" -f 2)
+    ssid=$(iwconfig wlp5s0 |grep ESSID| awk '{print $NF}'|cut -d "\"" -f 2)
     # ip=$(ifconfig wlp3s0|grep 10|grep 'inet addr')
     # ip=$(echo $ip|cut -d " " -f 2 |awk '{gsub("addr:", "");print}')
     echo -n "$ssid"
@@ -42,12 +42,12 @@ Wifi() {
 }
 
 Diskspace() {
-  df -akh | grep "/dev/sda8" | awk '{print $5}' | tr -d '\n'
+  df -akh | grep "/dev/sda3" | awk '{print $5}' | tr -d '\n'
   return
 }
 
 Filespace() {
-  df -akh | grep "/dev/sda3" | awk '{print $5}' | tr -d '\n'
+  df -akh | grep "/dev/sda4" | awk '{print $5}' | tr -d '\n'
   return
 }
 
@@ -66,14 +66,14 @@ CoffeeUp() {
     echo -n ""
     return
   else
-    echo -n "  |   \uf0f4"
+    echo -n "  |   "
     return
   fi
 }
 
 DoNotDisturb() {
   if [[ -e "/tmp/donotdisturb.lock" ]]; then
-    echo -n "  |   \uf135"
+    echo -n "  |   "
     return
   else
     echo -n ""
@@ -84,7 +84,7 @@ DoNotDisturb() {
 counter=0
 
 while true; do
-  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curbrightness)      $(Curvolume)     |      $(Wifi)   |   \uf109   $(Diskspace) full    \uf0a0   $(Filespace) full    \uf2db   $(Memspace) $(CoffeeUp)   $(DoNotDisturb)"
+  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curbrightness)      $(Curvolume)     |      $(Wifi)   |      $(Diskspace) full       $(Filespace) full       $(Memspace) $(CoffeeUp)   $(DoNotDisturb)"
   sleep 1
   if [[ $counter -ge 5 ]]; then
     exit

@@ -4,8 +4,8 @@
 . "$HOME/.cache/wpgtk.color"
 
 # Options
-width="320"
-height="40"
+width="180"
+height="30"
 font="Helvetica Neue-9"
 
 # Get monitor width so we can center the bar.
@@ -46,6 +46,6 @@ Clock() {
 }
 
 while true; do
-    echo -e "%{c}%{F${foreground}}%{B${background}} \uf073  $(Clock)%{F-}%{B-}"
+    echo -en "%{c}%{F${foreground}}%{B${background}}   $(Clock)%{F-}%{B-}"
     sleep 0.5
-done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -f "ipagothic-10" -B "${background}"
+done | lemonbar -d -g $geometry -f "$font" -f "Hack Nerd Font" -f "ipagothic-10" -B "${background}"

@@ -39,5 +39,4 @@ xbanish -i shift -i mod1 -i mod4 -i control &
 pasystray &
 xss-lock -n /usr/share/doc/xss-lock/dim-screen.sh -- slock &
 libinput-gestures-setup start &
-pcloud &
 tint2 &

@@ -4,34 +4,34 @@
 . "$HOME/.cache/wpgtk.color"
 
 #Options
-width="120"
-height="40"
+width="90"
+height="30"
 font="Helvetica Neue-9"
 
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
 monitor_width="${resolution/x*}"
 offset="$((monitor_width - width))"
-geometry="${width}x${height}+${offset}+50"
+geometry="${width}x${height}+${offset}+40"
 
 Battery() {
   ACPIBATT=$(acpi --battery)
   BATPERC=$(echo $ACPIBATT | cut -d, -f2 | tr -d "%")
-  STATUS=$(echo $ACPIBATT | cut -d: -f2 | cut -d, -f1)
-  if [[ "$STATUS" == " Charging" ]] ; then
-    echo -ne "%{F${color14}}\uf0e7%{F-}  %{F${foreground}}$BATPERC % %{F-}"
-  elif [[ "$STATUS" == " Full" ]] ; then
-    echo -ne "%{F${color5}}\uf240%{F-} %{F${foreground}}$BATPERC % %{F-}"
+  STATUS=$(acpi -a | cut -d" " -f3)
+  if [[ "$STATUS" == "on-line" ]] ; then
+    echo -ne "%{F${color14}}%{F-}  %{F${foreground}}$BATPERC % %{F-}"
+  # elif [[ "$STATUS" == " Full" ]] ; then
+  #   echo -ne "%{F${color5}}%{F-} %{F${foreground}}$BATPERC % %{F-}"
   elif [[ "$BATPERC" -lt 20 ]]; then
-    echo -ne "%{F${color1}}\uf244%{F-} %{F${foreground}}$BATPERC % %{F-}"
+    echo -ne "%{F${color1}}%{F-} %{F${foreground}}$BATPERC % %{F-}"
   elif [[ "$BATPERC" -lt 35 ]]; then
-    echo -ne "%{F${color9}}\uf243%{F-} %{F${foreground}}$BATPERC % %{F-}"
+    echo -ne "%{F${color9}}%{F-} %{F${foreground}}$BATPERC % %{F-}"
   elif [ "$BATPERC" -lt 50 ]; then
-    echo -ne "\uf242$BATPERC %"
+    echo -ne "$BATPERC %"
   elif [[ "$BATPERC" -lt 70 ]]; then
-    echo -ne "\uf241$BATPERC %"
+    echo -ne "$BATPERC %"
   else
-    echo -ne "\uf240$BATPERC %"
+    echo -ne "$BATPERC %"
   fi
 }
 

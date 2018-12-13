@@ -1,7 +1,7 @@
 #!/bin/bash
 . "$HOME/.cache/wpgtk.color"
-width="400"
-height="70"
+width="300"
+height="50"
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
 monitor_width="${resolution/x*}"
 monitor_height="${resolution#*x}"
@@ -15,5 +15,5 @@ Brightness(){
 }
 
 while true; do
-echo -e "%{l}%{F${foreground}}%{B${background}}  \uf042 Brightness: $(Brightness) %{F-}%{B-}" && sleep 1.5 && exit
+echo -e "%{l}%{F${foreground}}%{B${background}}   Brightness: $(Brightness) %{F-}%{B-}" && sleep 1.5 && exit
 done | lemonbar -d -g $geometry -f "FontAwesome-18" -B "${background}"

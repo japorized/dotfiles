@@ -46,23 +46,17 @@ XF86PowerOff
 # XF86 Keys & Context Menu key as modal key for multimedia-key emulation
   # Context Menu is Menu button for generic keyboards
   # Press ESC to exit mode
-{XF86MonBrightnessUp,Menu : F2}
+{XF86MonBrightnessUp,Menu : F6}
   xbacklight -inc 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
-{shift + XF86MonBrightnessUp,Menu : shift + F2}
+{shift + XF86MonBrightnessUp,Menu : shift + F6}
   xbacklight -inc 15 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
-{XF86MonBrightnessDown,Menu : F1}
+{XF86MonBrightnessDown,Menu : F5}
   xbacklight -dec 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
-{shift + XF86MonBrightnessDown,Menu : shift + F1}
+{shift + XF86MonBrightnessDown,Menu : shift + F5}
   xbacklight -dec 15 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
-
-{XF86KbdBrightnessUp,Menu : F6}
-  xbacklight -ctrl smc::kbd_backlight -inc 5 ; ~/.config/lemonbar/kbd-brightness.sh
-
-{XF86KbdBrightnessDown,Menu : F5}
-  xbacklight -ctrl smc::kbd_backlight -dec 5 ; ~/.config/lemonbar/kbd-brightness.sh
 
 {XF86AudioNext,Menu : F9}
   mpc next
@@ -73,20 +67,20 @@ XF86PowerOff
 {XF86AudioPlay,Menu: F8}
   mpc toggle
 
-{XF86AudioRaiseVolume,Menu : F12}
-  pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +2% && ~/.config/lemonbar/vol.sh
+{XF86AudioRaiseVolume,Menu : F3}
+  pulseaudio-ctl up 2 && ~/.config/lemonbar/vol.sh
 
-{XF86AudioLowerVolume,Menu : F11}
-  pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -2% && ~/.config/lemonbar/vol.sh
+{XF86AudioLowerVolume,Menu : F2}
+  pulseaudio-ctl down 2 && ~/.config/lemonbar/vol.sh
 
-{shift + XF86AudioRaiseVolume,Menu: shift + F12}
-  pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +10% && ~/.config/lemonbar/vol.sh
+{shift + XF86AudioRaiseVolume,Menu: shift + F3}
+  pulseaudio-ctl up 10 && ~/.config/lemonbar/vol.sh
 
-{shift + XF86AudioLowerVolume,Menu : shift + F11}
-  pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -10% && ~/.config/lemonbar/vol.sh
+{shift + XF86AudioLowerVolume,Menu : shift + F2}
+  pulseaudio-ctl down 10 && ~/.config/lemonbar/vol.sh
 
-{XF86AudioMute,Menu : F10}
-  sh -c "pactl set-sink-mute 0 toggle ; ~/.config/lemonbar/vol.sh"
+{XF86AudioMute,Menu : F1}
+  pulseaudio-ctl mute ; ~/.config/lemonbar/vol.sh
 
 # make sxhkd reload its configuration files:
 super + Escape

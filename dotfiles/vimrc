@@ -98,7 +98,7 @@ autocmd Filetype tex setl updatetime=1000
 let g:vimtex_view_enabled=0
 let g:vimtex_view_automatic=0
 " let g:vimtex_view_method='skim'
-{%@@ elif profile == "Oolong" @@%}
+{%@@ elif profile == "sencha" @@%}
 let g:vimtex_view_general_viewer = '/home/japorized/.bin/tabbed-zathura'
 {%@@ endif @@%}
 let g:vimtex_compiler_progname='nvr'

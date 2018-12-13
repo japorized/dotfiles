@@ -1,5 +1,5 @@
 # For terminals that need an extra command to turn on 256-colors
-  {%@@ if profile == "Oolong" @@%}
+  {%@@ if profile == "sencha" @@%}
   (cat $HOME/.cache/wpgtk-term.color &)
   {%@@ elif profile == "Earl-Grey.local" @@%}
   (cat $HOME/.cache/wal/sequences &)
