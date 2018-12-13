@@ -17,7 +17,7 @@ let g:startify_files_number = 7
 let g:startify_bookmarks = [ 
   \ {'m': '~/dotfiles/dotfiles/vimrc'},
   \ {'z': '~/dotfiles/dotfiles/zshrc'},
-{%@@ if profile == "Oolong" @@%}
+{%@@ if profile == "sencha" @@%}
   \ {'h': '~/.config/sxhkd/sxhkdrc'},
   \ {'w': '~/.config/bspwm/bspwmrc'},
 {%@@ elif profile == "Earl-Grey.local" @@%}

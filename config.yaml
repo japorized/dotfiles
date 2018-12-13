@@ -43,6 +43,9 @@ dotfiles:
     - nvim-python
     dst: ~/.config/nvim
     src: config/nvim
+  d_schemes:
+    dst: ~/.config/wpg/schemes
+    src: config/wpg/schemes
   d_snippets:
     dst: ~/.vim/snippets
     src: vim/snippets
@@ -52,11 +55,6 @@ dotfiles:
   d_vis:
     dst: ~/.config/vis
     src: config/vis
-  d_wpg:
-    actions:
-    - wpgtk-install
-    dst: ~/.config/wpg
-    src: config/wpg
   "d_\xFCbersicht":
     dst: "~/.config/\xDCbersicht"
     src: "config/\xDCbersicht"
@@ -202,8 +200,8 @@ profiles:
     - d_ncmpcpp
     - f_zshenv
     - f_user-dirs.dirs
-    - d_wpg
     - f_tint2rc
+    - d_schemes
   ubuntu1604-002:
     dotfiles:
     - f_vimrc
