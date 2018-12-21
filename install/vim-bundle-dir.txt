@@ -1,0 +1,40 @@
+/home/japorized/.vim/bundle
+├── always
+│   ├── auto-pairs
+│   ├── gundo.vim
+│   ├── indentline
+│   ├── nuake
+│   ├── quick-scope
+│   ├── simplenote.vim
+│   ├── tabular
+│   ├── tlib_vim
+│   ├── vim-addon-mw-utils
+│   ├── vimagit
+│   ├── vim-case-convert
+│   ├── vim-commentary
+│   ├── vim-gitgutter
+│   ├── vim-multiple-cursors
+│   ├── vim-repeat
+│   ├── vim-startify
+│   ├── vim-surround
+│   ├── vim-template
+│   ├── vimtex
+│   ├── vim-tmux-navigator
+│   ├── vim-visual-increment
+│   └── vim-which-key
+├── haskell
+├── javascript
+│   ├── elm-vim
+│   ├── vim-javascript
+│   └── vim-vue
+├── optional
+│   ├── denite.nvim
+│   ├── deoplete.nvim
+│   ├── goyo.vim
+│   ├── lightline.vim
+│   ├── limelight.vim
+│   └── ultisnips
+├── r
+└── tex
+
+37 directories, 0 files

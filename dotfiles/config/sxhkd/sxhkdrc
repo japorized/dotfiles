@@ -4,10 +4,10 @@
 
 # terminal emulator
 super + Return
-  st
+  termite
 
-shift + super + Return
-  st -e wal-tmux
+# shift + super + Return
+#   kitty --new-session ~/.config/kitty/new-tmux
 
 # program launcher
 alt + space
@@ -58,29 +58,32 @@ XF86PowerOff
 {shift + XF86MonBrightnessDown,Menu : shift + F5}
   xbacklight -dec 15 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
 
-{XF86AudioNext,Menu : F9}
+{XF86AudioNext,XF86Tools,Menu : F9}
   mpc next
 
-{XF86AudioPrev,Menu : F7}
+{XF86AudioPrev,XF86Display,Menu : F7}
   mpc cdprev
 
-{XF86AudioPlay,Menu: F8}
+{XF86AudioPlay,XF86WLAN,Menu: F8}
   mpc toggle
 
 {XF86AudioRaiseVolume,Menu : F3}
-  pulseaudio-ctl up 2 && ~/.config/lemonbar/vol.sh
+  pactl set-sink-mute 0 false && pulseaudio-ctl up 2 && ~/.config/lemonbar/vol.sh
 
 {XF86AudioLowerVolume,Menu : F2}
-  pulseaudio-ctl down 2 && ~/.config/lemonbar/vol.sh
+  pactl set-sink-mute 0 false && pulseaudio-ctl down 2 && ~/.config/lemonbar/vol.sh
 
 {shift + XF86AudioRaiseVolume,Menu: shift + F3}
-  pulseaudio-ctl up 10 && ~/.config/lemonbar/vol.sh
+  pactl set-sink-mute 0 false && pulseaudio-ctl up 10 && ~/.config/lemonbar/vol.sh
 
 {shift + XF86AudioLowerVolume,Menu : shift + F2}
-  pulseaudio-ctl down 10 && ~/.config/lemonbar/vol.sh
+  pactl set-sink-mute 0 false && pulseaudio-ctl down 10 && ~/.config/lemonbar/vol.sh
 
 {XF86AudioMute,Menu : F1}
   pulseaudio-ctl mute ; ~/.config/lemonbar/vol.sh
+
+XF86Calculator
+  /usr/bin/=
 
 # make sxhkd reload its configuration files:
 super + Escape

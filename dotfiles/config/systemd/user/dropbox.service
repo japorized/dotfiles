@@ -1,0 +1,10 @@
+[Unit]
+Description=Dropbox daemon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/dropbox
+ExecReload=/usr/bin/kill -SIGUSR1 $MAINPID
+
+[Install]
+WantedBy=default.target

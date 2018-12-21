@@ -72,12 +72,27 @@ dotfiles:
     - beets-install
     dst: ~/.config/beets/config.yaml
     src: config/beets/config.yaml
+  f_default.custom.yaml:
+    dst: ~/.config/fcitx/rime/default.custom.yaml
+    src: config/fcitx/rime/default.custom.yaml
+  f_dmenuextended_preferences.txt:
+    dst: ~/.config/dmenu-extended/config/dmenuExtended_preferences.txt
+    src: config/dmenu-extended/config/dmenuExtended_preferences.txt
+  f_dropbox.service:
+    dst: ~/.config/systemd/user/dropbox.service
+    src: config/systemd/user/dropbox.service
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
+  f_fonts.conf:
+    dst: ~/.config/fontconfig/fonts.conf
+    src: config/fontconfig/fonts.conf
   f_functions:
     dst: ~/.functions
     src: functions
+  f_geoclue-agent.service:
+    dst: ~/.config/systemd/user/geoclue-agent.service
+    src: config/systemd/user/geoclue-agent.service
   f_keymap:
     dst: ~/.w3m/keymap
     src: w3m/keymap
@@ -90,6 +105,9 @@ dotfiles:
   f_preferences.sublime-settings:
     dst: ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
     src: config/sublime-text-3/Packages/User/Preferences.sublime-settings
+  f_redshift.service:
+    dst: ~/.config/systemd/user/redshift.service
+    src: config/systemd/user/redshift.service
   f_rofi_config:
     dst: ~/.config/rofi/config
     src: config/rofi/config
@@ -202,6 +220,12 @@ profiles:
     - f_user-dirs.dirs
     - f_tint2rc
     - d_schemes
+    - f_dmenuextended_preferences.txt
+    - f_dropbox.service
+    - f_redshift.service
+    - f_geoclue-agent.service
+    - f_default.custom.yaml
+    - f_fonts.conf
   ubuntu1604-002:
     dotfiles:
     - f_vimrc

@@ -1,0 +1,46 @@
+pkgname=handpicked-fonts
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Japorized's personally handpicked fonts"
+arch=('any')
+license=('custom:VARIOUS')
+makedepends=('p7zip' 'fontconfig' 'xorg-mkfontdir' 'xorg-mkfontscale')
+install=$pkgname.install
+source=(
+  "https://timesnewerroman.com/assets/TimesNewerRoman.zip"
+  "https://01.org/sites/default/files/downloads/clear-sans/clearsans-1.00.zip"
+  "https://www.fontsquirrel.com/fonts/download/noticia-text"
+  "http://flop.sakura.ne.jp/font/fontdata/SoukouMincho-Font.zip"
+  "http://modi.jpn.org/download/MODI_timemachine-wa_2017_0930.zip"
+  "https://download1041.mediafire.com/4ddcjoobcjog/sjpiji3cdqfmlb4/hkgyong.zip"
+  "https://download1199.mediafire.com/4313338vfbog/xdhveb6hexcbnp4/hkkaiiw.zip"
+)
+sha256sums=(
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+)
+
+prepare(){
+  WANTEDPREFIX=/home/japorized/.fonts
+  mkdir -p "$WANTEDPREFIX"/OTF "$WANTEDPREFIX"/TTF
+  mkfontdir "$WANTEDPREFIX"/OTF "$WANTEDPREFIX"/TTF
+  mkfontscale "$WANTEDPREFIX"/OTF "$WANTEDPREFIX"/TTF
+  mkdir -p "$WANTEDPREFIX"/Licenses
+  7z x *.zip
+  # tar -xzvf *.tar.gz
+}
+
+package() {
+  WANTEDPREFIX=/home/japorized/.fonts
+  find "$srcdir" -name "*.ttf" -exec install {} "$WANTEDPREFIX"/TTF \;
+  find "$srcdir" -name "*.otf" -exec install {} "$WANTEDPREFIX"/OTF \;
+  find "$srcdir" -name "*license*" -exec install {} "$WANTEDPREFIX"/Licenses \;
+  find "$srcdir" -name "*License*" -exec install {} "$WANTEDPREFIX"/Licenses \;
+  find "$srcdir" -name "*LICENSE*" -exec install {} "$WANTEDPREFIX"/Licenses \;
+  echo "You are to not use these fonts commercially without consulting their licenses. These are fonts for aesthetic pleasure."
+}

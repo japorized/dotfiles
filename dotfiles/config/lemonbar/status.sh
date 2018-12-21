@@ -81,10 +81,20 @@ DoNotDisturb() {
   fi
 }
 
+TrackpadStatus() {
+  trackpadStatus=$(cat $HOME/.cache/trackpadStatus)
+  if [ "$trackpadStatus" == "off" ]; then
+    echo -n "  |   x"
+    return
+  else
+    echo -n ""
+  fi
+}
+
 counter=0
 
 while true; do
-  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curbrightness)      $(Curvolume)     |      $(Wifi)   |      $(Diskspace) full       $(Filespace) full       $(Memspace) $(CoffeeUp)   $(DoNotDisturb)"
+  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curbrightness)      $(Curvolume)     |      $(Wifi)   |      $(Diskspace) full       $(Filespace) full       $(Memspace) $(CoffeeUp)   $(DoNotDisturb)$(TrackpadStatus)"
   sleep 1
   if [[ $counter -ge 5 ]]; then
     exit

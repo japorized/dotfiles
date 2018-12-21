@@ -30,7 +30,7 @@ export npm_config_prefix=$HOME/.node_modules
 export XDG_DATA_HOME=$HOME/.data
 
 # nnn
-export NNN_BMS='doc:~/Documents;D:~/Downloads/;P:~/Pictures/;M:~/Music;tex:~/Documents/TeX_Notes/'
+export NNN_BMS='d:~/Documents;D:~/Downloads/;P:~/Pictures/;M:~/Music;T:~/Documents/TeX_Notes/'
 
 export PATH=$HOME/.bin:$HOME/.node_modules/bin:$PATH
 export fpath=($fpath $HOME/.bin/fpath)

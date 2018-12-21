@@ -4,14 +4,14 @@
 . "$HOME/.cache/wpgtk.color"
 
 # Options
-width="50"
-height="40"
+width="30"
+height="30"
 
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
 monitor_width="${resolution/x*}"
 offset="$((monitor_width - width))"
-geometry="${width}x${height}+${offset}+100"
+geometry="${width}x${height}+${offset}+70"
 
 indicator() {
   SPACES=$(bspc query -D)
@@ -23,25 +23,25 @@ indicator() {
     CHAR="\uf111"
     case "$C" in
       "1")
-        CHAR="\uf120"
+        CHAR=""
         ;;
       "2")
-        CHAR="\uf0ac"
+        CHAR=""
         ;;
       "3")
-        CHAR="\uf121"
+        CHAR=""
         ;;
       "4")
-        CHAR="\uf06c"
+        CHAR=""
         ;;
       "5")
-        CHAR="\uf0b1"
+        CHAR=""
         ;;
       "6")
-        CHAR="\uf025"
+        CHAR=""
         ;;
       "7")
-        CHAR="\uf11b"
+        CHAR=""
         ;;
     esac
     if [[ $SPACE = $(bspc query -D -d) ]]; then

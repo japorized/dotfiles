@@ -1,8 +1,11 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
+let &packpath=&runtimepath
 {%@@ if profile == "Earl-Grey.local" @@%}
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
+{%@@ else @@%}
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python'
 {%@@ endif @@%}
 source ~/.vimrc
 

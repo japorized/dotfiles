@@ -1,5 +1,5 @@
 {
-    "wallpaper": "pinetrees.png",
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/pinetrees.png",
     "alpha": "100",
 
     "special": {
@@ -10,7 +10,7 @@
     "colors": {
         "color0": "#161a16",
         "color1": "#648144",
-        "color2": "#214f4b",
+        "color2": "#29897d",
         "color3": "#02827e",
         "color4": "#38a16b",
         "color5": "#83a266",
@@ -18,7 +18,7 @@
         "color7": "#bacdc0",
         "color8": "#5e6e5e",
         "color9": "#bce97f",
-        "color10": "#5d7f7c",
+        "color10": "#5ea59f",
         "color11": "#02b2ac",
         "color12": "#4cdc93",
         "color13": "#b4de8b",

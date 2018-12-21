@@ -24,12 +24,12 @@
   export CONFIG=$HOME/.config
 
 # tmux plugin configs
-ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART_ONCE=true
 
 # oh-my-zsh settings
 DISABLE_AUTO_TITLE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git gulp)
+plugins=(git gulp tmux)
 ZSH_THEME=""
 
 {%@@ if profile == "Earl-Grey.local" @@%}

@@ -1,0 +1,4 @@
+post_install() {
+  echo -n "Clearing font cache"
+  fc-cache -fv
+}

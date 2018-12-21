@@ -6,11 +6,11 @@ echo "Installing plugins from vim-plugins.txt"
 while read repo ; do
   git clone "$repo"
   echo 'Cloned ' $repo
-done < vim-plugins.txt
+done < $HOME/dotfiles/install/vim-plugins.txt
 
 echo "Creating symlinks for slimmed configuration"
 mkdir -p $HOME/.vim/slim
 cd $HOME/.vim/slim
 ln -sf $HOME/.vim/bundle/* $HOME/.vim/slim
-rm -f denite.nvim lightline nuake thumbnail.vim tlib_vim vim-addon-mw-utils ultisnips vim-case-convert vim-javascript vim-startify vim-template vim-vue vimagit vimtex
+rm -f denite.nvim lightline.vim nuake thumbnail.vim tlib_vim vim-addon-mw-utils ultisnips vim-case-convert vim-javascript vim-startify vim-template vim-vue vimagit vimtex
 echo "Slim configuration ready. Use svim to specify slim-vim configuration."

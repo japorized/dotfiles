@@ -30,12 +30,9 @@ set timeoutlen=200
 set splitbelow
 map <SPACE> <Nop>
 let mapleader=" "
+filetype indent plugin on
 
 if has("autocmd")
-  if !has('nvim')
-    filetype plugin indent on
-  endif
-
   autocmd Syntax html,javascript,latex,vim setlocal foldmethod=indent
 endif
 
@@ -46,11 +43,6 @@ endif
 " Highlights
 hi VertSplit ctermbg=NONE guibg=NONE cterm=NONE
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-hi Conceal ctermfg=132
-highlight Pmenu ctermbg=8  ctermfg=0
-highlight PmenuThumb ctermbg=14 ctermfg=0
-highlight PmenuSel ctermbg=1 ctermfg=15
-highlight PmenuSbar ctermbg=0 ctermfg=15
 
 " Workaround for crontab saving problems
 au FileType crontab setlocal bkc=yes
@@ -69,7 +61,10 @@ let g:netrw_winsize=25     " netrw to only occupy 25% of the screen
 let g:netrw_altv=1
 
 " Pathogen plugin manager
-execute pathogen#infect()
+execute pathogen#infect('bundle/always/{}', 'bundle/optional/{}')
+autocmd FileType tex execute pathogen#infect('bundle/tex/{}')
+autocmd FileType javascript execute pathogen#infect('bundle/javascript/{}')
+autocmd Filetype hs execute pathogen#infect('bundle/haskell/{}')
 Helptags
 
 " GitGutter Config
@@ -212,16 +207,20 @@ let g:lightline = {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch' ],
   \             [ 'readonly', 'filename', 'modified' ]],
-  \   'right': [ [ 'linter_checking', 'linter_warnings', 'linter_errors' ],
-  \              [ 'percent', 'lineinfo' ],
-  \              [ 'fileencoding', 'filetype' ]]
+  \   'right': [ [ 'sensible_lineinfo' ],
+  \              [ 'filetype' ],
+  \              [ 'linter_checking', 'linter_warnings', 'linter_errors' ]]
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'gitbranch#name'
+  \   'gitbranch': 'gitbranch#name',
+  \   'sensible_lineinfo': 'SensibleLineinfo'
   \ },
   \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
   \ 'subseparator': { 'left': '▒', 'right': '░' }
   \ }
+function! SensibleLineinfo()
+  return col('.') . ':' . line('.') . ':' . line('$')
+endfunction
 let g:lightline.mode_map = {
     \ 'n' : ' ',
     \ 'i' : ' ',

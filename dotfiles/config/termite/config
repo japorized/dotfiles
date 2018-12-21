@@ -1,48 +1,44 @@
 [options]
-font = FontAwesome 10
+font = Hack Nerd Font 10
+font = SoukouMincho 10
 font = Emoji 10
-font = Hack 10
 
 [colors]
-Base16 Eighties
-Author: Chris Kempson (http://chriskempson.com)
 
-foreground      = #d3d0c8
-foreground_bold = #e8e6df
-cursor          = #e8e6df
-background      = #2d2d2d
-
-16 color space
+foreground      = #f4eaea
+foreground_bold = #f4eaea
+cursor          = #f4eaea
+background      = #161a16
 
 Black, Gray, Silver, White
-color0  = #2d2d2d
-color8  = #747369
-color7  = #d3d0c8
-color15 = #f2f0ec
+color0  = #161a16
+color8  = #5e6e5e
+color7  = #bacdc0
+color15 = #f4eaea
 
 Red
-color1  = #f2777a
-color9  = #f2777a
+color1  = #648144
+color9  = #bce97f
 
 Green
-color2  = #99cc99
-color10 = #99cc99
+color2  = #29897d
+color10 = #5ea59f
 
 Yellow
-color3  = #ffcc66
-color11 = #ffcc66
+color3  = #02827e
+color11 = #02b2ac
 
 Blue
-color4  = #6699cc
-color12 = #6699cc
+color4  = #38a16b
+color12 = #4cdc93
 
 Purple
-color5  = #cc99cc
-color13 = #cc99cc
+color5  = #83a266
+color13 = #b4de8b
 
 Teal
-color6  = #66cccc
-color14 = #66cccc
+color6  = #118d53
+color14 = #16c172
 
 Extra colors
 color16 = #f99157

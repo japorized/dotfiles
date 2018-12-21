@@ -2,7 +2,7 @@
 
 bspc monitor -d I II III IV V VI VII
 
-bspc config border_width         3
+bspc config border_width         2
 sh -c "~/.config/bspwm/gaps.sh"
 sh -c "~/.config/bspwm/bspwm-colors.sh"
 
@@ -36,7 +36,8 @@ fcitx &
 sxhkd &
 ~/.fehbg &
 xbanish -i shift -i mod1 -i mod4 -i control &
-pasystray &
-xss-lock -n /usr/share/doc/xss-lock/dim-screen.sh -- slock &
+# pasystray &
+# light-locker --lock-on-suspend --lock-on-lid &
+xss-lock -- slock &
 libinput-gestures-setup start &
 tint2 &

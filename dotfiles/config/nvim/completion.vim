@@ -21,4 +21,4 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}
 endif
-let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+au Filetype tex let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete

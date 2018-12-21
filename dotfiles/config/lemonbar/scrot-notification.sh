@@ -6,7 +6,7 @@
 # Options
 width="350"
 height="40"
-font="Terminus-9"
+font="Helvetica Neue-9"
  
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
@@ -22,7 +22,7 @@ Scrot() {
 }
  
 while true; do
-    echo -e "%{c}%{F${foreground}}%{B${background}} \uf030  $(Scrot)"
+    echo -e "%{c}%{F${foreground}}%{B${background}}   $(Scrot)"
     sleep 0.7
     exit
 done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -B "${background}"

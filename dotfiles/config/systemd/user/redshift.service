@@ -1,0 +1,12 @@
+[Unit]
+Description=Redshift display colour temperature adjustment
+Documentation=http://jonls.dk/redshift/
+After=network.target geoclue.service
+
+[Service]
+ExecStart=/usr/bin/redshift
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

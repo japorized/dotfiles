@@ -77,4 +77,4 @@ while true; do
     echo -e "%{c}%{F${foreground}}No music players active%{F-}"
   fi
   sleep 1
-done | lemonbar -d -g $geometry -f "FontAwesome" -f "$font" -f "ipagothic-9" -f "ipamincho-9" -B "${background}"
+done | lemonbar -d -g $geometry -f "FontAwesome" -f "$font" -f "SoukouMincho-9" -B "${background}"
