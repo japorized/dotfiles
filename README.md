@@ -11,7 +11,11 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 
 ![macOS scrot](/screenshots/macos-2018nov24.png?raw=true "macOS Screenshot")
 
-### Antergos (base installation)
+### archlinux
+
+![archlinux scrot](/screenshots/archlinux.png?raw=true "archlinux Screenshot")
+
+### Antergos (base installation; retired)
 
 ![antergos-base scrot](/screenshots/antergos-base.png?raw=true "antergos-base")
 
@@ -19,7 +23,19 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 
 ## Setup
 
-### macOS (current main system)
+### archlinux (current main system)
+
+* Installed base package
+* WM: [ bspwm ](https://github.com/baskerville/bspwm)
+* Hotkey daemon: [ sxhkd ](https://github.com/baskerville/sxhkd)
+* Bar: [ lemonbar-xft ](https://github.com/krypt-n/bar) (inspiration from [here](https://www.reddit.com/r/unixporn/comments/6g5vx0/windowchef_comfy/))
+* Terminal: [ termite ](https://github.com/thestinger/termite/), [ kitty ](https://github.com/kovidgoyal/kitty), [ st ](https://suckless.org)
+* Run dialog, etc: [ Rofi ](https://github.com/DaveDavenport/rofi), [ dmenu_extended ](https://github.com/MarkHedleyJones/dmenu-extended)
+* AUR Package Manager: [ auracle ](https://github.com/falconindy/auracle)
+* Color scheme: [pywal](https://github.com/dylanaraps/pywal) with colorz backend (with personal adjustments)
+* Font choices: Hack Nerd Font (monospace), Helvetica Neue (sans-serif), Times Newer Roman (serif), SoukouMincho (japanese)
+
+### macOS
 
 * WM: [ chunkwm ](https://github.com/koekeishiya/chunkwm)
 * Hotkey daemon: [ skhd ](https://github.com/koekeishiya/skhd)
@@ -28,17 +44,6 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 * Application Launcher: Alfred
 * Other utilities: Hammerspoon (emoji chooser, fontawesome chooser [semi-usable])
 * Package Manager: [ Homebrew ](https://brew.sh)
-
-### Antergos (forced to retire)
-
-* Installed base package
-* WM: [ bspwm ](https://github.com/baskerville/bspwm)
-* Hotkey daemon: [ sxhkd ](https://github.com/baskerville/sxhkd)
-* Bar: [ lemonbar-xft ](https://github.com/krypt-n/bar) (inspiration from [here](https://www.reddit.com/r/unixporn/comments/6g5vx0/windowchef_comfy/))
-* Terminal: [ st ](https://suckless.org), [ termite ](https://github.com/thestinger/termite/), urxvt
-* Run dialog, etc: [ Rofi ](https://github.com/DaveDavenport/rofi)
-* AUR Package Manager: auracle
-* Color scheme: [pywal](https://github.com/dylanaraps/pywal)
 
 ---
 
