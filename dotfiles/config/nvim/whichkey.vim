@@ -17,7 +17,8 @@ vmap <leader>dchc :HyphenToCamelSel<CR>
 vmap <leader>dchs :HyphenToSnakeSel<CR>
 vmap <leader>dcsh :SnakeToHyphenSel<CR>
 vmap <leader>dcsc :SnakeToCamelSel<CR>
-nmap <leader>dtg :Denite template<CR>
+nmap <leader>dtg :Denite templates<CR>
+nnoremap <leader>ddw :%s/\s\+$//e<CR>
 let g:which_key_map.d = {
       \ 'name' : '+document',
       \ 's' : {
@@ -50,6 +51,10 @@ let g:which_key_map.d = {
       \   'name' : '+template',
       \   'g' : 'get-template',
       \   },
+      \ 'd' : {
+      \   'name' : '+delete-actions',
+      \   'w' : 'remove-trailing-whitespaces'
+      \   }
       \ }
 let g:typewriter_mode = 0
 let g:linenumber_mode = 0
@@ -125,8 +130,10 @@ nnoremap <silent> <leader>cy :tabnew ~/.config/nvim/commontypos.vim<CR>
 nnoremap <silent> <leader>cd :digraphs<CR>
 nnoremap <silent> <leader>ccs :Denite colorscheme<CR>
 nnoremap <silent> <leader>cce1 :tabnew ~/.vim/colors/chaos.vim<CR>
+nnoremap <silent> <leader>cUec :UltiSnipsEdit<CR>
+nnoremap <silent> <leader>cUee :UltiSnipsEdit<Space>
 let g:which_key_map.c = {
-      \ 'name' : '+vim',
+      \ 'name' : '+configs',
       \ 'c' : {
       \   'name' : '+colorscheme',
       \   's' : 'set-colorscheme',
@@ -140,6 +147,14 @@ let g:which_key_map.c = {
       \ 'd' : 'show-digraphs',
       \ 't' : 'edit-tmux-conf',
       \ 'y' : 'edit-commontypos',
+      \ 'U' : {
+      \   'name' : '+Ultisnips',
+      \   'e' : {
+      \     'name' : '+edit-snippets',
+      \     'c' : 'edit-current',
+      \     'e' : 'edit-choice',
+      \     },
+      \   },
       \ }
 
   " ale linting
@@ -167,6 +182,7 @@ let g:which_key_map.s = {
       \ }
 
   " buffer controls
+call denite#custom#source ('buffer', 'sorters', ['sorter/sublime', 'sorter/rank'])
 nmap <Leader>bb :Denite buffer<CR>
 nmap <Leader>bl :ls<CR>
 nmap <Leader>bp :bl<CR>

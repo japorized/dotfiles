@@ -1,7 +1,7 @@
 #!/bin/sh
 
 userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+usermodmap=$HOME/.xmodmaprc
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -39,3 +39,5 @@ systemctl --user import-environment DISPLAY
 
 xset r rate 270 30
 xset dpms 0 0 1800
+xset b off
+xset b 0 0 0

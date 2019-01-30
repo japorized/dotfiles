@@ -4,25 +4,24 @@
 . "$HOME/.cache/wpgtk.color"
 
 # Options
-width="350"
-height="40"
-font="Helvetica Neue-9"
+width="400"
+height="30"
+ssid="---"
  
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
 monitor_width="${resolution/x*}"
 monitor_height="${resolution#*x}"
 offset_width="$((monitor_width / 2 - width / 2))"
-offset_height="$((monitor_height - height - 10))"
+offset_height="5"
 geometry="${width}x${height}+${offset_width}+${offset_height}"
- 
-Scrot() {
-    echo -n "Screenshot!"
-    return
-}
- 
+
 while true; do
-    echo -e "%{c}%{F${foreground}}%{B${background}}   $(Scrot)"
-    sleep 0.7
-    exit
-done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -B "${background}"
+  if [ -n "$2" ]; then
+    echo -e "%{c}$2   $1"
+  else
+    echo -e "%{c}   $1"
+  fi
+  sleep 2
+  exit 0
+done | lemonbar -d -g $geometry -f "Helvetica Neue-9" -f "Hack Nerd Font-10" -B "${background}" -F "${foreground}"

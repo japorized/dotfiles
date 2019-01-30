@@ -23,39 +23,39 @@ indicator() {
     CHAR="\uf111"
     case "$C" in
       "1")
-        CHAR=""
+        CHAR="\uf120"
         ;;
       "2")
-        CHAR=""
+        CHAR="\ufa9e"
         ;;
       "3")
-        CHAR=""
+        CHAR="\uf121"
         ;;
       "4")
-        CHAR=""
+        CHAR="\uf06c"
         ;;
       "5")
-        CHAR=""
+        CHAR="\ufb32"
         ;;
       "6")
-        CHAR=""
+        CHAR="\uf7ca"
         ;;
       "7")
-        CHAR=""
+        CHAR="\uf795"
         ;;
     esac
     if [[ $SPACE = $(bspc query -D -d) ]]; then
-      echo -n "%{B${color5}}%{F${background}}   $CHAR   %{F-}%{B-}"
+      echo -n "%{B${color5}}%{F${background}} $CHAR %{F-}%{B-}"
     elif [[ $BUSY =~ $SPACE ]]; then
-      echo -n "%{A:bspc desktop -f '^$C':}%{F${color5}}   $CHAR   %{F-}%{A}"
+      echo -n "%{A:bspc desktop -f '^$C':}%{F${color5}} $CHAR %{F-}%{A}"
     else
-      echo -n "%{A:bspc desktop -f '^$C':}   $CHAR   %{A}"
+      echo -n "%{A:bspc desktop -f '^$C':} $CHAR %{A}"
     fi
     C=$(( C + 1 ))
   done
 }
 
 while true; do
-    echo -e "%{c}%{F${foreground}}%{B${background}}$(indicator)%{F-}%{B-}"
-    sleep .2
-done | lemonbar -d -g $geometry -f "FontAwesome" -F "${foreground}" -B "${background}" | while read line; do eval "${line}"; done
+  echo -e "%{F${background}}%{B${color6}}%{A:rofi -show run:} \uf303 %{A}%{B-}%{F-} $(indicator)"
+  sleep .2
+done | lemonbar -d -g $geometry -f "Hack Nerd Font" -F "${foreground}" -B "${background}" | while read line; do eval "${line}"; done

@@ -1,4 +1,5 @@
 export XDG_CONFIG_HOME=$HOME/.config
+export CONFIG=$HOME/.config
 
 # RubyGems
 export GEM_HOME=$HOME/.gem
@@ -31,6 +32,11 @@ export XDG_DATA_HOME=$HOME/.data
 
 # nnn
 export NNN_BMS='d:~/Documents;D:~/Downloads/;P:~/Pictures/;M:~/Music;T:~/Documents/TeX_Notes/'
+export NNN_USE_EDITOR=1
+export NNN_SHOW_HIDDEN=1
 
 export PATH=$HOME/.bin:$HOME/.node_modules/bin:$PATH
 export fpath=($fpath $HOME/.bin/fpath)
+
+# Habitica
+source $HOME/.habitica-api

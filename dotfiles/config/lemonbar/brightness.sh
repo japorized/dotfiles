@@ -10,8 +10,8 @@ offset_height="$(( monitor_height / 2 + height ))"
 geometry="${width}x${height}+${offset_width}+${offset_height}"
 
 Brightness(){
-    xbacklight -get \
-    |SIZE=9 START="" END="" SEP="" CHAR1="" CHAR2="%{F${background}}%{F-}" mkb
+    light -G \
+    |SIZE=12 START="" END="" SEP="" CHAR1="" CHAR2="%{F${background}}%{F-}" mkb
 }
 
 while true; do

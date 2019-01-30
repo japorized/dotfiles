@@ -1,0 +1,11 @@
+[Unit]
+Description=Timer for weekly pacman-list-install service
+Requires=pacman-list-installs.service
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+WakeSystem=false
+
+[Install]
+WantedBy=timers.target

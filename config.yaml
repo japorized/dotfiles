@@ -78,9 +78,6 @@ dotfiles:
   f_dmenuextended_preferences.txt:
     dst: ~/.config/dmenu-extended/config/dmenuExtended_preferences.txt
     src: config/dmenu-extended/config/dmenuExtended_preferences.txt
-  f_dropbox.service:
-    dst: ~/.config/systemd/user/dropbox.service
-    src: config/systemd/user/dropbox.service
   f_dunstrc:
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
@@ -221,7 +218,6 @@ profiles:
     - f_tint2rc
     - d_schemes
     - f_dmenuextended_preferences.txt
-    - f_dropbox.service
     - f_redshift.service
     - f_geoclue-agent.service
     - f_default.custom.yaml

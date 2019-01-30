@@ -9,6 +9,7 @@
   export ZSH=$HOME/.oh-my-zsh
 
 # Env
+  source $HOME/.zshenv
   source $HOME/.aliases
   source $HOME/.functions
   export EDITOR=$(which nvim)
@@ -25,6 +26,7 @@
 
 # tmux plugin configs
 ZSH_TMUX_AUTOSTART_ONCE=true
+ZSH_TMUX_AUTOCONNECT=false
 
 # oh-my-zsh settings
 DISABLE_AUTO_TITLE="true"
@@ -54,3 +56,9 @@ typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]='fg=magenta'
+
+bindkey -v
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[OB" down-line-or-beginning-search
+bindkey -M vicmd "k" up-line-or-beginning-search
+bindkey -M vicmd "j" down-line-or-beginning-search

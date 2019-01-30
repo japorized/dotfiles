@@ -1,2 +1,1 @@
-xbacklight -set $(cat $HOME/.config/X11/brightness)
 pactl set-sink-volume 0 20%

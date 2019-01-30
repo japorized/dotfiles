@@ -95,20 +95,12 @@ header_visibility = "no"
 display_bitrate = "yes"
 
 # Run command on every change of song
-{%@@ if profile == "Earl-Grey.local" @@%}
-execute_on_song_change = "sh ~/.bin/ncmpcpp-notify"
-{%@@ else @@%}
 execute_on_song_change = ""
-{%@@ endif @@%}
 
 # Directories
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/Music/Lyrics
-{%@@ if profile == "Earl-Grey.local" @@%}
-mpd_music_dir = "~/Music/Database"
-{%@@ else @@%}
 mpd_music_dir = "~/Music"
-{%@@ endif @@%}
 
 # Connection settings
 mpd_host = 127.0.0.1
@@ -116,10 +108,8 @@ mpd_port = 6600
 #mpd_connection_timeout = 5
 
 # Visualizer settings
-{%@@ if profile == "sencha" @@%}
 visualizer_fifo_path = /tmp/mpd.fifo
 visualizer_output_name = "mpd_fifo"
-{%@@ endif @@%}
 ## If you set format to 44100:16:2, make it 'yes'.
 visualizer_in_stereo = no
 visualizer_sync_interval = 30

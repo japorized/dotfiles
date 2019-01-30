@@ -1,46 +1,46 @@
 [options]
-font = Hack Nerd Font 10
 font = SoukouMincho 10
 font = Emoji 10
+font = Hack Nerd Font 10
 
 [colors]
 
-foreground      = #f4eaea
-foreground_bold = #f4eaea
-cursor          = #f4eaea
-background      = #161a16
+foreground      = #010101
+foreground_bold = #010101
+cursor          = #010101
+background      = #fff3cb
 
-Black, Gray, Silver, White
-color0  = #161a16
-color8  = #5e6e5e
-color7  = #bacdc0
-color15 = #f4eaea
+# Black, Gray, Silver, White
+color0  = #fff3cb
+color8  = #7c7762
+color7  = #231a15
+color15 = #010101
 
-Red
-color1  = #648144
-color9  = #bce97f
+# Red
+color1  = #f01580
+color9  = #a11672
 
-Green
-color2  = #29897d
-color10 = #5ea59f
+# Green
+color2  = #704dad
+color10 = #5c408e
 
-Yellow
-color3  = #02827e
-color11 = #02b2ac
+# Yellow
+color3  = #e4572e
+color11 = #bb4826
 
-Blue
-color4  = #38a16b
-color12 = #4cdc93
+# Blue
+color4  = #aba361
+color12 = #8c8650
 
-Purple
-color5  = #83a266
-color13 = #b4de8b
+# Purple
+color5  = #e59d11
+color13 = #b27a0e
 
-Teal
-color6  = #118d53
-color14 = #16c172
+# Teal
+color6  = #b23917
+color14 = #922f13
 
-Extra colors
+# Extra colors
 color16 = #f99157
 color17 = #d27b53
 color18 = #393939

@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/day_hydrangea.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#fffacc",
+        "foreground": "#010101",
+        "cursor": "#010101"
+    },
+    "colors": {
+        "color0": "#fffacc",
+        "color1": "#5d2f79",
+        "color2": "#96a36b",
+        "color3": "#7e9f44",
+        "color4": "#5d2f79",
+        "color5": "#b77097",
+        "color6": "#8250a0",
+        "color7": "#1d2015",
+        "color8": "#b1b2b0",
+        "color9": "#4f0147",
+        "color10": "#758933",
+        "color11": "#628a1b",
+        "color12": "#3a015c",
+        "color13": "#a85180",
+        "color14": "#672a8c",
+        "color15": "#010101"
+    }
+}

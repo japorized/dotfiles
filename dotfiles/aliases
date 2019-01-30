@@ -18,7 +18,9 @@ alias vim="nvim "
 alias vi="nvim "
 alias view="nvim -R "
 alias vimdiff="nvim -d "
-alias svim="nvim -u $HOME/.vimrc-slim"
+alias svim="nvim -u $CONFIG/slim-vim/init.vim"
+alias tvim="nvim -u $CONFIG/latex-vim/init.vim"
+alias jvim="nvim -u $CONFIG/js-vim/init.vim"
 
 ##############################
 # Others

@@ -29,8 +29,12 @@ super + i
 super + o
   sh -c "~/.bin/tmpshow-datetime-battery.sh"
 
-super + p
+super + n
   sh -c "~/.bin/tmpshow-nowplaying.sh"
+
+# picture-in-picture mode
+super + p
+  sh -c "~/.bin/bspc-pip"
 
 # scrot hotkey
 @shift + super + ctrl + {3,4,5}
@@ -47,43 +51,59 @@ XF86PowerOff
   # Context Menu is Menu button for generic keyboards
   # Press ESC to exit mode
 {XF86MonBrightnessUp,Menu : F6}
-  xbacklight -inc 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
+  /usr/bin/light -A 5 && ~/.config/lemonbar/brightness.sh
 
 {shift + XF86MonBrightnessUp,Menu : shift + F6}
-  xbacklight -inc 15 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
+  /usr/bin/light -A 15 && ~/.config/lemonbar/brightness.sh
 
 {XF86MonBrightnessDown,Menu : F5}
-  xbacklight -dec 5 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
+  /usr/bin/light -U 5 && ~/.config/lemonbar/brightness.sh
 
 {shift + XF86MonBrightnessDown,Menu : shift + F5}
-  xbacklight -dec 15 && xbacklight -get > ~/.config/X11/brightness ; ~/.config/lemonbar/brightness.sh
+  /usr/bin/light -U 15 && ~/.config/lemonbar/brightness.sh
 
-{XF86AudioNext,XF86Tools,Menu : F9}
+{XF86AudioNext,Menu : F9}
   mpc next
 
-{XF86AudioPrev,XF86Display,Menu : F7}
+{XF86AudioPrev,Menu : F7}
   mpc cdprev
 
-{XF86AudioPlay,XF86WLAN,Menu: F8}
+{XF86AudioPlay,Menu: F8}
   mpc toggle
 
 {XF86AudioRaiseVolume,Menu : F3}
-  pactl set-sink-mute 0 false && pulseaudio-ctl up 2 && ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl up 2" && ~/.config/lemonbar/vol.sh
 
 {XF86AudioLowerVolume,Menu : F2}
-  pactl set-sink-mute 0 false && pulseaudio-ctl down 2 && ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl down 2" && ~/.config/lemonbar/vol.sh
 
 {shift + XF86AudioRaiseVolume,Menu: shift + F3}
-  pactl set-sink-mute 0 false && pulseaudio-ctl up 10 && ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl up 10" && ~/.config/lemonbar/vol.sh
 
 {shift + XF86AudioLowerVolume,Menu : shift + F2}
-  pactl set-sink-mute 0 false && pulseaudio-ctl down 10 && ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl down 10" && ~/.config/lemonbar/vol.sh
 
 {XF86AudioMute,Menu : F1}
   pulseaudio-ctl mute ; ~/.config/lemonbar/vol.sh
 
+XF86Favorites
+  rofi-mpc
+
 XF86Calculator
   /usr/bin/=
+
+super + shift + m : {t, p, n, r, z, y, R, c, C}
+  {\
+  mpc toggle && sh -c '~/.config/lemonbar/show.sh "mpc toggle" ', \
+  mpc cdprev && sh -c '~/.config/lemonbar/show.sh "mpc cdprev" ', \
+  mpc next && sh -c '~/.config/lemonbar/show.sh "mpc next" ', \
+  mpc repeat && sh -c '~/.config/lemonbar/show.sh "mpc repeat" ', \
+  mpc random && sh -c '~/.config/lemonbar/show.sh "mpc random" ', \
+  mpc single && sh -c '~/.config/lemonbar/show.sh "mpc single" ', \
+  mpc consume && sh -c '~/.config/lemonbar/show.sh "mpc consume" ', \
+  mpc crossfade 5 && sh -c '~/.config/lemonbar/show.sh "mpc crossfade 5" ', \
+  mpc crossfade 0 && sh -c '~/.config/lemonbar/show.sh "mpc crossfade 0" ' \
+  }
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -94,7 +114,7 @@ super + Escape
 
 # quit bspwm normally
 super + alt + Escape
-	bspc quit
+	sh -c "$HOME/.bin/cleandesktop.sh && bspc quit"
 
 # close and kill
 super + {_,shift + }q
@@ -129,8 +149,11 @@ super + ctrl + {x,y,z}
 #
 
 # focus the node in the given direction
-super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+super + {h,j,k,l}
+  bspc node -f {west,south,north,east}
+
+super + shift + {h,j,k,l}
+  sh -c "~/.bin/bspc-smartmove {left,down,up,right}"
 
 # focus the node for the given path jump
 super + {p,b,comma,period}
@@ -194,12 +217,16 @@ super + alt + {h,j,k,l}
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# move a floating window
-super + w : {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
-
 #
 # Gap control
 #
 super + {_,shift + }g
   sh -c "~/.config/bspwm/{gaps,sans-gaps}.sh"
+
+#
+# Floating windows
+#
+# snap a floating window
+super + w : {1-9}
+	sh -c "~/.bin/bspc-smartmove {top-left,top-center,top-right,left-center,center,right-center,bottom-left,bottom-center,bottom-right}"
+

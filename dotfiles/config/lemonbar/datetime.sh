@@ -46,6 +46,6 @@ Clock() {
 }
 
 while true; do
-    echo -en "%{c}%{F${foreground}}%{B${background}}   $(Clock)%{F-}%{B-}"
+    echo -en "%{c} \uf073  $(Clock)"
     sleep 0.5
-done | lemonbar -d -g $geometry -f "$font" -f "Hack Nerd Font" -f "SoukouMincho-10" -B "${background}"
+done | lemonbar -d -g $geometry -f "$font" -f "Hack Nerd Font" -f "SoukouMincho-10" -F "${foreground}" -B "${background}"

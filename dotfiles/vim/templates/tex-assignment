@@ -1,18 +1,19 @@
+% !TEX TS-program = pdflatex
 \documentclass{tufte-handout}
 \renewcommand{\baselinestretch}{1.1}
 
 \include{latex-assignments-preamble}
 
-\title{title}
+\title{code --- title}
 \author{Johnson Ng}
 
 \begin{document}
 
 \begin{fullwidth}
 \begin{tabular*}{\linewidth}{l @{\extracolsep{\fill}} l @{\extracolsep{\fill}} l @{\extracolsep{\fill}} l}
-Student name & : Keng Seng (Johnson) & UW ID\#    & : 20635817 \\
-	Class      & : CLASSCODE           & Assignment & : \# \\
-	Term       & : TERM 20XX
+  Student name & : Keng Seng (Johnson) Ng & UW ID\#    & : 20635817 \\
+	Class        & : CLASSCODE              & Assignment & : \# \\
+	Term         & : TERM 20XX
 \end{tabular*}
 
 \hrule

@@ -1,6 +1,7 @@
 priority -50
 
 extends texmath
+extends texwords
 
 global !p
 
@@ -63,7 +64,7 @@ $0${2/(?<=.)(c|l|r)|./(?1: & )/g}
 endsnippet
 
 pre_expand "create_table(snip)"
-snippet "gentbl(\d+)x(\d+)" "Generate table of *width* by *height*" r  
+snippet "tbl(\d+)x(\d+)" "Generate table of *width* by *height*" r  
 endsnippet
 
 pre_expand "add_row(snip)"
@@ -82,11 +83,11 @@ snippet table "Table environment" b
 endsnippet
 
 snippet fig "Figure environment" b
-\begin{figure}[${2:htpb}]
+\begin{figure}[${1:htpb}]
 	\centering
-	\includegraphics[width=${3:0.8}\linewidth]{${4:name.ext}}
-	\caption{${4/(\w+)\.\w+/\u$1/}$0}
-	\label{fig:${4/(\w+)\.\w+/$1/}}
+	$0
+	\caption{${2:caption}}
+	\label{fig:${3:${2/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 \end{figure}
 endsnippet
 
@@ -96,6 +97,12 @@ snippet marfig "Margin figure environment" b
 	$0
 	\caption{$1}\label{fig:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 \end{marginfigure}
+endsnippet
+
+snippet tikzp "tikzpicture environment" b
+\begin{tikzpicture}
+	$0
+\end{tikzpicture}
 endsnippet
 
 snippet enum "Enumerate" b
@@ -199,9 +206,7 @@ $0
 endsnippet
 
 snippet para "Paragraph" b
-\paragraph{${1:paragraph name}}
-
-$0
+\paragraph{${1:paragraph name}} $0
 endsnippet
 
 snippet subp "Subparagraph" b
@@ -267,8 +272,12 @@ snippet hlbc "highlight background c" w
 \hlbnotec{$1} $0
 endsnippet
 
-snippet hlbd "highlight background c" w
+snippet hlbd "highlight background d" w
 \hlbnoted{$1} $0
+endsnippet
+
+snippet hlbe "highlight background e" w
+\hlbnotee{$1} $0
 endsnippet
 
 snippet hld "highlight definition" w
@@ -297,6 +306,14 @@ endsnippet
 
 snippet ul "underline" w
 \underline{$1} $0
+endsnippet
+
+snippet tsup "text superscript" w
+\textsuperscript{$1} $0
+endsnippet
+
+snippet tsub "text subscript" w
+\textsubscript{$1} $0
 endsnippet
 
 snippet ac "Acroynm normal" b

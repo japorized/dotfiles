@@ -61,10 +61,7 @@ let g:netrw_winsize=25     " netrw to only occupy 25% of the screen
 let g:netrw_altv=1
 
 " Pathogen plugin manager
-execute pathogen#infect('bundle/always/{}', 'bundle/optional/{}')
-autocmd FileType tex execute pathogen#infect('bundle/tex/{}')
-autocmd FileType javascript execute pathogen#infect('bundle/javascript/{}')
-autocmd Filetype hs execute pathogen#infect('bundle/haskell/{}')
+execute pathogen#infect('bundle/always/{}', 'bundle/optional/{}', 'bundle/javascript/{}', 'bundle/tex/{}')
 Helptags
 
 " GitGutter Config
@@ -222,17 +219,27 @@ function! SensibleLineinfo()
   return col('.') . ':' . line('.') . ':' . line('$')
 endfunction
 let g:lightline.mode_map = {
-    \ 'n' : ' ',
-    \ 'i' : ' ',
-    \ 'R' : ' ',
-    \ 'v' : ' ',
-    \ 'V' : ' ',
-    \ "\<C-v>": ' ',
-    \ 'c' : ' ',
-    \ 's' : ' ',
-    \ 'S' : ' ',
-    \ "\<C-s>": ' ',
-    \ 't': ' ',
+    \ 'n' : ' ',
+    \ 'no' : ' ',
+    \ 'v' : ' ',
+    \ 'V' : ' ',
+    \ "\<C-V>" : ' ',
+    \ 's' : '麗 ',
+    \ 'S' : '麗 ',
+    \ "\<C-S>" : '麗 ',
+    \ 'i' : ' ',
+    \ 'ic' : ' ',
+    \ 'ix' : ' ',
+    \ 'R' : '凌 ',
+    \ 'Rc' : '凌 ',
+    \ 'Rv' : '凌 ',
+    \ 'Rx' : '凌 ',
+    \ 'c' : 'גּ ',
+    \ 'cv' : 'גּ ',
+    \ 'ce' : 'גּ ',
+    \ 'r' : ' ',
+    \ 'rm' : ' ',
+    \ 't': ' '
     \ }
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
@@ -291,6 +298,9 @@ let g:ale_lint_on_filetype_changed = 0
 let g:ale_lint_on_save = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
+
+" nnn
+let g:nnn#set_default_mappings = 0
 
 let g:SimplenoteVertical=1
 source $HOME/.vim/simplenoterc

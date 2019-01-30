@@ -24,6 +24,15 @@ snippet ff "font-family"
 font-family: ${1:"Helvetica Neue", Helvetica, Arial, sans-serif};$0
 endsnippet
 
+snippet fface "font-face" b
+@font-face {
+	font-family: ${1:font name};
+	src: url('${2:path to font}');
+	font-weight: ${3:normal};
+	font-style: ${4:normal};
+}$0
+endsnippet
+
 snippet h "height"
 height: ${1:auto};$0
 endsnippet

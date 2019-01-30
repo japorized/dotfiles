@@ -99,7 +99,7 @@ execute_on_song_change = "$HOME/.bin/show-song-cover.sh"
 
 # Directories
 ncmpcpp_directory = ~/.config/ncmpcpp
-lyrics_directory = ~/.config/ncmpcpp/Lyrics
+lyrics_directory = ~/Music/Lyrics
 mpd_music_dir = "~/Music"
 
 # Connection settings

@@ -1,5 +1,5 @@
-#ncmpcpp_directory = ~/.ncmpcpp
-#lyrics_directory = ~/.lyrics
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/Music/Lyrics
 mpd_host = localhost
 mpd_port = 6600
 mpd_crossfade_time = 2

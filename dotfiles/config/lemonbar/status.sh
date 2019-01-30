@@ -17,8 +17,8 @@ offset_height="$((monitor_height - height - 5))"
 geometry="${width}x${height}+${offset_width}+${offset_height}"
 
 Curbrightness() {
-  lvl=$(xbacklight -get)
-  echo -n "   $lvl"
+  lvl=$(light -G | cut -d'.' -f1)
+  echo -n "   $lvl %"
 }
  
 Curvolume() {

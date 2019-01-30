@@ -1,0 +1,10 @@
+[Unit]
+Description=Backup system packages as a list to dotfiles repository
+Wants=pacman-list-installs.timer
+
+[Service]
+Type=oneshot
+ExecStart=/home/japorized/.bin/backup-pkglist.sh
+
+[Install]
+WantedBy=default.target

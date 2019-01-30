@@ -37,11 +37,11 @@ snippet prod "Product" w
 \prod_{${1:i = 0}}^{${2:k}} $0
 endsnippet
 
-snippet bcup "Union" w
+snippet bigcup "Union" w
 \bigcup_{${1:i = 0}}^{${2:k}} $0
 endsnippet
 
-snippet bcap "Intersection" w
+snippet bigcap "Intersection" w
 \bigcap_{${1:i = 0}}^{${2:k}} $0
 endsnippet
 
@@ -66,35 +66,47 @@ snippet mat "Smart Matrix"
 endsnippet
 
 snippet lrp "left( right)" w
-\left( ${1:${VISUAL}} \right)
+\left( $1 \right)
 endsnippet
 
 snippet blrp "big left-right parentheses" w
-\big( ${1:${VISUAL}} \big)
+\big( $1 \big)
 endsnippet
 
 snippet bglrp "big left-right parentheses" w
-\bigg( ${1:${VISUAL}} \bigg)
+\bigg( $1 \bigg)
 endsnippet
 
 snippet Blrp "Big left-right parentheses" w
-\Big( ${1:${VISUAL}} \Big)
+\Big( $1 \Big)
 endsnippet
 
 snippet Bglrp "Big left-right parentheses" w
-\Bigg( ${1:${VISUAL}} \Bigg)
+\Bigg( $1 \Bigg)
 endsnippet
 
-snippet lr| "left| right|" w
-\left| ${1:${VISUAL}} \right|
+snippet lrv "left| right|" w
+\left| $1 \right|
+endsnippet
+
+snippet lra "left< right>" w
+\langle $1 \rangle
 endsnippet
 
 snippet lrb "left\{ right\}" w
-\left\\{ ${1:${VISUAL}} \right\\}
+\left\\{ $1 \right\\}
 endsnippet
 
 snippet lrs "left[ right]" w
-\left[ ${1:${VISUAL}} \right]
+\left[ $1 \right]
+endsnippet
+
+snippet hyp "hyperref" w
+\hyperref[$1]{$2}
+endsnippet
+
+snippet symbf "bold symbol" w
+\symbf{$1}
 endsnippet
 
 # vim:ft=snippets:
