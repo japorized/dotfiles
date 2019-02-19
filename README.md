@@ -7,13 +7,13 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 
 ## Screenshots
 
-### macOS
-
-![macOS scrot](/screenshots/macos-2018nov24.png?raw=true "macOS Screenshot")
-
 ### archlinux
 
 ![archlinux scrot](/screenshots/archlinux.png?raw=true "archlinux Screenshot")
+
+### macOS
+
+![macOS scrot](/screenshots/macos-2018nov24.png?raw=true "macOS Screenshot")
 
 ### Antergos (base installation; retired)
 
@@ -31,8 +31,9 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 * Bar: [ lemonbar-xft ](https://github.com/krypt-n/bar) (inspiration from [here](https://www.reddit.com/r/unixporn/comments/6g5vx0/windowchef_comfy/))
 * Terminal: [ termite ](https://github.com/thestinger/termite/), [ kitty ](https://github.com/kovidgoyal/kitty), [ st ](https://suckless.org)
 * Run dialog, etc: [ Rofi ](https://github.com/DaveDavenport/rofi), [ dmenu_extended ](https://github.com/MarkHedleyJones/dmenu-extended)
+* Screenshot tool: scrot script utilizing rofi
 * AUR Package Manager: [ auracle ](https://github.com/falconindy/auracle)
-* Color scheme: [pywal](https://github.com/dylanaraps/pywal) with colorz backend (with personal adjustments)
+* Color scheme: managed by [wpgtk](https://github.com/deviantfero/wpgtk)
 * Font choices: Hack Nerd Font (monospace), Helvetica Neue (sans-serif), Times Newer Roman (serif), SoukouMincho (japanese)
 
 ### macOS
@@ -52,7 +53,7 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 Here's a list of my commonly used applications:
 
 * Shell: zsh
-* Text Editors: **nvim**, Sublime Text
+* Text Editors: **nvim**, vis, Sublime Text
 * Browser: **FF**, qutebrowser, surf
 * Music: mpd + mpc + ncmpcpp
 * Image/Graphics Editing: **Affinity Designer**, Gravit (learning), GIMP (learning; replacing Photoshop)
@@ -103,7 +104,7 @@ Simply run `$HOME/dotfiles/install/mac-bootstrap.sh`
 The installation will include [Homebrew](https://brew.sh) and some packages that I use (please see `./install/brewPackages.txt`) and use 
 zsh as the default shell, with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) installed.
   
-### antergos-base
+### antergos-base & archlinux
 
 Since I use [auracle](https://aur.archlinux.org/packages/auracle-git/), and I did not manually track packages that I have installed via it, 
 they are, unfortunately, mixed into the list that I have (or shall) generated using [pacman](https://wiki.archlinux.org/index.php/Pacman). 

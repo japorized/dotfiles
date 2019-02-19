@@ -1,0 +1,11 @@
+[Unit]
+Description=Nextcloud client
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/nextcloud
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
