@@ -29,6 +29,9 @@ dotfiles:
   d_hammerspoon:
     dst: ~/.config/hammerspoon
     src: config/hammerspoon
+  d_latex-vim:
+    dst: ~/.config/latex-vim
+    src: config/latex-vim
   d_lemonbar:
     dst: ~/.config/lemonbar
     src: config/lemonbar
@@ -43,9 +46,15 @@ dotfiles:
     - nvim-python
     dst: ~/.config/nvim
     src: config/nvim
+  d_rofi:
+    dst: ~/.config/rofi
+    src: config/rofi
   d_schemes:
     dst: ~/.config/wpg/schemes
     src: config/wpg/schemes
+  d_slim-vim:
+    dst: ~/.config/slim-vim
+    src: config/slim-vim
   d_snippets:
     dst: ~/.vim/snippets
     src: vim/snippets
@@ -105,9 +114,6 @@ dotfiles:
   f_redshift.service:
     dst: ~/.config/systemd/user/redshift.service
     src: config/systemd/user/redshift.service
-  f_rofi_config:
-    dst: ~/.config/rofi/config
-    src: config/rofi/config
   f_scimrc:
     dst: ~/.config/scimrc
     src: config/scimrc
@@ -178,7 +184,6 @@ profiles:
     - f_functions
     - d_chunkwm
     - "d_\xFCbersicht"
-    - d_vis
     - f_preferences.sublime-settings
     - f_skhdrc
     - d_colors
@@ -196,7 +201,6 @@ profiles:
     - f_mpd.conf
     - f_sxhkdrc
     - d_lemonbar
-    - f_rofi_config
     - f_termite_config
     - f_aria2.conf
     - f_config.yaml
@@ -222,6 +226,9 @@ profiles:
     - f_geoclue-agent.service
     - f_default.custom.yaml
     - f_fonts.conf
+    - d_latex-vim
+    - d_rofi
+    - d_slim-vim
   ubuntu1604-002:
     dotfiles:
     - f_vimrc

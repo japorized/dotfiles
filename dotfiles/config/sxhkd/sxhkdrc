@@ -37,15 +37,21 @@ super + p
   sh -c "~/.bin/bspc-pip"
 
 # scrot hotkey
-@shift + super + ctrl + {3,4,5}
-  sh -c "~/.bin/ss-with-preview.sh {e,se,ue}"
+@alt + super + s
+  rofi-scrot
 
 # emoji-keyboard
 @alt + super + e
   rofimoji
 
+@alt + super + m
+  rofi-mpc
+
+{XF86Favorites,@alt + super + w}
+  rofiwpg
+
 XF86PowerOff
-	oblogout
+  rofi-powermenu
 
 # XF86 Keys & Context Menu key as modal key for multimedia-key emulation
   # Context Menu is Menu button for generic keyboards
@@ -68,7 +74,7 @@ XF86PowerOff
 {XF86AudioPrev,Menu : F7}
   mpc cdprev
 
-{XF86AudioPlay,Menu: F8}
+{XF86AudioPlay,XF86AudioPause,Menu: F8}
   mpc toggle
 
 {XF86AudioRaiseVolume,Menu : F3}
@@ -86,24 +92,8 @@ XF86PowerOff
 {XF86AudioMute,Menu : F1}
   pulseaudio-ctl mute ; ~/.config/lemonbar/vol.sh
 
-XF86Favorites
-  rofi-mpc
-
-XF86Calculator
-  /usr/bin/=
-
-super + shift + m : {t, p, n, r, z, y, R, c, C}
-  {\
-  mpc toggle && sh -c '~/.config/lemonbar/show.sh "mpc toggle" ', \
-  mpc cdprev && sh -c '~/.config/lemonbar/show.sh "mpc cdprev" ', \
-  mpc next && sh -c '~/.config/lemonbar/show.sh "mpc next" ', \
-  mpc repeat && sh -c '~/.config/lemonbar/show.sh "mpc repeat" ', \
-  mpc random && sh -c '~/.config/lemonbar/show.sh "mpc random" ', \
-  mpc single && sh -c '~/.config/lemonbar/show.sh "mpc single" ', \
-  mpc consume && sh -c '~/.config/lemonbar/show.sh "mpc consume" ', \
-  mpc crossfade 5 && sh -c '~/.config/lemonbar/show.sh "mpc crossfade 5" ', \
-  mpc crossfade 0 && sh -c '~/.config/lemonbar/show.sh "mpc crossfade 0" ' \
-  }
+{XF86Calculator,Menu : F11}
+  /usr/bin/rofi -show calc -modi calc -no-show-match -no-sort
 
 # make sxhkd reload its configuration files:
 super + Escape

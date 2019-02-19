@@ -17,8 +17,6 @@ vmap <leader>dchc :HyphenToCamelSel<CR>
 vmap <leader>dchs :HyphenToSnakeSel<CR>
 vmap <leader>dcsh :SnakeToHyphenSel<CR>
 vmap <leader>dcsc :SnakeToCamelSel<CR>
-nmap <leader>dtg :Denite templates<CR>
-nnoremap <leader>ddw :%s/\s\+$//e<CR>
 let g:which_key_map.d = {
       \ 'name' : '+document',
       \ 's' : {
@@ -51,10 +49,6 @@ let g:which_key_map.d = {
       \   'name' : '+template',
       \   'g' : 'get-template',
       \   },
-      \ 'd' : {
-      \   'name' : '+delete-actions',
-      \   'w' : 'remove-trailing-whitespaces'
-      \   }
       \ }
 let g:typewriter_mode = 0
 let g:linenumber_mode = 0
@@ -69,8 +63,6 @@ function! TypeWriterToggle()
   endif
 endfunction
 function! LineNumberToggle()
-  set nornu
-  let g:relnumber_mode = 0
   if g:linenumber_mode
     set nonu
     let g:linenumber_mode = 0
@@ -80,13 +72,11 @@ function! LineNumberToggle()
   endif
 endfunction
 function! RelNumberToggle()
-  set nonu
-  let g:linenumber_mode = 0
   if g:relnumber_mode
-    set nornu
+    set nonu
     let g:relnumber_mode = 0
   else
-    set rnu
+    set nu
     let g:relnumber_mode = 1
   endif
 endfunction
@@ -98,7 +88,6 @@ nmap <silent> <leader>wvc :vsplit<CR>
 nmap <silent> <leader>wve :vsplit<Space>
 nmap <silent> <leader>wte :tabnew<Space>
 nmap <silent> <leader>wtn :tabnew<CR>
-nmap <silent> <leader>wtc :tabnew %<CR>
 let g:which_key_map.w = { 
       \'name' : '+window',
       \ 's' : {
@@ -113,7 +102,6 @@ let g:which_key_map.w = {
       \   },
       \ 't' : {
         \ 'name' : '+tabnew-options',
-        \ 'c' : 'open-current-buffer-in-new-tab',
         \ 'e' : 'open-in-new-tab',
         \ 'n' : 'blank-new-tab',
       \   },
@@ -136,10 +124,8 @@ nnoremap <silent> <leader>cy :tabnew ~/.config/nvim/commontypos.vim<CR>
 nnoremap <silent> <leader>cd :digraphs<CR>
 nnoremap <silent> <leader>ccs :Denite colorscheme<CR>
 nnoremap <silent> <leader>cce1 :tabnew ~/.vim/colors/chaos.vim<CR>
-nnoremap <silent> <leader>cUec :UltiSnipsEdit<CR>
-nnoremap <silent> <leader>cUee :UltiSnipsEdit<Space>
 let g:which_key_map.c = {
-      \ 'name' : '+configs',
+      \ 'name' : '+vim',
       \ 'c' : {
       \   'name' : '+colorscheme',
       \   's' : 'set-colorscheme',
@@ -153,14 +139,6 @@ let g:which_key_map.c = {
       \ 'd' : 'show-digraphs',
       \ 't' : 'edit-tmux-conf',
       \ 'y' : 'edit-commontypos',
-      \ 'U' : {
-      \   'name' : '+Ultisnips',
-      \   'e' : {
-      \     'name' : '+edit-snippets',
-      \     'c' : 'edit-current',
-      \     'e' : 'edit-choice',
-      \     },
-      \   },
       \ }
 
   " ale linting
@@ -188,8 +166,7 @@ let g:which_key_map.s = {
       \ }
 
   " buffer controls
-call denite#custom#source ('buffer', 'sorters', ['sorter/sublime', 'sorter/rank'])
-nmap <Leader>bb :Denite buffer<CR>
+nmap <Leader>bb :buffer<CR>
 nmap <Leader>bl :ls<CR>
 nmap <Leader>bp :bl<CR>
 nmap <Leader>bn :bn<CR>

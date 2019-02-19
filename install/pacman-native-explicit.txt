@@ -1,3 +1,4 @@
+0ad
 acpi
 acpi_call
 alsa-utils
@@ -87,6 +88,7 @@ glade
 glibc
 gnuplot
 goldendict
+gparted
 grep
 groff
 grsync
@@ -100,6 +102,7 @@ gvfs
 gvfs-afc
 gvim
 gzip
+handbrake
 haskell-gtk
 haskell-gtk2hs-buildtools
 haveged
@@ -107,7 +110,9 @@ hledger
 hplip
 htop
 id3v2
+ifplugd
 iftop
+imagemagick
 inetutils
 inkscape
 intel-ucode
@@ -159,6 +164,8 @@ ncdu
 ncmpcpp
 neovim
 netctl
+nextcloud
+nextcloud-client
 nfs-utils
 nilfs-utils
 nmap
@@ -169,6 +176,7 @@ npm
 ntfs-3g
 oblogout
 obs-studio
+octave
 openssh
 orage
 otf-ipafont

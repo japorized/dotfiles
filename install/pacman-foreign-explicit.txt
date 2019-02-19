@@ -1,5 +1,7 @@
 auracle-git
 bash-pipes
+bitlbee-discord-git
+bitlbee-libpurple
 buku
 buku_run-git
 caffeine-ng
@@ -9,7 +11,7 @@ discord
 dmenu-extended-git
 dropbox
 ephifonts
-freeplane
+freedict-tools
 hfsprogs
 icdiff
 lemonbar-xft-git
@@ -22,7 +24,6 @@ libxlsxwriter
 luv-icon-theme-git
 ly-git
 macos-icon-theme
-menu-calc
 minecraft-launcher
 minecraft-technic-launcher
 mkb-git
@@ -39,8 +40,9 @@ pytg
 python-dictobject
 python-ewmh
 python-luckydonald-utils
+python-pystache
 resvg-git
-rofi-mpc
+rofi-calc
 rxvt-unicode-pixbuf
 sc-im
 screenrecorder-git
@@ -51,11 +53,15 @@ simplescreenrecorder-git
 slack-term
 sublime-text-3-imfix
 telegram-cli-git
+telegram-purple
+texlive-installer
 ttf-emojione
 ttf-font-awesome-4
 ttf-impallari-cabin-font
 ttf-roboto-mono
 ttf-symbola
 tty-clock
+uberwriter
 vitetris
 xbanish-git
+xournalpp-git

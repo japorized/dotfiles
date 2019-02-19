@@ -105,6 +105,14 @@ snippet tikzp "tikzpicture environment" b
 \end{tikzpicture}
 endsnippet
 
+snippet draw "tikzpicture draw command" b
+\draw${1:[${2:options}]} $0;
+endsnippet
+
+snippet node "tikzpicture node command" b
+\node${1:[${2:options}]} at (${3:a}, ${4:b}) {${5:label}};
+endsnippet
+
 snippet enum "Enumerate" b
 \begin{enumerate}
 	\item $0
@@ -237,15 +245,39 @@ snippet ita "Italicized Text" w
 endsnippet
 
 snippet bb "mathbb" w
-\mathbb{$1} $0
+\mathbb{$1}$0
+endsnippet
+
+snippet bbC "mathbb C" w
+\mathbb{C}
+endsnippet
+
+snippet bbR "mathbb R" w
+\mathbb{R}
+endsnippet
+
+snippet bbQ "mathbb Q" w
+\mathbb{Q}
+endsnippet
+
+snippet bbN "mathbb N" w
+\mathbb{N}
+endsnippet
+
+snippet bbZ "mathbb Z" w
+\mathbb{Z}
 endsnippet
 
 snippet cal "mathcal" w
-\mathcal{$1} $0
+\mathcal{$1}$0
 endsnippet
 
 snippet scr "mathscr" w
-\mathscr{$1} $0
+\mathscr{$1}$0
+endsnippet
+
+snippet frak "mathfrak" w
+\mathfrak{$1}$0
 endsnippet
 
 snippet hla "highlight color a" w
@@ -351,4 +383,22 @@ ${2:${VISUAL:code}}
 
 $0
 endsnippet
+
+snippet pl "partial" w
+\partial_
+endsnippet
+
+snippet newth "newthought" b
+\newthought{$1} $0
+endsnippet
+
+snippet aques "assignment problem" b
+${3:\newpage}
+% TODO : Question $1
+\item $0
+	\begin{${2:solbox}}
+
+	\end{$2}
+endsnippet
+
 # vim:ft=snippets:

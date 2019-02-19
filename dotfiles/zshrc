@@ -11,6 +11,7 @@
 # Env
   source $HOME/.zshenv
   source $HOME/.aliases
+  source $HOME/.term-aliases
   source $HOME/.functions
   export EDITOR=$(which nvim)
   {%@@ if profile == "Earl-Grey.local" @@%}

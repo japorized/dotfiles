@@ -20,7 +20,7 @@
     horizontal_padding = 20
     frame_width = 5
 
-    frame_color = "#b6ae67"
+    frame_color = "#f35d31"
     separator_color = frame
     sort = yes
     idle_threshold = 300

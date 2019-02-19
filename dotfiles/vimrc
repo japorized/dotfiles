@@ -52,8 +52,8 @@ if has("autocmd")
 endif
 
 " netrw Configs
-nmap <F1> :Lexplore<cr>
-imap <F1> <C-o>:Lexplore<CR>
+nmap <F1> :F<cr>
+imap <F1> <C-o>:F<CR>
 let g:netrw_liststyle=3    " Tree view
 let g:netrw_banner=0       " Hide Banner by default, use I to toggle
 let g:netrw_browse_split=3 " Opens new file in a new tab
@@ -298,9 +298,6 @@ let g:ale_lint_on_filetype_changed = 0
 let g:ale_lint_on_save = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
-
-" nnn
-let g:nnn#set_default_mappings = 0
 
 let g:SimplenoteVertical=1
 source $HOME/.vim/simplenoterc

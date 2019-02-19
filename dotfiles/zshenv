@@ -35,6 +35,14 @@ export NNN_BMS='d:~/Documents;D:~/Downloads/;P:~/Pictures/;M:~/Music;T:~/Documen
 export NNN_USE_EDITOR=1
 export NNN_SHOW_HIDDEN=1
 
+# fff
+export FFF_FAV1=~/Documents/TeX_Notes
+export FFF_FAV2=~/Documents/Projects
+export FFF_FAV3=~/Dropbox/Classes/PMATH348
+export FFF_FAV4=~/Dropbox/Classes/PMATH467
+export FFF_FAV5=~/Dropbox/Classes/PMATH365
+export FFF_FAV6=~/Dropbox/Classes/UW\ Course\ Outlines
+
 export PATH=$HOME/.bin:$HOME/.node_modules/bin:$PATH
 export fpath=($fpath $HOME/.bin/fpath)
 
