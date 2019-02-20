@@ -6,10 +6,10 @@
 rofi.modi:              run,drun,window
 rofi.location:          0
 rofi.color-enabled:     true
-rofi.color-window:      argb:ee2d2d2d, argb:aaD3D0C8, #CD98CD
-rofi.color-normal:      argb:00111111, #D3D0C8, argb:00111111, #CD98CD, #2D2D2D
-rofi.color-urgent:      argb:00111111, #af652f, argb:00111111, #F47678, #2D2D2D
-rofi.color-active:      argb:00111111, #70a16c, argb:00111111, #98CD97, #2D2D2D
+rofi.color-window:      #fff3cb, #b23917, #922f13
+rofi.color-normal:      #fff3cb, #010101, #fff3cb, #b23917, #010101
+rofi.color-urgent:      #fff3cb, #f01580, #fff3cb, #704dad, #010101
+rofi.color-active:      #fff3cb, #e4572e, #fff3cb, #aba361, #010101
 rofi.theme:             ~/.config/rofi/theme/rofi-default.rasi
 rofi.separator-style:   none
 rofi.fullscreen:        false
@@ -24,6 +24,6 @@ rofi.show-icons:        true
 rofi.lines:             6
 rofi.terminal:          st
 rofi.font:              Hack 12
+rofi.run:               'zsh -c {cmd}'
 rofi.fuzzy:             true
-rofi.run-command:       zsh -c "{cmd}"
 rofi.opacity:           75

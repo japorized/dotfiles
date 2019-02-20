@@ -10,6 +10,7 @@ nmap <Leader>dsi :IndentLinesToggle<CR>
 nmap <silent> <leader>dst :call TypeWriterToggle()<CR>
 nmap <silent> <leader>dsn :call LineNumberToggle()<CR>
 nmap <silent> <leader>dsr :call RelNumberToggle()<CR>
+nmap <silent> <leader>dl :set tw=
 nmap <silent> <leader>dT :Tabularize /
 vmap <leader>dcch :CamelToHyphenSel<CR>
 vmap <leader>dccs :CamelToSnakeSel<CR>
@@ -21,6 +22,7 @@ nmap <leader>dtg :Denite templates<CR>
 nnoremap <leader>ddw :%s/\s\+$//e<CR>
 let g:which_key_map.d = {
       \ 'name' : '+document',
+      \ 'l' : 'textwidth',
       \ 's' : {
       \   'name' : '+viewer-styling',
       \   'i' : 'toggle-indentline',

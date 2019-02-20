@@ -41,6 +41,7 @@ python-dictobject
 python-ewmh
 python-luckydonald-utils
 python-pystache
+python2-neovim
 resvg-git
 rofi-calc
 rxvt-unicode-pixbuf
@@ -64,4 +65,5 @@ tty-clock
 uberwriter
 vitetris
 xbanish-git
+xboxdrv
 xournalpp-git

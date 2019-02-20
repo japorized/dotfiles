@@ -3,7 +3,7 @@
     active-foreground: @background;
     normal-background: @background;
     normal-foreground: @foreground;
-    urgent-background: #e4572e;
+    urgent-background: #e59d11;
     urgent-foreground: @foreground;
 
     alternate-active-background: @background;
@@ -13,12 +13,12 @@
     alternate-urgent-background: @background;
     alternate-urgent-foreground: @foreground;
 
-    selected-active-background: #f01580;
+    selected-active-background: #aba361;
     selected-active-foreground: @background;
-    selected-normal-background: #e4572e;
+    selected-normal-background: #e59d11;
     selected-normal-foreground: @background;
-    selected-urgent-background: #e59d11;
-    selected-urgent-foreground: @foreground;
+    selected-urgent-background: #f01580;
+    selected-urgent-foreground: @background;
 
     background-color: @background;
     background: #fff3cb;
@@ -33,10 +33,6 @@ window {
     padding: 10px;
 }
 
-inputbar {
-  children: [];
-}
-
 #mainbox {
     border: 0;
     padding: 0;
@@ -44,11 +40,16 @@ inputbar {
 
 #message {
     margin: 5px 20px;
-    text-color: @foreground;
+    border-color: @border-color;
+    padding: 1px;
 }
 
 #textbox {
-  text-color: @foreground;
+    text-color: @foreground;
+}
+
+inputbar {
+  children: [];
 }
 
 textbox-prompt-colon {
@@ -136,6 +137,12 @@ textbox-prompt-colon {
 #button.selected {
     background-color: @selected-normal-background;
     text-color: @selected-normal-foreground;
+}
+
+#inputbar {
+    spacing: 0;
+    text-color: @normal-foreground;
+    padding: 1px;
 }
 
 #case-indicator {

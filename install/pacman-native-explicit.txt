@@ -107,6 +107,7 @@ haskell-gtk
 haskell-gtk2hs-buildtools
 haveged
 hledger
+hledger-web
 hplip
 htop
 id3v2
@@ -206,7 +207,6 @@ python-gobject
 python-neovim
 python-pip
 python2
-python2-neovim
 python2-pip
 qt5-multimedia
 qtikz

@@ -55,7 +55,16 @@ indicator() {
   done
 }
 
+stop() {
+  pkill -P $$
+  exit 0
+}
+
+trap 'stop' SIGINT SIGTERM
+
 while true; do
   echo -e "%{F${background}}%{B${color6}}%{A:rofi -show run:} \uf303 %{A}%{B-}%{F-} $(indicator)"
   sleep .2
-done | lemonbar -d -g $geometry -f "Hack Nerd Font" -F "${foreground}" -B "${background}" | while read line; do eval "${line}"; done
+done | \
+  lemonbar -d -g $geometry -f "Hack Nerd Font" -F "${foreground}" -B "${background}" | \
+  while read line; do eval "${line}"; done

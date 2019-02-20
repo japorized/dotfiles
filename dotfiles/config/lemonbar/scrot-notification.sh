@@ -25,4 +25,4 @@ while true; do
     echo -e "%{c}%{F${foreground}}%{B${background}}   $(Scrot)"
     sleep 0.7
     exit
-done | lemonbar -g $geometry -f "$font" -f "FontAwesome" -B "${background}"
+done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -B "${background}"
