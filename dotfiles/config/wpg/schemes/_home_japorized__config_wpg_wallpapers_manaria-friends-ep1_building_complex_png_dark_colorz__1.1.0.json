@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/manaria-friends-ep1_building_complex.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#21100a",
+        "foreground": "#fffdfb",
+        "cursor": "#fffdfb"
+    },
+    "colors": {
+        "color0": "#21100a",
+        "color1": "#aa5435",
+        "color2": "#aa6743",
+        "color3": "#c7aa53",
+        "color4": "#c57242",
+        "color5": "#aa7659",
+        "color6": "#c78944",
+        "color7": "#c7c3c1",
+        "color8": "#9a3c19",
+        "color9": "#eb6636",
+        "color10": "#ec8147",
+        "color11": "#ffe659",
+        "color12": "#ff8f44",
+        "color13": "#ed9462",
+        "color14": "#ffb346",
+        "color15": "#fffdfb"
+    }
+}

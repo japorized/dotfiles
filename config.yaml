@@ -64,6 +64,9 @@ dotfiles:
   d_vis:
     dst: ~/.config/vis
     src: config/vis
+  d_wpg_templates:
+    dst: ~/.config/wpg/templates
+    src: config/wpg/templates
   "d_\xFCbersicht":
     dst: "~/.config/\xDCbersicht"
     src: "config/\xDCbersicht"
@@ -229,6 +232,7 @@ profiles:
     - d_latex-vim
     - d_rofi
     - d_slim-vim
+    - d_wpg_templates
   ubuntu1604-002:
     dotfiles:
     - f_vimrc

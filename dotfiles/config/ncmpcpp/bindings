@@ -1,3 +1,38 @@
+def_key "9"
+  show_help
+def_key "k"
+  scroll_up
+def_key "j"
+  scroll_down
+def_key "l"
+  next_column
+def_key "h"
+  previous_column
+def_key "ctrl-u"
+  page_up
+def_key "ctrl-d"
+  page_down
+def_key "ctrl-f" [deferred]
+  page_down
+  page_down
+def_key "ctrl-b" [deferred]
+  page_up
+  page_up
+def_key "d"
+  delete_playlist_items
+def_key "d"
+  delete_stored_playlist
+def_key "7"
+  show_visualizer
+def_key "8"
+  show_clock
+def_key "E"
+  edit_lyrics
+def_key "L"
+  show_lyrics
+def_key "ctrl-l"
+  toggle_lyrics_fetcher
+
 ##############################################################
 ## This is the example bindings file. Copy it to            ##
 ## ~/.ncmpcpp/bindings or $XDG_CONFIG_HOME/ncmpcpp/bindings ##
@@ -152,9 +187,6 @@
 #def_key "mouse"
 #  mouse_event
 #
-#def_key "up"
-#  scroll_up
-#
 #def_key "shift-up"
 #  select_item
 #  scroll_up
@@ -178,11 +210,6 @@
 #def_key "}"
 #  scroll_down_artist
 #
-def_key "ctrl-u"
-  page_up
-#
-def_key "ctrl-d"
-  page_down
 #
 #def_key "home"
 #  move_home
@@ -196,8 +223,6 @@ def_key "ctrl-d"
 #def_key "enter"
 #  enter_directory
 #
-def_key "9"
-  show_help
 #def_key "enter"
 #  toggle_output
 #
@@ -216,14 +241,10 @@ def_key "9"
 #def_key "space"
 #  toggle_visualization_type
 #
-def_key "d"
-  delete_playlist_items
 #
 #def_key "delete"
 #  delete_browser_items
 #
-def_key "d"
-  delete_stored_playlist
 #
 #def_key "right"
 #  next_column
@@ -291,11 +312,6 @@ def_key "d"
 #def_key "7"
 #  show_outputs
 #
-def_key "7"
-  show_visualizer
-#
-def_key "8"
-  show_clock
 #
 #def_key "@"
 #  show_server_info
@@ -426,7 +442,7 @@ def_key "8"
 #def_key "e"
 #  edit_playlist_name
 #
-#def_key "e"
+#def_key "E"
 #  edit_lyrics
 #
 #def_key "i"

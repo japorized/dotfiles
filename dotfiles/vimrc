@@ -31,6 +31,7 @@ set splitbelow
 map <SPACE> <Nop>
 let mapleader=" "
 filetype indent plugin on
+colorscheme chaos
 
 if has("autocmd")
   autocmd Syntax html,javascript,latex,vim setlocal foldmethod=indent
@@ -80,6 +81,7 @@ let g:gundo_return_on_revert= 0
 
 " Indentline Configs
 let g:indentLine_char='|'
+let g:indentLine_setColors = 0
 
 " Tex configs
 let g:tex_flavor = 'latex'
@@ -159,101 +161,46 @@ let g:limelight_eop = '\ze\n^\s'
   " Set it to -1 not to overrule hlsearch
 let g:limelight_priority = -1
 
-" Lightline
-" Style credits: https://github.com/xero/dotfiles
-colorscheme chaos
-let s:base03 = [ '#151513', 233 ]
-let s:base02 = [ '#222222', 236 ]
-let s:base01 = [ '#4e4e43', 239 ]
-let s:base00 = [ '#666656', 242  ]
-let s:base0 = [ '#808070', 244 ]
-let s:base1 = [ '#949484', 246 ]
-let s:base2 = [ '#a8a897', 248 ]
-let s:base3 = [ '#e8e8d3', 253 ]
-let s:dark = [ '#2d2d2d', 0 ]
-let s:light = [ '#ededed', 15 ]
-let s:gray = [ '8c8c8c', 8 ]
-let s:yellow = [ '#7A7A57', 11 ]
-let s:orange = [ '#7A7A57', 3 ]
-let s:red = [ '#5F8787', 1 ]
-let s:magenta = [ '#8181A6', 13 ]
-let s:blue = [ '#0578fc', 12 ]
-let s:cyan = [ '#87ceeb', 14 ]
-let s:green = [ '#7A7A57', 3 ]
-let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'command': {}, 'tabline': {}}
-let s:p.normal.left = [ [ s:dark, s:magenta ], [ s:magenta, s:dark ] ]
-let s:p.normal.middle = [ [ s:light, s:dark ] ]
-let s:p.normal.right = [ [ s:light, s:base1 ], [ s:base2, s:dark ] ]
-let s:p.inactive.left =  [ [ s:light, s:dark ], [ s:light, s:dark ] ]
-let s:p.inactive.middle = [ [ s:light, s:dark ] ]
-let s:p.inactive.right = [ [ s:dark, s:light ], [ s:light, s:dark ] ]
-let s:p.insert.left = [ [ s:dark, s:cyan ], [ s:light, s:dark ] ]
-let s:p.replace.left = [ [ s:dark, s:red ], [ s:light, s:dark ] ]
-let s:p.visual.left = [ [ s:dark, s:green ], [ s:light, s:dark ] ]
-let s:p.command.left = [ [ s:light, s:yellow, 'bold' ], [ s:light, s:dark ] ]
-let s:p.tabline.left = [ [ s:light, s:dark, 'bold' ] ]
-let s:p.tabline.tabsel = [ [ s:light, s:magenta, 'bold' ] ]
-let s:p.tabline.middle = [ [ s:light, s:dark ] ]
-let s:p.tabline.right = copy(s:p.tabline.left)
-let s:p.normal.error = [ [ s:dark, s:yellow ] ]
-let s:p.normal.warning = [ [ s:yellow, s:base01 ] ]
-let g:lightline#colorscheme#sourcerer#palette = lightline#colorscheme#flatten(s:p)
-let g:lightline = {
-  \ 'colorscheme': 'sourcerer',
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch' ],
-  \             [ 'readonly', 'filename', 'modified' ]],
-  \   'right': [ [ 'sensible_lineinfo' ],
-  \              [ 'filetype' ],
-  \              [ 'linter_checking', 'linter_warnings', 'linter_errors' ]]
-  \ },
-  \ 'component_function': {
-  \   'gitbranch': 'gitbranch#name',
-  \   'sensible_lineinfo': 'SensibleLineinfo'
-  \ },
-  \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
-  \ 'subseparator': { 'left': '▒', 'right': '░' }
+" vim-moodo
+
+let g:moodo_mid = "\  %r%h\ %.40f%(\ %q%m%)\ "
+let g:moodo_right = "%(%{MoodoFT()}%) %l/%L\ \ %2c\ \ "
+let g:moodo_tabline_modified = ""
+let g:moodo_tabline_closestr = ''
+let g:moodo_modes = {
+  \ 'n'      : '',
+  \ 'no'     : '',
+  \ 'v'      : '',
+  \ 'V'      : '',
+  \ "\<C-V>" : '',
+  \ 's'      : '閭',
+  \ 'S'      : '閭',
+  \ "\<C-S>" : '閭',
+  \ 'i'      : '',
+  \ 'ic'     : '',
+  \ 'ix'     : '',
+  \ 'R'      : '',
+  \ 'Rc'     : '',
+  \ 'Rv'     : '',
+  \ 'Rx'     : '',
+  \ 'c'      : 'גּ',
+  \ 'cv'     : 'גּ',
+  \ 'ce'     : 'גּ',
+  \ 'r'      : '',
+  \ 'rm'     : '',
+  \ '!'      : '',
+  \ 't'      : ''
   \ }
-function! SensibleLineinfo()
-  return col('.') . ':' . line('.') . ':' . line('$')
-endfunction
-let g:lightline.mode_map = {
-    \ 'n' : ' ',
-    \ 'no' : ' ',
-    \ 'v' : ' ',
-    \ 'V' : ' ',
-    \ "\<C-V>" : ' ',
-    \ 's' : '麗 ',
-    \ 'S' : '麗 ',
-    \ "\<C-S>" : '麗 ',
-    \ 'i' : ' ',
-    \ 'ic' : ' ',
-    \ 'ix' : ' ',
-    \ 'R' : '凌 ',
-    \ 'Rc' : '凌 ',
-    \ 'Rv' : '凌 ',
-    \ 'Rx' : '凌 ',
-    \ 'c' : 'גּ ',
-    \ 'cv' : 'גּ ',
-    \ 'ce' : 'גּ ',
-    \ 'r' : ' ',
-    \ 'rm' : ' ',
-    \ 't': ' '
-    \ }
-let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \ }
-let g:lightline.component_type = {
-      \     'linter_checking': 'left',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \ }
-let g:lightline#ale#indicator_checking = "\uf110 "
-let g:lightline#ale#indicator_warnings = "\uf071 "
-let g:lightline#ale#indicator_errors = "\uf05e "
+let g:moodo_fticons = {
+  \ 'conf'       : '',
+  \ 'fugitive'   : '',
+  \ 'help'       : '',
+  \ 'magit'      : '',
+  \ 'markdown'   : '',
+  \ 'simplenote' : 'ﴬ',
+  \ 'startify'   : '',
+  \ 'vim'        : ''
+  \ }
 
 if ! has('gui_running')
     set ttimeout

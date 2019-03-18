@@ -83,12 +83,12 @@ snippet table "Table environment" b
 endsnippet
 
 snippet fig "Figure environment" b
-\begin{figure}[${1:htpb}]
+\begin{figure${1}}[${2:htpb}]
 	\centering
 	$0
-	\caption{${2:caption}}
-	\label{fig:${3:${2/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
-\end{figure}
+	\caption{${3:caption}}
+	\label{fig:${4:${3/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\end{figure$1}
 endsnippet
 
 snippet marfig "Margin figure environment" b
@@ -111,6 +111,17 @@ endsnippet
 
 snippet node "tikzpicture node command" b
 \node${1:[${2:options}]} at (${3:a}, ${4:b}) {${5:label}};
+endsnippet
+
+snippet axis "tikzpicture axis snippet" b
+\draw[->] (-${1:2}, 0) -- ($1, 0);
+\draw[->] (0, -$1) -- (0, $1);
+endsnippet
+
+snippet axis3d "tikzpicture 3d axis snippet" b
+\draw[->] (-${1:2}, 0, 0) -- ($1, 0, 0);
+\draw[->] (0, -$1, 0) -- (0, $1, 0);
+\draw[->] (0, 0, -$1) -- (0, 0, $1);
 endsnippet
 
 snippet enum "Enumerate" b
@@ -248,26 +259,6 @@ snippet bb "mathbb" w
 \mathbb{$1}$0
 endsnippet
 
-snippet bbC "mathbb C" w
-\mathbb{C}
-endsnippet
-
-snippet bbR "mathbb R" w
-\mathbb{R}
-endsnippet
-
-snippet bbQ "mathbb Q" w
-\mathbb{Q}
-endsnippet
-
-snippet bbN "mathbb N" w
-\mathbb{N}
-endsnippet
-
-snippet bbZ "mathbb Z" w
-\mathbb{Z}
-endsnippet
-
 snippet cal "mathcal" w
 \mathcal{$1}$0
 endsnippet
@@ -384,21 +375,30 @@ ${2:${VISUAL:code}}
 $0
 endsnippet
 
-snippet pl "partial" w
-\partial_
-endsnippet
-
 snippet newth "newthought" b
 \newthought{$1} $0
 endsnippet
 
-snippet aques "assignment problem" b
-${3:\newpage}
-% TODO : Question $1
-\item $0
-	\begin{${2:solbox}}
+snippet sn "sidenote" w
+\sidenote{$0}
+endsnippet
 
-	\end{$2}
+snippet mn "marginnote" w
+\marginnote{$0}
+endsnippet
+
+snippet aques "assignment problem" b
+${1:\newpage}
+% TODO : Question $2
+\item $0
+
+\begin{${3:solution}}
+
+\end{$3}
+endsnippet
+
+snippet todoq "TODO question tag" b
+% TODO : Question $0
 endsnippet
 
 # vim:ft=snippets:

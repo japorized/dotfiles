@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/Mountain-light.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#fffdff",
+        "foreground": "#1c1a21",
+        "cursor": "#1c1a21"
+    },
+    "colors": {
+        "color0": "#fffdff",
+        "color1": "#f3c9ff",
+        "color2": "#ffdaff",
+        "color3": "#f1b0c6",
+        "color4": "#ddb6f0",
+        "color5": "#b096f0",
+        "color6": "#c5a8f1",
+        "color7": "#c6c5c7",
+        "color8": "#7d7495",
+        "color9": "#b4adb7",
+        "color10": "#c4bbc4",
+        "color11": "#aa989e",
+        "color12": "#a59da9",
+        "color13": "#8e83aa",
+        "color14": "#9b91aa",
+        "color15": "#1c1a21"
+    }
+}

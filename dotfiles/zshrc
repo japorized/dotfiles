@@ -1,6 +1,6 @@
 # For terminals that need an extra command to turn on 256-colors
   {%@@ if profile == "sencha" @@%}
-  (cat $HOME/.cache/wpgtk-term.color &)
+  # (cat $HOME/.cache/wpgtk-term.color &)
   {%@@ elif profile == "Earl-Grey.local" @@%}
   (cat $HOME/.cache/wal/sequences &)
   {%@@ endif @@%}
@@ -47,10 +47,12 @@ PURE_CMD_MAX_EXEC_TIME=10
 PURE_PROMPT_SYMBOL=
 PURE_GIT_DOWN_ARROW=⇣
 PURE_GIT_UP_ARROW=⇡
+PURE_PROMPT_SYMBOL=" λ"
+PURE_PROMPT_VICMD_SYMBOL=" ξ"
 prompt pure
 prompt_pure_set_title() {}
 prompt_newline='%666v'
-PROMPT=' %(?.%F{magenta}λ.%F{red}↯)%f '
+# PROMPT=' %(?.%F{magenta}λ.%F{red}↯)%f '
 
 # ZSH Syntax Highlighting configs
 typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS

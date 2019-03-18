@@ -2,12 +2,11 @@
 call which_key#register('<Space>', "g:which_key_map")
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :WhichKeyVisual '<Space>'<CR>
-let g:which_key_map = {
-      \ 'M' : 'Magit',
-      \ }
+let g:which_key_map = {}
   " Document Related
 nmap <Leader>dsi :IndentLinesToggle<CR>
 nmap <silent> <leader>dst :call TypeWriterToggle()<CR>
+nmap <silent> <leader>dsc :call ConcealToggle()<CR>
 nmap <silent> <leader>dsn :call LineNumberToggle()<CR>
 nmap <silent> <leader>dsr :call RelNumberToggle()<CR>
 nmap <silent> <leader>dl :set tw=
@@ -18,13 +17,15 @@ vmap <leader>dchc :HyphenToCamelSel<CR>
 vmap <leader>dchs :HyphenToSnakeSel<CR>
 vmap <leader>dcsh :SnakeToHyphenSel<CR>
 vmap <leader>dcsc :SnakeToCamelSel<CR>
-nmap <leader>dtg :Denite templates<CR>
+nmap <leader>dtg :Denite gettemplates<CR>
+nmap <leader>dte :Denite edittemplates<CR>
 nnoremap <leader>ddw :%s/\s\+$//e<CR>
 let g:which_key_map.d = {
       \ 'name' : '+document',
       \ 'l' : 'textwidth',
       \ 's' : {
       \   'name' : '+viewer-styling',
+      \   'c' : 'toggle-conceal',
       \   'i' : 'toggle-indentline',
       \   't' : 'toggle-typewriter-mode',
       \   'n': 'line-number-toggle',
@@ -52,6 +53,7 @@ let g:which_key_map.d = {
       \ 't' : {
       \   'name' : '+template',
       \   'g' : 'get-template',
+      \   'e' : 'edit-template',
       \   },
       \ 'd' : {
       \   'name' : '+delete-actions',
@@ -68,6 +70,13 @@ function! TypeWriterToggle()
   else
     set so=999
     let g:typewriter_mode = 1
+  endif
+endfunction
+function! ConcealToggle()
+  if &conceallevel == 0
+    set conceallevel=2
+  else
+    set conceallevel=0
   endif
 endfunction
 function! LineNumberToggle()
@@ -131,39 +140,79 @@ let g:which_key_map.T = {
       \ }
 
   " configs
-nnoremap <silent> <leader>ce :tabnew ~/.vimrc<CR>
-nnoremap <silent> <leader>cs :source ~/.config/nvim/init.vim<CR>
-nnoremap <silent> <leader>ct :tabnew ~/.tmux.conf<CR>
-nnoremap <silent> <leader>cy :tabnew ~/.config/nvim/commontypos.vim<CR>
+nnoremap <silent> <leader>cev :tabnew ~/.vimrc<CR>
+nnoremap <silent> <leader>cei :tabnew ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>cet :tabnew ~/.tmux.conf<CR>
+nnoremap <silent> <leader>ceb :tabnew ~/.config/nvim/whichkey.vim<CR>
+nnoremap <silent> <leader>cey :tabnew ~/.config/nvim/commontypos.vim<CR>
+nnoremap <silent> <leader>csi :source ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>csb :source ~/.config/nvim/whichkey.vim<CR>
+nnoremap <silent> <leader>csy :source ~/.config/nvim/commontypos.vim<CR>
 nnoremap <silent> <leader>cd :digraphs<CR>
 nnoremap <silent> <leader>ccs :Denite colorscheme<CR>
 nnoremap <silent> <leader>cce1 :tabnew ~/.vim/colors/chaos.vim<CR>
 nnoremap <silent> <leader>cUec :UltiSnipsEdit<CR>
 nnoremap <silent> <leader>cUee :UltiSnipsEdit<Space>
+nnoremap <silent> <leader>cCd :CocList diagnostics<CR>
+nnoremap <silent> <leader>cCe :CocList extensions<CR>
+nnoremap <silent> <leader>cCl :CocList<CR>
+nnoremap <silent> <leader>cCc :CocConfig<CR>
+nnoremap <silent> <leader>cCE :CocEnable<CR>
+nnoremap <silent> <leader>cCD :CocDisable<CR>
+nnoremap <silent> <leader>cCR :CocRestart<CR>
+nnoremap <silent> <leader>cCU :CocUpdate<CR>
+nnoremap <silent> <leader>cCI :CocInstall<Space>
+nnoremap <silent> <leader>cCX :CocUninstall<Space>
+nnoremap <silent> <leader>cCf :call FindCocExtensions()<CR>
 let g:which_key_map.c = {
-      \ 'name' : '+configs',
-      \ 'c' : {
-      \   'name' : '+colorscheme',
-      \   's' : 'set-colorscheme',
-      \   'e' : {
-      \     'name' : '+edit-colorscheme',
-      \     '1' : 'chaos',
-      \     },
-      \   },
-      \ 'e' : 'edit-vimrc',
-      \ 's' : 'source-vimrc',
-      \ 'd' : 'show-digraphs',
-      \ 't' : 'edit-tmux-conf',
-      \ 'y' : 'edit-commontypos',
-      \ 'U' : {
-      \   'name' : '+Ultisnips',
-      \   'e' : {
-      \     'name' : '+edit-snippets',
-      \     'c' : 'edit-current',
-      \     'e' : 'edit-choice',
-      \     },
-      \   },
-      \ }
+  \ 'name' : '+configs',
+  \ 'C' : {
+  \   'name' : '+coc',
+  \   'd' : 'diagnostics',
+  \   'e' : 'manage-extensions',
+  \   'l' : 'lists',
+  \   'c' : 'edit-config',
+  \   'E' : 'enable-coc',
+  \   'D' : 'disable-coc',
+  \   'U' : 'async-update-coc',
+  \   'I' : 'install-extension',
+  \   'f' : 'find-extensions'
+  \   },
+  \ 'c' : {
+  \   'name' : '+colorscheme',
+  \   's' : 'set-colorscheme',
+  \   'e' : {
+  \     'name' : '+edit-colorscheme',
+  \     '1' : 'chaos',
+  \     },
+  \   },
+  \ 'e' : {
+  \   'name' : '+edit-configs',
+  \   'b' : 'edit-keybindings',
+  \   'v' : 'edit-vimrc',
+  \   'i' : 'edit-nvim-init',
+  \   't' : 'edit-tmux-conf',
+  \   'y' : 'edit-commontypos'
+  \   },
+  \ 's' : {
+  \   'name' : '+source-configs',
+  \   'b' : 'source-keybindings',
+  \   'i' : 'source-vimrc',
+  \   'y' : 'source-commontypos'
+  \   },
+  \ 'd' : 'show-digraphs',
+  \ 'U' : {
+  \   'name' : '+Ultisnips',
+  \   'e' : {
+  \     'name' : '+edit-snippets',
+  \     'c' : 'edit-current',
+  \     'e' : 'edit-choice',
+  \     },
+  \   }
+  \ }
+function! FindCocExtensions() abort
+  silent execute "!firefox 'https://www.npmjs.com/search?q=keywords:coc.nvim'"
+endfunction
 
   " ale linting
 nmap <silent> <Leader>dal :ALELint<cr>
@@ -178,16 +227,25 @@ let g:which_key_map.d.a = {
 
   " Startify related
 nmap <Leader>st :Startify<CR>
-nmap <Leader>ss :SSave<CR>
-nmap <Leader>sd :SDelete<CR>
+nmap <Leader>sS :SSave!<CR>
+nmap <leader>ss :call LazySave()<CR>
+nmap <Leader>sd :SDelete!<CR>
 nmap <Leader>sc :SClose<CR>
 let g:which_key_map.s = {
       \ 'name' : '+startify',
       \ 't' : 'Startify',
-      \ 's' : 'SSave',
+      \ 's' : 'quicksave session',
       \ 'd' : 'SDelete',
       \ 'c' : 'SClose',
       \ }
+function! LazySave() abort
+  if filereadable(v:this_session)
+    execute "normal!:SSave!<CR><CR>"
+    echo "Session saved"
+  else
+    :SSave
+  endif
+endfunction
 
   " buffer controls
 call denite#custom#source ('buffer', 'sorters', ['sorter/sublime', 'sorter/rank'])
@@ -233,3 +291,39 @@ let g:which_key_map.S = {
       \ 'P' : 'simplenote-unpin',
       \ 't' : 'simplenote-tag',
       \ }
+
+" git-fugitive
+nmap <leader>gs :G<CR>
+nmap <leader>gx :Git<Space>
+nmap <leader>gcm :Gcommit<Space>
+nmap <leader>gcM :Gcommit<CR>
+nmap <leader>gru :Gpull<CR>
+nmap <leader>grf :Gfetch<CR>
+nmap <leader>grp :Gpush<CR>
+nmap <leader>gw :Gwrite<CR>
+nmap <leader>gm :Gmerge<CR>
+nmap <leader>gds :Gsdiff<CR>
+nmap <leader>gdv :Gvdiff<CR>
+let g:which_key_map.g = {
+  \ 'name' : '+fugitive',
+  \ 's' : 'status',
+  \ 'x' : '*arbitrary command',
+  \ 'c' : {
+    \ 'name' : '+commit',
+    \ 'm' : 'commit with msg',
+    \ 'M' : 'commit & edit msg'
+  \   },
+  \ 'r' : {
+    \ 'name' : '+remote',
+    \ 'u' : 'pull',
+    \ 'f' : 'fetch',
+    \ 'p' : 'push'
+  \   },
+  \ 'w' : 'write',
+  \ 'm' : 'merge',
+  \ 'd' : {
+    \ 'name' : '+diff',
+    \ 's' : 'split',
+    \ 'v' : 'vsplit'
+  \   }
+  \ }

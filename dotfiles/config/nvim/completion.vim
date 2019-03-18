@@ -1,16 +1,5 @@
-" Deoplete
-" deoplete + neosnippet + autopairs changes 
 au Filetype tex let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '$':'$', '`':"'"}
 let g:AutoPairsMapCR=0
-let g:deoplete#auto_complete_start_length = 1 
-" Do not complete too short words
-" call deoplete#custom#source(
-" \ 'dictionary', 'min_pattern_length', 2)
-let g:deoplete#auto_complete_start_length = 3
-let g:deoplete#enable_at_startup = 1 
-call deoplete#custom#option('auto_complete_delay', 200)
-let g:deoplete#enable_smart_case = 1 
-call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
 
 " Ultisnips
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/mysnippets']
@@ -19,7 +8,15 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit="horizontal"
 
-if !exists('g:deoplete#omni#input_patterns')
-    let g:deoplete#omni#input_patterns = {}
-endif
-au Filetype tex let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

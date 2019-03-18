@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/Mr._Lee.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#f5e7de",
+        "foreground": "#34302d",
+        "cursor": "#34302d"
+    },
+    "colors": {
+        "color0": "#f5e7de",
+        "color1": "#992e2e",
+        "color2": "#4c3226",
+        "color3": "#a67c53",
+        "color4": "#4c7399",
+        "color5": "#bf9986",
+        "color6": "#d97742",
+        "color7": "#4c4742",
+        "color8": "#7f7f7a",
+        "color9": "#b23636",
+        "color10": "#664233",
+        "color11": "#bf8f60",
+        "color12": "#5986b2",
+        "color13": "#d9ae98",
+        "color14": "#f2854a",
+        "color15": "#34302d"
+    }
+}

@@ -2,6 +2,8 @@
 acpi
 acpi_call
 alsa-utils
+android-tools
+arandr
 arc-gtk-theme
 arc-icon-theme
 aria2
@@ -52,6 +54,7 @@ dunst
 e2fsprogs
 efibootmgr
 efitools
+entr
 espeak
 evtest
 exfat-utils
@@ -73,6 +76,7 @@ findutils
 firefox
 fish
 flex
+fontforge
 fzf
 garcon
 gawk
@@ -98,6 +102,7 @@ gsfonts
 gtk-engine-murrine
 gtk-xfce-engine
 gtksourceview3
+gufw
 gvfs
 gvfs-afc
 gvim
@@ -114,6 +119,7 @@ id3v2
 ifplugd
 iftop
 imagemagick
+incron
 inetutils
 inkscape
 intel-ucode
@@ -143,12 +149,14 @@ linux-headers
 logrotate
 lsof
 luarocks
+lutris
 lvm2
 lxappearance
 m4
 make
 man-db
 man-pages
+matterbridge
 maxima
 mdadm
 mlocate
@@ -212,6 +220,7 @@ qt5-multimedia
 qtikz
 qutebrowser
 r
+ragel
 raw-thumbnailer
 redshift
 reflector
@@ -279,12 +288,15 @@ weechat
 wget
 which
 whois
+wine
 wireless_tools
 wpa_actiond
 wpa_supplicant
 wqy-zenhei
+x11-ssh-askpass
 xarchiver
 xclip
+xcursor-simpleandsoft
 xdg-user-dirs
 xdo
 xf86-video-vesa
@@ -351,6 +363,7 @@ xorg-xauth
 xorg-xcmsdb
 xorg-xcursorgen
 xorg-xdm
+xorg-xdpyinfo
 xorg-xdriinfo
 xorg-xev
 xorg-xgamma
@@ -374,10 +387,13 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xsel
+xsettingsd
 xss-lock
 xterm
+yarn
 youtube-dl
 zathura
+zathura-cb
 zathura-pdf-poppler
 zip
 zsh

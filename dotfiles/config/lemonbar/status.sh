@@ -42,12 +42,12 @@ Wifi() {
 }
 
 Diskspace() {
-  df -akh | grep "/dev/sda3" | awk '{print $5}' | tr -d '\n'
+  df -akh | grep "/dev/sda3" | tail -n 1 | awk '{print $5}' | tr -d '\n'
   return
 }
 
 Filespace() {
-  df -akh | grep "/dev/sda4" | awk '{print $5}' | tr -d '\n'
+  df -akh | grep "/dev/sda4" | tail -n 1 | awk '{print $5}' | tr -d '\n'
   return
 }
 

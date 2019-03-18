@@ -3,21 +3,31 @@
 bspc monitor -d I II III IV V VI VII
 
 bspc config border_width         2
-sh -c "~/.config/bspwm/gaps.sh"
 sh -c "~/.config/bspwm/bspwm-colors.sh"
 
+SPACES=$(bspc query -D)
+for SPACE in $SPACES
+do
+  bspc config -d ${SPACE} window_gap      20
+  bspc config -d ${SPACE} top_padding     30
+  bspc config -d ${SPACE} bottom_padding  30
+  bspc config -d ${SPACE} left_padding   100
+  bspc config -d ${SPACE} right_padding  100
+done
+
+bspc config automatic_scheme     spiral
 bspc config split_ratio          0.5
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config borderless_monocle   false
+bspc config gapless_monocle      false
 bspc config focus_follows_pointer true
 
 # Rules
 bspc rule -a Firefox desktop='^2'
+bspc rule -a Gimp desktop='^4'
 bspc rule -a Sublime_text desktop='^3'
 bspc rule -a retroarch desktop='^7'
 bspc rule -a feh state floating
 bspc rule -a tint2 manage=off
-bspc rule -a Oblogout focus=on state floating
 
 # Set Desktop 4 to start with floating windows
 FLOATING_DESKTOP_ID=$(bspc query -D -d '^4')
@@ -38,7 +48,7 @@ xset r rate 270 30 &
 xset dpms 0 0 1800 &
 xset b off &
 xset b 0 0 0 &
-xmodmap ~/.xmodmaprc
+xmodmap ~/.Xmodmap
 xss-lock -- slock &
 libinput-gestures-setup start &
 tint2 &

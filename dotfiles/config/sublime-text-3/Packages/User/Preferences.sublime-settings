@@ -11,7 +11,7 @@
 			"selector": "string.quoted.double.html,string.quoted.single.html, source.css"
 		}
 	],
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/User/Chaos.tmTheme",
 	"detect_indentation": false,
 	"enable_tab_scrolling": false,
 	"folder_exclude_patterns":

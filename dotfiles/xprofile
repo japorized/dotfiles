@@ -1,1 +1,2 @@
 pactl set-sink-volume 0 20%
+xmodmap $HOME/.Xmodmap

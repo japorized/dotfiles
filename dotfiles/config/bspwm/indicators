@@ -32,6 +32,9 @@ then
   echo $! >> $HOME/.cache/lemon.pid
   ~/.config/lemonbar/bspwm-indicator-simple.sh &
   echo $! >> $HOME/.cache/lemon.pid
+
+  sleep 0.5
+  ~/.bin/move-lemonbar-to-back.sh
 else
   if [ "$param1" = '-n' ] || [ "$param1" = '--noNowPlaying' ] || [ "$param2" = '-n' ] || [ "$param2" = '--noNowPlaying' ]
   then
@@ -59,4 +62,7 @@ else
   # ~/.config/lemonbar/activeapp.sh &
   ~/.config/lemonbar/bspwm-indicator.sh &
   echo $! >> $HOME/.cache/lemon.pid
+
+  sleep 0.5
+  ~/.bin/move-lemonbar-to-back.sh
 fi

@@ -5,7 +5,10 @@ let &packpath = &runtimepath
 set nocompatible
 filetype plugin indent on
 syntax on
+set concealcursor=""
+set conceallevel=2
 set expandtab
+set shortmess+=c
 set noshowmode
 set ignorecase    " Ignore case when searching
 set numberwidth=2
@@ -27,7 +30,7 @@ inoremap <C-l> ^
 execute pathogen#infect('bundle/always/{}')
 execute pathogen#interpose('bundle/tex/vimtex')
 execute pathogen#interpose('bundle/optional/denite.nvim')
-execute pathogen#interpose('bundle/optional/deoplete.nvim')
+execute pathogen#interpose('bundle/optional/coc.nvim')
 execute pathogen#interpose('bundle/optional/goyo.vim')
 execute pathogen#interpose('bundle/optional/ultisnips')
 execute pathogen#interpose('bundle/calltoload/thesaurus_query.vim')
@@ -41,69 +44,14 @@ so ~/.config/nvim/completion.vim
 so ~/.config/nvim/commontypos.vim
 
 " Overriding some of the keybindings for this configuration
-nnoremap <silent> <leader>ce :tabnew ~/.config/latex-vim/init.vim<CR>
-nnoremap <silent> <leader>cs :source ~/.config/latex-vim/init.vim<CR>
+nnoremap <silent> <leader>cei :tabnew ~/.config/latex-vim/init.vim<CR>
+nnoremap <silent> <leader>csi :source ~/.config/latex-vim/init.vim<CR>
 
-set statusline=%!JStatusline()
-
-function! JStatusline()
-  let curmode = mode(1)
-  let statuscolor = StatuslineColor(curmode)
-  let label = StatuslineLabel(curmode)
-  let midsec = "\  %r%h\ %.40f\ %q%m\ "
-  let leftsec = "%{SmartFiletype()} %l/%L\ \ %2c\ \ "
-  let typewriterstat = g:typewriter_mode ? '  ' : ''
-  return statuscolor . '  ' . label . "  %#Normal# " . midsec . "%= " . statuscolor . leftsec . typewriterstat
-endfunction
-
-function! StatuslineColor(mode)
-  return get(g:statusline_colors, a:mode, '%#ErrorMsg#')
-endfunction
-
-function! StatuslineLabel(mode)
-  return get(g:statusline_modes, a:mode, a:mode)
-endfunction
-
-function! SmartFiletype() abort
-  let s = get(g:filetype_icons, &filetype, &filetype)
-  return s == '' ? '' : '  ' . s . '  |'
-endfunction
-
-let g:filetype_icons = {
-  \ 'conf'       : '',
-  \ 'help'       : '',
-  \ 'magit'      : '',
-  \ 'markdown'   : '',
-  \ 'simplenote' : 'ﴬ',
-  \ 'startify'   : '',
-  \ 'vim'        : ''
-  \ }
-let g:statusline_colors = {
-  \ 'n'      : '%#StatusLine#',
-  \ 'no'     : '%#DiffChange#',
-  \ 'v'      : '%#DiffText#',
-  \ 'V'      : '%#DiffText#',
-  \ "\<C-V>" : '%#DiffText#',
-  \ 's'      : '%#WildMenu#',
-  \ 'S'      : '%#WildMenu#',
-  \ "\<C-S>" : '%#WildMenu#',
-  \ 'i'      : '%#DiffAdd#',
-  \ 'ic'     : '%#DiffAdd#',
-  \ 'ix'     : '%#DiffAdd#',
-  \ 'R'      : '%#DiffDelete#',
-  \ 'Rc'     : '%#DiffDelete#',
-  \ 'Rv'     : '%#DiffDelete#',
-  \ 'Rx'     : '%#DiffDelete#',
-  \ 'c'      : '%#Search#',
-  \ 'cv'     : '%#Search#',
-  \ 'ce'     : '%#Search#',
-  \ 'r'      : '%#Todo#',
-  \ 'rm'     : '%#Todo#',
-  \ '!'      : '%#IncSearch#',
-  \ 't'      : '%#IncSearch#'
-  \ }
-
-let g:statusline_modes = {
+let g:moodo_mid = "\  %r%h\ %.40f%(\ %q%m%)\ "
+let g:moodo_right = "%(\ %{FugitiveHead(8)}\ |%)%(%{MoodoFT()}%) %l/%L\ \ %2c\ \ %{coc#status()}"
+let g:moodo_tabline_modified = ""
+let g:moodo_tabline_closestr = ''
+let g:moodo_modes = {
   \ 'n'      : '',
   \ 'no'     : '',
   \ 'v'      : '',
@@ -127,48 +75,55 @@ let g:statusline_modes = {
   \ '!'      : '',
   \ 't'      : ''
   \ }
+let g:moodo_fticons = {
+  \ 'conf'       : '',
+  \ 'fugitive'   : '',
+  \ 'help'       : '',
+  \ 'magit'      : '',
+  \ 'markdown'   : '',
+  \ 'simplenote' : 'ﴬ',
+  \ 'startify'   : '',
+  \ 'tex'        : 'TeX',
+  \ 'vim'        : ''
+  \ }
 
-set tabline=%!MyTabLine()
-function! MyTabLine()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    " select the highlighting
-    if i + 1 == tabpagenr()
-      let s .= '%#StatusLine#'
-    else
-      let s .= '%#Normal#'
-    endif
-
-    " set the tab page number (for mouse clicks)
-    let s .= '%' . (i + 1) . 'T'
-
-    " the label is made by MyTabLabel()
-    let s .= ' %.20{MyTabLabel(' . (i + 1) . ')} '
-  endfor
-
-  " after the last tab fill with TabLineFill and reset tab page nr
-  let s .= '%#Normal#%T'
-
-  " right-align the label to close the current tab page
-  if tabpagenr('$') > 1
-    let s .= '%=%#StatusLine#%999X  '
-  endif
-
-  return s
-endfunction
-
-function! MyTabLabel(n)
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
-  let fin = bufname(buflist[winnr - 1]) . (getbufvar(buflist[winnr - 1], "&mod")?' ':'')
-  if fin == ''
-    return ' ... '
-  else
-    return fin
-  endif
+function! MoodoIndicators() abort
+  let typewriterstat = g:typewriter_mode ? '  ' : ''
+  let str = typewriterstat . ' '
+  return str
 endfunction
 
 let g:tex_flavor = 'latex'
+let g:tex_conceal="abdmgs"
+let g:vimtex_fold_enabled=1
+autocmd Filetype tex setl updatetime=1000
+let g:vimtex_view_general_viewer = '/home/japorized/.bin/tabbed-zathura'
+let g:vimtex_view_general_options = '-f @pdf'
+let g:vimtex_compiler_progname='nvr'
+let g:vimtex_quickfix_latexlog = {
+      \ 'overfull' : 0,
+      \ 'underfull' : 0,
+      \ 'font' : 0,
+      \ 'packages' : {
+      \   'natbib' : 0,
+      \ },
+      \}
+let g:vimtex_compiler_latexmk = {
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
+    \ 'executable' : 'latexmk',
+    \ 'options' : [
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \   '-shell-escape'
+    \ ],
+    \}
+let g:vimtex_quickfix_mode=0
+let g:vimtex_imaps_leader=";"
+let g:vimtex_imaps_disabled = ['.']
+let g:neotex_delay = 1000
 
 " netrw Configs
 nmap <F1> :F<cr>
@@ -187,6 +142,7 @@ let g:gundo_return_on_revert= 0
 
 " Indentline Configs
 let g:indentLine_char='|'
+let g:indentLine_setColors = 0
 
 " Goyo
 nmap <F3> :Goyo<cr>
@@ -248,7 +204,6 @@ let g:startify_lists = [
       \ { 'type': 'commands',  'header': ['   Commands']       },
       \ ]
 let g:startify_commands = [
-    \ {'M': ['Magit', ':MagitOnly']},
     \ {'S': ['Simplenote', ':SimplenoteList']},
     \ ]
 
@@ -273,5 +228,4 @@ let g:which_key_map.t = {
       \   },
       \ 'R' : 'query-reset'
       \ }
-
 source $HOME/.vim/simplenoterc

@@ -6,6 +6,9 @@
 super + Return
   termite
 
+shift + super + Return
+  tdrop -ma -w -2 -s " dropdown" termite
+
 # shift + super + Return
 #   kitty --new-session ~/.config/kitty/new-tmux
 
@@ -37,20 +40,16 @@ super + p
   sh -c "~/.bin/bspc-pip"
 
 # scrot hotkey
-@alt + super + s
-  rofi-scrot
+@alt + super + {s,e,m,b,a}
+  {rofi-scrot,rofimoji,rofi-mpc,rofi-btctl,rofianime}
 
-# emoji-keyboard
-@alt + super + e
-  rofimoji
-
-@alt + super + m
-  rofi-mpc
+@alt + super + r : {h,j,k,l}
+  xrandr --output eDP-1 --rotate {left,normal,inverted,right}
 
 {XF86Favorites,@alt + super + w}
   rofiwpg
 
-XF86PowerOff
+{XF86PowerOff,@alt + super + grave}
   rofi-powermenu
 
 # XF86 Keys & Context Menu key as modal key for multimedia-key emulation
@@ -78,19 +77,19 @@ XF86PowerOff
   mpc toggle
 
 {XF86AudioRaiseVolume,Menu : F3}
-  sh -c "~/.bin/mypactl up 2" && ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl up 2" && (ffplay -nodisp -vn -autoexit $HOME/.data/sounds/blop.mp3 &) ; ~/.config/lemonbar/vol.sh
 
 {XF86AudioLowerVolume,Menu : F2}
-  sh -c "~/.bin/mypactl down 2" && ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl down 2" && (ffplay -nodisp -vn -autoexit $HOME/.data/sounds/blop.mp3 &) ; ~/.config/lemonbar/vol.sh
 
 {shift + XF86AudioRaiseVolume,Menu: shift + F3}
-  sh -c "~/.bin/mypactl up 10" && ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl up 10" && (ffplay -nodisp -vn -autoexit $HOME/.data/sounds/blop.mp3 &) ; ~/.config/lemonbar/vol.sh
 
 {shift + XF86AudioLowerVolume,Menu : shift + F2}
-  sh -c "~/.bin/mypactl down 10" && ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl down 10" && (ffplay -nodisp -vn -autoexit $HOME/.data/sounds/blop.mp3 &) ; ~/.config/lemonbar/vol.sh
 
 {XF86AudioMute,Menu : F1}
-  pulseaudio-ctl mute ; ~/.config/lemonbar/vol.sh
+  pulseaudio-ctl mute && (ffplay -nodisp -vn -autoexit $HOME/.data/sounds/blop.mp3 &) ; ~/.config/lemonbar/vol.sh
 
 {XF86Calculator,Menu : F11}
   /usr/bin/rofi -show calc -modi calc -no-show-match -no-sort
@@ -105,6 +104,9 @@ super + Escape
 # quit bspwm normally
 super + alt + Escape
 	sh -c "$HOME/.bin/cleandesktop.sh && bspc quit"
+
+super + alt + shift + r
+  bspc wm -r
 
 # close and kill
 super + {_,shift + }q
@@ -128,11 +130,15 @@ super + b
 
 # set the window state
 super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -t "~{tiled,pseudo_tiled,floating,fullscreen}"
 
 # set the node flags
 super + ctrl + {x,y,z}
 	bspc node -g {locked,sticky,private}
+
+# set node layer
+super + ctrl + {minus,equal,plus}
+  bspc node -l {below,normal,above}
 
 #
 # focus/swap/rotate
@@ -210,13 +216,12 @@ super + alt + shift + {h,j,k,l}
 #
 # Gap control
 #
-super + {_,shift + }g
-  sh -c "~/.config/bspwm/{gaps,sans-gaps}.sh"
+super + g
+  sh -c "~/.config/bspwm/gaps.sh"
 
 #
 # Floating windows
 #
 # snap a floating window
-super + w : {1-9}
-	sh -c "~/.bin/bspc-smartmove {top-left,top-center,top-right,left-center,center,right-center,bottom-left,bottom-center,bottom-right}"
-
+super + w
+  sh -c "~/.bin/bspc-floatsnap"

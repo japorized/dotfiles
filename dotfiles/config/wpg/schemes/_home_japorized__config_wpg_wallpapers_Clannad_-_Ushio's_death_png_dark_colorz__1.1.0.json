@@ -1,5 +1,5 @@
 {
-    "wallpaper": "Clannad_-_Ushio's_death.png",
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/Clannad_-_Ushio's_death.png",
     "alpha": "100",
 
     "special": {
@@ -10,19 +10,19 @@
     "colors": {
         "color0": "#ededed",
         "color1": "#ff6f59",
-        "color2": "#ba5959",
-        "color3": "#7db9e3",
-        "color4": "#76da9a",
-        "color5": "#a4a425",
-        "color6": "#95507d",
-        "color7": "#6d7298",
-        "color8": "#b1b1b2",
-        "color9": "#d15b49",
-        "color10": "#994949",
-        "color11": "#578fb6",
-        "color12": "#56a773",
-        "color13": "#959529",
-        "color14": "#7a4267",
+        "color2": "#76da9a",
+        "color3": "#c0c000",
+        "color4": "#7db9e3",
+        "color5": "#b294bb",
+        "color6": "#00c2c8",
+        "color7": "#767676",
+        "color8": "#aaaaaa",
+        "color9": "#ff2200",
+        "color10": "#15c956",
+        "color11": "#9d9d00",
+        "color12": "#81a2be",
+        "color13": "#a149bb",
+        "color14": "#00acb1",
         "color15": "#010101"
     }
 }

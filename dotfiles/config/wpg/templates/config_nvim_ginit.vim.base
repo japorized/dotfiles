@@ -1,0 +1,175 @@
+hi   Normal                       guibg={color0}         guifg={color15}
+hi   NonText                      guibg=NONE             guifg={color0}
+hi   Comment                      guibg=NONE             guifg={color8}
+hi   Conceal                      guibg=NONE             guifg={color4}
+hi   Constant                     guibg=NONE             guifg={color6}
+hi   Error                        guibg={color1}         guifg={color7}
+hi   Function                     guibg=NONE             guifg={color2}
+hi   Identifier                   guibg=NONE             guifg={color6}          gui=BOLD
+hi   Ignore                       guibg={color8}         guifg={color0}
+hi   PreProc                      guibg=NONE             guifg={color3}
+hi   Special                      guibg=NONE             guifg={color6}
+hi   Statement                    guibg=NONE             guifg={color1}
+hi   String                       guibg=NONE             guifg={color6}
+hi   Number                       guibg=NONE             guifg={color3}
+hi   Todo                         guibg={color2}         guifg={color0}
+hi   Type                         guibg=NONE             guifg={color2}
+hi   Underlined                   guibg=NONE             guifg=NONE              gui=underline
+hi   StatusLine                   guibg={color3}         guifg={color0}
+hi   StatusLineNC                 guibg={color2}         guifg={color0}
+hi   TabLine                      guibg=NONE             guifg={color8}
+hi   TabLineFill                  guibg=NONE             guifg={color8}
+hi   TabLineSel                   guibg={color4}         guifg={color0}
+hi   TermCursorNC                 guibg={color3}         guifg={color0}
+hi   VertSplit                    guibg=NONE             guifg={color4}
+hi   Title                        guibg=NONE             guifg={color4}
+hi   CursorLine                   guibg={color8}         guifg={color0}
+hi   LineNr                       guibg=NONE             guifg={color4}
+hi   CursorLineNr                 guibg=NONE             guifg={color3}
+hi   helpLeadBlank                guibg=NONE             guifg={color7}
+hi   helpNormal                   guibg=NONE             guifg={color7}
+hi   Visual                       guibg=NONE             guifg={color11}         gui=reverse
+hi   VisualNOS                    guibg=NONE             guifg=NONE              gui=reverse
+hi   Pmenu                        guibg={color8}         guifg={color0}
+hi   PmenuSbar                    guibg={color0}         guifg={color15}
+hi   PmenuSel                     guibg={color1}         guifg={color15}
+hi   PmenuThumb                   guibg={color14}        guifg={color0}
+hi   FoldColumn                   guibg=NONE             guifg={color14}
+hi   Folded                       guibg=NONE             guifg={color14}
+hi   WildMenu                     guibg={color15}        guifg={color0}
+hi   SpecialKey                   guibg=NONE             guifg={color4}
+hi   DiffAdd                      guibg={color11}        guifg={color0}
+hi   DiffChange                   guibg={color12}        guifg={color0}
+hi   DiffDelete                   guibg={color13}        guifg={color0}
+hi   DiffText                     guibg={color7}         guifg={color0}
+hi   IncSearch                    guibg={color9}         guifg={color0}
+hi   Search                       guibg={color3}         guifg={color0}
+hi   Directory                    guibg=NONE             guifg={color3}
+hi   MatchParen                   guibg=NONE             guifg={color11}
+hi   ColorColumn                  guibg={color12}        guifg={color4}
+hi   SignColumn                   guibg={color0}         guifg={color4}
+hi   ErrorMsg                     guibg=NONE             guifg={color8}
+hi   ModeMsg                      guibg=NONE             guifg={color3}
+hi   MoreMsg                      guibg=NONE             guifg={color2}
+hi   Question                     guibg=NONE             guifg={color4}
+hi   WarningMsg                   guibg={color1}         guifg={color0}
+hi   Cursor                       guibg=NONE             guifg={color8}
+hi   Structure                    guibg=NONE             guifg={color5}
+hi   CursorColumn                 guibg={color8}         guifg={color7}
+hi   ModeMsg                      guibg=NONE             guifg={color7}
+hi   SpellBad                     guibg=NONE             guifg={color1}          gui=underline
+hi   SpellCap                     guibg=NONE             guifg={color4}          gui=underline
+hi   SpellLocal                   guibg=NONE             guifg={color5}          gui=underline
+hi   SpellRare                    guibg=NONE             guifg={color6}          gui=underline
+hi   Boolean                      guibg=NONE             guifg={color6}
+hi   Character                    guibg=NONE             guifg={color1}
+hi   Conditional                  guibg=NONE             guifg={color5}
+hi   Define                       guibg=NONE             guifg={color5}
+hi   Delimiter                    guibg=NONE             guifg={color13}
+hi   Float                        guibg=NONE             guifg={color5}
+hi   Include                      guibg=NONE             guifg={color4}
+hi   Keyword                      guibg=NONE             guifg={color5}
+hi   Label                        guibg=NONE             guifg={color3}
+hi   Operator                     guibg=NONE             guifg={color7}
+hi   Repeat                       guibg=NONE             guifg={color3}
+hi   SpecialChar                  guibg=NONE             guifg={color5}
+hi   Tag                          guibg=NONE             guifg={color3}
+hi   Typedef                      guibg=NONE             guifg={color3}
+hi   vimUserCommand               guibg=NONE             guifg={color1}          gui=BOLD
+hi   link                         vimMap                 vimUserCommand
+hi   link                         vimLet                 vimUserCommand
+hi   link                         vimCommand             vimUserCommand
+hi   link                         vimFTCmd               vimUserCommand
+hi   link                         vimAutoCmd             vimUserCommand
+hi   link                         vimNotFunc             vimUserCommand
+hi   vimNotation                  guibg=NONE             guifg={color4}
+hi   vimMapModKey                 guibg=NONE             guifg={color4}
+hi   vimBracket                   guibg=NONE             guifg={color7}
+hi   vimCommentString             guibg=NONE             guifg={color8}
+hi   htmlLink                     guibg=NONE             guifg={color1}          gui=underline
+hi   htmlBold                     guibg=NONE             guifg={color3}          gui=BOLD
+hi   htmlItalic                   guibg=NONE             guifg={color5}
+hi   htmlEndTag                   guibg=NONE             guifg={color7}
+hi   htmlTag                      guibg=NONE             guifg={color7}
+hi   htmlTagName                  guibg=NONE             guifg={color1}          gui=BOLD
+hi   htmlH1                       guibg=NONE             guifg={color7}
+hi   link                         htmlH2                 htmlH1
+hi   link                         htmlH3                 htmlH1
+hi   link                         htmlH4                 htmlH1
+hi   link                         htmlH5                 htmlH1
+hi   link                         htmlH6                 htmlH1
+hi   cssMultiColumnAttr           guibg=NONE             guifg={color2}
+hi   link                         cssFontAttr            cssMultiColumnAttr
+hi   link                         cssFlexibleBoxAttr     cssMultiColumnAttr
+hi   cssBraces                    guibg=NONE             guifg={color7}
+hi   link                         cssAttrComma           cssBraces
+hi   cssValueLength               guibg=NONE             guifg={color7}
+hi   cssUnitDecorators            guibg=NONE             guifg={color7}
+hi   cssValueNumber               guibg=NONE             guifg={color7}
+hi   link                         cssValueLength         cssValueNumber
+hi   cssNoise                     guibg=NONE             guifg={color8}
+hi   cssTagName                   guibg=NONE             guifg={color1}
+hi   cssFunctionName              guibg=NONE             guifg={color4}
+hi   scssSelectorChar             guibg=NONE             guifg={color7}
+hi   scssAttribute                guibg=NONE             guifg={color7}
+hi   link                         scssDefinition         cssNoise
+hi   sassidChar                   guibg=NONE             guifg={color1}
+hi   sassClassChar                guibg=NONE             guifg={color5}
+hi   sassInclude                  guibg=NONE             guifg={color5}
+hi   sassMixing                   guibg=NONE             guifg={color5}
+hi   sassMixinName                guibg=NONE             guifg={color4}
+hi   javaScript                   guibg=NONE             guifg={color7}
+hi   javaScriptBraces             guibg=NONE             guifg={color7}
+hi   javaScriptNumber             guibg=NONE             guifg={color5}
+hi   markdownH1                   guibg=NONE             guifg={color7}
+hi   link                         markdownH2             markdownH1
+hi   link                         markdownH3             markdownH1
+hi   link                         markdownH4             markdownH1
+hi   link                         markdownH5             markdownH1
+hi   link                         markdownH6             markdownH1
+hi   markdownAutomaticLink        guibg=NONE             guifg={color2}          gui=underline
+hi   link                         markdownUrl            markdownAutomaticLink
+hi   markdownError                guibg=NONE             guifg={color7}
+hi   markdownCode                 guibg=NONE             guifg={color3}
+hi   markdownCodeBlock            guibg=NONE             guifg={color3}
+hi   markdownCodeDelimiter        guibg=NONE             guifg={color5}
+hi   markdownItalic               gui=Italic
+hi   markdownBold                 gui=Bold
+hi   xdefaultsValue               guibg=NONE             guifg={color7}
+hi   rubyInclude                  guibg=NONE             guifg={color4}
+hi   rubyDefine                   guibg=NONE             guifg={color5}
+hi   rubyFunction                 guibg=NONE             guifg={color4}
+hi   rubyStringDelimiter          guibg=NONE             guifg={color2}
+hi   rubyInteger                  guibg=NONE             guifg={color3}
+hi   rubyAttribute                guibg=NONE             guifg={color4}
+hi   rubyConstant                 guibg=NONE             guifg={color3}
+hi   rubyInterpolation            guibg=NONE             guifg={color2}
+hi   rubyInterpolationDelimiter   guibg=NONE             guifg={color3}
+hi   rubyRegexp                   guibg=NONE             guifg={color6}
+hi   rubySymbol                   guibg=NONE             guifg={color2}
+hi   rubyTodo                     guibg=NONE             guifg={color8}
+hi   rubyRegexpAnchor             guibg=NONE             guifg={color7}
+hi   link                         rubyRegexpQuantifier   rubyRegexpAnchor
+hi   pythonOperator               guibg=NONE             guifg={color5}
+hi   pythonFunction               guibg=NONE             guifg={color4}
+hi   pythonRepeat                 guibg=NONE             guifg={color5}
+hi   pythonStatement              guibg=NONE             guifg={color1}          gui=Bold
+hi   pythonBuiltIn                guibg=NONE             guifg={color4}
+hi   phpMemberSelector            guibg=NONE             guifg={color7}
+hi   phpComparison                guibg=NONE             guifg={color7}
+hi   phpParent                    guibg=NONE             guifg={color7}
+hi   cOperator                    guibg=NONE             guifg={color6}
+hi   cPreCondit                   guibg=NONE             guifg={color5}
+hi   SignifySignAdd               guibg=NONE             guifg={color2}
+hi   SignifySignChange            guibg=NONE             guifg={color4}
+hi   SignifySignDelete            guibg=NONE             guifg={color1}
+hi   NERDTreeDirSlash             guibg=NONE             guifg={color4}
+hi   NERDTreeExecFile             guibg=NONE             guifg={color7}
+hi   ALEErrorSign                 guibg=NONE             guifg={color1}
+hi   ALEWarningSign               guibg=NONE             guifg={color3}
+hi   ALEError                     guibg=NONE             guifg={color1}
+hi   ALEWarning                   guibg=NONE             guifg={color3}
+
+GuiFont! Hack\ Nerd\ Font:h12
+GuiPopupmenu 0
+GuiTabline 0

@@ -1,4 +1,5 @@
 export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.data
 export CONFIG=$HOME/.config
 
 # RubyGems
@@ -23,12 +24,6 @@ export XMODIFIERS=@im=fcitx
 export PATH=$HOME/.texlive/2018/bin/x86_64-linux:$PATH
 export MANPATH=$MANPATH:$HOME/.texlive/2018/texmf-dist/doc/man
 export INFOPATH=$INFOPATH:/$HOME/.texlive/2018/texmf-dist/doc/info
-
-# npm
-export npm_config_prefix=$HOME/.node_modules
-
-# buku
-export XDG_DATA_HOME=$HOME/.data
 
 # nnn
 export NNN_BMS='d:~/Documents;D:~/Downloads/;P:~/Pictures/;M:~/Music;T:~/Documents/TeX_Notes/'

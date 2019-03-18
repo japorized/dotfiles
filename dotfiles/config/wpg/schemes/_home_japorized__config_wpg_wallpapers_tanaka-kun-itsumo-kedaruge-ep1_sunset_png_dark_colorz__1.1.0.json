@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/tanaka-kun-itsumo-kedaruge-ep1_sunset.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#23110e",
+        "foreground": "#fffcfb",
+        "cursor": "#fffcfb"
+    },
+    "colors": {
+        "color0": "#23110e",
+        "color1": "#b4584b",
+        "color2": "#c78e7b",
+        "color3": "#c6aa84",
+        "color4": "#987fa5",
+        "color5": "#ad6b80",
+        "color6": "#c77172",
+        "color7": "#c8c3c2",
+        "color8": "#874134",
+        "color9": "#fa6550",
+        "color10": "#ffae8a",
+        "color11": "#ffe096",
+        "color12": "#cb92e9",
+        "color13": "#f3789f",
+        "color14": "#ff7e80",
+        "color15": "#fffcfb"
+    }
+}

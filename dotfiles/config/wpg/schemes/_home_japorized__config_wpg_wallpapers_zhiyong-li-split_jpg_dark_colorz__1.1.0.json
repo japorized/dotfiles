@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/zhiyong-li-split.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#f3f3f3",
+        "foreground": "#333333",
+        "cursor": "#333333"
+    },
+    "colors": {
+        "color0": "#f3f3f3",
+        "color1": "#ff50a3",
+        "color2": "#f08700",
+        "color3": "#f49f0a",
+        "color4": "#efca08",
+        "color5": "#00a6a6",
+        "color6": "#7cc1e5",
+        "color7": "#a3a3a3",
+        "color8": "#888888",
+        "color9": "#e44792",
+        "color10": "#dc7c00",
+        "color11": "#cc8508",
+        "color12": "#dfbd07",
+        "color13": "#008383",
+        "color14": "#6aacce",
+        "color15": "#333333"
+    }
+}

@@ -26,7 +26,7 @@
         "Hack Nerd Font",
         "-l",
         "20",
-        "-yoffset -100"
+        "-yoffset -200"
     ],
     "password_helper": [
         "zenity",
@@ -71,6 +71,7 @@
     ],
     "watch_folders": [
         "~/Documents",
+        "~/Nextcloud",
         "~/Pictures",
         "~/Music/",
         "~/.config/"

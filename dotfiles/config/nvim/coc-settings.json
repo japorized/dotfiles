@@ -1,0 +1,6 @@
+{
+  "diagnostic.refreshOnInsertMode": true,
+  "suggest.autoTrigger": "trigger",
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "suggest.snippetIndicator": " "
+}

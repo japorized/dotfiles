@@ -21,6 +21,7 @@ alias vimdiff="nvim -d "
 alias svim="nvim -u $CONFIG/slim-vim/init.vim"
 alias tvim="nvim -u $CONFIG/latex-vim/init.vim"
 alias jvim="nvim -u $CONFIG/js-vim/init.vim"
+alias spacevim="nvim -u $HOME/.SpaceVim/init.vim"
 
 ##############################
 # Others
