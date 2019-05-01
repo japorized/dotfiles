@@ -12,6 +12,9 @@ shift + super + Return
 # shift + super + Return
 #   kitty --new-session ~/.config/kitty/new-tmux
 
+alt + grave
+  kill -s USR1 $(pidof deadd-notification-center)
+
 # program launcher
 alt + space
 	rofi -show run
@@ -22,18 +25,21 @@ shift + alt + space
 super + grave
   rofi -show window
 
-@ctrl + super + alt + {f,e,t,r,n}
-  {firefox,st -e wal-nvim,thunar,wpg -m,st -e wal-vim-simplenote}
+@ctrl + super + alt + {f,e,t,z}
+  {firefox,\
+  nvim-qt,\
+  thunar,\
+  tabbed-zathura -i reader}
 
 # status display
 super + i
-  sh -c "~/.config/lemonbar/status.sh"
+  rofi-lemon
 
 super + o
-  sh -c "~/.bin/tmpshow-datetime-battery.sh"
+  sh -c "~/.bin/show-lemonbar datetime battery"
 
 super + n
-  sh -c "~/.bin/tmpshow-nowplaying.sh"
+  sh -c "~/.bin/show-lemonbar nowplaying"
 
 # picture-in-picture mode
 super + p
@@ -77,19 +83,19 @@ super + p
   mpc toggle
 
 {XF86AudioRaiseVolume,Menu : F3}
-  sh -c "~/.bin/mypactl up 2" && (ffplay -nodisp -vn -autoexit $HOME/.data/sounds/blop.mp3 &) ; ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl -u 2"
 
 {XF86AudioLowerVolume,Menu : F2}
-  sh -c "~/.bin/mypactl down 2" && (ffplay -nodisp -vn -autoexit $HOME/.data/sounds/blop.mp3 &) ; ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl -d 2"
 
 {shift + XF86AudioRaiseVolume,Menu: shift + F3}
-  sh -c "~/.bin/mypactl up 10" && (ffplay -nodisp -vn -autoexit $HOME/.data/sounds/blop.mp3 &) ; ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl -u 10"
 
 {shift + XF86AudioLowerVolume,Menu : shift + F2}
-  sh -c "~/.bin/mypactl down 10" && (ffplay -nodisp -vn -autoexit $HOME/.data/sounds/blop.mp3 &) ; ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl -d 10"
 
 {XF86AudioMute,Menu : F1}
-  pulseaudio-ctl mute && (ffplay -nodisp -vn -autoexit $HOME/.data/sounds/blop.mp3 &) ; ~/.config/lemonbar/vol.sh
+  sh -c "~/.bin/mypactl -m"
 
 {XF86Calculator,Menu : F11}
   /usr/bin/rofi -show calc -modi calc -no-show-match -no-sort
@@ -105,6 +111,7 @@ super + Escape
 super + alt + Escape
 	sh -c "$HOME/.bin/cleandesktop.sh && bspc quit"
 
+# restart bspwm
 super + alt + shift + r
   bspc wm -r
 

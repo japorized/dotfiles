@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/kaguyasama-loveiswar-official-wp.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#242120",
+        "foreground": "#fffefe",
+        "cursor": "#fffefe"
+    },
+    "colors": {
+        "color0": "#242120",
+        "color1": "#d60012",
+        "color2": "#ef151a",
+        "color3": "#ff9e95",
+        "color4": "#ea888c",
+        "color5": "#ffc3bf",
+        "color6": "#e93276",
+        "color7": "#c8c7c7",
+        "color8": "#685f5c",
+        "color9": "#af0211",
+        "color10": "#ae1b1e",
+        "color11": "#c48883",
+        "color12": "#a67779",
+        "color13": "#b9a6a5",
+        "color14": "#a9325e",
+        "color15": "#fffefe"
+    }
+}

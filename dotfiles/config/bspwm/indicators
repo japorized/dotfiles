@@ -1,68 +1,78 @@
-#!/usr/bin/env dash
+#!/usr/bin/env bash
 
-USAGE() {
+w_flag=false
+n_flag=false
+t_flag=false
+o_flag=false
+
+lemonbars=$HOME/.config/lemonbar
+
+usage() {
   echo "usage: indicators [OPTION]
 
 OPTIONS:
-  <no option>          Show all usual indicators
-  --help, -h           Show this help message
-  --noNowPlaying, -n   Do not show Now Playing lemonbar
-  --noTimeBat, -t      Do not show Time and Battery lemonbar
-  --onlyTimeBat, -o    Show only Time and Battery lemonbar"
+  <no option> Show all usual indicators
+  -h          Show this help message
+  -o          Show only Time and Battery lemonbar
+  -w          Show window info
+  -n          Do not show Now Playing lemonbar
+  -t          Do not show Time and Battery lemonbar
+
+USUAL INDICATORS: bspwm-indicator, datetime, battery, nowplaying"
 }
 
-if [ "$1" = '--help' ] || [ "$1" = '-h' ]
-then
-  USAGE
-  exit 0
-fi
-
-param1=$1
-param2=$2
-
-# Defaults
-showNowPlaying=1
-showTimeBat=1
-
-if [ "$param1" = '-o' ] || [ "$param1" = '--onlyTimeBat' ]
-then
-  ~/.config/lemonbar/datetime.sh &
-  echo $! > $HOME/.cache/lemon.pid
-  ~/.config/lemonbar/battery.sh &
+start() {
+  ${lemonbars}/"$1".sh &
   echo $! >> $HOME/.cache/lemon.pid
-  ~/.config/lemonbar/bspwm-indicator-simple.sh &
-  echo $! >> $HOME/.cache/lemon.pid
+}
 
-  sleep 0.5
-  ~/.bin/move-lemonbar-to-back.sh
+while getopts "hownt" flag; do
+  case "${flag}" in
+    h)
+      usage
+      exit 0
+      ;;
+    o)
+      o_flag=true
+      break
+      ;;
+    w) w_flag=true ;;
+    n) n_flag=true ;;
+    t) t_flag=true ;;
+    *)
+      usage
+      exit 1
+      ;;
+  esac
+done
+
+# reset lemon.pid file
+echo "" > $HOME/.cache/lemon.pid
+
+if [ "$o_flag" = true ]; then
+  # This is the most minimal set of indicators
+  start datetime
+  start battery
+  start bspwm-indicator-simple
 else
-  if [ "$param1" = '-n' ] || [ "$param1" = '--noNowPlaying' ] || [ "$param2" = '-n' ] || [ "$param2" = '--noNowPlaying' ]
-  then
-    showNowPlaying=0
-  fi
-  
-  if [ "$param1" = "-t" ] || [ "$param1" = '--noTimeBat' ] || [ "$param2" = "-t" ] || [ "$param2" = '--noTimeBat' ]
-  then
-    showTimeBat=0
-  fi
-  
-  if [ "$showTimeBat" = "1" ]
-  then
-    ~/.config/lemonbar/datetime.sh &
-    echo $! > $HOME/.cache/lemon.pid
-    ~/.config/lemonbar/battery.sh &
-    echo $! >> $HOME/.cache/lemon.pid
-  fi
-  if [ "$showNowPlaying" = "1" ]
-  then
-    ~/.config/lemonbar/nowplaying.sh &
-    echo $! >> $HOME/.cache/lemon.pid
+  if [ "$t_flag" = false ]; then
+    # show time and battery (default: show)
+    start datetime
+    start battery
   fi
 
-  # ~/.config/lemonbar/activeapp.sh &
-  ~/.config/lemonbar/bspwm-indicator.sh &
-  echo $! >> $HOME/.cache/lemon.pid
+  if [ "$n_flag" = false ]; then
+    # show now playing (default: show)
+    start nowplaying
+  fi
 
-  sleep 0.5
-  ~/.bin/move-lemonbar-to-back.sh
+  if [ "$w_flag" = true ]; then
+    # show windowinfo (default: none)
+    start bspwm-window-info
+  fi
+
+  start bspwm-indicator
 fi
+
+sleep 0.5
+~/.bin/move-lemonbar-to-back.sh

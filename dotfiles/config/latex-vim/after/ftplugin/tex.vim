@@ -1,17 +1,36 @@
-function! AddMathToVimtex(lhs, rhs) abort
-  call vimtex#imaps#add_map({
-        \ 'lhs' : a:lhs,
-        \ 'rhs' : a:rhs,
-        \ 'wrapper' : 'vimtex#imaps#wrap_math'
-        \ })
+" Simplified function to add new imaps
+" include leader key to set leader
+" otherwise use empty string
+function! AddMathToVimtex(lhs, rhs, lead) abort
+  if a:lead == ''
+    call vimtex#imaps#add_map({
+          \ 'lhs' : a:lhs,
+          \ 'rhs' : a:rhs,
+          \ 'wrapper' : 'vimtex#imaps#wrap_math'
+          \ })
+  else
+    call vimtex#imaps#add_map({
+          \ 'lhs' : a:lhs,
+          \ 'rhs' : a:rhs,
+          \ 'leader' : a:lead,
+          \ 'wrapper' : 'vimtex#imaps#wrap_math'
+          \ })
+  endif
 endfunction
-for c in ['C', 'R', 'Q', 'Z', 'N', 'F', 'H', '1']
-  call AddMathToVimtex('b' . c, '\mathbb{' . c . '}')
+" mathbb
+for c in ['C', 'R', 'Q', 'Z', 'N', 'F', 'H', 'P', 'T', '1']
+  call AddMathToVimtex('b' . tolower(c), '\mathbb{' . c . '}', 'b')
+  call AddMathToVimtex('b' . c, '\mathbb{' . c . '}', 'b')
 endfor
-call AddMathToVimtex('hd', '\hdots')
-call AddMathToVimtex('cd', '\cdots')
-call AddMathToVimtex('dd', '\ddots')
-call AddMathToVimtex('vd', '\vdots')
+" mathcal
+for c in ['A', 'B', 'C', 'D', 'F', 'G', 'H', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  call AddMathToVimtex('al' . tolower(c), '\mathcal{' . c . '}', 'c')
+  call AddMathToVimtex('al' . c, '\mathcal{' . c . '}', 'c')
+endfor
+call AddMathToVimtex('hd', '\hdots', '')
+call AddMathToVimtex('cd', '\cdots', '')
+call AddMathToVimtex('dd', '\ddots', '')
+call AddMathToVimtex('vd', '\vdots', '')
 
 nmap <silent> <leader>vn :VimtexClean<CR>
 nmap <leader>vco :VimtexCompileOutput<CR>
@@ -22,6 +41,9 @@ nmap <leader>vll :VimtexLog<CR>
 nmap <leader>vli :VimtexImapsList<CR>
 nmap <leader>vs :VimtexStatus<CR>
 nmap <leader>ve :VimtexErrors<CR>
+nmap <leader>vEc :tabnew ~/Documents/TeX_Notes/tex-common/latex-classnotes-preamble.tex<CR>
+nmap <leader>vEh :tabnew ~/Documents/TeX_Notes/tex-common/latex-classnotes-header.tex<CR>
+nmap <leader>vEa :tabnew ~/Documents/TeX_Notes/tex-common/latex-assignments-preamble.tex<CR>
 nmap <silent> <leader>vv :VimtexView<CR>
 nmap <leader>vt :Denite vimtex<CR>
 nmap <leader>vd :VimtexDocPackage<Space>
@@ -32,6 +54,12 @@ let g:which_key_map.v = {
   \ 's' : 'VimtexStatus',
   \ 'n' : 'VimtexClean',
   \ 'e' : 'VimtexErrors',
+  \ 'E' : {
+  \   'name' : '+edit-common-files',
+  \   'a' : 'assignments-preamble',
+  \   'c' : 'classnotes-preamble',
+  \   'h' : 'classnotes-header',
+  \   },
   \ 'l' : {
   \   'name' : '+logs & lists',
   \   'l' : 'VimtexLog',

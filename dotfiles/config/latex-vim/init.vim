@@ -25,6 +25,9 @@ let mapleader=" "
 colorscheme chaos
 
 " just do I don't get carpal tunnel syndrome from using a QWERTY keyboard
+set spell
+set spelllang=en_ca,en_us
+inoremap <C-b> <c-g>u<Esc>[s1z=`]a<c-g>u
 inoremap <C-l> ^
 
 execute pathogen#infect('bundle/always/{}')
@@ -94,6 +97,7 @@ function! MoodoIndicators() abort
 endfunction
 
 let g:tex_flavor = 'latex'
+let g:tex_fold_enabled=1
 let g:tex_conceal="abdmgs"
 let g:vimtex_fold_enabled=1
 autocmd Filetype tex setl updatetime=1000
@@ -206,6 +210,7 @@ let g:startify_lists = [
 let g:startify_commands = [
     \ {'S': ['Simplenote', ':SimplenoteList']},
     \ ]
+let g:startify_session_dir = '~/.data/latex-vim/session'
 
 let g:SimplenoteVertical=1
 
@@ -229,3 +234,11 @@ let g:which_key_map.t = {
       \ 'R' : 'query-reset'
       \ }
 source $HOME/.vim/simplenoterc
+
+augroup TeXDefaults
+  " immediately start typewriter mode
+  call TypeWriterToggle()
+
+  " autostart coc
+  let g:coc_start_at_startup=1
+augroup END

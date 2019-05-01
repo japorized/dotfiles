@@ -160,6 +160,7 @@ nnoremap <silent> <leader>cCc :CocConfig<CR>
 nnoremap <silent> <leader>cCE :CocEnable<CR>
 nnoremap <silent> <leader>cCD :CocDisable<CR>
 nnoremap <silent> <leader>cCR :CocRestart<CR>
+nnoremap <silent> <leader>cCs :CocStart<CR>
 nnoremap <silent> <leader>cCU :CocUpdate<CR>
 nnoremap <silent> <leader>cCI :CocInstall<Space>
 nnoremap <silent> <leader>cCX :CocUninstall<Space>

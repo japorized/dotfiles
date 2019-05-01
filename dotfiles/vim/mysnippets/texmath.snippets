@@ -1,58 +1,148 @@
 priority -50
 
+global !p
+texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z']]
+
+texIgnoreMathZones = ['texMathText']
+
+texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
+texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
+
+ignore = texIgnoreMathZoneIds[0]
+
+def math():
+	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
+	try:
+		first = next(i for i in reversed(synstackids) if i in texIgnoreMathZoneIds or i in texMathZoneIds)
+		return first != ignore
+	except StopIteration:
+		return False
+endglobal
+
 ##############
 # MATH STUFF #
 ##############
-snippet equ "Equation" b
-\begin{equation${1:*}}${2:\label{eq:${3}}}
-	$0
-\end{equation$1}
+priority 100
+context "math()"
+snippet ... "ldots" iA
+\ldots
 endsnippet
 
-snippet gat "Gather" b
-\begin{gather${1:*}}
-	$0
-\end{gather$1}
+context "math()"
+snippet != "not equal" iA
+\neq
 endsnippet
 
-snippet ali "Aligned" b
-\begin{align${1:*}}
-	$0
-\end{align$1}
+context "math()"
+snippet >= "geq" iA
+\geq
 endsnippet
 
-snippet frac "Fraction" w
-\frac{${1:${VISUAL:a}}}{${2:b}}
+context "math()"
+snippet <= "leq" iA
+\leq
 endsnippet
 
-snippet intg "Integrate" w
-\int_{${1:a}}^{${2:b}} $0
+context "math()"
+snippet => "implies" iA
+\implies
 endsnippet
 
-snippet summ "Summation" w
-\sum_{${1:i = 0}}^{${2:k}} $0
+context "math()"
+snippet := "define" iA
+\coloneqq
 endsnippet
 
-snippet prod "Product" w
-\prod_{${1:i = 0}}^{${2:k}} $0
+context "math()"
+snippet +O "oplus" iA
+\oplus
 endsnippet
 
-snippet bigcup "Union" w
-\bigcup_{${1:i = 0}}^{${2:k}} $0
+context "math()"
+snippet xO "otimes" iA
+\otimes
 endsnippet
 
-snippet bigcap "Intersection" w
-\bigcap_{${1:i = 0}}^{${2:k}} $0
+context "math()"
+snippet quo "quotient" iA
+\\quotient{$1}{$2}$0
 endsnippet
 
-snippet dif "with respect to" w
+context "math()"
+snippet // "Fraction" iA
+\\frac{$1}{$2}$0
+endsnippet
+
+context "math()"
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+priority 1000
+context "math()"
+snippet '^.*\)/' "() Fraction" wrA
+`!p
+stripped = match.string[:-1]
+depth = 0
+i = len(stripped) - 1
+while True:
+	if stripped[i] == ')': depth += 1
+	if stripped[i] == '(': depth -= 1
+	if depth == 0: break;
+	i -= 1
+snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+`{$1}$0
+endsnippet
+
+snippet / "Fraction" "snip.visual_mode" eiA
+\\frac{${VISUAL}}{$1}$0
+endsnippet
+
+context "math()"
+snippet /\ "wedge product" iA
+\land
+endsnippet
+
+context "math()"
+snippet \/ "lor" iA
+\lor
+endsnippet
+
+context "math()"
+snippet |\ "restriction" iA
+\restriction
+endsnippet
+
+context "math()"
+snippet intg "Integrate" wA
+\int_{${1}}^{${2}} $0
+endsnippet
+
+context "math()"
+snippet summ "Summation" wA
+\sum_{${1}}^{${2}} $0
+endsnippet
+
+context "math()"
+snippet prod "Product" wA
+\prod_{${1}}^{${2}} $0
+endsnippet
+
+context "math()"
+snippet bcup "Union" wA
+\bigcup_{${1}}^{${2}} $0
+endsnippet
+
+snippet bcap "Intersection" w
+\bigcap_{${1}}^{${2}} $0
+endsnippet
+
+context "math()"
+snippet dif "with respect to" wA
 \dif{$1}$0
 endsnippet
 
-snippet ept "emptyset" w
-\emptyset $0
-endsnippet
-
+context "math()"
 snippet cases "Cases" w
 \begin{cases}
 	$0
@@ -65,48 +155,137 @@ snippet mat "Smart Matrix"
 \end{$1matrix}
 endsnippet
 
-snippet lrp "left( right)" w
+context "math()"
+snippet '([A-Za-z])(\d)' "auto subscript" wrA
+`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
+endsnippet
+
+context "math()"
+snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
+`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+endsnippet
+
+snippet lrp "left( right)" wA
 \left( $1 \right)
 endsnippet
 
-snippet blrp "big left-right parentheses" w
+snippet blrp "big left-right parentheses" wA
 \big( $1 \big)
 endsnippet
 
-snippet bglrp "big left-right parentheses" w
+snippet bglrp "big left-right parentheses" wA
 \bigg( $1 \bigg)
 endsnippet
 
-snippet Blrp "Big left-right parentheses" w
+snippet Blrp "Big left-right parentheses" wA
 \Big( $1 \Big)
 endsnippet
 
-snippet Bglrp "Big left-right parentheses" w
+snippet Bglrp "Big left-right parentheses" wA
 \Bigg( $1 \Bigg)
 endsnippet
 
-snippet lrv "left| right|" w
+snippet lrv "left| right|" wA
 \left| $1 \right|
 endsnippet
 
-snippet lra "left< right>" w
+snippet lra "left< right>" wA
 \langle $1 \rangle
 endsnippet
 
-snippet lrb "left\{ right\}" w
+snippet lrb "left\{ right\}" wA
 \left\\{ $1 \right\\}
 endsnippet
 
-snippet lrs "left[ right]" w
+snippet lrs "left[ right]" wA
 \left[ $1 \right]
 endsnippet
 
-snippet hyp "hyperref" w
-\hyperref[$1]{$2}
+priority 10
+context "math()"
+snippet "vec" "vec" riA
+\vec{$1}$0
 endsnippet
 
-snippet symbf "bold symbol" w
-\symbf{$1}
+priority 100
+context "math()"
+snippet "([a-zA-Z])vec" "vec" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet "bar" "bar" riA
+\overline{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])bar" "bar" riA
+\overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet "hat" "hat" riA
+\hat{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])hat" "hat" riA
+\hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet "tilde" "tilde" riA
+\tilde{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])tilde" "tilde" riA
+\tilde{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+snippet |-> "mapsto" iA
+\mapsto
+endsnippet
+
+context "math()"
+snippet -> "to" iA
+\to
+endsnippet
+
+context "math()"
+snippet <|= "Normal subgroup of" iA
+\trianglelefteq
+endsnippet
+
+context "math()"
+snippet |>= "Normal subgroup to" iA
+\trianglerighteq
+endsnippet
+
+snippet sympy "sympy block " w
+sympy $1 sympy$0
+endsnippet
+
+priority 10000
+snippet 'sympy(.*)sympy' "evaluate sympy" wr
+`!p
+from sympy import *
+x, y, z, t = symbols('x y z t')
+k, m, n = symbols('k m n', integer=True)
+f, g, h = symbols('f g h', cls=Function)
+init_printing()
+snip.rv = eval('latex(' + match.group(1).replace('\\', '') \
+    .replace('^', '**') \
+    .replace('{', '(') \
+    .replace('}', ')') + ')')
+`
 endsnippet
 
 # vim:ft=snippets:

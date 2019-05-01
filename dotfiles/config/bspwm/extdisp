@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+bspc monitor HDMI1 -n 0 -d I II III IV V VI VII
+bspc monitor eDP1 -n 1 -d VIII IX X
+
+SPACES=$(bspc query -D)
+for SPACE in $SPACES
+do
+  bspc config -d ${SPACE} window_gap      20
+  bspc config -d ${SPACE} top_padding     30
+  bspc config -d ${SPACE} bottom_padding  30
+  bspc config -d ${SPACE} left_padding   100
+  bspc config -d ${SPACE} right_padding  100
+done
+
+~/.bin/refresh-indicators.sh

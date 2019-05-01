@@ -102,9 +102,107 @@ syn match texMathSymbol '\\mathfrak{X}' contained conceal cchar=𝖃
 syn match texMathSymbol '\\mathfrak{Y}' contained conceal cchar=𝖄
 syn match texMathSymbol '\\mathfrak{Z}' contained conceal cchar=𝖅
 
-" others
+" other math symbols
+syn match texMathSymbol "\\restriction" contained conceal cchar=↾
+syn match texMathSymbol '\\implies' contained conceal cchar=⇒
+syn match texMathSymbol "\\{" contained conceal cchar={
+syn match texMathSymbol "\\}" contained conceal cchar=}
+syn match texMathSymbol "\\;" contained conceal
+syn match texMathSymbol "\\," contained conceal
+syn match texMathSymbol "\\enspace" contained conceal
+syn match texMathSymbol "\\quad" contained conceal
+syn match texMathSymbol "\\qquad" contained conceal
 syn match texMathSymbol "\\hdots" contained conceal cchar=┈
 syn match texMathSymbol '\\sqrt' contained conceal cchar=√
 syn match texMathSymbol '\\\\' contained conceal cchar=⏎
- 
-hi link texMathSymbol Conceal
+syn match texMathSymbol '\\setminus\>' contained conceal cchar=\
+syn match texMathSymbol '\\coloneqq\>' contained conceal cchar=≔
+syn match texMathSymbol '\\not\\subseteq' contained conceal cchar=⊈
+syn match texMathSymbol '\\not\\supseteq' contained conceal cchar=⊉
+syn match texMathSymbol '\\subsetneq' contained conceal cchar=⊊
+syn match texMathSymbol '\\supsetneq' contained conceal cchar=⊋
+syn match texMathSymbol '\\triangleleft' contained conceal cchar=⊲
+syn match texMathSymbol '\\triangleright' contained conceal cchar=⊳
+syn match texMathSymbol '\\trianglelefteq' contained conceal cchar=⊴
+syn match texMathSymbol '\\trianglerighteq' contained conceal cchar=⊵
+syn match texMathSymbol '\\dif' contained conceal cchar=d
+syn match texMathSymbol '\\tilde' contained conceal cchar=˜
+
+" statement conceals
+syn match texStatement /\\index{[^}]*}\+/ contains=@texFoldGroup,@texMathZoneGroup conceal cchar=
+syn match texStatement /\\label/ nextgroup=texCite conceal cchar=
+syn match texStatement /\\hyperref\[[^\]]*\]\+/ conceal cchar=◘
+syn match texStatement /\\cref/ nextgroup=texCite conceal cchar=◘
+syn match texStatement '``' contained conceal cchar=“
+syn match texStatement '\'\'' contained conceal cchar=”
+syn match texStatement '`' contained conceal cchar='
+syn match texStatement '\'' contained conceal cchar='
+syn match texStatement /\\item/ conceal cchar=●
+
+" tufte style specifics
+syn match texStatement '\\sidenote' contained conceal cchar=
+syn match texStatement '\\marginnote' contained conceal cchar=
+
+" hide \text delimiter etc. inside math mode
+if !exists("g:tex_no spell") || !g:tex_nospell
+  syn region texMathText matchgroup=texStatement
+        \ start='\\\(\(inter\)\=mathrm\)\s*{' end='}' 
+        \ concealends keepend contains=@texFoldGroup containedin=texMathMatcher
+  syn region texMathText matchgroup=texStatement
+        \ start='\\\(\(inter\)\=text\|mbox\)\s*{' end='}'
+        \ concealends keepend contains=@texFoldGroup,@Spell containedin=texMathMatcher
+else
+  syn region texMathText matchgroup=texStatement 
+        \ start='\\\(\(inter\)\=text\|mbox\|mathrm\)\s*{' end='}'
+        \ concealends keepend contains=@texFoldGroup containedin=texMathMatcher
+endif
+
+syn region texBoldMathText matchgroup=texStatement 
+      \ start='\\\(mathbf\|bm\|symbf\){' end='}' 
+      \ concealends contains=@texMathZoneGroup containedin=texMathMatcher
+syn cluster texMathZoneGroup add=texBoldMathText
+
+syn region texBoldItalStyle matchgroup=texTypeStyle
+      \ start="\\emph\s*{" end="}" concealends contains=@texItalGroup
+syn region texItalStyle matchgroup=texTypeStyle 
+      \ start="\\emph\s*{" end="}" concealends contains=@texItalGroup
+
+" custom highlight syntax
+for [s:color, s:cmd] in [
+  \ ['texCustomHLRed', 'hlimpo'],
+  \ ['texCustomHLBlue', 'hldefn'],
+  \ ['texCustomHLYellow', 'hlwarn'],
+  \ ['texCustomHLGreen', 'hlnotea'],
+  \ ['texCustomHLCyan', 'hlnoteb'],
+  \ ['texCustomHLBGreen', 'hlbnotea'],
+  \ ['texCustomHLBCyan', 'hlbnoteb'],
+  \ ['texCustomHLBYellow', 'hlbnotec'],
+  \ ['texCustomHLBMagenta', 'hlbnoted'],
+  \ ['texCustomHLBRed', 'hlbnotee']
+  \ ]
+  execute 'syn region ' . s:color . ' matchgroup=texTypeStyle'
+        \ 'start="\\' . s:cmd . '\s*{" end="}"'
+        \ 'containedin=ALLBUT,texComment concealends'
+        \ 'contains=@Spell,@Delimiter,@texMathZoneGroup,@texMathZoneX,@texMathZoneY,@texFoldGroup,@' . s:color
+  execute 'syn cluster texMatchGroup add=' . s:color
+endfor
+
+set ambiwidth=single
+
+hi   texBoldMathText    cterm=bold          gui=bold
+hi   texItalStyle       cterm=italic        gui=italic
+hi   texBoldItalStyle   cterm=italic,bold   gui=italic,bold
+
+hi   texCustomHLRed      ctermfg=196  cterm=bold  guifg=#ff0000  gui=bold
+hi   texCustomHLGreen    ctermfg=70   cterm=bold  guifg=#00ff00  gui=bold
+hi   texCustomHLYellow   ctermfg=220  cterm=bold  guifg=#00ffff  gui=bold
+hi   texCustomHLBlue     ctermfg=27   cterm=bold  guifg=#0000ff  gui=bold
+hi   texCustomHLMagenta  ctermfg=129  cterm=bold  guifg=#ff00ff  gui=bold
+hi   texCustomHLCyan     ctermfg=69   cterm=bold  guifg=#00ccff  gui=bold
+hi   texCustomHLBRed     ctermbg=196  ctermfg=232  cterm=bold  guifg=#ff0000  guibg=#000000 gui=bold
+hi   texCustomHLBGreen   ctermbg=70   ctermfg=232  cterm=bold  guifg=#00ff00  guibg=#000000 gui=bold
+hi   texCustomHLBYellow  ctermbg=226  ctermfg=232  cterm=bold  guifg=#ff00ff  guibg=#000000 gui=bold
+hi   texCustomHLBMagenta ctermbg=129  ctermfg=232  cterm=bold  guifg=#ff00ff  guibg=#000000 gui=bold
+hi   texCustomHLBCyan    ctermbg=69   ctermfg=232  cterm=bold  guifg=#00ccff  guibg=#000000 gui=bold
+
+hi   link               texMathSymbol       Conceal

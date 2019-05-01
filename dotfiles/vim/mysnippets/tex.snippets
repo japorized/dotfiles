@@ -51,6 +51,54 @@ snippet "b(egin)?" "begin{} / end{}" br
 \end{$1}
 endsnippet
 
+snippet proofe "proof env" bA
+\begin{proof}
+	$0
+\end{proof}
+endsnippet
+
+snippet ege "example env" bA
+\begin{eg}
+	$0
+\end{eg}
+endsnippet
+
+snippet exe "execise env" bA
+\begin{ex}
+	$0
+\end{ex}
+endsnippet
+
+snippet notee "note env" bA
+\begin{note}
+	$0
+\end{note}
+endsnippet
+
+snippet rmke "remark env" bA
+\begin{rmk}
+	$0
+\end{rmk}
+endsnippet
+
+snippet equ "Equation" b
+\begin{equation${1:*}}${2:\label{eq:${3}}}
+	$0
+\end{equation$1}
+endsnippet
+
+snippet gat "Gather" b
+\begin{gather${1:*}}
+	$0
+\end{gather$1}
+endsnippet
+
+snippet ali "Aligned" b
+\begin{align${1:*}}
+	$0
+\end{align$1}
+endsnippet
+
 snippet abs "abstract environment" b
 \begin{abstract}
 	$0
@@ -75,7 +123,7 @@ snippet table "Table environment" b
 \begin{table}[${1:htpb}]
 	\centering
 	\caption{${2:caption}}
-	\label{tab:${3:label}}
+	\label{table:${3:label}}
 	\begin{${4:t}${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${5:c}}
 	$0${5/(?<=.)(c|l|r)|./(?1: & )/g}
 	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
@@ -375,6 +423,24 @@ ${2:${VISUAL:code}}
 $0
 endsnippet
 
+snippet ml "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+  snip.rv = ' '
+else:
+  snip.rv = ''
+`$2
+endsnippet
+
+snippet lm "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+  snip.rv = ' '
+else:
+  snip.rv = ''
+`$2
+endsnippet
+
 snippet newth "newthought" b
 \newthought{$1} $0
 endsnippet
@@ -385,6 +451,14 @@ endsnippet
 
 snippet mn "marginnote" w
 \marginnote{$0}
+endsnippet
+
+snippet hyp "hyperref" w
+\hyperref[$1]{$2}
+endsnippet
+
+snippet symbf "bold symbol" w
+\symbf{$1}
 endsnippet
 
 snippet aques "assignment problem" b

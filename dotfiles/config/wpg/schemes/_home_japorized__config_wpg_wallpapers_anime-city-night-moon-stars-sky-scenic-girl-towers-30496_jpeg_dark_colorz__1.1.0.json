@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/anime-city-night-moon-stars-sky-scenic-girl-towers-30496.jpeg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0d1a25",
+        "foreground": "#fbffff",
+        "cursor": "#fbffff"
+    },
+    "colors": {
+        "color0": "#0d1a25",
+        "color1": "#1f47aa",
+        "color2": "#316bab",
+        "color3": "#245baa",
+        "color4": "#1333aa",
+        "color5": "#8c98bb",
+        "color6": "#4687be",
+        "color7": "#c2c5c8",
+        "color8": "#707d88",
+        "color9": "#1b56ea",
+        "color10": "#318aec",
+        "color11": "#2173ea",
+        "color12": "#0c3be9",
+        "color13": "#a0bbff",
+        "color14": "#4ab0ff",
+        "color15": "#fbffff"
+    }
+}

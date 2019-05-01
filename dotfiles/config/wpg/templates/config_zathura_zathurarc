@@ -22,10 +22,10 @@ set notification-warning-fg     "#af99ed"
 set highlight-color             "#9fa0ff"
 set highlight-active-color      "#bbadff"
 
-set completion-bg               "#efefef"
+set completion-bg               "#1c1c1c"
 set completion-fg               "#bbadff"
 
-set completion-highlight-fg     "#dab6fc"
+set completion-highlight-fg     "#1c1c1c"
 set completion-highlight-bg     "#bbadff"
 
 set recolor-lightcolor          "#1c1c1c"

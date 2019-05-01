@@ -3,8 +3,11 @@
 # Import color scheme
 . "$HOME/.cache/wpgtk.color"
 
+DESKTOPS=($(bspc query -D))
+DESKTOPS=${#DESKTOPS[@]}
+
 # Options
-width="430"
+width="$(( 45 + DESKTOPS * 35 ))"
 height="30"
 
 # Get monitor width so we can center the bar.
@@ -43,6 +46,9 @@ indicator() {
       "7")
         CHAR="\uf795"
         ;;
+      *)
+        CHAR="\uf108"
+        ;;
     esac
     if [[ $SPACE = $(bspc query -D -d) ]]; then
       echo -n "%{B${color5}}%{F${background}} $CHAR %{F-}%{B-}"
@@ -52,100 +58,10 @@ indicator() {
       echo -n "%{A:bspc desktop -f '^$C':} $CHAR %{A}"
     fi
     C=$(( C + 1 ))
-  done
-}
-
-windowstate() {
-  state=""
-  states=(tiled pseudo_tiled floating fullscreen)
-  for bstate in ${states[@]}; do
-    statestr=$(bspc query -N -n focused.${bstate})
-    if [ "$statestr" != '' ]; then
-      state=${bstate}
+    if [ $C -ge 10 ]; then
       break
     fi
-  done 
-  case "$state" in
-    tiled)
-      state=""
-      ;;
-    pseudo_tiled)
-      state=""
-      ;;
-    floating)
-      state=""
-      ;;
-    fullscreen)
-      state=""
-      ;;
-  esac
-
-  echo "$state"
-}
-
-windowflag() {
-  flag=""
-  locked_icon=""
-  sticky_icon=""
-  private_icon=""
-  flags=(sticky locked private)
-  for bflag in ${flags[@]}; do
-    flagstr=$(bspc query -N -n focused.${bflag})
-    if [ "$flagstr" != '' ]; then
-      if [ "$flag" != '' ]; then
-        case "$bflag" in
-          sticky)
-            flag="$flag $sticky_icon"
-            ;;
-          locked)
-            flag="$flag $locked_icon"
-            ;;
-          private)
-            flag="$flag $private_icon"
-            ;;
-        esac
-      else
-        case "$bflag" in
-          sticky)
-            flag=$sticky_icon
-            ;;
-          locked)
-            flag=$locked_icon
-            ;;
-          private)
-            flag=$private_icon
-            ;;
-        esac
-      fi
-    fi
   done
-
-  echo "$flag"
-}
-
-windowlayer() {
-  layer=""
-  layers=(below normal above)
-  for blayer in ${layers[@]}; do
-    layerstr=$(bspc query -N -n focused.${blayer})
-    if [ "$layerstr" != '' ]; then
-      layer=${blayer}
-      break
-    fi
-  done 
-  case "$layer" in
-    below)
-      layer=""
-      ;;
-    normal)
-      layer=""
-      ;;
-    above)
-      layer=""
-      ;;
-  esac
-
-  echo "$layer"
 }
 
 stop() {
@@ -156,7 +72,7 @@ stop() {
 trap 'stop' SIGINT SIGTERM
 
 while true; do
-  echo -e "%{F${background}}%{B${color6}}%{A:rofi-startmenu:} \uf303 %{A}%{B-}%{F-} $(indicator) %{F${background}}%{B${color3}} $(windowstate) $(windowlayer) %{F-}%{B-} $(windowflag) "
+  echo -e "%{F${background}}%{B${color6}}%{A:rofi-startmenu:} \uf303 %{A}%{B-}%{F-} $(indicator) "
   sleep .2
 done | \
   lemonbar -d -g $geometry -f "Hack Nerd Font" -F "${foreground}" -B "${background}" | \

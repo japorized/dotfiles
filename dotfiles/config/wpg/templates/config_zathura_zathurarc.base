@@ -22,10 +22,10 @@ set notification-warning-fg     "{color1}"
 set highlight-color             "{color3}"
 set highlight-active-color      "{color4}"
 
-set completion-bg               "{color15}"
+set completion-bg               "{color0}"
 set completion-fg               "{color4}"
 
-set completion-highlight-fg     "{color5}"
+set completion-highlight-fg     "{color0}"
 set completion-highlight-bg     "{color4}"
 
 set recolor-lightcolor          "{color0}"

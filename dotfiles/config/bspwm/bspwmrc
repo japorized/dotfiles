@@ -1,6 +1,6 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
-bspc monitor -d I II III IV V VI VII
+bspc monitor eDP-1 -n 0 -d I II III IV V VI VII
 
 bspc config border_width         2
 sh -c "~/.config/bspwm/bspwm-colors.sh"
@@ -43,7 +43,6 @@ done
 fcitx &
 sxhkd &
 ~/.fehbg &
-xbanish -i shift -i mod1 -i mod4 -i control &
 xset r rate 270 30 &
 xset dpms 0 0 1800 &
 xset b off &
@@ -51,4 +50,5 @@ xset b 0 0 0 &
 xmodmap ~/.Xmodmap
 xss-lock -- slock &
 libinput-gestures-setup start &
+sh -c "~/.config/bspwm/summon -cx"
 tint2 &
