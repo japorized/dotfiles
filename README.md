@@ -15,10 +15,6 @@ See also: [`japorized/bin`](https://gitlab.com/japorized/bin)
 
 ![macOS scrot](/screenshots/macos-2018nov24.png?raw=true "macOS Screenshot")
 
-### Antergos (base installation; retired)
-
-![antergos-base scrot](/screenshots/antergos-base.png?raw=true "antergos-base")
-
 ---
 
 ## Setup
