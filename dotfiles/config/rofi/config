@@ -5,9 +5,8 @@
 !| you can refer rofi site/screenshot for different configurations
 rofi.modi:              run,drun,window
 rofi.location:          0
-rofi.monitor:           -1
 rofi.color-enabled:     true
-rofi.color-window:      #1c1c1c, #7d7abc, #443b4e
+rofi.color-window:      #1c1c1c, #7d7abc, #312f4a
 rofi.color-normal:      #1c1c1c, #efefef, #1c1c1c, #7d7abc, #efefef
 rofi.color-urgent:      #1c1c1c, #af99ed, #1c1c1c, #8e94f2, #efefef
 rofi.color-active:      #1c1c1c, #9fa0ff, #1c1c1c, #bbadff, #efefef

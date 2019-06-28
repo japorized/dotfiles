@@ -17,16 +17,21 @@ function! AddMathToVimtex(lhs, rhs, lead) abort
           \ })
   endif
 endfunction
-" mathbb
-for c in ['C', 'R', 'Q', 'Z', 'N', 'F', 'H', 'P', 'T', '1']
-  call AddMathToVimtex('b' . tolower(c), '\mathbb{' . c . '}', 'b')
-  call AddMathToVimtex('b' . c, '\mathbb{' . c . '}', 'b')
-endfor
-" mathcal
-for c in ['A', 'B', 'C', 'D', 'F', 'G', 'H', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-  call AddMathToVimtex('al' . tolower(c), '\mathcal{' . c . '}', 'c')
-  call AddMathToVimtex('al' . c, '\mathcal{' . c . '}', 'c')
-endfor
+" " mathbb
+" for c in ['C', 'R', 'Q', 'Z', 'N', 'F', 'H', 'P', 'T', '1', 'K', 'M']
+"   call AddMathToVimtex('b' . tolower(c), '\mathbb{' . c . '}', 'b')
+"   call AddMathToVimtex('b' . c, '\mathbb{' . c . '}', 'b')
+" endfor
+" " mathcal
+" for c in ['A', 'B', 'C', 'D', 'F', 'G', 'H', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+"   call AddMathToVimtex('al' . tolower(c), '\mathcal{' . c . '}', 'c')
+"   call AddMathToVimtex('al' . c, '\mathcal{' . c . '}', 'c')
+" endfor
+" " mathfrak
+" for c in ['X', 'Y', 'M', 'N', 'Z', 'F', 'G', 'B']
+"   call AddMathToVimtex('r' . tolower(c), '\mathfrak{' . c . '}', 'f')
+"   call AddMathToVimtex('r' . c, '\mathfrak{' . c . '}', 'f')
+" endfor
 call AddMathToVimtex('hd', '\hdots', '')
 call AddMathToVimtex('cd', '\cdots', '')
 call AddMathToVimtex('dd', '\ddots', '')

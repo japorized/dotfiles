@@ -112,6 +112,7 @@ syn match texMathSymbol "\\," contained conceal
 syn match texMathSymbol "\\enspace" contained conceal
 syn match texMathSymbol "\\quad" contained conceal
 syn match texMathSymbol "\\qquad" contained conceal
+syn match texMathSymbol "\\limits" contained conceal
 syn match texMathSymbol "\\hdots" contained conceal cchar=┈
 syn match texMathSymbol '\\sqrt' contained conceal cchar=√
 syn match texMathSymbol '\\\\' contained conceal cchar=⏎
@@ -127,6 +128,16 @@ syn match texMathSymbol '\\trianglelefteq' contained conceal cchar=⊴
 syn match texMathSymbol '\\trianglerighteq' contained conceal cchar=⊵
 syn match texMathSymbol '\\dif' contained conceal cchar=d
 syn match texMathSymbol '\\tilde' contained conceal cchar=˜
+syn match texMathSymbol '\\hat' contained conceal cchar=🎩
+syn match texMathSymbol '\\%' contained conceal cchar=%
+syn match texMathSymbol '\\$\>' contained conceal cchar=$
+
+" actuarial symbols
+syn match texMathSymbol '\\ax\*\>' contained conceal cchar=ā
+syn match texMathSymbol '\\ax\*\*' contained conceal cchar=ä
+syn match texMathSymbol '\\Ax\*' contained conceal cchar=Ā
+syn match texMathSymbol '\\Ax\>' contained conceal cchar=A
+syn match texMathSymbol '\\angl' contained conceal cchar=⌝
 
 " statement conceals
 syn match texStatement /\\index{[^}]*}\+/ contains=@texFoldGroup,@texMathZoneGroup conceal cchar=
@@ -138,6 +149,7 @@ syn match texStatement '\'\'' contained conceal cchar=”
 syn match texStatement '`' contained conceal cchar='
 syn match texStatement '\'' contained conceal cchar='
 syn match texStatement /\\item/ conceal cchar=●
+syn match texStatement "\\noindent" conceal
 
 " tufte style specifics
 syn match texStatement '\\sidenote' contained conceal cchar=

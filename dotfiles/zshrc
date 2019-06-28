@@ -65,6 +65,7 @@ bindkey "^[OA" up-line-or-beginning-search
 bindkey "^[OB" down-line-or-beginning-search
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
+bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 ###-tns-completion-start-###
 if [ -f /home/japorized/.tnsrc ]; then 

@@ -1,15 +1,37 @@
 #!/usr/bin/env bash
-bspc monitor HDMI1 -n 0 -d I II III IV V VI VII
-bspc monitor eDP1 -n 1 -d VIII IX X
 
-SPACES=$(bspc query -D)
-for SPACE in $SPACES
-do
-  bspc config -d ${SPACE} window_gap      20
-  bspc config -d ${SPACE} top_padding     30
-  bspc config -d ${SPACE} bottom_padding  30
-  bspc config -d ${SPACE} left_padding   100
-  bspc config -d ${SPACE} right_padding  100
+usage() {
+  echo "Options:
+  -a  Set up external monitor
+  -r  Return to laptop-only mode"
+}
+
+updategaps() {
+  SPACES=$(bspc query -D)
+  for SPACE in $SPACES
+  do
+    bspc config -d ${SPACE} window_gap      20
+    bspc config -d ${SPACE} top_padding     30
+    bspc config -d ${SPACE} bottom_padding  30
+    bspc config -d ${SPACE} left_padding   100
+    bspc config -d ${SPACE} right_padding  100
+  done
+}
+
+while getopts "ar" flag ; do
+  case "${flag}" in
+    a)
+      bspc monitor HDMI-1 -d I II III IV V
+      bspc monitor eDP-1 -d VI VII VIII IX
+      updategaps
+      refresh-indicators.sh
+      ;;
+    r)
+      bspc monitor eDP-1 -d I II III IV V VI VII
+      bspc monitor HDMI-1 -r
+      updategaps
+      refresh-indicators.sh
+      ;;
+  esac
 done
 
-~/.bin/refresh-indicators.sh

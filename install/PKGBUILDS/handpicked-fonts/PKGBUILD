@@ -14,8 +14,10 @@ source=(
   "http://modi.jpn.org/download/MODI_timemachine-wa_2017_0930.zip"
   "https://download1041.mediafire.com/4ddcjoobcjog/sjpiji3cdqfmlb4/hkgyong.zip"
   "https://download1199.mediafire.com/4313338vfbog/xdhveb6hexcbnp4/hkkaiiw.zip"
+  "http://atipofoundry.com/user/pages/01.fonts/16.silka/Silka-Regular-&-Italic.zip"
 )
 sha256sums=(
+  'SKIP'
   'SKIP'
   'SKIP'
   'SKIP'

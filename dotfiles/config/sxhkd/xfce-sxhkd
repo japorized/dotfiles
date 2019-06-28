@@ -9,9 +9,6 @@ super + Return
 shift + super + Return
   tdrop -ma -w -2 -s " dropdown" termite
 
-# shift + super + Return
-#   kitty --new-session ~/.config/kitty/new-tmux
-
 alt + grave
   kill -s USR1 $(pidof deadd-notification-center)
 
@@ -21,6 +18,9 @@ alt + space
 
 shift + alt + space
   dmenu_extended_run
+
+super + alt + space
+  xfce4-appfinder -q ; xfce4-appfinder
 
 super + grave
   rofi -show window
@@ -50,8 +50,8 @@ super + p
   sh -c "~/.bin/bspc-pip"
 
 # scrot hotkey
-@alt + super + {s,e,m,b,a,shift + e}
-  {rofi-scrot,rofimoji,rofi-mpc,rofi-btctl,rofianime,sh -c "~/.config/rofi/kaomoji-rofi/kaomoji.sh"}
+@alt + super + {s,e,m,b,a}
+  {rofi-scrot,rofimoji,rofi-mpc,rofi-btctl,rofianime}
 
 @alt + super + r : {h,j,k,l}
   xrandr --output eDP-1 --rotate {left,normal,inverted,right}
@@ -102,10 +102,10 @@ super + p
   sh -c "~/.bin/mypactl -m"
 
 {XF86Calculator,Menu : F11}
-  roficalc
+  /usr/bin/rofi -show calc -modi calc -no-show-match -no-sort
 
 # make sxhkd reload its configuration files:
-super + Escape
+super + ctrl + alt + Escape
 	pkill -USR1 -x sxhkd
 #
 # bspwm hotkeys

@@ -20,13 +20,15 @@ set softtabstop=2
 set t_Co=256
 set timeoutlen=200
 set splitbelow
+set signcolumn=yes
+set dir=$XDG_DATA_HOME/latex-vim/swap
+set sessionoptions="buffers,curdir,tabpages,winsize,winpos"
 map <SPACE> <Nop>
 let mapleader=" "
-colorscheme chaos
 
 " just do I don't get carpal tunnel syndrome from using a QWERTY keyboard
 set spell
-set spelllang=en_ca,en_us
+set spelllang=en_ca,en_us,cjk
 inoremap <C-b> <c-g>u<Esc>[s1z=`]a<c-g>u
 inoremap <C-l> ^
 
@@ -180,12 +182,15 @@ let g:qs_highlight_on_keys = ['f', 'F']
 
 let g:multi_cursor_exit_from_insert_mode=0
 
-" GitGutter
-let g:gitgutter_sign_added='┃'
-let g:gitgutter_sign_modified='┃'
-let g:gitgutter_sign_removed='◢'
-let g:gitgutter_sign_removed_first_line='◥'
-let g:gitgutter_sign_modified_removed='◢'
+" VCS signs
+let g:signify_vcs_list = [ 'git' ]
+let g:signify_sign_show_count = 1
+let g:signify_sign_show_text = 1
+let g:signify_sign_add='┃'
+let g:signify_sign_change='┃'
+let g:signify_sign_delete='◢'
+let g:signify_sign_delete_first_line='◥'
+let g:signify_sign_changedelete='◢'
 
 " Indent Guides
 let g:indentLine_enabled = 0
@@ -242,3 +247,5 @@ augroup TeXDefaults
   " autostart coc
   let g:coc_start_at_startup=1
 augroup END
+
+colorscheme wpgtk

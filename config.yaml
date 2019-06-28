@@ -12,7 +12,8 @@ config:
   dotpath: dotfiles
   ignoreempty: false
   keepdot: false
-  link_by_default: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
   longkey: false
   showdiff: true
   workdir: ~/.config/dotdrop
@@ -58,12 +59,12 @@ dotfiles:
   d_snippets:
     dst: ~/.vim/snippets
     src: vim/snippets
+  d_sxhkdrc:
+    dst: ~/.config/sxhkd
+    src: config/sxhkd
   d_templates:
     dst: ~/.vim/templates
     src: vim/templates
-  d_vis:
-    dst: ~/.config/vis
-    src: config/vis
   d_wpg_templates:
     dst: ~/.config/wpg/templates
     src: config/wpg/templates
@@ -90,9 +91,6 @@ dotfiles:
   f_dmenuextended_preferences.txt:
     dst: ~/.config/dmenu-extended/config/dmenuExtended_preferences.txt
     src: config/dmenu-extended/config/dmenuExtended_preferences.txt
-  f_dunstrc:
-    dst: ~/.config/dunst/dunstrc
-    src: config/dunst/dunstrc
   f_fonts.conf:
     dst: ~/.config/fontconfig/fonts.conf
     src: config/fontconfig/fonts.conf
@@ -123,15 +121,6 @@ dotfiles:
   f_skhdrc:
     dst: ~/.config/skhdrc
     src: config/skhdrc
-  f_sxhkdrc:
-    dst: ~/.config/sxhkd/sxhkdrc
-    src: config/sxhkd/sxhkdrc
-  f_termite_config:
-    dst: ~/.config/termite/config
-    src: config/termite/config
-  f_tint2rc:
-    dst: ~/.config/tint2/tint2rc
-    src: config/tint2/tint2rc
   f_tmux.conf:
     dst: ~/.tmux.conf
     src: tmux.conf
@@ -158,9 +147,6 @@ dotfiles:
   f_xserverrc:
     dst: ~/.xserverrc
     src: xserverrc
-  f_zathurarc:
-    dst: ~/.config/zathura/zathurarc
-    src: config/zathura/zathurarc
   f_zshenv:
     dst: ~/.zshenv
     src: zshenv
@@ -202,9 +188,8 @@ profiles:
     - f_functions
     - f_tmux.conf
     - f_mpd.conf
-    - f_sxhkdrc
+    - d_sxhkdrc
     - d_lemonbar
-    - f_termite_config
     - f_aria2.conf
     - f_config.yaml
     - f_config.conf
@@ -213,8 +198,6 @@ profiles:
     - f_preferences.sublime-settings
     - d_mysnippets
     - d_nvim
-    - f_zathurarc
-    - f_dunstrc
     - f_scimrc
     - f_xinitrc
     - f_xserverrc
@@ -222,7 +205,6 @@ profiles:
     - d_ncmpcpp
     - f_zshenv
     - f_user-dirs.dirs
-    - f_tint2rc
     - d_schemes
     - f_dmenuextended_preferences.txt
     - f_redshift.service

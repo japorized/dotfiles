@@ -9,6 +9,8 @@ nmap <silent> <leader>dst :call TypeWriterToggle()<CR>
 nmap <silent> <leader>dsc :call ConcealToggle()<CR>
 nmap <silent> <leader>dsn :call LineNumberToggle()<CR>
 nmap <silent> <leader>dsr :call RelNumberToggle()<CR>
+nmap <silent> <leader>dsst :SignifyToggle<CR>
+nmap <silent> <leader>dssr :SignifyRefresh<CR>
 nmap <silent> <leader>dl :set tw=
 nmap <silent> <leader>dT :Tabularize /
 vmap <leader>dcch :CamelToHyphenSel<CR>
@@ -27,9 +29,14 @@ let g:which_key_map.d = {
       \   'name' : '+viewer-styling',
       \   'c' : 'toggle-conceal',
       \   'i' : 'toggle-indentline',
-      \   't' : 'toggle-typewriter-mode',
       \   'n': 'line-number-toggle',
-      \   'r': 'relative-number-toggle'
+      \   'r': 'relative-number-toggle',
+      \   's' : {
+      \     'name' : '+Signify',
+      \     't' : 'signify-toggle',
+      \     'r' : 'signify-refresh'
+      \     },
+      \   't' : 'toggle-typewriter-mode'
       \   },
       \ 'T' : 'Tabularize',
       \ 'c' : {

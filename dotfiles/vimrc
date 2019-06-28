@@ -28,10 +28,10 @@ set tabstop=2     " The number of spaces that a <Tab> counts for
 set t_Co=256
 set timeoutlen=200
 set splitbelow
+set signcolumn=yes
 map <SPACE> <Nop>
 let mapleader=" "
 filetype indent plugin on
-colorscheme chaos
 
 if has("autocmd")
   autocmd Syntax html,javascript,latex,vim setlocal foldmethod=indent
@@ -64,14 +64,6 @@ let g:netrw_altv=1
 " Pathogen plugin manager
 execute pathogen#infect('bundle/always/{}', 'bundle/optional/{}', 'bundle/javascript/{}', 'bundle/tex/{}')
 Helptags
-
-" GitGutter Config
-if exists('&signcolumn')  " > Vim 7.4.2201
-  set signcolumn=yes
-else
-  let g:gitgutter_sign_column_always = 1
-endif
-set updatetime=250
 
 " Gundo configurations
 nnoremap <F5> :GundoToggle<CR>
@@ -212,12 +204,15 @@ if ! has('gui_running')
     augroup END
 endif
 
-" GitGutter
-let g:gitgutter_sign_added='┃'
-let g:gitgutter_sign_modified='┃'
-let g:gitgutter_sign_removed='◢'
-let g:gitgutter_sign_removed_first_line='◥'
-let g:gitgutter_sign_modified_removed='◢'
+" VCS signs
+let g:signify_vcs_list = [ 'git' ]
+let g:signify_sign_show_count = 1
+let g:signify_sign_show_text = 1
+let g:signify_sign_add='┃'
+let g:signify_sign_change='┃'
+let g:signify_sign_delete='◢'
+let g:signify_sign_delete_first_line='◥'
+let g:signify_sign_changedelete='◢'
 
 " Indent Guides
 let g:indentLine_enabled = 0
@@ -251,3 +246,8 @@ let g:ale_lint_on_enter = 0
 
 let g:SimplenoteVertical=1
 source $HOME/.vim/simplenoterc
+
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.config/vimslime"
+
+colorscheme wpgtk

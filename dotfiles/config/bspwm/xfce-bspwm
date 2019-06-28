@@ -28,6 +28,7 @@ bspc rule -a Sublime_text desktop='^3'
 bspc rule -a retroarch desktop='^7'
 bspc rule -a feh state=floating
 bspc rule -a tint2 manage=off
+bspc rule -a Xfce4-appfinder state=floating
 
 # Set Desktop 4 to start with floating windows
 FLOATING_DESKTOP_ID=$(bspc query -D -d '^4')
@@ -41,16 +42,14 @@ done
 # starting applications
 ~/.config/bspwm/indicators &
 fcitx &
-sxhkd &
+sxhkd -c /home/japorized/.config/sxhkd/xfce-sxhkd &
 ~/.fehbg &
 xset r rate 270 30 &
 xset dpms 0 0 1800 &
 xset b off &
 xset b 0 0 0 &
 xmodmap ~/.Xmodmap
-xss-lock -- slock &
 libinput-gestures-setup start &
 plank &
-pasystray &
 sh -c "~/.config/bspwm/summon -cx"
 tint2 &

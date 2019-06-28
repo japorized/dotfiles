@@ -1,6 +1,7 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.data
 export CONFIG=$HOME/.config
+export QT_QPA_PLATFORMTHEME="gtk2"
 
 # RubyGems
 export GEM_HOME=$HOME/.gem
@@ -21,9 +22,9 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
 # TeXLive
-export PATH=$HOME/.texlive/2018/bin/x86_64-linux:$PATH
-export MANPATH=$MANPATH:$HOME/.texlive/2018/texmf-dist/doc/man
-export INFOPATH=$INFOPATH:/$HOME/.texlive/2018/texmf-dist/doc/info
+export PATH=$HOME/.texlive/2019/bin/x86_64-linux:$PATH
+export MANPATH=$MANPATH:$HOME/.texlive/2019/texmf-dist/doc/man
+export INFOPATH=$INFOPATH:/$HOME/.texlive/2019/texmf-dist/doc/info
 
 # nnn
 export NNN_BMS='d:~/Documents;D:~/Downloads/;P:~/Pictures/;M:~/Music;T:~/Documents/TeX_Notes/'

@@ -3,9 +3,11 @@
 
 set default-bg                  "{color0}"
 set default-fg                  "{color15}"
+set render-loading-bg           "{color0}"
+set render-loading-fg           "{color15}"
 
-set statusbar-fg                "{color6}"
-set statusbar-bg                "{color8}"
+set statusbar-bg                "{color0}"
+set statusbar-fg                "{color5}"
 
 set inputbar-bg                 "{color0}"
 set inputbar-fg                 "{color5}"

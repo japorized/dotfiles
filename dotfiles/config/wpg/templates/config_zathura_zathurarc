@@ -3,9 +3,11 @@
 
 set default-bg                  "#1c1c1c"
 set default-fg                  "#efefef"
+set render-loading-bg           "#1c1c1c"
+set render-loading-fg           "#efefef"
 
-set statusbar-fg                "#7d7abc"
-set statusbar-bg                "#6d6477"
+set statusbar-bg                "#1c1c1c"
+set statusbar-fg                "#dab6fc"
 
 set inputbar-bg                 "#1c1c1c"
 set inputbar-fg                 "#dab6fc"

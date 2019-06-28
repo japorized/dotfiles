@@ -72,7 +72,7 @@ border_color_pressed = {color6} 30
 
 #-------------------------------------
 # Panel
-panel_items = PP:PPPPPPPPPPFPPPPPP:S
+panel_items = PP:PPPPPPPPPPF:S
 panel_size = 85% 50
 panel_margin = 0 0
 panel_padding = 8 4 4
@@ -252,122 +252,122 @@ button_max_icon_size = 0
 
 #-------------------------------------
 # Button 3
-button = new
-button_text = 
-button_tooltip = termite
-button_lclick_command = termite
-button_rclick_command = 
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
+# button = new
+# button_text = 
+# button_tooltip = termite
+# button_lclick_command = termite
+# button_rclick_command = 
+# button_mclick_command = 
+# button_uwheel_command = 
+# button_dwheel_command = 
+# button_font = Hack Nerd Font 9
+# button_font_color = {color15} 100
+# button_padding = 12 0
+# button_background_id = 1
+# button_centered = 1
+# button_max_icon_size = 0
 
 #-------------------------------------
 # Button 4
-button = new
-button_text = 
-button_tooltip = Thunar
-button_lclick_command = thunar
-button_rclick_command = dmenu_extended_run
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
+# button = new
+# button_text = 
+# button_tooltip = Thunar
+# button_lclick_command = thunar
+# button_rclick_command = dmenu_extended_run
+# button_mclick_command = 
+# button_uwheel_command = 
+# button_dwheel_command = 
+# button_font = Hack Nerd Font 9
+# button_font_color = {color15} 100
+# button_padding = 12 0
+# button_background_id = 1
+# button_centered = 1
+# button_max_icon_size = 0
 
 #-------------------------------------
 # Button 5
-button = new
-button_text = 
-button_tooltip = geary
-button_lclick_command = geary
-button_rclick_command =
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
+# button = new
+# button_text = 
+# button_tooltip = geary
+# button_lclick_command = geary
+# button_rclick_command =
+# button_mclick_command = 
+# button_uwheel_command = 
+# button_dwheel_command = 
+# button_font = Hack Nerd Font 9
+# button_font_color = {color15} 100
+# button_padding = 12 0
+# button_background_id = 1
+# button_centered = 1
+# button_max_icon_size = 0
 
 #-------------------------------------
 # Button 6
-button = new
-button_text = 
-button_tooltip = vim
-button_lclick_command = /usr/bin/nvim-qt --stylesheet $HOME/.config/nvim/nvim-qt.qss
-button_rclick_command = /usr/bin/nvim-qt --stylesheet $HOME/.config/nvim/nvim-qt.qss -- -u $HOME/.config/latex-vim/init.vim
-button_mclick_command = /usr/bin/nvim-qt --stylesheet $HOME/.config/nvim/nvim-qt.qss -- -u $HOME/.SpaceVim/init.vim
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 12
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
+# button = new
+# button_text = 
+# button_tooltip = vim
+# button_lclick_command = /usr/bin/nvim-qt --stylesheet $HOME/.config/nvim/nvim-qt.qss
+# button_rclick_command = /usr/bin/nvim-qt --stylesheet $HOME/.config/nvim/nvim-qt.qss -- -u $HOME/.config/latex-vim/init.vim
+# button_mclick_command = /usr/bin/nvim-qt --stylesheet $HOME/.config/nvim/nvim-qt.qss -- -u $HOME/.SpaceVim/init.vim
+# button_uwheel_command = 
+# button_dwheel_command = 
+# button_font = Hack Nerd Font 12
+# button_font_color = {color15} 100
+# button_padding = 12 0
+# button_background_id = 1
+# button_centered = 1
+# button_max_icon_size = 0
 
 #-------------------------------------
 # Button 7
-button = new
-button_text = 
-button_tooltip = Simplenote
-button_lclick_command = /usr/bin/nvim-qt -- "+:SimplenoteList"
-button_rclick_command = /home/japorized/.bin/surf https://app.simplenote.com
-button_mclick_command = firefox https://app.simplenote.com
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
+# button = new
+# button_text = 
+# button_tooltip = Simplenote
+# button_lclick_command = /usr/bin/nvim-qt -- "+:SimplenoteList"
+# button_rclick_command = /home/japorized/.bin/surf https://app.simplenote.com
+# button_mclick_command = firefox https://app.simplenote.com
+# button_uwheel_command = 
+# button_dwheel_command = 
+# button_font = Hack Nerd Font 9
+# button_font_color = {color15} 100
+# button_padding = 12 0
+# button_background_id = 1
+# button_centered = 1
+# button_max_icon_size = 0
 
 #-------------------------------------
 # Button 8
-button = new
-button_text = 
-button_tooltip = Music
-button_lclick_command = melody
-button_rclick_command = urxvt -e /home/japorized/.bin/urxvt-ncmpcpp
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
+# button = new
+# button_text = 
+# button_tooltip = Music
+# button_lclick_command = melody
+# button_rclick_command = urxvt -e /home/japorized/.bin/urxvt-ncmpcpp
+# button_mclick_command = 
+# button_uwheel_command = 
+# button_dwheel_command = 
+# button_font = Hack Nerd Font 9
+# button_font_color = {color15} 100
+# button_padding = 12 0
+# button_background_id = 1
+# button_centered = 1
+# button_max_icon_size = 0
 
 #-------------------------------------
 # Button 9
-button = new
-button_text = 
-button_tooltip = Firefox
-button_lclick_command = firefox
-button_rclick_command = 
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
+# button = new
+# button_text = 
+# button_tooltip = Firefox
+# button_lclick_command = firefox
+# button_rclick_command = 
+# button_mclick_command = 
+# button_uwheel_command = 
+# button_dwheel_command = 
+# button_font = Hack Nerd Font 9
+# button_font_color = {color15} 100
+# button_padding = 12 0
+# button_background_id = 1
+# button_centered = 1
+# button_max_icon_size = 0
 
 #-------------------------------------
 # Button 10
