@@ -1,4 +1,5 @@
 ant-dracula-gtk-theme
+asciinema-rs
 auracle-git
 bash-pipes
 bdf-curie
@@ -73,6 +74,7 @@ python-pymupdf
 python-pystache
 python2-neovim
 python2-pymupdf
+qownnotes
 resvg
 ripcord
 rofi-calc
@@ -81,7 +83,6 @@ sc-im
 screenrecorder-git
 sddm-chinese-painting-theme
 shantz-xwinwrap-bzr
-signal-desktop-bin
 simplescreenrecorder-git
 slack-desktop
 slack-term
@@ -108,6 +109,7 @@ ttf-vlgothic
 tty-clock
 ungoogled-chromium-archlinux
 viu
+vlang-git
 wpa_actiond
 xbanish-git
 xboxdrv

@@ -28,6 +28,7 @@ calc
 calcurse
 calibre
 calligra-plan
+cantata
 cantor
 capitaine-cursors
 castget
@@ -133,6 +134,7 @@ ipw2200-fw
 jfsutils
 joyutils
 jpegoptim
+kiten
 kitty
 krita
 less
@@ -229,6 +231,7 @@ python2-pip
 qt5-doc
 qt5-examples
 qt5-multimedia
+qt5-styleplugins
 qtcreator
 qtikz
 qutebrowser
@@ -263,6 +266,7 @@ splix
 steam
 subversion
 sudo
+supertuxkart
 sxhkd
 sysfsutils
 systemd
