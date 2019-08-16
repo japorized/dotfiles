@@ -47,10 +47,10 @@ xset r rate 270 30 &
 xset dpms 0 0 1800 &
 xset b off &
 xset b 0 0 0 &
-xmodmap ~/.Xmodmap
+# xmodmap ~/.Xmodmap
 xss-lock -- slock &
 libinput-gestures-setup start &
 plank &
 pasystray &
-sh -c "~/.config/bspwm/summon -cx"
 tint2 &
+ffplay -nodisp -loglevel quiet -vn -autoexit $XDG_DATA_HOME/sounds/Morning_Maze.m4a &

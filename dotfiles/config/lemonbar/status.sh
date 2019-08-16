@@ -7,6 +7,8 @@
 width="600"
 height="30"
 ssid="---"
+wifiinterface="wlp5s0"
+laninterface="enp3s0"
  
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
@@ -34,7 +36,7 @@ Curvolume() {
 }
 
 Wifi() {
-    ssid=$(iwconfig wlp5s0 |grep ESSID| awk '{print $NF}'|cut -d "\"" -f 2)
+    ssid=$(iwconfig ${wifiinterface} | grep ESSID | cut -d: -f2 | tr -d "\"")
     # ip=$(ifconfig wlp3s0|grep 10|grep 'inet addr')
     # ip=$(echo $ip|cut -d " " -f 2 |awk '{gsub("addr:", "");print}')
     echo -n "$ssid"

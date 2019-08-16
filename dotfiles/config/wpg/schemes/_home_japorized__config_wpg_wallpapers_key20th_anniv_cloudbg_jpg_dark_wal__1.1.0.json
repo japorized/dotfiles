@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/key20th_anniv_cloudbg.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background":"#f8f8fb",
+        "foreground":"#060d29",
+        "cursor":"#060d29"
+    },
+    "colors": {
+        "color0":"#f8f8fb",
+        "color1":"#aaebff",
+        "color2":"#89a6f1",
+        "color3":"#a0b3f4",
+        "color4":"#b6d2ff",
+        "color5":"#c0b8ff",
+        "color6":"#dfc8ff",
+        "color7":"#1f2f89",
+        "color8":"#b5b7c0",
+        "color9":"#53b4f0",
+        "color10":"#5275da",
+        "color11":"#5e7ae5",
+        "color12":"#6590e8",
+        "color13":"#7486eb",
+        "color14":"#9868e6",
+        "color15":"#060d29"
+    }
+}

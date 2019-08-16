@@ -1,0 +1,11 @@
+[Unit]
+Description=lxqt-polkit-agent
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/lxqt-policykit-agent
+Restart=always
+RestartSec=20
+
+[Install]
+WantedBy=default.target

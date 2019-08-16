@@ -1,7 +1,7 @@
-let g:moodo_mid = "\  %r%h\ %.40f%(\ %q%m%)\ "
-let g:moodo_right = "%(\ %{FugitiveHead(8)}\ |%)%(%{MoodoFT()}%) %l/%L\ \ %2c\ \ %{coc#status()}"
-let g:moodo_tabline_modified = ""
+let g:moodo_modified_indicator = ""
 let g:moodo_tabline_closestr = ''
+let g:moodo_mid = "\  %r%h\ %.40f%(\ %q%)\ %(\%#MoodoReplace# %{&modified?g:moodo_modified_indicator:''} %#Normal#%)\ "
+let g:moodo_right = "%(\ %{FugitiveHead(8)}\ |%)%(%{MoodoFT()}%) %l/%L\ \ %2c\ \ %{coc#status()}"
 let g:moodo_modes = {
   \ 'n'      : '',
   \ 'no'     : '',

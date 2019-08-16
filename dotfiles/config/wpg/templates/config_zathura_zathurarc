@@ -1,37 +1,37 @@
 # Base16 Eighties
 # Author: Chris Kempson (http://chriskempson.com)
 
-set default-bg                  "#1c1c1c"
-set default-fg                  "#efefef"
-set render-loading-bg           "#1c1c1c"
-set render-loading-fg           "#efefef"
+set default-bg                  "#242120"
+set default-fg                  "#fffefe"
+set render-loading-bg           "#242120"
+set render-loading-fg           "#fffefe"
 
-set statusbar-bg                "#1c1c1c"
-set statusbar-fg                "#dab6fc"
+set statusbar-bg                "#242120"
+set statusbar-fg                "#ffc3bf"
 
-set inputbar-bg                 "#1c1c1c"
-set inputbar-fg                 "#dab6fc"
+set inputbar-bg                 "#242120"
+set inputbar-fg                 "#ffc3bf"
 
-set notification-bg             "#1c1c1c"
-set notification-fg             "#dab6fc"
+set notification-bg             "#242120"
+set notification-fg             "#ffc3bf"
 
-set notification-error-bg       "#1c1c1c"
-set notification-error-fg       "#af99ed"
+set notification-error-bg       "#242120"
+set notification-error-fg       "#d60012"
 
-set notification-warning-bg     "#1c1c1c"
-set notification-warning-fg     "#af99ed"
+set notification-warning-bg     "#242120"
+set notification-warning-fg     "#d60012"
 
-set highlight-color             "#9fa0ff"
-set highlight-active-color      "#bbadff"
+set highlight-color             "#ff9e95"
+set highlight-active-color      "#ea888c"
 
-set completion-bg               "#1c1c1c"
-set completion-fg               "#bbadff"
+set completion-bg               "#242120"
+set completion-fg               "#ea888c"
 
-set completion-highlight-fg     "#1c1c1c"
-set completion-highlight-bg     "#bbadff"
+set completion-highlight-fg     "#242120"
+set completion-highlight-bg     "#ea888c"
 
-set recolor-lightcolor          "#1c1c1c"
-set recolor-darkcolor           "#efefef"
+set recolor-lightcolor          "#242120"
+set recolor-darkcolor           "#fffefe"
 
 set recolor                     "true"
 set recolor-keephue             "false"

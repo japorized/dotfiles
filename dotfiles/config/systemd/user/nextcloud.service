@@ -5,7 +5,7 @@ After=network.target
 [Service]
 ExecStart=/usr/bin/nextcloud
 Restart=always
-RestartSec=10
+RestartSec=30
 
 [Install]
 WantedBy=default.target

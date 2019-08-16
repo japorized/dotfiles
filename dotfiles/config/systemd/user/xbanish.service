@@ -1,0 +1,9 @@
+[Unit]
+Description=hide the X11 mouse cursor when a key is pressed
+Documentation=man:xbanish(1)
+
+[Service]
+ExecStart=/usr/bin/xbanish -i shift -i mod1 -i mod4 -i control
+
+[Install]
+WantedBy=graphical.target

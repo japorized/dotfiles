@@ -1,0 +1,8 @@
+[Unit]
+Description=Oneko-sakura
+
+[Service]
+ExecStart=/usr/bin/oneko -sakura -fg "#cd98cd" -position "32x32" -speed 32 -tofocus
+
+[Install]
+WantedBy=graphical.target

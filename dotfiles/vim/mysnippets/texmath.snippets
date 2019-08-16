@@ -3,7 +3,7 @@ priority -50
 global !p
 texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z']]
 
-texIgnoreMathZones = ['texMathText']
+texIgnoreMathZones = ['texMathText', 'texCite']
 
 texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
 texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
@@ -64,43 +64,13 @@ snippet xO "otimes" iA
 endsnippet
 
 context "math()"
-snippet 'bb([a-zA-Z])' "mathbb" wrA
-\mathbb{`!p snip.rv = match.group(1).upper()`}$0
+snippet '(bb|cal|scr|frak)([a-zA-Z])' "mathfont" wrA
+\math`!p snip.rv = match.group(1)`{`!p snip.rv = match.group(2).upper()`}$0
 endsnippet
 
 context "math()"
-snippet 'cal([a-zA-Z])' "mathcal" wrA
-\mathcal{`!p snip.rv = match.group(1).upper()`}$0
-endsnippet
-
-context "math()"
-snippet 'scr([a-zA-Z])' "mathscr" wrA
-\mathscr{`!p snip.rv = match.group(1).upper()`}$0
-endsnippet
-
-context "math()"
-snippet 'fr([a-zA-Z])' "mathfrak" wrA
-\mathfrak{`!p snip.rv = match.group(1).upper()`}$0
-endsnippet
-
-context "math()"
-snippet bb "mathbb" w
-\mathbb{$1}$0
-endsnippet
-
-context "math()"
-snippet cal "mathcal" w
-\mathcal{$1}$0
-endsnippet
-
-context "math()"
-snippet scr "mathscr" w
-\mathscr{$1}$0
-endsnippet
-
-context "math()"
-snippet frak "mathfrak" w
-\mathfrak{$1}$0
+snippet '(bb|cal|scr|frak)' "mathbb" wr
+\math`!p snip.rv = match.group(1)`{$1}$0
 endsnippet
 
 context "math()"
@@ -114,7 +84,7 @@ snippet // "Fraction" iA
 endsnippet
 
 context "math()"
-snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+snippet '([0-9a-zA-Z\.\+\-\\]+)\/' "Fraction" wrA
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
@@ -179,12 +149,12 @@ snippet intg "Integrate" iA
 endsnippet
 
 context "math()"
-snippet sum "Summation" iA
+snippet '(?<=\s)sum' "Summation" irA
 \sum_{${1}}^{${2}} $0
 endsnippet
 
 context "math()"
-snippet prod "Product" iA
+snippet '(?<=\s)prod' "Product" irA
 \prod_{${1}}^{${2}} $0
 endsnippet
 
@@ -292,15 +262,21 @@ snippet "bar" "bar" riA
 \overline{$1}$0
 endsnippet
 
-priority 100
+priority 50
 context "math()"
 snippet "([a-zA-Z])bar" "bar" riA
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
+priority 100
+context "math()"
+snippet '(?!\\hat)(\\[a-z]+)bar' "bar" riA
+\overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
 priority 10
 context "math()"
-snippet "(?<!\\)hat" "hat" riA
+snippet "(?<!\\wide)hat" "hat" riA
 \hat{$1}$0
 endsnippet
 
@@ -312,7 +288,7 @@ endsnippet
 
 priority 100
 context "math()"
-snippet '(?!\\hat)(\\[a-z]+)hat' "hat" riA
+snippet '(?!\\hat|\\wide)(\\[a-z]+)hat' "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
@@ -381,75 +357,90 @@ endsnippet
 
 priority 10
 context "math()"
-snippet '(?<!\\)angl' "angle notation" riA
+snippet '(?<!\\)angl' "angle notation" wrA
 \\angl{$1}$0
 endsnippet
 
 priority 100
 context "math()"
-snippet '(?<!\\)angl{(([a-z0-9]+(\+|\-)*)*)}' "angle notation" wrA
+snippet '(?<!\\)angl{([0-9a-z+-]*)}' "angle notation" wrA
 \\angl{`!p snip.rv = match.group(1)`}
 endsnippet
 
 # advanced
 context "math()"
-snippet '1p{(\[{0,1}[a-z0-9]+\]{0,1}((\+|\-)[a-z0-9]+)*)}' "survival" wrA
+snippet '1p{([a-zA-Z0-9+{}.:_\\-]*)}' "survival" wrA
 \\px{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet '1q{(\[{0,1}[a-z0-9]+\]{0,1}((\+|\-)[a-z0-9]+)*)}' "mortality" wrA
+snippet '1q{([a-zA-Z0-9+{}.:_\\-]*)}' "mortality" wrA
 \\qx{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet '(?<!\\){([a-z0-9]+((\+|\-)[a-z0-9]+)*\|{0,1}([a-z0-9]+(\+|\-)*)*)}p{(\[{0,1}[a-z0-9]+\]{0,1}((\+|\-)[a-z0-9]+)*)}' "survival" wrA
-\\px[`!p snip.rv = match.group(1)`]{`!p snip.rv = match.group(6)`}
+snippet '(?<!\\)(?<=\s|\$|\(|\{){(.*)}p{([a-zA-Z0-9+{}.:_\\-]*)}' "survival" wrA
+\\px[`!p snip.rv = match.group(1)`]{`!p snip.rv = match.group(2)`}
 endsnippet
 
 context "math()"
-snippet '(?<!\\){([a-z0-9]+((\+|\-)[a-z0-9]+)*\|{0,1}([a-z0-9]+(\+|\-)*)*)}q{(\[{0,1}[a-z0-9]+\]{0,1}((\+|\-)[a-z0-9]+)*)}' "mortality" wrA
-\\qx[`!p snip.rv = match.group(1)`]{`!p snip.rv = match.group(6)`}
+snippet '(?<!\\)(?<=\s|\$|\(|\{){(.*)}q{([a-zA-Z0-9+{}.:_\\-]*)}' "mortality" wrA
+\\qx[`!p snip.rv = match.group(1)`]{`!p snip.rv = match.group(2)`}
 endsnippet
 
 context "math()"
-snippet '(?<!\\){([a-z0-9]+|([a-z0-9]+(\+|\-))*[a-z0-9]+)}E' "pure endowment" wrA
-\\Ex[`!p snip.rv = match.group(1)`]{$1}$0
+snippet '(?<!\\){([0-9a-zA-Z+\|-]*)}E{[0-9a-zA-Z+-]}' "pure endowment" wrA
+\\Ex[`!p snip.rv = match.group(1)`]{`!p snip.rv = match.group(2)`}$0
 endsnippet
 
 context "math()"
-snippet '(?<!\\)A{(\[{0,1}[a-z0-9]+\]{0,1}((\+|\-)[a-z0-9]+)*)}' "discrete insurance" wrA
-\\Ax{`!p snip.rv = match.group(1)`$1}$0
+snippet '({([0-9a-zA-Z\\\s]+?)})?A{([0-9a-zA-Z_\\+\{\}\-,\.:]+)}' "discrete insurance" wrA
+\\Ax`!p snip.rv = '[' + match.group(2) + ']' if match.group(2) is not None else ""`{`!p snip.rv = match.group(3)`}$0
 endsnippet
 
 context "math()"
-snippet '(?<!\\)A\*{(\[{0,1}[a-z0-9]+\]{0,1}((\+|\-)[a-z0-9]+)*)}' "cts ins" wrA
-\\Ax*{`!p snip.rv = match.group(1)`$1}$0
+snippet '({([0-9a-zA-Z\\\s]+?)})?A\*{([0-9a-zA-Z_\\+\{\}\-,\.:]+)}' "cts ins" wrA
+\\Ax*`!p snip.rv = '[' + match.group(2) + ']' if match.group(2) is not None else ""`{`!p snip.rv = match.group(3)`}$0
 endsnippet
 
 context "math()"
-snippet '(?<!\\)a\*\*{(\[{0,1}[a-z0-9]+\]{0,1}((\+|\-)[a-z0-9]+)*)}' "discrete annuity due" wrA
-\\ax**{`!p snip.rv = match.group(1)`$1}$0
+snippet '(?<!\\)(\{([0-9a-z]*\|)\})?a\*\*\{([a-zA-Z0-9+{}.:_\\-]*)\}' "discrete annuity due" wrA
+\\ax**`!p snip.rv = '[' + match.group(2) + ']' if match.group(2) is not None else ""`{`!p snip.rv = match.group(3)`}$0
 endsnippet
 
 context "math()"
-snippet '(?<!\\)a\*{(\[{0,1}[a-z0-9]+\]{0,1}((\+|\-)[a-z0-9]+)*)}' "cts annuity" wrA
-\\ax*{`!p snip.rv = match.group(1)`$1}$0
+snippet '(?<!\\)(\{([0-9a-z]*\|)\})?a\*\{([a-zA-Z0-9+{}.:_\\-]*)\}' "cts annuity" wrA
+\\ax*`!p snip.rv = '[' + match.group(2) + ']' if match.group(2) is not None else ""`{`!p snip.rv = match.group(3)`}$0
 endsnippet
 
 context "math()"
-snippet '(?<!\\)a{(\[{0,1}[a-z0-9]+\]{0,1}((\+|\-)[a-z0-9]+)*)}' "discrete annuity imm" wrA
-\\ax{`!p snip.rv = match.group(1)`$1}$0
+snippet '(?<!\\)(\{([0-9a-z]*\|)\})?a\{([a-zA-Z0-9+{}.:_\\-]*)\}' "discrete annuity imm" wrA
+\\ax`!p snip.rv = '[' + match.group(2) + ']' if match.group(2) is not None else ""`{`!p snip.rv = match.group(3)`}$0
 endsnippet
 
 context "math()"
-snippet '(?<!\\){([a-z0-9]+|([a-z0-9]+(\+|\-))*[a-z0-9]+)}Vx' "policy value" wrA
+snippet '(?<!\\)(\{([0-9a-z]*\|)\})?s\*\*\{([a-zA-Z0-9+{}.:_\\-]*)\}' "discrete annuity (accumulation) due" wrA
+\\sx**`!p snip.rv = '[' + match.group(2) + ']' if match.group(2) is not None else ""`{`!p snip.rv = match.group(3)`}$0
+endsnippet
+
+context "math()"
+snippet '(?<!\\)(\{([0-9a-z]*\|)\})?s\*\{([a-zA-Z0-9+{}.:_\\-]*)\}' "cts annuity (accumulation)" wrA
+\\sx*`!p snip.rv = '[' + match.group(2) + ']' if match.group(2) is not None else ""`{`!p snip.rv = match.group(3)`}$0
+endsnippet
+
+context "math()"
+snippet '(?<!\\|b)(\{([0-9a-z]*\|)\})?s\{([a-zA-Z0-9+{}.:_\\-]*)\}' "discrete annuity (accumulation) imm" wrA
+\\sx`!p snip.rv = '[' + match.group(2) + ']' if match.group(2) is not None else ""`{`!p snip.rv = match.group(3)`}$0
+endsnippet
+
+context "math()"
+snippet '(?<!\\)\{([0-9a-z+|\\\{\}\.-]*)\}Vx' "policy value" wrA
 \\Vx[`!p snip.rv = match.group(1)`]{}
 endsnippet
 
 context "math()"
-snippet '(?<!\\){([a-z0-9]+|([a-z0-9]+(\+|\-))*[a-z0-9]+)}V(g|n|e|FPT)' "policy value" wrA
-\\Vx[`!p snip.rv = match.group(1)`]{}[`!p snip.rv = match.group(4)`]
+snippet '(?<!\\)\{([0-9a-z+|\\\{\}\.-]*)\}V(g|n|e|FPT)' "policy value" wrA
+\\Vx[`!p snip.rv = match.group(1)`]{}[`!p snip.rv = match.group(2)`]
 endsnippet
 
 # vim:ft=snippets:

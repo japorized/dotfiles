@@ -1,4 +1,3 @@
-let g:tq_map_keys=0
 nnoremap <leader>ts :Thesaurus<Space>
 nnoremap <leader>tql :ThesaurusQueryLookupCurrentWord<CR>
 nnoremap <leader>tqr :ThesaurusQueryReplaceCurrentWord<CR>

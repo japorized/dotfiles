@@ -5,40 +5,40 @@ font = Hack Nerd Font 11
 
 [colors]
 
-foreground      = #efefef
-foreground_bold = #efefef
-cursor          = #efefef
-background      = #1c1c1c
+foreground      = #fffefe
+foreground_bold = #fffefe
+cursor          = #fffefe
+background      = #242120
 
 # Black, Gray, Silver, White
-color0  = #1c1c1c
-color8  = #6d6477
-color7  = #c1c1c1
-color15 = #efefef
+color0  = #242120
+color8  = #685f5c
+color7  = #c8c7c7
+color15 = #fffefe
 
 # Red
-color1  = #af99ed
-color9  = #7c6c8f
+color1  = #d60012
+color9  = #af0211
 
 # Green
-color2  = #8e94f2
-color10 = #5c5f9c
+color2  = #ef151a
+color10 = #ae1b1e
 
 # Yellow
-color3  = #9fa0ff
-color11 = #6869b2
+color3  = #ff9e95
+color11 = #c48883
 
 # Blue
-color4  = #bbadff
-color12 = #726d9b
+color4  = #ea888c
+color12 = #a67779
 
 # Magenta
-color5  = #dab6fc
-color13 = #7c6c8f
+color5  = #ffc3bf
+color13 = #b9a6a5
 
 # Cyan
-color6  = #7d7abc
-color14 = #5a5787
+color6  = #e93276
+color14 = #a9325e
 
 # Extra colors
 color16 = #f99157

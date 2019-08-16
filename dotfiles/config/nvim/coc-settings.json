@@ -1,6 +1,8 @@
 {
   "diagnostic.refreshOnInsertMode": true,
   "suggest.autoTrigger": "trigger",
+  "suggest.noselect": false,
   "suggest.preferCompleteThanJumpPlaceholder": true,
-  "suggest.snippetIndicator": " "
+  "suggest.snippetIndicator": " ",
+  "snippets.userSnippetsDirectory": "/home/japorized/.vim/mysnippets"
 }

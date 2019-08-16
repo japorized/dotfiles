@@ -3,9 +3,13 @@ weather(){
   curl http://wttr.in/${1:-Waterloo}
 }
 
-### pip upgrades
-pip_upgrade(){
+### pip shortcuts
+pip-upgrade(){
   pip3 install --user -U $(pip3 freeze --user | awk '{split($0, a, "=="); print a[1]}')
+}
+
+pip-list-installed-files() {
+  pip3 show -f $(pip3 list --format freeze | awk '{split($0, a, "=="); print a[1]}')
 }
 
 {%@@ if profile == "Earl-Grey.local" @@%}

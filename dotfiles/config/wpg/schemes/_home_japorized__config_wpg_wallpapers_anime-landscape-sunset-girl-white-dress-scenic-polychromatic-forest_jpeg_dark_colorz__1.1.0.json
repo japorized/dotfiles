@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/anime-landscape-sunset-girl-white-dress-scenic-polychromatic-forest.jpeg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#fff8d0",
+        "foreground": "#271f14",
+        "cursor": "#271f14"
+    },
+    "colors": {
+        "color0": "#fff8d0",
+        "color1": "#6cb17e",
+        "color2": "#69bac1",
+        "color3": "#c6a066",
+        "color4": "#5286ba",
+        "color5": "#c3bf8b",
+        "color6": "#4099c6",
+        "color7": "#483924",
+        "color8": "#c9c7c4",
+        "color9": "#8ee9a6",
+        "color10": "#75ffff",
+        "color11": "#f1c268",
+        "color12": "#5bb6cb",
+        "color13": "#eee858",
+        "color14": "#42ccff",
+        "color15": "#271f14"
+    }
+}

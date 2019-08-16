@@ -43,6 +43,7 @@ crda
 cronie
 cryptsetup
 cscope
+ctags
 cups
 cups-pk-helper
 dash
@@ -52,6 +53,7 @@ dhcpcd
 dialog
 dictd
 diffutils
+discord
 dmraid
 docker
 dosfstools
@@ -64,6 +66,7 @@ espeak
 evtest
 exfat-utils
 f2fs-tools
+faba-icon-theme
 fakeroot
 fcitx
 fcitx-configtool
@@ -98,6 +101,7 @@ gimp
 git
 glade
 glibc
+gnu-free-fonts
 gnuplot
 goldendict
 gparted
@@ -108,7 +112,6 @@ grub
 grub-customizer
 gsfonts
 gtk-engine-murrine
-gtk-xfce-engine
 gtksourceview3
 gufw
 gvfs
@@ -134,6 +137,7 @@ ipw2200-fw
 jfsutils
 joyutils
 jpegoptim
+kid3-qt
 kiten
 kitty
 krita
@@ -153,6 +157,7 @@ linux
 linux-firmware
 linux-headers
 logrotate
+lollypop
 lsof
 luarocks
 lutris
@@ -225,6 +230,7 @@ python-matplotlib
 python-neovim
 python-pandas
 python-pip
+python-pylast
 python-sympy
 python2
 python2-pip
@@ -244,14 +250,15 @@ reiserfsprogs
 retroarch
 retroarch-assets-xmb
 ristretto
+rlwrap
 rofi
 rsync
 ruby
 ruby-docs
 ruby-rdoc
-rustup
 rxvt-unicode-terminfo
 s-nail
+sakura
 scribus
 scrot
 sddm
@@ -267,12 +274,14 @@ steam
 subversion
 sudo
 supertuxkart
+surfraw
 sxhkd
 sysfsutils
 systemd
 systemd-sysvcompat
 tar
 task
+termdown
 terminus-font
 termite
 texinfo
@@ -284,10 +293,11 @@ timidity++
 tint2
 tlp
 tmux
+tpacpi-bat
 tree
-ttf-freefont
 ttf-hack
 ttf-inconsolata
+ttf-joypixels
 ttf-junicode
 ttf-liberation
 ttf-roboto

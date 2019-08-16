@@ -65,134 +65,13 @@ let g:netrw_altv=1
 execute pathogen#infect('bundle/always/{}', 'bundle/optional/{}', 'bundle/javascript/{}', 'bundle/tex/{}')
 Helptags
 
-" Gundo configurations
-nnoremap <F5> :GundoToggle<CR>
-let g:gundo_preview_height= 30
-let g:gundo_help = 0
-let g:gundo_return_on_revert= 0
-
 " Indentline Configs
 let g:indentLine_char='|'
 let g:indentLine_setColors = 0
 
-" Tex configs
-let g:tex_flavor = 'latex'
-let g:tex_conceal=""
-let g:vimtex_fold_enabled=1
-autocmd Filetype tex setl updatetime=1000
-{%@@ if profile == "Earl-Grey.local" @@%}
-let g:vimtex_view_enabled=0
-let g:vimtex_view_automatic=0
-" let g:vimtex_view_method='skim'
-{%@@ elif profile == "sencha" @@%}
-let g:vimtex_view_general_viewer = '/home/japorized/.bin/tabbed-zathura'
-{%@@ endif @@%}
-let g:vimtex_compiler_progname='nvr'
-let g:vimtex_quickfix_latexlog = {
-      \ 'overfull' : 0,
-      \ 'underfull' : 0,
-      \ 'font' : 0,
-      \ 'packages' : {
-      \   'natbib' : 0,
-      \ },
-      \}
-let g:vimtex_quickfix_mode=0
-
-" Goyo
-nmap <F3> :Goyo<cr>
-let s:save_option = {}
-function! s:goyo_enter()
-  silent !tmux set status off
-  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
-  set noshowmode
-  set noshowcmd
-  set scrolloff=999
-  if exists(':Limelight') == 2
-    Limelight
-    let s:save_option['limelight'] = 1
-  endif
-endfunction
-
-function! s:goyo_leave()
-  silent !tmux set status on
-  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
-  set showmode
-  set showcmd
-  set scrolloff=5
-  if get(s:save_option,'limelight', 0)
-    execute 'Limelight!'
-  endif
-endfunction
-augroup goyo_map
-  autocmd! User GoyoEnter nested call <SID>goyo_enter()
-  autocmd! User GoyoLeave nested call <SID>goyo_leave()
-augroup END
-
-" Limelight
-  " Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-
-  " Color name (:help gui-colors) or RGB color
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
-
-  " Default: 0.5
-let g:limelight_default_coefficient = 0.3
-
-  " Number of preceding/following paragraphs to include (default: 0)
-let g:limelight_paragraph_span = 2
-
-  " Beginning/end of paragraph
-  " When there's no empty line between the paragraphs
-  " and each paragraph starts with indentation
-let g:limelight_bop = '^\s'
-let g:limelight_eop = '\ze\n^\s'
-
   " Highlighting priority (default: 10)
   " Set it to -1 not to overrule hlsearch
 let g:limelight_priority = -1
-
-" vim-moodo
-
-let g:moodo_mid = "\  %r%h\ %.40f%(\ %q%m%)\ "
-let g:moodo_right = "%(%{MoodoFT()}%) %l/%L\ \ %2c\ \ "
-let g:moodo_tabline_modified = ""
-let g:moodo_tabline_closestr = ''
-let g:moodo_modes = {
-  \ 'n'      : '',
-  \ 'no'     : '',
-  \ 'v'      : '',
-  \ 'V'      : '',
-  \ "\<C-V>" : '',
-  \ 's'      : '閭',
-  \ 'S'      : '閭',
-  \ "\<C-S>" : '閭',
-  \ 'i'      : '',
-  \ 'ic'     : '',
-  \ 'ix'     : '',
-  \ 'R'      : '',
-  \ 'Rc'     : '',
-  \ 'Rv'     : '',
-  \ 'Rx'     : '',
-  \ 'c'      : 'גּ',
-  \ 'cv'     : 'גּ',
-  \ 'ce'     : 'גּ',
-  \ 'r'      : '',
-  \ 'rm'     : '',
-  \ '!'      : '',
-  \ 't'      : ''
-  \ }
-let g:moodo_fticons = {
-  \ 'conf'       : '',
-  \ 'fugitive'   : '',
-  \ 'help'       : '',
-  \ 'magit'      : '',
-  \ 'markdown'   : '',
-  \ 'simplenote' : 'ﴬ',
-  \ 'startify'   : '',
-  \ 'vim'        : ''
-  \ }
 
 if ! has('gui_running')
     set ttimeout
@@ -203,16 +82,6 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-
-" VCS signs
-let g:signify_vcs_list = [ 'git' ]
-let g:signify_sign_show_count = 1
-let g:signify_sign_show_text = 1
-let g:signify_sign_add='┃'
-let g:signify_sign_change='┃'
-let g:signify_sign_delete='◢'
-let g:signify_sign_delete_first_line='◥'
-let g:signify_sign_changedelete='◢'
 
 " Indent Guides
 let g:indentLine_enabled = 0
@@ -235,19 +104,15 @@ autocmd VimEnter *
   \ |   wincmd w
   \ | endif
 
-" ale-linter
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_lint_on_filetype_changed = 0
-let g:ale_lint_on_save = 0
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_enter = 0
-
 let g:SimplenoteVertical=1
 source $HOME/.vim/simplenoterc
 
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.config/vimslime"
+
+let g:gutentags_exclude_project_root = ['/usr/local', '/home/japorized/Documents/Projects/japorized.gitlab.io']
+
+let g:coc_start_at_startup=1
+
 
 colorscheme wpgtk

@@ -105,6 +105,10 @@ snippet abs "abstract environment" b
 \end{abstract}
 endsnippet
 
+snippet '([0-9]+|\$)th' "th superscript" irA
+`!p snip.rv = match.group(1)`\textsuperscript{th}
+endsnippet
+
 snippet tab "tabular / array environment" b
 \begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}
 $0${2/(?<=.)(c|l|r)|./(?1: & )/g}
@@ -123,7 +127,7 @@ snippet table "Table environment" b
 \begin{table}[${1:htpb}]
 	\centering
 	\caption{${2:caption}}
-	\label{table:${3:${2/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+	\label{table:${3:${2/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 	\begin{${4:t}${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${5:c}}
 	$0${5/(?<=.)(c|l|r)|./(?1: & )/g}
 	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
@@ -135,7 +139,7 @@ snippet fig "Figure environment" b
 	\centering
 	$0
 	\caption{${3:caption}}
-	\label{fig:${4:${3/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+	\label{fig:${4:${3/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 \end{figure$1}
 endsnippet
 
@@ -143,8 +147,16 @@ snippet marfig "Margin figure environment" b
 \begin{marginfigure}
 	\centering
 	$0
-	\caption{$1}\label{fig:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+	\caption{$1}\label{fig:${2:${1/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 \end{marginfigure}
+endsnippet
+
+snippet martab "Margin table environment" b
+\begin{margintable}
+	\centering
+	$0
+	\caption{$1}\label{table:${2:${1/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\end{margintable}
 endsnippet
 
 snippet tikzp "tikzpicture environment" b
@@ -200,9 +212,9 @@ snippet 1. "Enumerate Env" bA
 \end{enumerate}
 endsnippet
 
-snippet '(?!1\.|0\.)[0-9]{1,3}\.' "Numbered item" brA
-\item$0
-endsnippet
+# snippet '(?!1\.|0\.)[0-9]{1,3}\.' "Numbered item" brA
+# \item$0
+# endsnippet
 
 snippet part "Part" b
 \part{${1:part name}}%
@@ -213,7 +225,7 @@ endsnippet
 
 snippet chp "Chapter" b
 \chapter{${1:chapter name}}%
-\label{chp:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{chp:${2:${1/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 % chapter $2
 
 $0
@@ -223,7 +235,7 @@ endsnippet
 
 snippet sec "Section" b
 \section{${1:section name}}%
-\label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{sec:${2:${1/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 % section $2
 
 $0
@@ -233,7 +245,7 @@ endsnippet
 
 snippet sec* "Section" b
 \section*{${1:section name}}%
-\label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{sec:${2:${1/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 % section $2
 
 $0
@@ -244,7 +256,7 @@ endsnippet
 
 snippet sub "Subsection" b
 \subsection{${1:subsection name}}%
-\label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{sub:${2:${1/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 % subsection $2
 
 $0
@@ -254,7 +266,7 @@ endsnippet
 
 snippet sub* "Subsection" b
 \subsection*{${1:subsection name}}%
-\label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{sub:${2:${1/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 % subsection $2
 
 $0
@@ -264,7 +276,7 @@ endsnippet
 
 snippet ssub "Subsubsection" b
 \subsubsection{${1:subsubsection name}}%
-\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 % subsubsection $2
 
 $0
@@ -274,7 +286,7 @@ endsnippet
 
 snippet ssub* "Subsection" b
 \subsubsection*{${1:subsubsection name}}%
-\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 % subsubsection $2
 
 $0
@@ -288,19 +300,19 @@ endsnippet
 
 snippet subp "Subparagraph" b
 \subparagraph{${1:subparagraph name}}%
-\label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{par:${2:${1/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 
 $0
 endsnippet
 
 snippet thm "Theorem" b
-\begin{${1:thm}}[${2:Theorem name}]${3:\index{$2}}\label{$1:${4:${2/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\begin{${1:thm}}[${2:Theorem name}]${3:\index{$2}}\label{$1:$4${2/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}
 	$0
 \end{$1}
 endsnippet
 
 snippet defn "Definition" b
-\begin{defn}[${1:Definition Name}]\index{$1}\label{defn:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\begin{defn}[${1:Definition Name}]\index{$1}\label{defn:$2${1/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}
 	$0
 \end{defn}
 endsnippet
@@ -313,48 +325,24 @@ snippet ita "Italicized Text" w
 \textit{$1} $0
 endsnippet
 
-snippet hla "highlight color a" w
-\hlnotea{$1} $0
+snippet '(?<!\\|b)(?<=\s|\n|\{|\`)hl(a|b|c|d|e|f|g)' "highlight color" wrA
+\hlnote`!p snip.rv = match.group(1)`{$1}$0
 endsnippet
 
-snippet hlb "highlight color b" w
-\hlnoteb{$1} $0
+snippet '(?<!\\)(?<=\s|\n)bhl(a|b|c|d|e)' "highlight background" irA
+\hlbnote`!p snip.rv = match.group(1)`{$1}$0
 endsnippet
 
-snippet hlc "highlight color c" w
-\hlnotec{$1} $0
+snippet dfhl "highlight definition" wA
+\hldefn{$1}$0
 endsnippet
 
-snippet hlba "highlight background a" w
-\hlbnotea{$1} $0
+snippet hlw "highlight warning" wA
+\hlwarn{$1}$0
 endsnippet
 
-snippet hlbb "highlight background b" w
-\hlbnoteb{$1} $0
-endsnippet
-
-snippet hlbc "highlight background c" w
-\hlbnotec{$1} $0
-endsnippet
-
-snippet hlbd "highlight background d" w
-\hlbnoted{$1} $0
-endsnippet
-
-snippet hlbe "highlight background e" w
-\hlbnotee{$1} $0
-endsnippet
-
-snippet hld "highlight definition" w
-\hldefn{$1} $0
-endsnippet
-
-snippet hlw "highlight warning" w
-\hlwarn{$1} $0
-endsnippet
-
-snippet hli "highlight important" w
-\hlimpo{$1} $0
+snippet '(?<!\\)(?<=\s)hli' "highlight important" wrA
+\hlimpo{$1}$0
 endsnippet
 
 snippet star "level 1 star" w
@@ -411,7 +399,7 @@ snip.rv = match.group(3) if match.group(2) is not None else "language"`}}
 ${2:${VISUAL:code}}
 \end{minted}
 \caption{${3:caption name}}
-\label{lst:${4:${3/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{lst:${4:${3/\\\w+\{(.*?)\}|\\([^\\"])|(\w+)|([^\w]+)/(?4:_:\L$1$2$3\E)/ga}}}
 \end{listing}
 
 $0
@@ -419,20 +407,20 @@ endsnippet
 
 snippet 'ml' "Math" wr
 $${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', ';']:
   snip.rv = ' '
 else:
   snip.rv = ''
-`$2
+`$0
 endsnippet
 
-snippet '(?<=\s)lm' "Math" irA
+snippet '(?<=[\s\n\{\[\(])lm' "Math" irA
 $${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', ';']:
   snip.rv = ' '
 else:
   snip.rv = ''
-`$2
+`$0
 endsnippet
 
 snippet newth "newthought" b

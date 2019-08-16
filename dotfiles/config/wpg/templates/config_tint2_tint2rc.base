@@ -421,6 +421,23 @@ button_centered = 1
 button_max_icon_size = 0
 
 #-------------------------------------
+# Button 13
+button = new
+button_text = 
+button_tooltip = gnvim
+button_lclick_command = gnvim
+button_rclick_command = gnvim -- -u $HOME/.config/latex-vim/init.vim
+button_mclick_command = 
+button_uwheel_command = 
+button_dwheel_command = 
+button_font = Hack Nerd Font 9
+button_font_color = {color15} 100
+button_padding = 12 0
+button_background_id = 1
+button_centered = 1
+button_max_icon_size = 0
+
+#-------------------------------------
 # Tooltip
 tooltip_show_timeout = 0.5
 tooltip_hide_timeout = 0.1

@@ -1,0 +1,11 @@
+[Unit]
+Description=A compositor for X11
+Documentation=man:compton(1)
+
+[Service]
+ExecStart=/usr/bin/compton
+ExecReload=/usr/bin/kill -SIGUSR1 $MAINPID
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=graphical.target

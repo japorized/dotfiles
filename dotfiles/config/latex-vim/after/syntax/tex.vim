@@ -107,6 +107,8 @@ syn match texMathSymbol "\\restriction" contained conceal cchar=↾
 syn match texMathSymbol '\\implies' contained conceal cchar=⇒
 syn match texMathSymbol "\\{" contained conceal cchar={
 syn match texMathSymbol "\\}" contained conceal cchar=}
+syn match texMathSymbol "\\langle" contained conceal cchar=<
+syn match texMathSymbol "\\rangle" contained conceal cchar=>
 syn match texMathSymbol "\\;" contained conceal
 syn match texMathSymbol "\\," contained conceal
 syn match texMathSymbol "\\enspace" contained conceal
@@ -129,8 +131,15 @@ syn match texMathSymbol '\\trianglerighteq' contained conceal cchar=⊵
 syn match texMathSymbol '\\dif' contained conceal cchar=d
 syn match texMathSymbol '\\tilde' contained conceal cchar=˜
 syn match texMathSymbol '\\hat' contained conceal cchar=🎩
+syn match texMathSymbol '\\widehat' contained conceal cchar=🎩
+syn match texMathSymbol '\\bar' contained conceal cchar=‾
+syn match texMathSymbol '\\overline' contained conceal cchar=‾
 syn match texMathSymbol '\\%' contained conceal cchar=%
 syn match texMathSymbol '\\$\>' contained conceal cchar=$
+syn match texMathSymbol '\\left\.' contained conceal
+syn match texMathSymbol '\\right\.' contained conceal
+syn match texMathSymbol '\\because' contained conceal cchar=∵
+syn match texMathSymbol '\\therefore' contained conceal cchar=∴
 
 " actuarial symbols
 syn match texMathSymbol '\\ax\*\>' contained conceal cchar=ā
@@ -150,6 +159,7 @@ syn match texStatement '`' contained conceal cchar='
 syn match texStatement '\'' contained conceal cchar='
 syn match texStatement /\\item/ conceal cchar=●
 syn match texStatement "\\noindent" conceal
+syn match texStatement "\\textsuperscript" conceal
 
 " tufte style specifics
 syn match texStatement '\\sidenote' contained conceal cchar=
@@ -186,6 +196,11 @@ for [s:color, s:cmd] in [
   \ ['texCustomHLYellow', 'hlwarn'],
   \ ['texCustomHLGreen', 'hlnotea'],
   \ ['texCustomHLCyan', 'hlnoteb'],
+  \ ['texCustomHLDRed', 'hlnotec'],
+  \ ['texCustomHLDGreen', 'hlnoted'],
+  \ ['texCustomHLDYellow', 'hlnotee'],
+  \ ['texCustomHLDBlue', 'hlnotef'],
+  \ ['texCustomHLDMagenta', 'hlnoteg'],
   \ ['texCustomHLBGreen', 'hlbnotea'],
   \ ['texCustomHLBCyan', 'hlbnoteb'],
   \ ['texCustomHLBYellow', 'hlbnotec'],
@@ -206,15 +221,20 @@ hi   texItalStyle       cterm=italic        gui=italic
 hi   texBoldItalStyle   cterm=italic,bold   gui=italic,bold
 
 hi   texCustomHLRed      ctermfg=196  cterm=bold  guifg=#ff0000  gui=bold
-hi   texCustomHLGreen    ctermfg=70   cterm=bold  guifg=#00ff00  gui=bold
+hi   texCustomHLGreen    ctermfg=112  cterm=bold  guifg=#00ff00  gui=bold
 hi   texCustomHLYellow   ctermfg=220  cterm=bold  guifg=#00ffff  gui=bold
 hi   texCustomHLBlue     ctermfg=27   cterm=bold  guifg=#0000ff  gui=bold
 hi   texCustomHLMagenta  ctermfg=129  cterm=bold  guifg=#ff00ff  gui=bold
 hi   texCustomHLCyan     ctermfg=69   cterm=bold  guifg=#00ccff  gui=bold
-hi   texCustomHLBRed     ctermbg=196  ctermfg=232  cterm=bold  guifg=#ff0000  guibg=#000000 gui=bold
-hi   texCustomHLBGreen   ctermbg=70   ctermfg=232  cterm=bold  guifg=#00ff00  guibg=#000000 gui=bold
-hi   texCustomHLBYellow  ctermbg=226  ctermfg=232  cterm=bold  guifg=#ff00ff  guibg=#000000 gui=bold
-hi   texCustomHLBMagenta ctermbg=129  ctermfg=232  cterm=bold  guifg=#ff00ff  guibg=#000000 gui=bold
-hi   texCustomHLBCyan    ctermbg=69   ctermfg=232  cterm=bold  guifg=#00ccff  guibg=#000000 gui=bold
+hi   texCustomHLDRed     ctermfg=160  cterm=bold  guifg=#ff0000  gui=bold
+hi   texCustomHLDGreen   ctermfg=70   cterm=bold  guifg=#00ff00  gui=bold
+hi   texCustomHLDYellow  ctermfg=142  cterm=bold  guifg=#00ffff  gui=bold
+hi   texCustomHLDBlue    ctermfg=24   cterm=bold  guifg=#0000ff  gui=bold
+hi   texCustomHLDMagenta ctermfg=92   cterm=bold  guifg=#ff00ff  gui=bold
+hi   texCustomHLBRed     ctermbg=196  ctermfg=233  cterm=bold  guifg=#ff0000  guibg=#000000 gui=bold
+hi   texCustomHLBGreen   ctermbg=70   ctermfg=233  cterm=bold  guifg=#00ff00  guibg=#000000 gui=bold
+hi   texCustomHLBYellow  ctermbg=226  ctermfg=233  cterm=bold  guifg=#ff00ff  guibg=#000000 gui=bold
+hi   texCustomHLBMagenta ctermbg=129  ctermfg=233  cterm=bold  guifg=#ff00ff  guibg=#000000 gui=bold
+hi   texCustomHLBCyan    ctermbg=69   ctermfg=233  cterm=bold  guifg=#00ccff  guibg=#000000 gui=bold
 
 hi   link               texMathSymbol       Conceal

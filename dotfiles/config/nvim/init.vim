@@ -15,9 +15,9 @@ nnoremap <F4> :Nuake<CR>
 inoremap <F4> <C-\><C-n>:Nuake<CR>
 tnoremap <F4> <C-\><C-n>:Nuake<CR>
 
-source ~/.config/nvim/completion.vim
 source ~/.config/nvim/startify.vim
 source ~/.config/nvim/whichkey.vim
+source ~/.config/nvim/completion.vim
 {%@@ if profile == "Earl-Grey.local" @@%}
 if has("gui_vimr")
   source ~/.config/nvim/ginit.vim

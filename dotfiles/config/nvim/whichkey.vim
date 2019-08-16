@@ -147,17 +147,18 @@ let g:which_key_map.T = {
       \ }
 
   " configs
-nnoremap <silent> <leader>cev :tabnew ~/.vimrc<CR>
-nnoremap <silent> <leader>cei :tabnew ~/.config/nvim/init.vim<CR>
-nnoremap <silent> <leader>cet :tabnew ~/.tmux.conf<CR>
-nnoremap <silent> <leader>ceb :tabnew ~/.config/nvim/whichkey.vim<CR>
-nnoremap <silent> <leader>cey :tabnew ~/.config/nvim/commontypos.vim<CR>
-nnoremap <silent> <leader>csi :source ~/.config/nvim/init.vim<CR>
-nnoremap <silent> <leader>csb :source ~/.config/nvim/whichkey.vim<CR>
-nnoremap <silent> <leader>csy :source ~/.config/nvim/commontypos.vim<CR>
+nnoremap <silent> <leader>cvev :tabnew ~/.vimrc<CR>
+nnoremap <silent> <leader>cvei :tabnew ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>cvet :tabnew ~/.tmux.conf<CR>
+nnoremap <silent> <leader>cveb :tabnew ~/.config/nvim/whichkey.vim<CR>
+nnoremap <silent> <leader>cvey :tabnew ~/.config/nvim/commontypos.vim<CR>
+nnoremap <silent> <leader>cvsi :source ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <leader>cvsb :source ~/.config/nvim/whichkey.vim<CR>
+nnoremap <silent> <leader>cvsy :source ~/.config/nvim/commontypos.vim<CR>
 nnoremap <silent> <leader>cd :digraphs<CR>
-nnoremap <silent> <leader>ccs :Denite colorscheme<CR>
-nnoremap <silent> <leader>cce1 :tabnew ~/.vim/colors/chaos.vim<CR>
+nnoremap <silent> <leader>cscs :Denite -start-filter colorscheme<CR>
+nnoremap <silent> <leader>csce1 :tabnew ~/.vim/colors/chaos.vim<CR>
+nnoremap <silent> <leader>cstb :call ToggleBackgroundMode()<CR>
 nnoremap <silent> <leader>cUec :UltiSnipsEdit<CR>
 nnoremap <silent> <leader>cUee :UltiSnipsEdit<Space>
 nnoremap <silent> <leader>cCd :CocList diagnostics<CR>
@@ -186,29 +187,22 @@ let g:which_key_map.c = {
   \   'I' : 'install-extension',
   \   'f' : 'find-extensions'
   \   },
-  \ 'c' : {
-  \   'name' : '+colorscheme',
-  \   's' : 'set-colorscheme',
-  \   'e' : {
-  \     'name' : '+edit-colorscheme',
-  \     '1' : 'chaos',
-  \     },
-  \   },
-  \ 'e' : {
-  \   'name' : '+edit-configs',
-  \   'b' : 'edit-keybindings',
-  \   'v' : 'edit-vimrc',
-  \   'i' : 'edit-nvim-init',
-  \   't' : 'edit-tmux-conf',
-  \   'y' : 'edit-commontypos'
-  \   },
-  \ 's' : {
-  \   'name' : '+source-configs',
-  \   'b' : 'source-keybindings',
-  \   'i' : 'source-vimrc',
-  \   'y' : 'source-commontypos'
-  \   },
   \ 'd' : 'show-digraphs',
+  \ 's' : {
+  \   'name' : '+styling',
+  \   'c' : {
+  \     'name' : '+colorscheme',
+  \     'e' : {
+  \       'name' : '+edit-colorscheme',
+  \       '1' : 'chaos',
+  \       },
+  \     's' : 'set-colorscheme',
+  \     },
+  \   't' : {
+  \     'name' : '+toggles',
+  \     'b' : 'background light/dark'
+  \     }
+  \   },
   \ 'U' : {
   \   'name' : '+Ultisnips',
   \   'e' : {
@@ -216,10 +210,34 @@ let g:which_key_map.c = {
   \     'c' : 'edit-current',
   \     'e' : 'edit-choice',
   \     },
+  \   },
+  \ 'v' : {
+  \   'name' : '+vim-configs',
+  \   'e' : {
+  \     'name' : '+edit-configs',
+  \     'b' : 'edit-keybindings',
+  \     'v' : 'edit-vimrc',
+  \     'i' : 'edit-nvim-init',
+  \     't' : 'edit-tmux-conf',
+  \     'y' : 'edit-commontypos'
+  \     },
+  \   's' : {
+  \     'name' : '+source-configs',
+  \     'b' : 'source-keybindings',
+  \     'i' : 'source-vimrc',
+  \     'y' : 'source-commontypos'
+  \     },
   \   }
   \ }
 function! FindCocExtensions() abort
   silent execute "!firefox 'https://www.npmjs.com/search?q=keywords:coc.nvim'"
+endfunction
+function! ToggleBackgroundMode() abort
+  if &background == "light"
+    set background=dark
+  else
+    set background=light
+  endif
 endfunction
 
   " ale linting

@@ -32,12 +32,14 @@ fi
 
 # Display env
 systemctl --user import-environment DISPLAY
+systemctl --user start compton
+systemctl --user start xbanish
 
 # Sourcing xprofile
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-xset r rate 200 30
+xset r rate 270 30
 xset dpms 0 0 1800
 xset b off
 xset b 0 0 0

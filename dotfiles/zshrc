@@ -18,7 +18,6 @@
   source $HOME/.exports
   {%@@ endif @@%}
   export LANG=en_US.UTF-8
-  # export LANG=ja_JP.UTF-8
   {%@@ if profile == "Earl-Grey.local" @@%}
   export DEFAULT_CHEAT_DIR='$HOME/.cheat/'
   export CHEATCOLORS=true
@@ -29,10 +28,13 @@
 ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_AUTOCONNECT=false
 
+# frontend-search config
+FRONTEND_SEARCH_FALLBACK='duckduckgo'
+
 # oh-my-zsh settings
-DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="false"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git gulp tmux)
+plugins=(git gulp tmux frontend-search)
 ZSH_THEME=""
 
 {%@@ if profile == "Earl-Grey.local" @@%}

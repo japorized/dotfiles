@@ -44,3 +44,9 @@ export fpath=($fpath $HOME/.bin/fpath)
 
 # Habitica
 source $HOME/.habitica-api
+
+# nvm
+export NVM_DIR=$XDG_DATA_HOME
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec

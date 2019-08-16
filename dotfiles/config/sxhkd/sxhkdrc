@@ -49,9 +49,9 @@ super + n
 super + p
   sh -c "~/.bin/bspc-pip"
 
-# scrot hotkey
-@alt + super + {s,e,m,b,a,shift + e}
-  {rofi-scrot,rofimoji,rofi-mpc,rofi-btctl,rofianime,sh -c "~/.config/rofi/kaomoji-rofi/kaomoji.sh"}
+# rofi shortcuts
+@alt + super + {s,e,m,b,a,shift + e,i,shift + s}
+  {rofi-scrot,rofimoji,rofi-mpc,rofi-btctl,rofianime,sh -c "~/.config/rofi/kaomoji-rofi/kaomoji.sh",rofi-iro,rofi-systemctl-user}
 
 @alt + super + r : {h,j,k,l}
   xrandr --output eDP-1 --rotate {left,normal,inverted,right}
@@ -87,22 +87,25 @@ super + p
   mpc toggle
 
 {XF86AudioRaiseVolume,Menu : F3}
-  sh -c "~/.bin/mypactl -u 2"
+  sh -c "~/.bin/mypactl -u 2 && $HOME/.config/lemonbar/vol.sh &"
 
 {XF86AudioLowerVolume,Menu : F2}
-  sh -c "~/.bin/mypactl -d 2"
+  sh -c "~/.bin/mypactl -d 2 && $HOME/.config/lemonbar/vol.sh &"
 
 {shift + XF86AudioRaiseVolume,Menu: shift + F3}
-  sh -c "~/.bin/mypactl -u 10"
+  sh -c "~/.bin/mypactl -u 10 && $HOME/.config/lemonbar/vol.sh &"
 
 {shift + XF86AudioLowerVolume,Menu : shift + F2}
-  sh -c "~/.bin/mypactl -d 10"
+  sh -c "~/.bin/mypactl -d 10 && $HOME/.config/lemonbar/vol.sh &"
 
 {XF86AudioMute,Menu : F1}
-  sh -c "~/.bin/mypactl -m"
+  sh -c "~/.bin/mypactl -m && $HOME/.config/lemonbar/vol.sh &"
 
 {XF86Calculator,Menu : F11}
   roficalc
+
+XF86Display
+  arandr
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -144,8 +147,12 @@ super + {t,shift + t,f,F}
 	bspc node -t "~{tiled,pseudo_tiled,floating,fullscreen}"
 
 # set the node flags
-super + ctrl + shift + {l,s,p}
-	bspc node -g {locked,sticky,private}
+super + ctrl + shift + {l,s,p,h}
+	bspc node -g {locked,sticky,private,hidden}
+
+# bringing back hidden nodes
+super + ctrl + shift + alt + h
+  bspc-rofi-hidden-windows
 
 # set node layer
 super + ctrl + {minus,equal,plus}
