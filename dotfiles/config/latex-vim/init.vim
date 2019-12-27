@@ -1,6 +1,7 @@
 set encoding=utf-8
 set laststatus=2
 set rtp^=~/.config/latex-vim/,~/.vim rtp+=~/.config/latex-vim/after/,~/.vim/after
+set shada='20,<1000,s100,:0,n$HOME/.data/latex-vim/shada/main.shada
 let &packpath = &runtimepath
 filetype plugin indent on
 syntax on
@@ -36,26 +37,26 @@ execute pathogen#infect('bundle/always/{}')
 execute pathogen#interpose('bundle/tex/vimtex')
 execute pathogen#interpose('bundle/optional/denite.nvim')
 execute pathogen#interpose('bundle/optional/neomru.vim')
-execute pathogen#interpose('bundle/optional/coc.nvim')
 execute pathogen#interpose('bundle/optional/goyo.vim')
 execute pathogen#interpose('bundle/optional/ultisnips')
 execute pathogen#interpose('bundle/calltoload/thesaurus_query.vim')
 Helptags
 
-autocmd! FileType which_key
-autocmd  FileType which_key set laststatus=0 noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 ruler
 so ~/.config/nvim/whichkey.vim
-so ~/.config/nvim/completion.vim
+so ~/.config/latex-vim/completion.vim
 so ~/.config/nvim/commontypos.vim
 
 " Overriding some of the keybindings for this configuration
 nnoremap <silent> <leader>cvei :tabnew ~/.config/latex-vim/init.vim<CR>
 nnoremap <silent> <leader>cvsi :source ~/.config/latex-vim/init.vim<CR>
 
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python'
+
 let g:tex_flavor = 'latex'
 let g:tex_fold_enabled=1
 let g:tex_conceal="abdmgs"
+" let g:tex_conceal="abg"
 autocmd Filetype tex setl updatetime=1000
 " stop thesaurus plugin from starting with its own keys
 let g:tq_map_keys=0

@@ -2,6 +2,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.data
 export CONFIG=$HOME/.config
 export QT_QPA_PLATFORMTHEME="gtk2"
+# export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep.conf
 
 # RubyGems
 export GEM_HOME=$HOME/.gem
@@ -15,6 +16,9 @@ export PATH=$PATH:$HOME/.cabal/bin
 
 # Golang
 # export PATH=$PATH:$HOME/go/bin
+
+# Lua
+export PATH=$PATH:$HOME/.luarocks/bin
 
 # fcitx configs
 export GTK_IM_MODULE=fcitx
@@ -34,11 +38,8 @@ export NNN_SHOW_HIDDEN=1
 # fff
 export FFF_FAV1=~/Documents/TeX_Notes
 export FFF_FAV2=~/Documents/Projects
-export FFF_FAV3=~/Dropbox/Classes/PMATH348
-export FFF_FAV4=~/Dropbox/Classes/PMATH467
-export FFF_FAV5=~/Dropbox/Classes/PMATH365
-export FFF_FAV6=~/Dropbox/Classes/UW\ Course\ Outlines
 
+# node
 export PATH=$HOME/.bin:$HOME/.node_modules/bin:$PATH
 export fpath=($fpath $HOME/.bin/fpath)
 

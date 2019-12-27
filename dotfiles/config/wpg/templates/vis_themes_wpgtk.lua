@@ -6,22 +6,22 @@
 local lexers = vis.lexers
 
 local colors = {
-	['base00'] = '#242120',
-	['base01'] = '#d60012',
-	['base02'] = '#ef151a',
-	['base03'] = '#ff9e95',
-	['base04'] = '#ea888c',
-	['base05'] = '#ffc3bf',
-	['base06'] = '#e93276',
-	['base07'] = '#c8c7c7',
-	['base08'] = '#685f5c',
-	['base09'] = '#af0211',
-	['base0A'] = '#ae1b1e',
-	['base0B'] = '#c48883',
-	['base0C'] = '#a67779',
-	['base0D'] = '#b9a6a5',
-	['base0E'] = '#a9325e',
-  ['base0F'] = '#fffefe',
+	['base00'] = '#32302f',
+	['base01'] = '#fb4934',
+	['base02'] = '#b8bb26',
+	['base03'] = '#fabd2f',
+	['base04'] = '#83a598',
+	['base05'] = '#d3869b',
+	['base06'] = '#8ec07c',
+	['base07'] = '#d5c4a1',
+	['base08'] = '#665c54',
+	['base09'] = '#fb4934',
+	['base0A'] = '#b8bb26',
+	['base0B'] = '#fabd2f',
+	['base0C'] = '#83a598',
+	['base0D'] = '#d3869b',
+	['base0E'] = '#8ec07c',
+  ['base0F'] = '#fbf1c7',
 }
 
 lexers.colors = colors

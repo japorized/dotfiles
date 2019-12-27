@@ -17,7 +17,7 @@ set timeoutlen=200
 set splitbelow
 map <SPACE> <Nop>
 let mapleader=" "
-colorscheme chaos
+colorscheme wpgtk
 
 execute pathogen#infect('bundle/always/{}')
 execute pathogen#interpose('bundle/optional/goyo.vim')
@@ -29,114 +29,6 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 so ~/.config/slim-vim/whichkey.vim
 so ~/.config/nvim/commontypos.vim
-
-set statusline=%!JStatusline()
-
-function! JStatusline()
-  let curmode = mode(1)
-  let statuscolor = StatuslineColor(curmode)
-  let label = StatuslineLabel(curmode)
-  let midsec = "%r\ %.20f%q\ %m\ "
-  let leftsec = "%{SmartFiletype()}%4l/%4L\ %4c\ "
-  return '%#Visual#   ' . statuscolor . '  ' . label . "  %#Normal# " . midsec . "%= " . statuscolor . leftsec
-endfunction
-
-function! StatuslineColor(mode)
-  return get(g:statusline_colors, a:mode, '%#ErrorMsg#')
-endfunction
-
-function! StatuslineLabel(mode)
-  return get(g:statusline_modes, a:mode, a:mode)
-endfunction
-
-function! SmartFiletype() abort
-  return &filetype == '' ? '' : '  ' . &filetype . ' | '
-endfunction
-
-let g:statusline_colors = {
-  \ 'n'      : '%#StatusLine#',
-  \ 'no'     : '%#DiffChange#',
-  \ 'v'      : '%#DiffText#',
-  \ 'V'      : '%#DiffText#',
-  \ "\<C-V>" : '%#DiffText#',
-  \ 's'      : '%#WildMenu#',
-  \ 'S'      : '%#WildMenu#',
-  \ "\<C-S>" : '%#WildMenu#',
-  \ 'i'      : '%#DiffAdd#',
-  \ 'ic'     : '%#DiffAdd#',
-  \ 'ix'     : '%#DiffAdd#',
-  \ 'R'      : '%#DiffDelete#',
-  \ 'Rc'     : '%#DiffDelete#',
-  \ 'Rv'     : '%#DiffDelete#',
-  \ 'Rx'     : '%#DiffDelete#',
-  \ 'c'      : '%#Search#',
-  \ 'cv'     : '%#Search#',
-  \ 'ce'     : '%#Search#',
-  \ 'r'      : '%#Todo#',
-  \ 'rm'     : '%#Todo#',
-  \ '!'      : '%#IncSearch#',
-  \ 't'      : '%#IncSearch#'
-  \ }
-
-let g:statusline_modes = {
-  \ 'n'      : '',
-  \ 'no'     : '',
-  \ 'v'      : '',
-  \ 'V'      : '',
-  \ "\<C-V>" : '',
-  \ 's'      : '閭',
-  \ 'S'      : '閭',
-  \ "\<C-S>" : '閭',
-  \ 'i'      : '',
-  \ 'ic'     : '',
-  \ 'ix'     : '',
-  \ 'R'      : '',
-  \ 'Rc'     : '',
-  \ 'Rv'     : '',
-  \ 'Rx'     : '',
-  \ 'c'      : 'גּ',
-  \ 'cv'     : 'גּ',
-  \ 'ce'     : 'גּ',
-  \ 'r'      : '',
-  \ 'rm'     : '',
-  \ '!'      : '',
-  \ 't'      : ''
-  \ }
-
-set tabline=%!MyTabLine()
-function MyTabLine()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    " select the highlighting
-    if i + 1 == tabpagenr()
-      let s .= '%#StatusLine#'
-    else
-      let s .= '%#Normal#'
-    endif
-
-    " set the tab page number (for mouse clicks)
-    let s .= '%' . (i + 1) . 'T'
-
-    " the label is made by MyTabLabel()
-    let s .= ' %.20{MyTabLabel(' . (i + 1) . ')} '
-  endfor
-
-  " after the last tab fill with TabLineFill and reset tab page nr
-  let s .= '%#Normal#%T'
-
-  " right-align the label to close the current tab page
-  if tabpagenr('$') > 1
-    let s .= '%=%#StatusLine#%X'
-  endif
-
-  return s
-endfunction
-
-function MyTabLabel(n)
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
-  return bufname(buflist[winnr - 1]) . (getbufvar(buflist[winnr - 1], "&mod")?' [+]':'')
-endfunction
 
 " netrw Configs
 nmap <F1> :Lexplore<cr>

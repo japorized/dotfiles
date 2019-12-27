@@ -139,6 +139,16 @@ snippet '(?<!\\)limsup_' "limit supremum" irA
 endsnippet
 
 context "math()"
+snippet '(?<!\\|m)sup_' "supremum" irA
+\sup_{$1}$0
+endsnippet
+
+context "math()"
+snippet '(?<!\\|m)inf_' "infimum" irA
+\inf_{$1}$0
+endsnippet
+
+context "math()"
 snippet '(?<!\\)infty' "infinity" irA
 \infty$0
 endsnippet
@@ -241,7 +251,7 @@ endsnippet
 
 context "math()"
 snippet '\sand' "text and" riA
- \text{ and }
+ ${1:\\quad}\text{ and }$1
 endsnippet
 
 priority 10

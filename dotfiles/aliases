@@ -16,11 +16,11 @@ alias listBrewDependents='brew list -1 | while read cask; do echo -ne "\x1B[1;34
 ##############################
 alias vim="nvim "
 alias vi="nvim "
-alias view="nvim -R "
 alias vimdiff="nvim -d "
 alias svim="nvim -u $CONFIG/slim-vim/init.vim"
-alias tvim="nvim -u $CONFIG/latex-vim/init.vim"
-alias jvim="nvim -u $CONFIG/js-vim/init.vim"
+alias view="nvim -u $CONFIG/slim-vim/init.vim -R "
+alias tvim="NVIM_RPLUGIN_MANIFEST=$XDG_DATA_HOME/latex-vim/rplugin.vim nvim -u $CONFIG/latex-vim/init.vim"
+alias jvim="NVIM_RPLUGIN_MANIFEST=$XDG_DATA_HOME/js-vim/rplugin.vim nvim -u $CONFIG/js-vim/init.vim"
 alias spacevim="nvim -u $HOME/.SpaceVim/init.vim"
 
 ##############################

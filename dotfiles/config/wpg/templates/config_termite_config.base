@@ -1,6 +1,12 @@
 [options]
+allow bold = true
+mouse autohide = true
+dynamic title = true
+audible bell = false
+bold is bright = true
+
 font = SoukouMincho 10
-font = Emoji 10
+font = Noto Color Emoji 10
 font = Hack Nerd Font 11
 
 [colors]

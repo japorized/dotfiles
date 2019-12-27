@@ -1,6 +1,6 @@
 hi   Normal                       guibg={color0}         guifg={color15}
 hi   NonText                      guibg=NONE             guifg={color0}
-hi   Comment                      guibg=NONE             guifg={color8}
+hi   Comment                      guibg=NONE             guifg={color7}
 hi   Conceal                      guibg=NONE             guifg={color4}
 hi   Constant                     guibg=NONE             guifg={color6}
 hi   Error                        guibg={color1}         guifg={color7}

@@ -1,5 +1,5 @@
 {
-    "wallpaper": "colorfulsky_clearseas.jpg",
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/colorfulsky_clearseas.jpg",
     "alpha": "100",
 
     "special": {
@@ -15,8 +15,8 @@
         "color4": "#aaa296",
         "color5": "#6b99b7",
         "color6": "#4883b9",
-        "color7": "#c8c7c5",
-        "color8": "#9f8c67",
+        "color7": "#9f8c67",
+        "color8": "#484337",
         "color9": "#e7e7be",
         "color10": "#a1e6ff",
         "color11": "#ffd96d",

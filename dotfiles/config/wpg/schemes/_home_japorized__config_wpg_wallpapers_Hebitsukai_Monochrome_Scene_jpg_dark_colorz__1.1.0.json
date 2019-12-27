@@ -1,5 +1,5 @@
 {
-    "wallpaper": "Hebitsukai_Monochrome_Scene.jpg",
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/Hebitsukai_Monochrome_Scene.jpg",
     "alpha": "100",
 
     "special": {
@@ -16,7 +16,7 @@
         "color5": "#6f6f6f",
         "color6": "#555555",
         "color7": "#707070",
-        "color8": "#acacac",
+        "color8": "#dddddd",
         "color9": "#909090",
         "color10": "#8a8a8a",
         "color11": "#808080",

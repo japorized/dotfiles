@@ -1,0 +1,65 @@
+priority -50
+
+snippet lqif "if" b
+{% if $1 %}
+	$0
+{% endif %}
+endsnippet
+
+snippet lqelse "else" b
+{% else %}
+	$0
+endsnippet
+
+snippet lqifelse "if-else" b
+{% if $1 %}
+	$2
+{% else %}
+	$0
+{% endif %}
+endsnippet
+
+snippet lqifelsif "if-elsif" b
+{% if $1 %}
+	$2
+{% elsif $3 %}
+	$0
+{% endif %}
+endsnippet
+
+snippet lqifee "if-elsif-else" b
+{% if $1 %}
+	$2
+{% elsif $3 %}
+	$4
+{% else %}
+	$0
+{% endif %}
+endsnippet
+
+snippet elsif "elsif" b
+{% elsif $1 %}
+	$0
+endsnippet
+
+snippet lqunless "unless" b
+{% unless $1 %}
+	$0
+{% endunless %}
+endsnippet
+
+snippet lqfor "for loop" b
+{% for $1 in $2 %}
+	$0
+{% endfor %}
+endsnippet
+
+snippet 'lqcap(ture)?' "capture" br
+{%- capture $1 -%}
+	$0
+{%- endcapture -%}
+endsnippet
+
+snippet 'lqas(sign)?' "assign" br
+{%- assign $1 = $2 -%}
+endsnippet

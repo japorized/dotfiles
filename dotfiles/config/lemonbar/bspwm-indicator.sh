@@ -1,20 +1,19 @@
 #!/bin/bash
 
-# Import color scheme
-. "$HOME/.cache/wpgtk.color"
+. "$XDG_CONFIG_HOME/lemonbar/style.sh"
 
 DESKTOPS=($(bspc query -D))
 DESKTOPS=${#DESKTOPS[@]}
 
 # Options
-width="$(( 45 + DESKTOPS * 35 ))"
+width="$(( 45 + DESKTOPS * 32 ))"
 height="30"
 
 # Get monitor width so we can center the bar.
 resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
 monitor_width="${resolution/x*}"
 offset="$((monitor_width - width))"
-geometry="${width}x${height}+0+5"
+geometry="${width}x${height}+10+10"
 
 indicator() {
   SPACES=$(bspc query -D)
@@ -75,5 +74,5 @@ while true; do
   echo -e "%{F${background}}%{B${color6}}%{A:rofi-startmenu:} \uf303 %{A}%{B-}%{F-} $(indicator) "
   sleep .2
 done | \
-  lemonbar -d -g $geometry -f "Hack Nerd Font" -F "${foreground}" -B "${background}" | \
+  lemonbar -d -g $geometry -f "${iconfont}" -F "${foreground}" -B "${background}" | \
   while read line; do eval "${line}"; done

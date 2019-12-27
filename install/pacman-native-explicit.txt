@@ -13,6 +13,7 @@ audacity
 autoconf
 automake
 awesome
+base
 bash
 bash-completion
 bind-tools
@@ -34,9 +35,9 @@ capitaine-cursors
 castget
 certbot
 certbot-apache
+chromium
 cifs-utils
 code
-compton
 cool-retro-term
 coreutils
 crda
@@ -56,6 +57,7 @@ diffutils
 discord
 dmraid
 docker
+docker-compose
 dosfstools
 dunst
 e2fsprogs
@@ -63,6 +65,7 @@ efibootmgr
 efitools
 entr
 espeak
+evolution
 evtest
 exfat-utils
 f2fs-tools
@@ -83,7 +86,9 @@ findutils
 firefox
 firefox-developer-edition
 fish
+flatpak
 flex
+foliate
 font-mathematica
 fontforge
 fwupd
@@ -93,12 +98,12 @@ gawk
 gcc
 gcc-fortran
 gcc-libs
-geary
 gettext
 ghc
 gifsicle
 gimp
 git
+gitlab-runner
 glade
 glibc
 gnu-free-fonts
@@ -120,8 +125,10 @@ gvim
 gzip
 handbrake
 haveged
+hexchat
 hplip
 htop
+httpie
 id3v2
 ifplugd
 iftop
@@ -137,6 +144,8 @@ ipw2200-fw
 jfsutils
 joyutils
 jpegoptim
+julia
+jupyter-notebook
 kid3-qt
 kiten
 kitty
@@ -159,6 +168,7 @@ linux-headers
 logrotate
 lollypop
 lsof
+luakit
 luarocks
 lutris
 lvm2
@@ -166,6 +176,7 @@ lxappearance
 lxqt-policykit
 lyx
 m4
+maim
 make
 man-db
 man-pages
@@ -186,7 +197,6 @@ ncdu
 ncmpcpp
 neovim
 netctl
-nextcloud
 nextcloud-client
 nfs-utils
 nilfs-utils
@@ -194,6 +204,7 @@ nmap
 nnn
 nodejs
 noto-fonts-cjk
+noto-fonts-emoji
 npm
 ntfs-3g
 oblogout
@@ -201,22 +212,25 @@ obs-studio
 octave
 openssh
 orage
+otf-font-awesome
 otf-ipafont
 p7zip
 pacman
 pacman-contrib
+pandoc
 papirus-icon-theme
 pasystray
 patch
 pavucontrol
 pciutils
-peek
 perl
+picom
 pkgconf
 pkgfile
 plank
 pngcrush
 powertop
+ppsspp
 procps-ng
 psmisc
 pulseaudio
@@ -227,10 +241,10 @@ python
 python-ewmh
 python-gobject
 python-matplotlib
-python-neovim
 python-pandas
 python-pip
 python-pylast
+python-pynvim
 python-sympy
 python2
 python2-pip
@@ -252,6 +266,7 @@ retroarch-assets-xmb
 ristretto
 rlwrap
 rofi
+rofimoji
 rsync
 ruby
 ruby-docs
@@ -266,6 +281,7 @@ seahorse
 sed
 shadow
 sharutils
+simplescreenrecorder
 slop
 smartmontools
 soundfont-fluid
@@ -295,12 +311,13 @@ tlp
 tmux
 tpacpi-bat
 tree
+ttf-font-awesome
 ttf-hack
 ttf-inconsolata
-ttf-joypixels
 ttf-junicode
 ttf-liberation
 ttf-roboto
+ttf-roboto-mono
 tumbler
 unclutter
 unrar
@@ -309,6 +326,7 @@ usb_modeswitch
 usbutils
 util-linux
 uudeview
+vala
 vi
 virtualbox
 vis
@@ -329,6 +347,7 @@ x11-ssh-askpass
 xarchiver
 xclip
 xcursor-simpleandsoft
+xdelta3
 xdg-user-dirs
 xdo
 xf86-video-vesa
@@ -373,6 +392,7 @@ xfdesktop
 xfsprogs
 xfwm4
 xfwm4-themes
+xmlstarlet
 xonotic
 xorg-docs
 xorg-fonts-100dpi
@@ -382,7 +402,6 @@ xorg-luit
 xorg-server
 xorg-server-common
 xorg-server-devel
-xorg-server-xdmx
 xorg-server-xephyr
 xorg-server-xnest
 xorg-server-xvfb

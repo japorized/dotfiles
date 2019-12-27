@@ -9,18 +9,11 @@ if [ ! "$answer" = "n" ]; then
   ln -fs $HOME/.config/pure/async.zsh $HOME/.bin/fpath/async
 fi
 
-echo "Install rofimoji? (Y/n)"
+echo "Enable nextcloud.service? (Y/n)"
 read answer
 if [ ! "$answer" = "n" ]; then
-  echo "Installing rofimoji"
-  git clone https://github.com/fdw/rofimoji $HOME/.config/rofi/rofimoji
-fi
-
-echo "Enable dropbox.service? (Y/n)"
-read answer
-if [ ! "$answer" = "n" ]; then
-  systemctl --user enable dropbox.service
-  systemctl --user start dropbox.service
+  systemctl --user enable nextcloud.service
+  systemctl --user start nextcloud.service
 fi
 
 echo "Enable redshift.service? (Y/n)"

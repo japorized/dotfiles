@@ -9,7 +9,6 @@
   export ZSH=$HOME/.oh-my-zsh
 
 # Env
-  source $HOME/.zshenv
   source $HOME/.aliases
   source $HOME/.term-aliases
   source $HOME/.functions
@@ -28,13 +27,10 @@
 ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_AUTOCONNECT=false
 
-# frontend-search config
-FRONTEND_SEARCH_FALLBACK='duckduckgo'
-
 # oh-my-zsh settings
 DISABLE_AUTO_TITLE="false"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git gulp tmux frontend-search)
+plugins=(git gulp tmux docker colorize extract)
 ZSH_THEME=""
 
 {%@@ if profile == "Earl-Grey.local" @@%}
@@ -45,15 +41,15 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $ZSH/oh-my-zsh.sh
 
 autoload -U promptinit; promptinit
-PURE_CMD_MAX_EXEC_TIME=10
-PURE_PROMPT_SYMBOL=
-PURE_GIT_DOWN_ARROW=⇣
-PURE_GIT_UP_ARROW=⇡
-PURE_PROMPT_SYMBOL=" λ"
-PURE_PROMPT_VICMD_SYMBOL=" ξ"
-prompt pure
-prompt_pure_set_title() {}
-prompt_newline='%666v'
+# PURE_CMD_MAX_EXEC_TIME=10
+# PURE_PROMPT_SYMBOL=
+# PURE_GIT_DOWN_ARROW=⇣
+# PURE_GIT_UP_ARROW=⇡
+# PURE_PROMPT_SYMBOL=" λ"
+# PURE_PROMPT_VICMD_SYMBOL=" ξ"
+# prompt pure
+# prompt_pure_set_title() {}
+# prompt_newline='%666v'
 # PROMPT=' %(?.%F{magenta}λ.%F{red}↯)%f '
 
 # ZSH Syntax Highlighting configs
@@ -74,3 +70,5 @@ if [ -f /home/japorized/.tnsrc ]; then
     source /home/japorized/.tnsrc 
 fi
 ###-tns-completion-end-###
+
+eval "$(starship init zsh)"

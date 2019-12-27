@@ -1,44 +1,50 @@
 [options]
+allow bold = true
+mouse autohide = true
+dynamic title = true
+audible bell = false
+bold is bright = true
+
 font = SoukouMincho 10
-font = Emoji 10
+font = Noto Color Emoji 10
 font = Hack Nerd Font 11
 
 [colors]
 
-foreground      = #fffefe
-foreground_bold = #fffefe
-cursor          = #fffefe
-background      = #242120
+foreground      = #fbf1c7
+foreground_bold = #fbf1c7
+cursor          = #fbf1c7
+background      = #32302f
 
 # Black, Gray, Silver, White
-color0  = #242120
-color8  = #685f5c
-color7  = #c8c7c7
-color15 = #fffefe
+color0  = #32302f
+color8  = #665c54
+color7  = #d5c4a1
+color15 = #fbf1c7
 
 # Red
-color1  = #d60012
-color9  = #af0211
+color1  = #fb4934
+color9  = #fb4934
 
 # Green
-color2  = #ef151a
-color10 = #ae1b1e
+color2  = #b8bb26
+color10 = #b8bb26
 
 # Yellow
-color3  = #ff9e95
-color11 = #c48883
+color3  = #fabd2f
+color11 = #fabd2f
 
 # Blue
-color4  = #ea888c
-color12 = #a67779
+color4  = #83a598
+color12 = #83a598
 
 # Magenta
-color5  = #ffc3bf
-color13 = #b9a6a5
+color5  = #d3869b
+color13 = #d3869b
 
 # Cyan
-color6  = #e93276
-color14 = #a9325e
+color6  = #8ec07c
+color14 = #8ec07c
 
 # Extra colors
 color16 = #f99157

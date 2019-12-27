@@ -72,7 +72,9 @@ textbox-prompt-colon {{
 
 #element {{
     border: 0;
-    padding: 20px 18px;
+    padding: 20px 0;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
 }}
 
 #element.normal.normal {{

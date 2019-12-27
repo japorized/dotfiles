@@ -29,9 +29,11 @@ set t_Co=256
 set timeoutlen=200
 set splitbelow
 set signcolumn=yes
+set mouse=nvi
 map <SPACE> <Nop>
 let mapleader=" "
 filetype indent plugin on
+syntax on
 
 if has("autocmd")
   autocmd Syntax html,javascript,latex,vim setlocal foldmethod=indent
@@ -113,6 +115,16 @@ let g:slime_paste_file = "$HOME/.config/vimslime"
 let g:gutentags_exclude_project_root = ['/usr/local', '/home/japorized/Documents/Projects/japorized.gitlab.io']
 
 let g:coc_start_at_startup=1
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
+" set filetypes as typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+
+let g:twiggy_group_locals_by_slash = 0
+let g:twiggy_local_branch_sort = 'mru'
+let g:twiggy_remote_branch_sort = 'date'
 
 colorscheme wpgtk

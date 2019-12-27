@@ -23,7 +23,7 @@ rofi.width:             50
 rofi.show-icons:        true
 rofi.lines:             6
 rofi.terminal:          st
-rofi.font:              Hack 12
+rofi.font:              Hack Nerd Font 12
 rofi.run:               'zsh -c {{cmd}}'
 rofi.fuzzy:             true
 rofi.opacity:           75

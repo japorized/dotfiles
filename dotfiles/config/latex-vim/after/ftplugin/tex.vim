@@ -1,7 +1,7 @@
 " Simplified function to add new imaps
 " include leader key to set leader
 " otherwise use empty string
-function! AddMathToVimtex(lhs, rhs, lead) abort
+function! VimtexAddMath(lhs, rhs, lead) abort
   if a:lead == ''
     call vimtex#imaps#add_map({
           \ 'lhs' : a:lhs,
@@ -17,30 +17,35 @@ function! AddMathToVimtex(lhs, rhs, lead) abort
           \ })
   endif
 endfunction
-" " mathbb
-" for c in ['C', 'R', 'Q', 'Z', 'N', 'F', 'H', 'P', 'T', '1', 'K', 'M']
-"   call AddMathToVimtex('b' . tolower(c), '\mathbb{' . c . '}', 'b')
-"   call AddMathToVimtex('b' . c, '\mathbb{' . c . '}', 'b')
-" endfor
-" " mathcal
-" for c in ['A', 'B', 'C', 'D', 'F', 'G', 'H', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-"   call AddMathToVimtex('al' . tolower(c), '\mathcal{' . c . '}', 'c')
-"   call AddMathToVimtex('al' . c, '\mathcal{' . c . '}', 'c')
-" endfor
-" " mathfrak
-" for c in ['X', 'Y', 'M', 'N', 'Z', 'F', 'G', 'B']
-"   call AddMathToVimtex('r' . tolower(c), '\mathfrak{' . c . '}', 'f')
-"   call AddMathToVimtex('r' . c, '\mathfrak{' . c . '}', 'f')
-" endfor
-call AddMathToVimtex('hd', '\hdots', '')
-call AddMathToVimtex('cd', '\cdots', '')
-call AddMathToVimtex('dd', '\ddots', '')
-call AddMathToVimtex('vd', '\vdots', '')
+function! VimtexAddCmdToEnv(lhs, rhs, context, lead) abort
+  if a:lead == ''
+    call vimtex#imaps#add_map({
+          \ 'lhs' : a:lhs,
+          \ 'rhs' : a:rhs,
+          \ 'wrapper' : 'vimtex#imaps#wrap_environment',
+          \ 'context' : a:context
+          \ })
+  else
+    call vimtex#imaps#add_map({
+          \ 'lhs' : a:lhs,
+          \ 'rhs' : a:rhs,
+          \ 'leader' : a:lead,
+          \ 'wrapper' : 'vimtex#imaps#wrap_environment',
+          \ 'context' : a:context
+          \ })
+  endif
+endfunction
+call VimtexAddMath('hd', '\hdots', '')
+call VimtexAddMath('cd', '\cdot', '')
+call VimtexAddMath('dd', '\ddots', '')
+call VimtexAddMath('vd', '\vdots', '')
+for i in [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  call VimtexAddCmdToEnv(i . '.', '\item', ['enumerate', 'itemize'], '>')
+endfor
 
 nmap <silent> <leader>vn :VimtexClean<CR>
 nmap <leader>vco :VimtexCompileOutput<CR>
 nmap <leader>vcc :VimtexCompile<CR>
-nmap <leader>vcn :call NeoTexToggle()<CR>
 nmap <leader>vcs :VimtexCompileSS<CR>
 nmap <leader>vll :VimtexLog<CR>
 nmap <leader>vli :VimtexImapsList<CR>
@@ -53,6 +58,7 @@ nmap <silent> <leader>vv :VimtexView<CR>
 nmap <leader>vt :Denite vimtex<CR>
 nmap <leader>vd :VimtexDocPackage<Space>
 nmap <silent> <leader>vfb :call EditBibliography()<CR>
+nmap <silent> <leader>vfm :call EditLatexmkrc()<CR>
 
 let g:which_key_map.v = {
   \ 'name' : '+vimtex',
@@ -76,31 +82,32 @@ let g:which_key_map.v = {
   \ 'c' : {
     \ 'name' : '+compile',
     \ 'c' : 'VimtexCompile',
-    \ 'n' : 'NeotexLive',
     \ 'o' : 'VimtexCompileOutput',
     \ 's' : 'VimtexCompileSS',
   \   },
   \ 'f' : {
     \ 'name' : '+file',
-    \ 'b' : 'edit bibliography'
+    \ 'b' : 'edit bibliography',
+    \ 'm' : 'edit latexmkrc'
   \   },
   \ }
-let g:neotex_status = 0
-function! NeoTexToggle()
-  if g:neotex_status
-    :NeoTexOff
-    echom "Turning off NeoTex live compilation"
-    let g:neotex_status = 0
-  else
-    :NeoTexOn
-    echom "Turning on NeoTex live compilation"
-    let g:neotex_status = 1
-  endif
-endfunction
 
 function! EditBibliography() abort
   let referencefile = expand("%:h") . "/references.bib"
-  silent execute "tabnew " referencefile
+  silent execute "copen"
+  silent execute "e " referencefile
+endfunction
+
+function! EditLatexmkrc() abort
+  let latexmkrc_file = expand("%:h") . "/latexmkrc"
+  silent execute "copen"
+  silent execute "e " latexmkrc_file
+endfunction
+
+function! GoToLabelInFloatingWin() abort
+  call nvim_open_win(0, 1, {"relative": "cursor", "width": 80, "height": 20, "row": 1, "col": 1})
+  redraw!
+  silent execute ':tag ' . shellescape(s:get_visual_selection(), 1)
 endfunction
 
 augroup gitshortcuts
@@ -118,3 +125,18 @@ augroup gitshortcuts
     silent execute "!git reset " expand("%:h")
   endfunction
 augroup END
+
+" credits to this post on SE
+" https://stackoverflow.com/a/6271254
+function! s:get_visual_selection()
+    " Why is this not a built-in Vim script function?!
+    let [line_start, column_start] = getpos("'<")[1:2]
+    let [line_end, column_end] = getpos("'>")[1:2]
+    let lines = getline(line_start, line_end)
+    if len(lines) == 0
+        return ''
+    endif
+    let lines[-1] = lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
+    let lines[0] = lines[0][column_start - 1:]
+    return join(lines, "\n")
+endfunction

@@ -1,19 +1,17 @@
 #!/bin/bash
+# Dependencies:
+# getRes (own)
 
-# Import wal-colors
-. "$HOME/.cache/wpgtk.color"
+. "$XDG_CONFIG_HOME/lemonbar/style.sh"
 
 # Options
 width="180"
 height="30"
-font="Helvetica Neue-9"
 
 # Get monitor width so we can center the bar.
-resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
-monitor_width="${resolution/x*}"
-offset="$((monitor_width - width))"
-geometry="${width}x${height}+${offset}+5"
-
+monitor_width=$(getRes -w)
+offset="$((monitor_width - width - 10))"
+geometry="${width}x${height}+${offset}+10"
 
 Clock() {
     DATETIME=$(date "+%b %d, %H:%M:%S")
@@ -48,4 +46,4 @@ Clock() {
 while true; do
     echo -en "%{c} \uf073  $(Clock) "
     sleep 0.5
-done | lemonbar -d -g $geometry -f "$font" -f "Hack Nerd Font" -f "SoukouMincho-10" -F "${foreground}" -B "${background}"
+done | lemonbar -d -g $geometry -f "$font" -f "${iconfont}" -f "${jpfont}" -F "${foreground}" -B "${background}"

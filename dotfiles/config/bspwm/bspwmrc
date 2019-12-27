@@ -2,9 +2,9 @@
 
 bspc monitor eDP-1 -n eDP-1 -d I II III IV V VI VII
 
-bspc config border_width         2
 sh -c "~/.config/bspwm/bspwm-colors.sh"
 
+# set individual desktops to have their own gaps
 SPACES=$(bspc query -D)
 for SPACE in $SPACES
 do
@@ -15,6 +15,8 @@ do
   bspc config -d ${SPACE} right_padding  100
 done
 
+# configs
+bspc config border_width         2
 bspc config automatic_scheme     spiral
 bspc config split_ratio          0.5
 bspc config borderless_monocle   false
@@ -22,10 +24,12 @@ bspc config gapless_monocle      false
 bspc config focus_follows_pointer true
 
 # Rules
-bspc rule -a Firefox desktop='^2'
+bspc rule -a firefox desktop='^2'
 bspc rule -a Gimp desktop='^4'
 bspc rule -a Sublime_text desktop='^3'
-bspc rule -a retroarch desktop='^7'
+bspc rule -a retroarch desktop='^7' state=fullscreen layer=below
+bspc rule -a Steam desktop='^7'
+bspc rule -a PPSSPPSDL desktop='^7' state=fullscreen layer=below
 bspc rule -a feh state=floating
 bspc rule -a tint2 manage=off
 
@@ -38,19 +42,16 @@ bspc subscribe node_manage | while read -a msg ; do
    [ "$FLOATING_DESKTOP_ID" = "$desk_id" ] && bspc node "$wid" -t floating
 done
 
-# starting applications
+# desktop env-like stuff
+ffplay -nodisp -loglevel quiet -vn -autoexit $XDG_DATA_HOME/sounds/Morning_Maze.m4a &
 ~/.config/bspwm/indicators &
+~/.fehbg &
+
+# autostart programs
 fcitx &
 sxhkd &
-~/.fehbg &
-xset r rate 270 30 &
-xset dpms 0 0 1800 &
-xset b off &
-xset b 0 0 0 &
-# xmodmap ~/.Xmodmap
 xss-lock -- slock &
 libinput-gestures-setup start &
 plank &
 pasystray &
 tint2 &
-ffplay -nodisp -loglevel quiet -vn -autoexit $XDG_DATA_HOME/sounds/Morning_Maze.m4a &

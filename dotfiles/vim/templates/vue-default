@@ -1,0 +1,17 @@
+<template>
+
+</template>
+
+<style scoped>
+
+</style>
+
+<script charset="utf-8">
+export default {
+  data() {
+    return {
+
+    }
+  }
+}
+</script>

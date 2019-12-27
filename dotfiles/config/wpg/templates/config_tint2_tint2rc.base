@@ -252,37 +252,37 @@ button_max_icon_size = 0
 
 #-------------------------------------
 # Button 3
-# button = new
-# button_text = 
-# button_tooltip = termite
-# button_lclick_command = termite
-# button_rclick_command = 
-# button_mclick_command = 
-# button_uwheel_command = 
-# button_dwheel_command = 
-# button_font = Hack Nerd Font 9
-# button_font_color = {color15} 100
-# button_padding = 12 0
-# button_background_id = 1
-# button_centered = 1
-# button_max_icon_size = 0
+button = new
+button_text = 
+button_tooltip = Cantor
+button_lclick_command = cantor
+button_rclick_command = 
+button_mclick_command = 
+button_uwheel_command = 
+button_dwheel_command = 
+button_font = Hack Nerd Font 9
+button_font_color = {color15} 100
+button_padding = 12 0
+button_background_id = 1
+button_centered = 1
+button_max_icon_size = 0
 
 #-------------------------------------
 # Button 4
-# button = new
-# button_text = 
-# button_tooltip = Thunar
-# button_lclick_command = thunar
-# button_rclick_command = dmenu_extended_run
-# button_mclick_command = 
-# button_uwheel_command = 
-# button_dwheel_command = 
-# button_font = Hack Nerd Font 9
-# button_font_color = {color15} 100
-# button_padding = 12 0
-# button_background_id = 1
-# button_centered = 1
-# button_max_icon_size = 0
+button = new
+button_text = 
+button_tooltip = Evolution
+button_lclick_command = evolution
+button_rclick_command =
+button_mclick_command = 
+button_uwheel_command = 
+button_dwheel_command = 
+button_font = Hack Nerd Font 9
+button_font_color = {color15} 100
+button_padding = 12 0
+button_background_id = 1
+button_centered = 1
+button_max_icon_size = 0
 
 #-------------------------------------
 # Button 5

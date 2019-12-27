@@ -1,5 +1,5 @@
 {
-    "wallpaper": "konohanakitan_hydrangea.jpg",
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/konohanakitan_hydrangea.jpg",
     "alpha": "100",
 
     "special": {
@@ -15,8 +15,8 @@
         "color4": "#00abe7",
         "color5": "#399af7",
         "color6": "#5e82e3",
-        "color7": "#ededed",
-        "color8": "#647a9a",
+        "color7": "#787878",
+        "color8": "#374354",
         "color9": "#8eadd5",
         "color10": "#697960",
         "color11": "#6d6b93",

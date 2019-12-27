@@ -1,16 +1,19 @@
 #!/bin/bash
-. "$HOME/.cache/wpgtk.color"
+# Dependencies:
+# getRes (own), pulseaudio-ctl, mkb
+
+. "$XDG_CONFIG_HOME/lemonbar/style.sh"
 
 width="300"
 height="50"
-resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
-monitor_width="${resolution/x*}"
-monitor_height="${resolution#*x}"
-offset_width="$(( monitor_width / 2 - width / 2 ))"
-offset_height="$(( monitor_height / 2 + height ))"
+resolution=($(getRes))
+monitor_width=${resolution[0]}
+monitor_height=${resolution[1]}
+offset_width=$(( monitor_width - width - 10 ))
+offset_height=$(( monitor_height - height - 10 ))
 geometry="${width}x${height}+${offset_width}+${offset_height}"
 
-Status() {
+Muted() {
   pulseaudio-ctl full-status | cut -d " " -f2
 }
 
@@ -20,9 +23,9 @@ Volume(){
 }
 
 while true; do
-  if [[ $(Status) == "yes" ]] ; then
+  if [[ $(Muted) == "yes" ]] ; then
 echo -e "%{c}%{F${foreground}}%{B${background}}    %{F-}%{B-}" && sleep 1.5 && exit
   else
-echo -e "%{l}%{F${foreground}}%{B${background}}    Volume: $(Volume) %{F-}%{B-}" && sleep 1.5 && exit
+echo -e "%{l}%{F${foreground}}%{B${background}}    $(Volume) %{F-}%{B-}" && sleep 1.5 && exit
   fi
-done | lemonbar -d -g $geometry -f "FontAwesome-18" -B "${background}"
+done | lemonbar -d -g $geometry -f "${iconfont}" -B "${background}"

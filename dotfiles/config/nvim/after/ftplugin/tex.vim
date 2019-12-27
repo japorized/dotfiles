@@ -6,7 +6,8 @@ source $HOME/.config/nvim/commontypos.vim
 " which-keys
 nmap <silent> <leader>vn :VimtexClean<CR>
 nmap <leader>vco :VimtexCompileOutput<CR>
-nmap <leader>vcc :call NeoTexToggle()<CR>
+nmap <leader>vcc :VimtexCompile<CR>
+nmap <leader>vcn :call NeoTexToggle()<CR>
 nmap <leader>vcs :VimtexCompileSS<CR>
 nmap <leader>vs :VimtexStatus<CR>
 nmap <leader>ve :VimtexErrors<CR>
@@ -24,7 +25,8 @@ let g:which_key_map.v = {
    \ }
 let g:which_key_map.v.c = {
   \ 'name' : '+compile',
-  \ 'c' : 'NeotexLive',
+  \ 'c' : 'VimtexCompile',
+  \ 'n' : 'NeotexLive',
   \ 'o' : 'VimtexCompileOutput',
   \ 's' : 'VimtexCompileSS',
   \ }

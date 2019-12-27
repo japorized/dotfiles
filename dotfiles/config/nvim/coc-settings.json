@@ -1,8 +1,20 @@
 {
+  "languageserver": {
+    "lua": {
+      "command": "lua-lsp",
+      "filetypes": ["lua"]
+    }
+  },
   "diagnostic.refreshOnInsertMode": true,
   "suggest.autoTrigger": "trigger",
-  "suggest.noselect": false,
+  "suggest.noselect": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "suggest.snippetIndicator": " ",
-  "snippets.userSnippetsDirectory": "/home/japorized/.vim/mysnippets"
+  "emmet.showAbbreviationSuggestions": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "vue": "html"
+  },
+  "vetur.format.defaultFormatter.html": "prettier"
 }

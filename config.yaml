@@ -77,6 +77,9 @@ dotfiles:
   f_aria2.conf:
     dst: ~/.config/aria2/aria2.conf
     src: config/aria2/aria2.conf
+  f_compton.conf:
+    dst: ~/.config/compton.conf
+    src: config/compton.conf
   f_config.conf:
     dst: ~/.config/neofetch/config.conf
     src: config/neofetch/config.conf
@@ -215,6 +218,7 @@ profiles:
     - d_rofi
     - d_slim-vim
     - d_wpg_templates
+    - f_compton.conf
   ubuntu1604-002:
     dotfiles:
     - f_vimrc

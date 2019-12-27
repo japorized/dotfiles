@@ -1,245 +1,370 @@
-#
-# wm independent hotkeys
-#
+# Category: System controls
 
-# terminal emulator
-super + Return
-  termite
-
-shift + super + Return
-  tdrop -ma -w -2 -s " dropdown" termite
-
-# shift + super + Return
-#   kitty --new-session ~/.config/kitty/new-tmux
-
-alt + grave
-  kill -s USR1 $(pidof deadd-notification-center)
-
-# program launcher
-alt + space
- 	rofi -show run
-
-shift + alt + space
-  dmenu_extended_run
-
-super + grave
-  rofi -show window
-
-@ctrl + super + alt + {f,e,t,z,b}
-  {firefox,\
-  nvim-qt,\
-  thunar,\
-  tabbed-zathura -n,\
-  bwmenu}
-
-# status display
-super + i
-  sh -c "~/.bin/show-lemonbar status"
-
-super + I
-  rofi-lemon
-
-super + o
-  sh -c "~/.bin/show-lemonbar datetime battery"
-
-super + n
-  sh -c "~/.bin/show-lemonbar nowplaying"
-
-# picture-in-picture mode
-super + p
-  sh -c "~/.bin/bspc-pip"
-
-# rofi shortcuts
-@alt + super + {s,e,m,b,a,shift + e,i,shift + s}
-  {rofi-scrot,rofimoji,rofi-mpc,rofi-btctl,rofianime,sh -c "~/.config/rofi/kaomoji-rofi/kaomoji.sh",rofi-iro,rofi-systemctl-user}
-
-@alt + super + r : {h,j,k,l}
-  xrandr --output eDP-1 --rotate {left,normal,inverted,right}
-
-{XF86Favorites,@alt + super + w}
-  rofiwpg
-
-{XF86PowerOff,@alt + super + grave}
+# Desc: run rofi-powermenu
+{XF86PowerOff,super + alt + grave}
   rofi-powermenu
 
-# XF86 Keys & Context Menu key as modal key for multimedia-key emulation
-  # Context Menu is Menu button for generic keyboards
-  # Press ESC to exit mode
+# Desc: increase brightness by 5%
 {XF86MonBrightnessUp,Menu : F6}
   /usr/bin/light -A 5 && ~/.config/lemonbar/brightness.sh
 
+# Desc: increase brightness by 15%
 {shift + XF86MonBrightnessUp,Menu : shift + F6}
   /usr/bin/light -A 15 && ~/.config/lemonbar/brightness.sh
 
+# Desc: decrease brightness by 5%
 {XF86MonBrightnessDown,Menu : F5}
   /usr/bin/light -U 5 && ~/.config/lemonbar/brightness.sh
 
+# Desc: decrease brightness by 15%
 {shift + XF86MonBrightnessDown,Menu : shift + F5}
   /usr/bin/light -U 15 && ~/.config/lemonbar/brightness.sh
 
+# Desc: go to next on mpd
 {XF86AudioNext,Menu : F9}
   mpc next
 
+# Desc: restart/go to prev on mpd
 {XF86AudioPrev,Menu : F7}
   mpc cdprev
 
-{XF86AudioPlay,XF86AudioPause,Menu: F8}
+# Desc: toggle play pause on mpd
+{XF86AudioPlay,XF86AudioPause,Menu; F8}
   mpc toggle
 
+# Desc: increase volume by 2%
 {XF86AudioRaiseVolume,Menu : F3}
   sh -c "~/.bin/mypactl -u 2 && $HOME/.config/lemonbar/vol.sh &"
 
+# Desc: increase volume by 10%
+{shift + XF86AudioRaiseVolume,Menu : shift + F3}
+  sh -c "~/.bin/mypactl -u 10 && $HOME/.config/lemonbar/vol.sh &"
+
+# Desc: decrease volume by 2%
 {XF86AudioLowerVolume,Menu : F2}
   sh -c "~/.bin/mypactl -d 2 && $HOME/.config/lemonbar/vol.sh &"
 
-{shift + XF86AudioRaiseVolume,Menu: shift + F3}
-  sh -c "~/.bin/mypactl -u 10 && $HOME/.config/lemonbar/vol.sh &"
-
+# Desc: decrease volume by 10%
 {shift + XF86AudioLowerVolume,Menu : shift + F2}
   sh -c "~/.bin/mypactl -d 10 && $HOME/.config/lemonbar/vol.sh &"
 
+# Desc: toggle audio mute
 {XF86AudioMute,Menu : F1}
   sh -c "~/.bin/mypactl -m && $HOME/.config/lemonbar/vol.sh &"
 
+# ------
+
+# Category: Application shortcuts
+# Desc: start a new terminal session
+super + Return
+  termite
+
+# Desc: toggle quake-like dropdown terminal
+shift + super + Return
+  tdrop -ma -w -2 -s " dropdown" termite
+
+# Desc: toggle notification center
+alt + grave
+  kill -s USR1 $(pidof deadd-notification-center)
+
+# Desc: start program launcher
+alt + space
+  rofi -show run
+
+# Desc: start file searcher
+shift + alt + space
+  dmenu_extended_run
+
+# Desc: run firefox
+super + a ; f
+  firefox
+
+# Desc: run rofianime
+super + a ; a
+  rofianime
+
+# Desc: run gnvim
+super + a ; e
+  gnvim
+
+# Desc: run thunar
+super + a ; t
+  thunar
+
+# Desc: run tabbed-zathura
+super + a ; z
+  tabbed-zathura -n
+
+# Desc: run bwmenu
+super + a ; b
+  bwmenu
+
+# Desc: temporarily show bspwm desktop indicator
+super + i ; b
+  sh -c "~/.bin/show-lemonbar bspwm-indicator"
+
+# Desc: temporarily show datetime and battery lemonbars
+super + i ; c
+  sh -c "~/.bin/show-lemonbar datetime battery"
+
+# Desc: show useful information using rofi and lemonbar
+super + i ; g
+  rofi-lemon
+
+# Desc: show system status
+super + i ; i
+  sh -c "~/.bin/show-lemonbar status"
+
+# Desc: show nowplaying info
+super + i ; n
+  sh -c "~/.bin/show-lemonbar nowplaying"
+
+# Desc: show bspwm window info
+super + i ; W
+  sh -c "~/.bin/show-lemonbar bspwm-window-info"
+
+# Desc: show weather info
+super + i ; w
+  sh -c "~/.bin/show-lemonbar weather"
+
+# Desc: picture-in-picture mode
+super + p
+  sh -c "~/.bin/bspc-pip"
+
+# Desc: show sxhkd cheatsheet
+super + s
+  rofi-sxhkd-cheatsheet
+
+# rofi utilities
+# Desc: run bluetooth utility menu
+super + u ; b
+  rofi-btctl
+
+# Desc: run emoji picker
+super + u ; e
+  rofimoji
+
+# Desc: run kaomoji picker
+super + u ; E
+  sh -c "~/.config/rofi/kaomoji-rofi/kaomoji.sh"
+
+# Desc: run iro menu
+super + u ; i
+  rofi-iro
+
+# Desc: run rofi mpc menu
+super + u ; m
+  rofi-mpc
+
+# Desc: run screenshot utility
+super + u ; s
+  rofi-screenshot
+
+# Desc: run systemctl rofi menu
+super + u ; S
+  rofi-systemctl-user
+
+# Desc: run rofiwpg
+super + u ; w
+  rofiwpg
+
+# super + u ; r ; {h,j,k,l}
+#   xrandr --output eDP-1 --rotate {left,normal,inverted,right}
+
+# Desc: start roficalc
 {XF86Calculator,Menu : F11}
   roficalc
 
+# Desc: run arandr
 XF86Display
   arandr
 
-# make sxhkd reload its configuration files:
+# -----
+
+# Category: bspwm -- configuration controls
+# Desc: reload sxhkd
 super + Escape
-	pkill -USR1 -x sxhkd
-#
-# bspwm hotkeys
-#
+  pkill -USR1 -x sxhkd
 
-# quit bspwm normally
+# Desc: quit bspwm
 super + alt + Escape
-	sh -c "$HOME/.bin/cleandesktop.sh && bspc quit"
+  sh -c "$HOME/.bin/cleandesktop.sh && bspc quit"
 
-# restart bspwm
-super + alt + shift + r
+# Desc: restart bspwm
+shift + super + alt + r
   bspc wm -r
 
-# close and kill
-super + {_,shift + }q
-	bspc node -{c,k}
-
-# alternate between the tiled and monocle layout
-super + m
-	bspc desktop -l next
-
-# if the current node is automatic, send it to the last manual, otherwise pull the last leaf
-super + y
-	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
-
-# swap the current node and the biggest node
-super + b
-	bspc node -s biggest.local
-
-#
-# state/flags
-#
-
-# set the window state
-super + {t,shift + t,f,F}
-	bspc node -t "~{tiled,pseudo_tiled,floating,fullscreen}"
-
-# set the node flags
-super + ctrl + shift + {l,s,p,h}
-	bspc node -g {locked,sticky,private,hidden}
-
-# bringing back hidden nodes
-super + ctrl + shift + alt + h
-  bspc-rofi-hidden-windows
-
-# set node layer
-super + ctrl + {minus,equal,plus}
-  bspc node -l {below,normal,above}
-
-#
-# focus/swap/rotate
-#
-
-# focus the node in the given direction
-super + {h,j,k,l}
-  bspc node -f {west,south,north,east}
-
-super + shift + {h,j,k,l}
-  sh -c "~/.bin/bspc-smartmove {left,down,up,right}"
-
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous node in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local
-
-# focus the next/previous desktop in the current monitor
-# super + bracket{left,right}
-super + {Left,Right}
-	bspc desktop -f {prev,next}.local
-
-# focus the older or newer node in the focus history
-super + {Tab,shift + Tab}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
-
-super + shift + {Left,Right}
-  bspc node -d {prev,next}
-
-# rotate nodes
-super + {_,shift +}r
-  bspc node @/ -R {90,270}
-
-#
-# preselect
-#
-
-# preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
-
-# cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-#
-# move/resize
-#
-
-# expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-# contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-
-#
-# Gap control
-#
+# Desc: Toggle desktop gaps
 super + g
   sh -c "~/.config/bspwm/gaps.sh"
 
-#
-# Floating windows
-#
-# snap a floating window
-super + w
+# -----
+
+# Category: bspwm -- layout controls
+# Desc: toggle between the tiled and monocle layout
+super + m
+  bspc desktop -l next
+
+# Desc: preselect the direction
+super + ctrl + {h,j,k,l}
+  bspc node -p {west,south,north,east}
+
+# Desc: preselect the ratio
+super + ctrl + {1-9}
+  bspc node -o 0.{1-9}
+
+# Desc: cancel the preselection for the focused node
+super + ctrl + space
+  bspc node -p cancel
+
+# Desc: cancel the preselection for the focused desktop
+super + ctrl + shift + space
+  bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# Desc: rotate nodes {anti-clockwise, clockwise}
+super + {_,shift +}r
+  bspc node @/ -R {90,270}
+
+# -----
+
+# Category: bspwm -- window movemments
+# Desc: swap the current node and the biggest node
+super + b
+  bspc node -s biggest.local
+
+# Desc: send window to given desktop and focus
+super + shift + alt + {1-9,0}
+  bspc node -d '^{1-9,10}' --follow
+
+# Desc: send window to left or right desktop
+super + shift + {Left,Right}
+  bspc node -d {prev,next}
+
+# Desc: send window to left or right desktop and follow
+super + shift + alt + {Left,Right}
+  bspc node -d {prev, next} --follow
+
+# -----
+
+# Category: bspwm -- window controls (stateless)
+# Desc: close and kill windows
+{_,shift + }super + q
+  bspc node -{c,k}
+
+# Desc: show active windows
+super + grave
+  rofi -show window
+
+# Desc: focus the node in the given direction
+super + {h,j,k,l}
+  bspc node -f {west,south,north,east}
+
+# Desc: expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Desc: contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+  bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Category: bspwm -- window controls (non-floating / non-fullscreen)
+# Desc: swap tiled window (is aware of floating windows)
+super + shift + {h,j,k,l}
+  sh -c "~/.bin/bspc-smartmove {left,down,up,right}"
+
+# if the current node is automatic, send it to the last manual, otherwise pull the last leaf
+# super + y
+#   bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
+
+# Category: bspwm -- window controls (floating)
+# Desc: snap a floating window with guides
+super + w ; g
   sh -c "~/.bin/bspc-floatsnap"
+
+# Desc: snap a floatng window to top left
+super + w ; q
+  sh -c "~/.bin/bspc-smartmove top-left"
+
+# Desc: snap a floatng window to top center
+super + w ; w
+  sh -c "~/.bin/bspc-smartmove top-center"
+
+# Desc: snap a floatng window to top right
+super + w ; e
+  sh -c "~/.bin/bspc-smartmove top-right"
+
+# Desc: snap a floatng window to center left
+super + w ; a
+  sh -c "~/.bin/bspc-smartmove center-left"
+
+# Desc: snap a floatng window to center
+super + w ; s
+  sh -c "~/.bin/bspc-smartmove center"
+
+# Desc: snap a floatng window to center right
+super + w ; d
+  sh -c "~/.bin/bspc-smartmove center-right"
+
+# Desc: snap a floatng window to bottom left
+super + w ; z
+  sh -c "~/.bin/bspc-smartmove bottom-left"
+
+# Desc: snap a floatng window to bottom center
+super + w ; x
+  sh -c "~/.bin/bspc-smartmove bottom-center"
+
+# Desc: snap a floatng window to bottom center
+super + w ; c
+  sh -c "~/.bin/bspc-smartmove bottom-right"
+
+# ------
+
+# Category: bspwm -- window states
+# Desc: set the window state (tiled, pseudo_tiled, floating, fullscreen)
+super + {t,T,f,F}
+  bspc node -t "~{tiled,pseudo_tiled,floating,fullscreen}"
+
+# Desc: set the node flags (locked, sticky, private, hidden)
+shift + super + ctrl + {l,s,p,h}
+  bspc node -g {locked,sticky,private,hidden}
+
+# Desc: bringing back hidden nodes
+shift + super + alt + ctrl + h
+  bspc-rofi-hidden-windows
+
+# Desc: set node layer (below, normal, above)
+super + ctrl + {minus,equal,plus}
+  bspc node -l {below,normal,above}
+
+# -----
+
+# Category: bspwm -- window focus
+# Desc: focus the next/previous desktop in the current monitor
+super + {Left,Right}
+  bspc desktop -f {prev,next}.local
+
+# Desc: focus on last focused node on the same desktop
+super + Tab
+  bspc node older.local -f
+
+# Desc: focus the older or newer node in the focus history
+super + alt + {Tab,shift + Tab}
+  bspc wm -h off; \
+  bspc node {older,newer} -f; \
+  bspc wm -h on
+
+# Desc: focus on next or prev window
+super + {_,shift + }n
+  bspc node {next,prev}.local -f
+
+# Desc: focus or send to the given desktop
+super + {_,shift +}{1-9,0}
+  bspc {desktop -f,node -d} '^{1-9,10}'
+
+# focus the node for the given path jump
+# super + {p,b,comma,period}
+# 	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous node in the current desktop
+# super + {_,shift + }c
+#   bspc node -f {next,prev}.local

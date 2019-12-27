@@ -1,16 +1,17 @@
 #!/bin/bash
+# Dependencies:
+# getRes, bspwm
 
-# Import color scheme
-. "$HOME/.cache/wpgtk.color"
+. "$XDG_CONFIG_HOME/lemonbar/style.sh"
 
 # Options
 width="150"
 height="30"
 
 # Get monitor width so we can center the bar.
-resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
-monitor_width="${resolution/x*}"
-monitor_height="${resolution#*x}"
+resolution=($(getRes))
+monitor_width=${resolution[0]}
+monitor_height=${resolution[1]}
 offset_x="$((monitor_width - width))"
 offset_y="$((monitor_height - height - 5))"
 geometry="${width}x${height}+${offset_x}+${offset_y}"
@@ -125,5 +126,5 @@ while true; do
   echo -e "%{r} $(windowflag) %{F${background}}%{B${color3}} $(windowlayer) $(windowstate) %{F-}%{B-} "
   sleep .2
 done | \
-  lemonbar -d -g $geometry -f "Hack Nerd Font" -F "${foreground}" -B "${background}" | \
+  lemonbar -d -g $geometry -f "${iconfont}" -F "${foreground}" -B "${background}" | \
   while read line; do eval "${line}"; done

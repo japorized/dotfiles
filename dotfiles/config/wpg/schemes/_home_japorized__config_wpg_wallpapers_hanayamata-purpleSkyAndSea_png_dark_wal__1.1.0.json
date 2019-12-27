@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/hanayamata-purpleSkyAndSea.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#190033",
+        "foreground": "#ffe6ff",
+        "cursor": "#ffe6ff"
+    },
+    "colors": {
+        "color0": "#190033",
+        "color1": "#8000ff",
+        "color2": "#8b00ff",
+        "color3": "#904bfe",
+        "color4": "#9d60ff",
+        "color5": "#af60ff",
+        "color6": "#be80ff",
+        "color7": "#c9a0ff",
+        "color8": "#7f7785",
+        "color9": "#4d0099",
+        "color10": "#5500aa",
+        "color11": "#5c00bb",
+        "color12": "#6600cc",
+        "color13": "#7400dd",
+        "color14": "#7a00ee",
+        "color15": "#ffe6ff"
+    }
+}

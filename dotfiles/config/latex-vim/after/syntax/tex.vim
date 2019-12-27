@@ -130,16 +130,20 @@ syn match texMathSymbol '\\trianglelefteq' contained conceal cchar=⊴
 syn match texMathSymbol '\\trianglerighteq' contained conceal cchar=⊵
 syn match texMathSymbol '\\dif' contained conceal cchar=d
 syn match texMathSymbol '\\tilde' contained conceal cchar=˜
+syn match texMathSymbol '\\widetilde' contained conceal cchar=˜
 syn match texMathSymbol '\\hat' contained conceal cchar=🎩
 syn match texMathSymbol '\\widehat' contained conceal cchar=🎩
 syn match texMathSymbol '\\bar' contained conceal cchar=‾
 syn match texMathSymbol '\\overline' contained conceal cchar=‾
+syn match texMathSymbol '\\underline' contained conceal cchar=_
 syn match texMathSymbol '\\%' contained conceal cchar=%
 syn match texMathSymbol '\\$\>' contained conceal cchar=$
 syn match texMathSymbol '\\left\.' contained conceal
 syn match texMathSymbol '\\right\.' contained conceal
 syn match texMathSymbol '\\because' contained conceal cchar=∵
 syn match texMathSymbol '\\therefore' contained conceal cchar=∴
+syn match texMathSymbol '\\bigcupdot' contained conceal cchar=⊍
+syn match texMathSymbol '\\cupdot' contained conceal cchar=⊍
 
 " actuarial symbols
 syn match texMathSymbol '\\ax\*\>' contained conceal cchar=ā
@@ -153,6 +157,7 @@ syn match texStatement /\\index{[^}]*}\+/ contains=@texFoldGroup,@texMathZoneGro
 syn match texStatement /\\label/ nextgroup=texCite conceal cchar=
 syn match texStatement /\\hyperref\[[^\]]*\]\+/ conceal cchar=◘
 syn match texStatement /\\cref/ nextgroup=texCite conceal cchar=◘
+syn match texStatement /\\nameref/ nextgroup=texCite conceal cchar=◘
 syn match texStatement '``' contained conceal cchar=“
 syn match texStatement '\'\'' contained conceal cchar=”
 syn match texStatement '`' contained conceal cchar='

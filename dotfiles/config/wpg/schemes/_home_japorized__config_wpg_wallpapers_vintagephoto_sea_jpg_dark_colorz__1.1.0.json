@@ -1,5 +1,5 @@
 {
-    "wallpaper": "vintagephoto_sea.jpg",
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/vintagephoto_sea.jpg",
     "alpha": "100",
 
     "special": {
@@ -16,7 +16,7 @@
         "color5": "#6ba4e3",
         "color6": "#6bc8e3",
         "color7": "#cfbcbc",
-        "color8": "#687174",
+        "color8": "#393d3f",
         "color9": "#7b8ca1",
         "color10": "#2c9293",
         "color11": "#4d7b8f",

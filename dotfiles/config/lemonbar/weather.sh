@@ -1,7 +1,8 @@
 #!/bin/bash
+# Dependencies:
+# getRes (own), jq, curl
 
-# Import color scheme
-. "$HOME/.cache/wpgtk.color"
+. "$XDG_CONFIG_HOME/lemonbar/style.sh"
 
 # Options
 width="400"
@@ -9,9 +10,9 @@ height="30"
 ssid="---"
  
 # Get monitor width so we can center the bar.
-resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
-monitor_width="${resolution/x*}"
-monitor_height="${resolution#*x}"
+resolution=($(getRes))
+monitor_width=${resolution[0]}
+monitor_height=${resolution[1]}
 offset_width="$((monitor_width / 2 - width / 2))"
 offset_height="$((monitor_height - height - 5))"
 geometry="${width}x${height}+${offset_width}+${offset_height}"
@@ -41,4 +42,4 @@ while true; do
   else
     counter=$(($counter + 1))  
   fi
-done | lemonbar -d -g $geometry -f "Helvetica Neue-9" -f "Hack Nerd Font-10" -f "EmojiOne-10" -B "${background}"
+done | lemonbar -d -g $geometry -f "${font}" -f "${iconfont}" -f "Noto Color Emoji-9" -B "${background}"

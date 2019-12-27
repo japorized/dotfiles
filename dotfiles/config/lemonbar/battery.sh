@@ -1,41 +1,39 @@
 #!/bin/bash
+# Dependencies:
+# getRes (own), acpi
 
-# Import color scheme
-. "$HOME/.cache/wpgtk.color"
+. "$XDG_CONFIG_HOME/lemonbar/style.sh"
 
 #Options
 width="90"
 height="30"
-font="Helvetica Neue-9"
 
 # Get monitor width so we can center the bar.
-resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
-monitor_width="${resolution/x*}"
-offset="$((monitor_width - width))"
-geometry="${width}x${height}+${offset}+40"
+monitor_width=$(getRes -w)
+offset="$((monitor_width - width - 10))"
+geometry="${width}x${height}+${offset}+50"
 
 Battery() {
-  ACPIBATT=$(acpi --battery)
-  BATPERC=$(echo $ACPIBATT | cut -d, -f2 | tr -d "%")
+  BATTPERC=$(acpi --battery | cut -d, -f2 | tr -d "%")
   STATUS=$(acpi -a | cut -d" " -f3)
   if [[ "$STATUS" == "on-line" ]] ; then
-    echo -ne "%{F${color14}}%{F-}  %{F${foreground}}$BATPERC % %{F-}"
+    echo -ne "%{F${color14}}%{F-}  %{F${foreground}}$BATTPERC % %{F-}"
   # elif [[ "$STATUS" == " Full" ]] ; then
-  #   echo -ne "%{F${color5}}%{F-} %{F${foreground}}$BATPERC % %{F-}"
-  elif [[ "$BATPERC" -lt 20 ]]; then
-    echo -ne "%{F${color1}}%{F-} %{F${foreground}}$BATPERC % %{F-}"
-  elif [[ "$BATPERC" -lt 35 ]]; then
-    echo -ne "%{F${color9}}%{F-} %{F${foreground}}$BATPERC % %{F-}"
-  elif [ "$BATPERC" -lt 50 ]; then
-    echo -ne "$BATPERC %"
-  elif [[ "$BATPERC" -lt 70 ]]; then
-    echo -ne "$BATPERC %"
+  #   echo -ne "%{F${color5}}%{F-} %{F${foreground}}$BATTPERC % %{F-}"
+  elif [[ "$BATTPERC" -lt 20 ]]; then
+    echo -ne "%{F${color1}}%{F-} %{F${foreground}}$BATTPERC % %{F-}"
+  elif [[ "$BATTPERC" -lt 35 ]]; then
+    echo -ne "%{F${color9}}%{F-} %{F${foreground}}$BATTPERC % %{F-}"
+  elif [ "$BATTPERC" -lt 50 ]; then
+    echo -ne "$BATTPERC %"
+  elif [[ "$BATTPERC" -lt 70 ]]; then
+    echo -ne "$BATTPERC %"
   else
-    echo -ne "$BATPERC %"
+    echo -ne "$BATTPERC %"
   fi
 }
 
 while true; do
     echo -e "%{c}%{F${foreground}}%{B${background}} $(Battery) %{F-}%{B-}"
     sleep 30
-done | lemonbar -d -g $geometry -f "$font" -f "FontAwesome" -B "${background}"
+  done | lemonbar -d -g $geometry -f "$font" -f "${iconfont}" -B "${background}"

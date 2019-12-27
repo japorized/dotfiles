@@ -3,6 +3,7 @@ call which_key#register('<Space>', "g:which_key_map")
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :WhichKeyVisual '<Space>'<CR>
 let g:which_key_map = {}
+
   " Document Related
 nmap <Leader>dsi :IndentLinesToggle<CR>
 nmap <silent> <leader>dst :call TypeWriterToggle()<CR>
@@ -19,8 +20,8 @@ vmap <leader>dchc :HyphenToCamelSel<CR>
 vmap <leader>dchs :HyphenToSnakeSel<CR>
 vmap <leader>dcsh :SnakeToHyphenSel<CR>
 vmap <leader>dcsc :SnakeToCamelSel<CR>
-nmap <leader>dtg :Denite gettemplates<CR>
-nmap <leader>dte :Denite edittemplates<CR>
+nmap <leader>dtg :Denite -split=floating gettemplates<CR>
+nmap <leader>dte :Denite -split=floating edittemplates<CR>
 nnoremap <leader>ddw :%s/\s\+$//e<CR>
 let g:which_key_map.d = {
       \ 'name' : '+document',
@@ -72,10 +73,10 @@ let g:linenumber_mode = 0
 let g:relnumber_mode = 0
 function! TypeWriterToggle()
   if g:typewriter_mode
-    set so=0
+    set scrolloff=0
     let g:typewriter_mode = 0
   else
-    set so=999
+    set scrolloff=999
     let g:typewriter_mode = 1
   endif
 endfunction
@@ -240,17 +241,6 @@ function! ToggleBackgroundMode() abort
   endif
 endfunction
 
-  " ale linting
-nmap <silent> <Leader>dal :ALELint<cr>
-nmap <silent> <Leader>dap <Plug>(ale_previous_wrap)
-nmap <silent> <Leader>dan <Plug>(ale_next_wrap)
-let g:which_key_map.d.a = {
-      \ 'name' : '+ale-lint',
-      \ 'l' : 'ale-lint',
-      \ 'n' : 'ale-next',
-      \ 'p' : 'ale-prev',
-      \ }
-
   " Startify related
 nmap <Leader>st :Startify<CR>
 nmap <Leader>sS :SSave!<CR>
@@ -301,7 +291,7 @@ let g:which_key_map.b = {
       \   },
       \ }
 
-" Simplenote
+  " Simplenote
 nmap <silent> <leader>Sl :SimplenoteList<CR>
 nmap <silent> <leader>Sn :SimplenoteNew<CR>
 nmap <silent> <leader>Sd :SimplenoteDelete<CR>
@@ -318,7 +308,7 @@ let g:which_key_map.S = {
       \ 't' : 'simplenote-tag',
       \ }
 
-" git-fugitive
+  " git-fugitive
 nmap <leader>gs :G<CR>
 nmap <leader>gx :Git<Space>
 nmap <leader>gcm :Gcommit<Space>
@@ -353,3 +343,47 @@ let g:which_key_map.g = {
     \ 'v' : 'vsplit'
   \   }
   \ }
+
+  " iro
+vmap <leader>ih :call Iro("hex")<CR>
+vmap <leader>ir :call Iro("rgba")<CR>
+nmap <leader>id :call IroClean()<CR>
+nmap <leader>il :call IroClear()<CR>
+let g:which_key_map.i = {
+  \ 'name' : '+iro',
+  \ 'h' : 'show hex color',
+  \ 'r' : 'show rgba color',
+  \ 'd' : 'delete all cached colors',
+  \ 'l' : 'remove all active palettes'
+  \ }
+
+function! Iro(type)
+  if a:type == "hex"
+    silent execute '!iro -p hex ' . shellescape(s:get_visual_selection(), 1)
+  elseif a:type == "rgba"
+    silent execute '!iro -p rgba ' . shellescape(s:get_visual_selection(), 1)
+  endif
+endfunction
+
+function! IroClean()
+  silent execute '!iro clean'
+endfunction
+
+function! IroClear()
+  silent execute '!iro clear'
+endfunction
+
+" credits to this post on SE
+" https://stackoverflow.com/a/6271254
+function! s:get_visual_selection()
+    " Why is this not a built-in Vim script function?!
+    let [line_start, column_start] = getpos("'<")[1:2]
+    let [line_end, column_end] = getpos("'>")[1:2]
+    let lines = getline(line_start, line_end)
+    if len(lines) == 0
+        return ''
+    endif
+    let lines[-1] = lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
+    let lines[0] = lines[0][column_start - 1:]
+    return join(lines, "\n")
+endfunction

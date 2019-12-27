@@ -1,19 +1,20 @@
 #!/bin/bash
+# Dependencies:
+# getRes (own), light, pulseaudio-ctl, iwconfig
 
-# Import color scheme
-. "$HOME/.cache/wpgtk.color"
+. "$XDG_CONFIG_HOME/lemonbar/style.sh"
 
 # Options
-width="600"
+width="700"
 height="30"
 ssid="---"
 wifiinterface="wlp5s0"
 laninterface="enp3s0"
  
 # Get monitor width so we can center the bar.
-resolution="$(xrandr --nograb --current | awk '/\*/ {printf $1; exit}')"
-monitor_width="${resolution/x*}"
-monitor_height="${resolution#*x}"
+resolution=($(getRes))
+monitor_width=${resolution[0]}
+monitor_height=${resolution[1]}
 offset_width="$((monitor_width / 2 - width / 2))"
 offset_height="$((monitor_height - height - 5))"
 geometry="${width}x${height}+${offset_width}+${offset_height}"
@@ -103,4 +104,4 @@ while true; do
   else
     counter=$(($counter + 1))  
   fi
-done | lemonbar -d -g $geometry -f "FontAwesome-10" -f "Helvetica Neue-9" -B "${background}"
+done | lemonbar -d -g $geometry -f "${font}" -f "${iconfont}" -B "${background}"
