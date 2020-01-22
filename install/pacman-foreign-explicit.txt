@@ -23,6 +23,8 @@ flips-git
 flowblade
 freedict-tools
 ganttproject
+gimp-plugin-resynthesizer
+gitkraken
 gnome-font-viewer-git
 gnvim-git
 godot
@@ -54,8 +56,9 @@ moka-and-faba-minimal-icons
 mpdscribble
 multimc5
 ncurses5-compat-libs
-neovim-qt-git
 nerd-fonts-gabmus
+nodenv
+nodenv-node-build
 nvm
 oneko
 oomox-git
@@ -72,7 +75,7 @@ pulseaudio-ctl
 python-djvulibre
 python-pymupdf
 python-pystache
-python2-neovim
+python2-neovim-git
 qownnotes
 rofi-calc
 rxvt-unicode-pixbuf

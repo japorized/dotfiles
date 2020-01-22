@@ -80,6 +80,7 @@ fcitx-qt5
 fcitx-rime
 feh
 fff
+figlet
 file
 filesystem
 findutils
@@ -196,6 +197,7 @@ nano
 ncdu
 ncmpcpp
 neovim
+neovim-qt
 netctl
 nextcloud-client
 nfs-utils
@@ -223,12 +225,14 @@ pasystray
 patch
 pavucontrol
 pciutils
+pepper-flash
 perl
 picom
 pkgconf
 pkgfile
 plank
 pngcrush
+postgresql
 powertop
 ppsspp
 procps-ng
@@ -337,8 +341,8 @@ wget
 which
 whois
 wine
+wine-gecko
 wine-mono
-wine_gecko
 winetricks
 wireless_tools
 wpa_supplicant

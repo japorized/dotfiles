@@ -114,3 +114,4 @@ your favorite AUR package manager.
 ### Possibly Relevant Links
 
 1. [Why did you switch to Antergos/Arch Linux?](https://japorized.gitlab.io/technical/2018/02/27/making-the-move-to-linux.html)
+2. [Wallpapers?](https://cloud.japorized.ink/index.php/s/pnbzN9gw6b9xL4M)
