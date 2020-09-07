@@ -40,6 +40,7 @@ alias slack-term="TERM=xterm slack-term"
 alias icat="kitty +kitten icat "
 alias cat="bat -pp "
 alias venv="python -m venv "
+alias dotdrop="$HOME/dotfiles/dotdrop/dotdrop.sh --cfg=$HOME/dotfiles/config.yaml"
 
 ##############################
 # Games
