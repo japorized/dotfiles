@@ -4,3 +4,9 @@
 [submodule "dotfiles/config/rofi/kaomoji-rofi"]
 	path = dotfiles/config/rofi/kaomoji-rofi
 	url = https://gitlab.com/ceda_ei/kaomoji-rofi
+[submodule "dotfiles/config/latex-vim/pack/external-plugins/start/deoplete-biblatex"]
+	path = dotfiles/config/latex-vim/pack/external-plugins/start/deoplete-biblatex
+	url = https://github.com/lionawurscht/deoplete-biblatex
+[submodule "dotfiles/config/latex-vim/pack/external-plugins/start/deoplete.nvim"]
+	path = dotfiles/config/latex-vim/pack/external-plugins/start/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
