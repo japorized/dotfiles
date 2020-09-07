@@ -21,7 +21,7 @@ alias svim="nvim -u $CONFIG/slim-vim/init.vim"
 alias view="nvim -u $CONFIG/slim-vim/init.vim -R "
 alias tvim="NVIM_RPLUGIN_MANIFEST=$XDG_DATA_HOME/latex-vim/rplugin.vim nvim -u $CONFIG/latex-vim/init.vim"
 alias jvim="NVIM_RPLUGIN_MANIFEST=$XDG_DATA_HOME/js-vim/rplugin.vim nvim -u $CONFIG/js-vim/init.vim"
-alias spacevim="nvim -u $HOME/.SpaceVim/init.vim"
+alias rvim="NVIM_RPLUGIN_MANIFEST=$XDG_DATA_HOME/rust-vim/rplugin.vim nvim -u $CONFIG/rust-vim/init.vim"
 
 ##############################
 # Others
@@ -38,3 +38,10 @@ alias popup-nowplaying="while true ; do /usr/bin/mpc idle >> /dev/null ; $HOME/.
 {%@@ endif @@%}
 alias slack-term="TERM=xterm slack-term"
 alias icat="kitty +kitten icat "
+alias cat="bat -pp "
+alias venv="python -m venv "
+
+##############################
+# Games
+##############################
+alias minecraft-launcher="gamemoderun minecraft-launcher "

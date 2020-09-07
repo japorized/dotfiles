@@ -79,6 +79,29 @@ mpc_volume() {
   mpc volume | cut -d':' -f2 | tr -d ' '
 }
 
+lollypop_status() {
+  thispid=$(pgrep lollypop)
+  if [ -n "$thispid" ]; then
+    echo true
+  else
+    echo false
+  fi
+}
+
+lollypop_info() {
+  song=$(dbus-send --print-reply --session \
+    --dest=org.mpris.MediaPlayer2.Lollypop \
+    /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get \
+    string:'org.mpris.MediaPlayer2.Player' string:'Metadata' \
+    | grep title -A 1 |tail -n 1 |cut -c 43- | sed 's/"//g' | cut -c -60)
+  artist=$(dbus-send --print-reply --session \
+    --dest=org.mpris.MediaPlayer2.Lollypop \
+    /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get \
+    string:'org.mpris.MediaPlayer2.Player' string:'Metadata' \
+    | grep albumArtist -A 2 | tail -n 1 | cut -c 26- | awk '{gsub("\"", "");print}')
+  echo "$artist - $song"
+}
+
 ## Keeping this code for reference purposes
 # spotify_status() {
 #   thispid=$(pidof spotify)
@@ -107,6 +130,13 @@ mpc_volume() {
 #   echo -e "%{c}%{F${foreground}}No music players active%{F-}"
 # fi
 
+  # if ($(lollypop_status)); then
+  #   echo -e "%{l}%{F${foreground}}   \uf001    $(lollypop_info)%{r}\uf144 Lollypop  %{F-}"
+  # elif [[ $(mpd_status) != "mpd is not active" ]] ; then
+  #   echo -e "%{l}%{F${foreground}}   \uf001    $(mpd_status)%{F-}"
+  # else
+  #   echo -e "%{c}%{F${foreground}}No music players active%{F-}"
+  # fi
 while true; do
   if [[ $(mpd_status) != "mpd is not active" ]] ; then
     echo -e "%{l}%{F${foreground}}   \uf001    $(mpd_status)%{F-}"

@@ -24,15 +24,9 @@ dotfiles:
   d_chunkwm:
     dst: ~/.config/chunkwm
     src: config/chunkwm
-  d_colors:
-    dst: ~/.vim/colors
-    src: vim/colors
   d_hammerspoon:
     dst: ~/.config/hammerspoon
     src: config/hammerspoon
-  d_latex-vim:
-    dst: ~/.config/latex-vim
-    src: config/latex-vim
   d_lemonbar:
     dst: ~/.config/lemonbar
     src: config/lemonbar
@@ -47,9 +41,13 @@ dotfiles:
     - nvim-python
     dst: ~/.config/nvim
     src: config/nvim
+    cmpignore:
+      - "./ginit.vim"
   d_rofi:
     dst: ~/.config/rofi
     src: config/rofi
+    cmpignore:
+      - "colors.rasi"
   d_schemes:
     dst: ~/.config/wpg/schemes
     src: config/wpg/schemes
@@ -135,9 +133,6 @@ dotfiles:
     - vim-pathogen
     dst: ~/.vimrc
     src: vimrc
-  f_vimrc-slim:
-    dst: ~/.vimrc-slim
-    src: vimrc-slim
   f_w3m_config:
     dst: ~/.w3m/config
     src: w3m/config
@@ -178,8 +173,6 @@ profiles:
     - "d_\xFCbersicht"
     - f_preferences.sublime-settings
     - f_skhdrc
-    - d_colors
-    - f_vimrc-slim
   sencha:
     dotfiles:
     - f_vimrc
@@ -214,7 +207,6 @@ profiles:
     - f_geoclue-agent.service
     - f_default.custom.yaml
     - f_fonts.conf
-    - d_latex-vim
     - d_rofi
     - d_slim-vim
     - d_wpg_templates

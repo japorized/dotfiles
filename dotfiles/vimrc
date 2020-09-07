@@ -114,7 +114,7 @@ let g:slime_paste_file = "$HOME/.config/vimslime"
 
 let g:gutentags_exclude_project_root = ['/usr/local', '/home/japorized/Documents/Projects/japorized.gitlab.io']
 
-let g:coc_start_at_startup=1
+let g:coc_start_at_startup=0
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)

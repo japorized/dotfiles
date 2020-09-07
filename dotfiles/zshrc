@@ -1,27 +1,26 @@
-# For terminals that need an extra command to turn on 256-colors
-  {%@@ if profile == "sencha" @@%}
-  # (cat $HOME/.cache/wpgtk-term.color &)
-  {%@@ elif profile == "Earl-Grey.local" @@%}
-  (cat $HOME/.cache/wal/sequences &)
-  {%@@ endif @@%}
-
+{%@@ if profile == "Earl-Grey.local" @@%}
+(cat $HOME/.cache/wal/sequences &)
+{%@@ endif @@%}
 # Path to oh-my-zsh installation.
-  export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Env
-  source $HOME/.aliases
-  source $HOME/.term-aliases
-  source $HOME/.functions
-  export EDITOR=$(which nvim)
-  {%@@ if profile == "Earl-Grey.local" @@%}
-  source $HOME/.exports
-  {%@@ endif @@%}
-  export LANG=en_US.UTF-8
-  {%@@ if profile == "Earl-Grey.local" @@%}
-  export DEFAULT_CHEAT_DIR='$HOME/.cheat/'
-  export CHEATCOLORS=true
-  {%@@ endif @@%}
-  export CONFIG=$HOME/.config
+source $HOME/.aliases
+source $HOME/.term-aliases
+source $HOME/.functions
+export EDITOR=$(which nvim)
+{%@@ if profile == "Earl-Grey.local" @@%}
+source $HOME/.exports
+{%@@ endif @@%}
+export LANG=en_US.UTF-8
+{%@@ if profile == "Earl-Grey.local" @@%}
+export DEFAULT_CHEAT_DIR='$HOME/.cheat/'
+export CHEATCOLORS=true
+{%@@ endif @@%}
+export CONFIG=$HOME/.config
+
+# zsh options
+setopt extendedglob
 
 # tmux plugin configs
 ZSH_TMUX_AUTOSTART_ONCE=true
@@ -30,7 +29,7 @@ ZSH_TMUX_AUTOCONNECT=false
 # oh-my-zsh settings
 DISABLE_AUTO_TITLE="false"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git gulp tmux docker colorize extract)
+plugins=(git gulp tmux docker docker-compose extract asdf pip npm zsh-interactive-cd)
 ZSH_THEME=""
 
 {%@@ if profile == "Earl-Grey.local" @@%}
@@ -41,16 +40,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $ZSH/oh-my-zsh.sh
 
 autoload -U promptinit; promptinit
-# PURE_CMD_MAX_EXEC_TIME=10
-# PURE_PROMPT_SYMBOL=
-# PURE_GIT_DOWN_ARROW=⇣
-# PURE_GIT_UP_ARROW=⇡
-# PURE_PROMPT_SYMBOL=" λ"
-# PURE_PROMPT_VICMD_SYMBOL=" ξ"
-# prompt pure
-# prompt_pure_set_title() {}
-# prompt_newline='%666v'
-# PROMPT=' %(?.%F{magenta}λ.%F{red}↯)%f '
 
 # ZSH Syntax Highlighting configs
 typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS
@@ -65,10 +54,23 @@ bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
-###-tns-completion-start-###
-if [ -f /home/japorized/.tnsrc ]; then 
-    source /home/japorized/.tnsrc 
-fi
-###-tns-completion-end-###
+# cd hooks
 
+## Source every hook function file
+for f in $(ls $XDG_DATA_HOME/chpwd/)
+do
+  . $XDG_DATA_HOME/chpwd/$f
+done
+
+## Register hooks
+chpwd() {
+  show_git_status
+}
+
+source /opt/asdf-vm/asdf.sh
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 eval "$(starship init zsh)"
+eval "$(sh $HOME/.zfunc/_npm)"
+eval $(keychain --eval --quiet gitlab github)

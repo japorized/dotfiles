@@ -1,7 +1,7 @@
 pactl set-sink-volume 0 20%
 setxkbmap -option compose:ralt &
 xset r rate 270 30
-xset dpms 0 0 1800
+xset dpms 0 0 6000
 xset b off
 xset b 0 0 0
 systemctl --user start picom xbanish

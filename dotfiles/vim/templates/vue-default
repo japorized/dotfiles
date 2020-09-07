@@ -6,7 +6,7 @@
 
 </style>
 
-<script charset="utf-8">
+<script>
 export default {
   data() {
     return {

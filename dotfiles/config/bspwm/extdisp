@@ -2,7 +2,8 @@
 
 usage() {
   echo "Options:
-  -a  Set up external monitor
+  -a  Set up external monitor (separate desktops)
+  -b  Use external monitor as primary
   -r  Return to laptop-only mode"
 }
 
@@ -18,20 +19,25 @@ updategaps() {
   done
 }
 
-while getopts "ar" flag ; do
+while getopts "abr" flag ; do
   case "${flag}" in
     a)
       bspc monitor HDMI-1 -d I II III IV V
       bspc monitor eDP-1 -d VI VII VIII IX
       updategaps
-      refresh-indicators.sh
+      # refresh-indicators.sh
+      ;;
+    b)
+      bspc monitor HDMI-1 -d I II III IV V VI VII
+      bspc monitor eDP-1 -r
+      updategaps
+      # refresh-indicators.sh
       ;;
     r)
       bspc monitor eDP-1 -d I II III IV V VI VII
       bspc monitor HDMI-1 -r
       updategaps
-      refresh-indicators.sh
+      # refresh-indicators.sh
       ;;
   esac
 done
-

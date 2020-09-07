@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 bspc monitor eDP-1 -n eDP-1 -d I II III IV V VI VII
+# bspc monitor eDP-1 -n eDP-1 -d       
 
 sh -c "~/.config/bspwm/bspwm-colors.sh"
 
@@ -14,7 +15,6 @@ do
   bspc config -d ${SPACE} left_padding   100
   bspc config -d ${SPACE} right_padding  100
 done
-
 # configs
 bspc config border_width         2
 bspc config automatic_scheme     spiral
@@ -23,15 +23,8 @@ bspc config borderless_monocle   false
 bspc config gapless_monocle      false
 bspc config focus_follows_pointer true
 
-# Rules
-bspc rule -a firefox desktop='^2'
-bspc rule -a Gimp desktop='^4'
-bspc rule -a Sublime_text desktop='^3'
-bspc rule -a retroarch desktop='^7' state=fullscreen layer=below
-bspc rule -a Steam desktop='^7'
-bspc rule -a PPSSPPSDL desktop='^7' state=fullscreen layer=below
-bspc rule -a feh state=floating
-bspc rule -a tint2 manage=off
+# Execute rules
+sh -c "~/.config/bspwm/rules"
 
 # Set Desktop 4 to start with floating windows
 FLOATING_DESKTOP_ID=$(bspc query -D -d '^4')
@@ -42,16 +35,9 @@ bspc subscribe node_manage | while read -a msg ; do
    [ "$FLOATING_DESKTOP_ID" = "$desk_id" ] && bspc node "$wid" -t floating
 done
 
-# desktop env-like stuff
+# desktop-env-like stuff
 ffplay -nodisp -loglevel quiet -vn -autoexit $XDG_DATA_HOME/sounds/Morning_Maze.m4a &
-~/.config/bspwm/indicators &
 ~/.fehbg &
 
 # autostart programs
-fcitx &
-sxhkd &
-xss-lock -- slock &
-libinput-gestures-setup start &
-plank &
-pasystray &
-tint2 &
+sh -c "~/.config/bspwm/autostart" &

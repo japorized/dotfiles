@@ -20,15 +20,15 @@ export PATH=$PATH:$HOME/.cabal/bin
 # Lua
 export PATH=$PATH:$HOME/.luarocks/bin
 
-# fcitx configs
+# im_module configs
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
 # TeXLive
-export PATH=$HOME/.texlive/2019/bin/x86_64-linux:$PATH
-export MANPATH=$MANPATH:$HOME/.texlive/2019/texmf-dist/doc/man
-export INFOPATH=$INFOPATH:/$HOME/.texlive/2019/texmf-dist/doc/info
+export PATH=$HOME/.texlive/2020/bin/x86_64-linux:$PATH
+export MANPATH=$MANPATH:$HOME/.texlive/2020/texmf-dist/doc/man
+export INFOPATH=$INFOPATH:/$HOME/.texlive/2020/texmf-dist/doc/info
 
 # nnn
 export NNN_BMS='d:~/Documents;D:~/Downloads/;P:~/Pictures/;M:~/Music;T:~/Documents/TeX_Notes/'
@@ -46,8 +46,30 @@ export fpath=($fpath $HOME/.bin/fpath)
 # Habitica
 source $HOME/.habitica-api
 
-# nvm
-export NVM_DIR=$XDG_DATA_HOME
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
+# nodenv
+export NODENV_ROOT=$XDG_DATA_HOME/nodenv
+export PATH=$PATH:$HOME/.nodenv/bin
+
+# rustup and cargo
+export fpath=($fpath $HOME/.zfunc)
+
+# python pyenv
+export PATH=$(pyenv root)/shims:$PATH
+if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+  source "${VIRTUAL_ENV}/bin/activate"
+fi
+
+# neovim configuration paths
+export RUSTVIM_CONFIG_HOME=$XDG_CONFIG_HOME/rust-vim
+export LATEXVIM_CONFIG_HOME=$XDG_CONFIG_HOME/latex-vim
+export VSVIM_CONFIG_HOME=$XDG_CONFIG_HOME/vs-vim
+
+# asdf-vm
+export ASDF_CONFIG_FILE=$XDG_CONFIG_HOME/asdf-vm/asdfrc
+export ASDF_DATA_DIR=$XDG_DATA_HOME/asdf-vm
+
+# subs
+export SUBS_FILE=$XDG_DATA_HOME/subs/subs.txt
+
+# Go
+export GOPATH=$XDG_DATA_HOME/go

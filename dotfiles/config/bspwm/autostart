@@ -1,0 +1,13 @@
+#!/usr/bin/env dash
+
+xmodmap ~/.Xmodmap
+xfce4-panel &
+fcitx &
+sxhkd &
+tint2 &
+tint2 -c ~/.config/tint2/lollypop-controls &
+xss-lock -- slock &
+xfce4-power-manager &
+libinput-gestures-setup start &
+plank &
+pasystray &

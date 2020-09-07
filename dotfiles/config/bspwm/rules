@@ -1,0 +1,18 @@
+#!/usr/bin/env dash
+
+bspc rule -a firefox desktop='^2'
+bspc rule -a Gimp desktop='^4'
+bspc rule -a Sublime_text desktop='^3'
+bspc rule -a retroarch desktop='^7' state=fullscreen layer=below
+bspc rule -a steam desktop='^7' state=floating layer=below
+bspc rule -a PPSSPPSDL desktop='^7' state=fullscreen layer=below
+bspc rule -a feh state=floating
+bspc rule -a tint2 manage=off
+bspc rule -a plank layer=above
+bspc rule -a Wrapper-1.0 state=floating
+bspc rule -a Wrapper-2.0 state=floating
+bspc rule -a Xfce4-panel state=floating
+bspc rule -a Dockx manage=off
+bspc rule -a Lollypop state=floating
+bspc rule -a Evolution-alarm-notify state=floating
+bspc rule -a Slack desktop='^1'

@@ -36,12 +36,18 @@ Curvolume() {
   return
 }
 
-Wifi() {
+Network() {
+  isWired=$(ip route list | grep default | grep ${laninterface})
+  if [ -n "$isWired" ]; then
+    echo -n "   Wired"
+    return
+  else
     ssid=$(iwconfig ${wifiinterface} | grep ESSID | cut -d: -f2 | tr -d "\"")
     # ip=$(ifconfig wlp3s0|grep 10|grep 'inet addr')
     # ip=$(echo $ip|cut -d " " -f 2 |awk '{gsub("addr:", "");print}')
-    echo -n "$ssid"
+    echo -n "   $ssid"
     return
+  fi
 }
 
 Diskspace() {
@@ -97,7 +103,7 @@ TrackpadStatus() {
 counter=0
 
 while true; do
-  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curbrightness)      $(Curvolume)     |      $(Wifi)   |      $(Diskspace) full       $(Filespace) full       $(Memspace) $(CoffeeUp)   $(DoNotDisturb)$(TrackpadStatus)"
+  echo -e "%{c}%{F${foreground}}%{B${background}} $(Curbrightness)      $(Curvolume)     |   $(Network)   |      $(Diskspace) full       $(Filespace) full       $(Memspace) $(CoffeeUp)   $(DoNotDisturb)$(TrackpadStatus)"
   sleep 1
   if [[ $counter -ge 5 ]]; then
     exit

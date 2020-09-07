@@ -16,5 +16,6 @@
     "vue-html": "html",
     "vue": "html"
   },
-  "vetur.format.defaultFormatter.html": "prettier"
+  "vetur.format.defaultFormatter.html": "prettier",
+  "python.pipenvPath": "/home/japorized/.pyenv/shims/pipenv"
 }

@@ -73,13 +73,13 @@ border_color_pressed = {color6} 30
 #-------------------------------------
 # Panel
 panel_items = PP:PPPPPPPPPPF:S
-panel_size = 85% 50
+panel_size = 70% 40
 panel_margin = 0 0
 panel_padding = 8 4 4
 panel_background_id = 5
 wm_menu = 1
 panel_dock = 0
-panel_position = center left vertical
+panel_position = center right vertical
 panel_layer = top
 panel_monitor = all
 panel_shrink = 0
@@ -253,9 +253,9 @@ button_max_icon_size = 0
 #-------------------------------------
 # Button 3
 button = new
-button_text = 
-button_tooltip = Cantor
-button_lclick_command = cantor
+button_text = 
+button_tooltip = Trello
+button_lclick_command = surf-open.sh https://trello.com
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 
@@ -270,9 +270,9 @@ button_max_icon_size = 0
 #-------------------------------------
 # Button 4
 button = new
-button_text = 
-button_tooltip = Evolution
-button_lclick_command = evolution
+button_text = 
+button_tooltip = TickTick
+button_lclick_command = surf-open.sh https://www.ticktick.com
 button_rclick_command =
 button_mclick_command = 
 button_uwheel_command = 
@@ -391,9 +391,9 @@ button_max_icon_size = 0
 button = new
 button_text = 
 button_tooltip = Telegram
-button_lclick_command = /home/japorized/.bin/surf web.telegram.org
+button_lclick_command = telegram-desktop
 button_rclick_command = /home/japorized/.bin/web-telegram
-button_mclick_command = 
+button_mclick_command = surf-open.sh web.telegram.org
 button_uwheel_command = 
 button_dwheel_command = 
 button_font = Hack Nerd Font 9
@@ -406,9 +406,9 @@ button_max_icon_size = 0
 #-------------------------------------
 # Button 12
 button = new
-button_text = 
-button_tooltip = Gitlab
-button_lclick_command = firefox gitlab.com
+button_text = 
+button_tooltip = Slack
+button_lclick_command = surf-open.sh https://guideanalytics.slack.com
 button_rclick_command = 
 button_mclick_command = 
 button_uwheel_command = 

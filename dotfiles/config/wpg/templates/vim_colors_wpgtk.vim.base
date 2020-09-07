@@ -9,7 +9,7 @@ if &t_Co >= 256
 set background=dark
 hi Normal           ctermbg=NONE ctermfg=15   cterm=NONE        guibg=NONE    guifg={color15}  gui=NONE
 
-hi Comment          ctermbg=NONE ctermfg=7    cterm=NONE        guibg=NONE    guifg={color7}  gui=NONE
+hi Comment          ctermbg=NONE ctermfg=7    cterm=NONE        guibg=NONE    guifg={color7}  gui=ITALIC
 hi Statement        ctermbg=NONE ctermfg=1    cterm=BOLD        guibg=NONE    guifg={color1}  gui=NONE
 hi Type             ctermbg=NONE ctermfg=2    cterm=BOLD        guibg=NONE    guifg={color2}  gui=NONE
 hi Function         ctermbg=NONE ctermfg=2    cterm=BOLD        guibg=NONE    guifg={color2}  gui=NONE

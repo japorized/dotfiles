@@ -5,52 +5,52 @@
   rofi-powermenu
 
 # Desc: increase brightness by 5%
-{XF86MonBrightnessUp,Menu : F6}
-  /usr/bin/light -A 5 && ~/.config/lemonbar/brightness.sh
+{XF86MonBrightnessUp}
+  /usr/bin/light -A 5
 
 # Desc: increase brightness by 15%
-{shift + XF86MonBrightnessUp,Menu : shift + F6}
-  /usr/bin/light -A 15 && ~/.config/lemonbar/brightness.sh
+{shift + XF86MonBrightnessUp}
+  /usr/bin/light -A 15
 
 # Desc: decrease brightness by 5%
-{XF86MonBrightnessDown,Menu : F5}
-  /usr/bin/light -U 5 && ~/.config/lemonbar/brightness.sh
+{XF86MonBrightnessDown}
+  /usr/bin/light -U 5
 
 # Desc: decrease brightness by 15%
-{shift + XF86MonBrightnessDown,Menu : shift + F5}
-  /usr/bin/light -U 15 && ~/.config/lemonbar/brightness.sh
+{shift + XF86MonBrightnessDown}
+  /usr/bin/light -U 15
 
 # Desc: go to next on mpd
-{XF86AudioNext,Menu : F9}
-  mpc next
+{XF86AudioNext}
+  sh -c "~/.bin/musicctl next"
 
 # Desc: restart/go to prev on mpd
-{XF86AudioPrev,Menu : F7}
-  mpc cdprev
+{XF86AudioPrev}
+  sh -c "~/.bin/musicctl prev"
 
 # Desc: toggle play pause on mpd
-{XF86AudioPlay,XF86AudioPause,Menu; F8}
-  mpc toggle
+{XF86AudioPlay,XF86AudioPause}
+  sh -c "~/.bin/musicctl toggle"
 
 # Desc: increase volume by 2%
-{XF86AudioRaiseVolume,Menu : F3}
-  sh -c "~/.bin/mypactl -u 2 && $HOME/.config/lemonbar/vol.sh &"
+{XF86AudioRaiseVolume}
+  sh -c "~/.bin/mypactl -u 2"
 
 # Desc: increase volume by 10%
-{shift + XF86AudioRaiseVolume,Menu : shift + F3}
-  sh -c "~/.bin/mypactl -u 10 && $HOME/.config/lemonbar/vol.sh &"
+{shift + XF86AudioRaiseVolume}
+  sh -c "~/.bin/mypactl -u 10"
 
 # Desc: decrease volume by 2%
-{XF86AudioLowerVolume,Menu : F2}
-  sh -c "~/.bin/mypactl -d 2 && $HOME/.config/lemonbar/vol.sh &"
+{XF86AudioLowerVolume}
+  sh -c "~/.bin/mypactl -d 2"
 
 # Desc: decrease volume by 10%
-{shift + XF86AudioLowerVolume,Menu : shift + F2}
-  sh -c "~/.bin/mypactl -d 10 && $HOME/.config/lemonbar/vol.sh &"
+{shift + XF86AudioLowerVolume}
+  sh -c "~/.bin/mypactl -d 10"
 
 # Desc: toggle audio mute
-{XF86AudioMute,Menu : F1}
-  sh -c "~/.bin/mypactl -m && $HOME/.config/lemonbar/vol.sh &"
+{XF86AudioMute}
+  sh -c "~/.bin/mypactl -m"
 
 # ------
 
@@ -59,13 +59,19 @@
 super + Return
   termite
 
+# Desc: start a new Kitty session
+super + alt + Return
+  kitty
+
 # Desc: toggle quake-like dropdown terminal
 shift + super + Return
   tdrop -ma -w -2 -s " dropdown" termite
 
-# Desc: toggle notification center
+# Desc: toggle notification do not disturb
 alt + grave
-  kill -s USR1 $(pidof deadd-notification-center)
+  xfconf-query -c xfce4-notifyd -p /do-not-disturb -T && \
+    notify-send --icon "notification" \
+      "Notification Center" "$(get_xfce4_notifyd_dnd_status)"
 
 # Desc: start program launcher
 alt + space
@@ -83,9 +89,9 @@ super + a ; f
 super + a ; a
   rofianime
 
-# Desc: run gnvim
+# Desc: run nvim-qt
 super + a ; e
-  gnvim
+  nvim-qt
 
 # Desc: run thunar
 super + a ; t
@@ -99,9 +105,17 @@ super + a ; z
 super + a ; b
   bwmenu
 
-# Desc: temporarily show bspwm desktop indicator
-super + i ; b
-  sh -c "~/.bin/show-lemonbar bspwm-indicator"
+# Desc: run subs
+super + a ; s
+  subs
+
+# Desc: run rofi ssh
+super + a ; S
+  rofi -modi "ssh" -show ssh
+
+## Desc: temporarily show bspwm desktop indicator
+# super + i ; b
+#   sh -c "~/.bin/show-lemonbar bspwm-indicator"
 
 # Desc: temporarily show datetime and battery lemonbars
 super + i ; c
@@ -127,6 +141,10 @@ super + i ; W
 super + i ; w
   sh -c "~/.bin/show-lemonbar weather"
 
+# Desc: show clipman; clipboard manager
+super + semicolon
+  xfce4-popup-clipman
+
 # Desc: picture-in-picture mode
 super + p
   sh -c "~/.bin/bspc-pip"
@@ -136,13 +154,17 @@ super + s
   rofi-sxhkd-cheatsheet
 
 # rofi utilities
+# Desc: run rofi-auracle
+super + u ; a
+  rofi-auracle
+
 # Desc: run bluetooth utility menu
 super + u ; b
   rofi-btctl
 
 # Desc: run emoji picker
 super + u ; e
-  rofimoji
+  rofi-emoji
 
 # Desc: run kaomoji picker
 super + u ; E
@@ -158,7 +180,7 @@ super + u ; m
 
 # Desc: run screenshot utility
 super + u ; s
-  rofi-screenshot
+  rofi-screenshot.rb
 
 # Desc: run systemctl rofi menu
 super + u ; S
@@ -172,7 +194,7 @@ super + u ; w
 #   xrandr --output eDP-1 --rotate {left,normal,inverted,right}
 
 # Desc: start roficalc
-{XF86Calculator,Menu : F11}
+{XF86Calculator}
   roficalc
 
 # Desc: run arandr

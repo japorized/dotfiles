@@ -275,11 +275,13 @@ nmap <Leader>bsf :sbf<CR>
 nmap <Leader>bsn :sbn<CR>
 nmap <Leader>bsp :sbp<CR>
 nmap <Leader>bd :bdelete<Space>
+nmap <Leader>bD :bdelete! %<CR>
 let g:which_key_map.b = {
       \ 'name' : '+buffer',
       \ 'b' : 'buffer-goto',
       \ 'l' : 'buffer-list',
       \ 'd' : 'buffer-delete',
+      \ 'D' : 'buffer-delete-current',
       \ 'n' : 'buffer-next',
       \ 'p' : 'buffer-prev',
       \ 's' : {
@@ -371,6 +373,49 @@ endfunction
 
 function! IroClear()
   silent execute '!iro clear'
+endfunction
+
+vmap <leader>ucchr :call HexToRgba()<CR>
+vmap <leader>uccrh :call RgbaToHex()<CR>
+vmap <leader>uccrH :call RgbaToHsl()<CR>
+vmap <leader>uccHr :call HslToRgba()<CR>
+let g:which_key_map.u = {
+      \ 'name': '+utilities',
+      \ 'c': {
+      \   'name': '+color utils',
+      \   'c': {
+      \     'name': '+convert to clipboard',
+      \     'h': {
+      \       'name': '+from hex',
+      \       'r': 'to rgba',
+      \       },
+      \     'r': {
+      \       'name': '+from rgb(a)',
+      \       'h': 'to hex',
+      \       'H': 'to hsl',
+      \       },
+      \     'H': {
+      \       'name': '+from hsl',
+      \       'r': 'to rgba',
+      \       },
+      \     },
+      \   },
+      \ }
+
+function! HexToRgba()
+  silent execute '!hex2rgba ' . shellescape(s:get_visual_selection(), 1) . ' | xclip -in -selection clipboard'
+endfunction
+
+function! RgbaToHex()
+  silent execute '!rgba2hex ' . shellescape(s:get_visual_selection(), 1) . ' | xclip -in -selection clipboard'
+endfunction
+
+function! RgbToHsl()
+  silent execute '!rgb2hsl ' . shellescape(s:get_visual_selection(), 1) . ' | xclip -in -selection clipboard'
+endfunction
+
+function! HslToRgba()
+  silent execute '!hsl2rgb ' . shellescape(s:get_visual_selection(), 1) . ' | xclip -in -selection clipboard'
 endfunction
 
 " credits to this post on SE

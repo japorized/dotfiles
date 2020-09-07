@@ -15,6 +15,7 @@ set softtabstop=2
 set t_Co=256
 set timeoutlen=200
 set splitbelow
+set ignorecase
 map <SPACE> <Nop>
 let mapleader=" "
 colorscheme wpgtk

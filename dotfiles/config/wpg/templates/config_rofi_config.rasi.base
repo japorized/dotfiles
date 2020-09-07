@@ -1,0 +1,22 @@
+configuration {
+	modi: "run,drun,window";
+	width: 50;
+	lines: 6;
+	font: "Hack Nerd Font 12";
+	location: 0;
+	padding: 30;
+	yoffset: -20;
+	xoffset: 0;
+	show-icons: true;
+	terminal: "st";
+	line-margin: 10;
+	separator-style: "none";
+	hide-scrollbar: true;
+	fullscreen: false;
+	fake-transparency: true;
+	theme: "~/.config/rofi/themes/rofi-default.rasi";
+	color-normal: "{color0}, {color15}, {color0}, {color6}, {color15}";
+	color-urgent: "{color0}, {color1}, {color0}, {color2}, {color15}";
+	color-active: "{color0}, #f4bf75, {color0}, {color4}, {color15}";
+	color-window: "{color0}, {color6}, {inactive}";
+}

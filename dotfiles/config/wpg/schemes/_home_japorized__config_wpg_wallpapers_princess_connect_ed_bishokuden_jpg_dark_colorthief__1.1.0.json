@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/princess_connect_ed_bishokuden.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#243a44",
+        "foreground": "#eeeeee",
+        "cursor": "#eeeeee"
+    },
+    "colors": {
+        "color0": "#243a44",
+        "color1": "#f76c73",
+        "color2": "#accca8",
+        "color3": "#f7d271",
+        "color4": "#75a4d6",
+        "color5": "#caa8ca",
+        "color6": "#6ebebf",
+        "color7": "#989898",
+        "color8": "#51595e",
+        "color9": "#f76c73",
+        "color10": "#accca8",
+        "color11": "#f7d271",
+        "color12": "#75a4d6",
+        "color13": "#caa8ca",
+        "color14": "#6ebebf",
+        "color15": "#eeeeee"
+    }
+}

@@ -1,0 +1,29 @@
+* {{
+    background: {color0};
+    foreground: {color15};
+
+    active-background: {color6};
+    active-foreground: @background;
+    normal-background: @background;
+    normal-foreground: @foreground;
+    urgent-background: {color5};
+    urgent-foreground: @foreground;
+
+    alternate-active-background: @background;
+    alternate-active-foreground: @foreground;
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @background;
+    alternate-urgent-foreground: @foreground;
+
+    selected-active-background: {color4};
+    selected-active-foreground: @background;
+    selected-normal-background: {color5};
+    selected-normal-foreground: @background;
+    selected-urgent-background: {color1};
+    selected-urgent-foreground: @background;
+
+    background-color: @background;
+    border-color: @background;
+}}
+
