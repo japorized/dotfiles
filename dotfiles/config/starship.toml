@@ -1,0 +1,53 @@
+add_newline = true
+prompt_order = [
+  "hostname",
+  "directory",
+  "git_branch",
+  "git_state",
+  "git_status",
+  "nodejs",
+  "ruby",
+  "rust",
+  "python",
+  "golang",
+  "java",
+  "package",
+  "nix_shell",
+  "cmd_duration",
+  "line_break",
+  "jobs",
+  "character"
+]
+
+[character]
+symbol = "∴"
+vicmd_symbol = "∵"
+# symbol = "λ"
+# vicmd_symbol = "ξ"
+
+[directory]
+style = "bold purple"
+
+[git_branch]
+symbol = " "
+
+[git_status]
+prefix = "{ "
+suffix = " } "
+conflicted = "↯"
+deleted = "−"
+diverged = "∇"
+modified = "δ"
+renamed = "↦"
+staged = "■"
+stashed = "∃"
+untracked = "∉"
+
+[ruby]
+# symbol = ' '
+
+[python]
+# symbol = ' '
+
+[rust]
+# symbol = '🦀 '

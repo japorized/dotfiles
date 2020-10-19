@@ -42,12 +42,12 @@ dotfiles:
     dst: ~/.config/nvim
     src: config/nvim
     cmpignore:
-      - "./ginit.vim"
+    - ./ginit.vim
   d_rofi:
     dst: ~/.config/rofi
     src: config/rofi
     cmpignore:
-      - "colors.rasi"
+    - colors.rasi
   d_schemes:
     dst: ~/.config/wpg/schemes
     src: config/wpg/schemes
@@ -66,9 +66,9 @@ dotfiles:
   d_wpg_templates:
     dst: ~/.config/wpg/templates
     src: config/wpg/templates
-  "d_\xFCbersicht":
-    dst: "~/.config/\xDCbersicht"
-    src: "config/\xDCbersicht"
+  d_übersicht:
+    dst: ~/.config/Übersicht
+    src: config/Übersicht
   f_aliases:
     dst: ~/.aliases
     src: aliases
@@ -151,6 +151,9 @@ dotfiles:
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
+  f_starship.toml:
+    src: config/starship.toml
+    dst: ~/.config/starship.toml
 profiles:
   Earl-Grey.local:
     dotfiles:
@@ -170,7 +173,7 @@ profiles:
     - d_nvim
     - f_functions
     - d_chunkwm
-    - "d_\xFCbersicht"
+    - d_übersicht
     - f_preferences.sublime-settings
     - f_skhdrc
   sencha:
@@ -211,6 +214,7 @@ profiles:
     - d_slim-vim
     - d_wpg_templates
     - f_compton.conf
+    - f_starship.toml
   ubuntu1604-002:
     dotfiles:
     - f_vimrc
