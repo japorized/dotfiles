@@ -4,8 +4,6 @@ asdf-vm
 auracle-git
 bashtop-git
 bdf-curie
-bibata-cursor-theme
-bitwarden
 bitwarden-cli
 bitwarden-rofi
 bottom
@@ -16,6 +14,7 @@ cmpdl
 dmenu-extended-git
 dragon-drag-and-drop
 drawio-desktop
+electron6-bin
 elementary-xfce-icons-git
 ephifonts
 evolution-on-git
@@ -27,18 +26,17 @@ flips-git
 font-mathematica
 fontpreview-git
 freedict-tools
-gamemode
 gimp-plugin-resynthesizer
 gitahead-bin
 gitlab-cli
 glow
 gnome-font-viewer-git
 godot
+google-chrome
 graphql-playground-electron
 gtk-xfce-engine
 handlr-bin
 hfsprogs
-htmlcxx
 icdiff
 imgcat-git
 informant
@@ -46,7 +44,6 @@ jstest-gtk-git
 lazydocker
 lazygit
 lemonbar-xft-git
-lib32-gamemode
 libffi6
 libgcj17-bin
 libinput-gestures
@@ -67,6 +64,7 @@ nerd-fonts-fantasque-sans-mono
 nerd-fonts-gabmus
 nodenv-node-build
 notion-app
+notion-enhancer
 nteract-bin
 nvm
 oneko
@@ -85,7 +83,6 @@ properties-cpp
 pulseaudio-ctl
 pyenv-virtualenv
 python-djvulibre
-python-pystache
 python2-neovim-git
 python2-polib
 qt5-styleplugins
@@ -101,6 +98,7 @@ sublime-text-3-imfix
 sweet-folders-icons-git
 sweet-theme-git
 tdrop-git
+teams
 termcap
 texlive-installer
 tikzit-git

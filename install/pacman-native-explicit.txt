@@ -52,6 +52,7 @@ cups
 cups-pk-helper
 d-feet
 dash
+dbeaver
 device-mapper
 dex
 dhcpcd
@@ -63,6 +64,7 @@ dmraid
 docker
 docker-compose
 dosfstools
+dunst
 e2fsprogs
 efibootmgr
 efitools
@@ -96,6 +98,7 @@ foliate
 fontforge
 fwupd
 fzf
+gamemode
 garcon
 gawk
 gcc
@@ -111,6 +114,7 @@ github-cli
 gitlab-runner
 glade
 glibc
+gnome-todo
 gnu-free-fonts
 gnuplot
 goldendict
@@ -136,6 +140,7 @@ gzip
 handbrake
 haveged
 hplip
+htmlcxx
 htop
 httpie
 id3v2
@@ -161,6 +166,7 @@ kiten
 kitty
 krita
 less
+lib32-gamemode
 lib32-gnutls
 lib32-libpulse
 lib32-mpg123
@@ -180,6 +186,7 @@ lollypop
 lsof
 luakit
 luarocks
+luit
 lutris
 lvm2
 lxappearance
@@ -207,7 +214,6 @@ nano
 ncdu
 ncmpcpp
 neovim
-neovim-qt
 netctl
 nextcloud-client
 nfs-utils
@@ -266,6 +272,7 @@ python-pandas
 python-pip
 python-pylast
 python-pynvim
+python-pystache
 python-sympy
 python2
 python2-pip
@@ -427,7 +434,6 @@ xorg-docs
 xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-iceauth
-xorg-luit
 xorg-server
 xorg-server-common
 xorg-server-devel
