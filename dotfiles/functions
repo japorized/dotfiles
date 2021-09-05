@@ -61,9 +61,8 @@ zsh_internet_signal(){
 
   echo -n "%{$color%}$symbol " # \f1eb is wifi bars
 }
-{%@@ endif @@%}
 
-# Create aoo icon
+# Create app icon
 
 function mkicns() {
     if [[ -z "$@" ]]; then
@@ -85,3 +84,4 @@ function mkicns() {
         rm -r $filename.iconset
     fi
 }
+{%@@ endif @@%}

@@ -8,7 +8,7 @@
 width="700"
 height="30"
 ssid="---"
-wifiinterface="wlp5s0"
+wifiinterface="wlan0"
 laninterface="enp3s0"
  
 # Get monitor width so we can center the bar.
@@ -42,30 +42,34 @@ Network() {
     echo -n "   Wired"
     return
   else
-    ssid=$(iwconfig ${wifiinterface} | grep ESSID | cut -d: -f2 | tr -d "\"")
+    ssid="$(iw dev wlan0 info | grep ssid | xargs | cut -d ' ' -f2-)"
+    # ssid=$(iwconfig ${wifiinterface} | grep ESSID | cut -d: -f2 | tr -d "\"")
     # ip=$(ifconfig wlp3s0|grep 10|grep 'inet addr')
     # ip=$(echo $ip|cut -d " " -f 2 |awk '{gsub("addr:", "");print}')
+    if [ -z "$ssid" ]; then
+      ssid="---"
+    fi
+
     echo -n "   $ssid"
     return
   fi
 }
 
 Diskspace() {
-  df -akh | grep "/dev/sda3" | tail -n 1 | awk '{print $5}' | tr -d '\n'
+  df -akh | grep "/dev/nvme0n1p3" | tail -n 1 | awk '{print $5}' | tr -d '\n'
   return
 }
 
 Filespace() {
-  df -akh | grep "/dev/sda4" | tail -n 1 | awk '{print $5}' | tr -d '\n'
+  df -akh | grep "/dev/sda1" | tail -n 1 | awk '{print $5}' | tr -d '\n'
   return
 }
 
 Memspace() {
-  meminfo=$(free -m | grep Mem)
-  totalMem=$(echo $meminfo | awk -F " " '{print $2}')
-  freeMem=$(echo $meminfo | awk -F " " '{print $4}')
+  local totalMem=$(awk '/MemTotal/ { printf "%.3f", $2/1024/1024 }' /proc/meminfo)
+  local freeMem=$(awk '/MemAvailable/ { printf "%.3f", $2/1024/1024 }' /proc/meminfo)
   percentUsed=$(echo "scale=1; $freeMem/$totalMem * 100" | bc)
-  echo -n "$percentUsed% free"
+  echo -n "$percentUsed% available"
   return
 }
 

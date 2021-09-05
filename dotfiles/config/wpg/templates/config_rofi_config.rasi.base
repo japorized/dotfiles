@@ -1,4 +1,4 @@
-configuration {
+configuration {{
 	modi: "run,drun,window";
 	width: 50;
 	lines: 6;
@@ -19,4 +19,4 @@ configuration {
 	color-urgent: "{color0}, {color1}, {color0}, {color2}, {color15}";
 	color-active: "{color0}, #f4bf75, {color0}, {color4}, {color15}";
 	color-window: "{color0}, {color6}, {inactive}";
-}
+}}

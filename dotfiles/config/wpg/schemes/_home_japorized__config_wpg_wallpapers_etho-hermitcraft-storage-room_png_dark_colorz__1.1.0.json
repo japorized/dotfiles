@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/japorized/.config/wpg/wallpapers/etho-hermitcraft-storage-room.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#20201f",
+        "foreground": "#d3d3cb",
+        "cursor": "#d3d3cb"
+    },
+    "colors": {
+        "color0": "#20201f",
+        "color1": "#7d6db0",
+        "color2": "#93c17f",
+        "color3": "#c0a264",
+        "color4": "#7e9fba",
+        "color5": "#c65353",
+        "color6": "#78a6a0",
+        "color7": "#6d6d64",
+        "color8": "#3a3a38",
+        "color9": "#7d6db0",
+        "color10": "#93c17f",
+        "color11": "#c0a264",
+        "color12": "#7e9fba",
+        "color13": "#c65353",
+        "color14": "#78a6a0",
+        "color15": "#d3d3cb"
+    }
+}

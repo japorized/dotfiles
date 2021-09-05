@@ -8,39 +8,29 @@ alias lsdir="ls -d */"
 # Homebrew (MacOS)
 ##############################
 alias listBrewDependents='brew list -1 | while read cask; do echo -ne "\x1B[1;34m $cask \x1B[0m"; brew uses $cask --installed | awk '\''{printf(" %s ", $0)}'\''; echo ""; done'
+
 {%@@ endif @@%}
-
-
 ##############################
 # Vim
 ##############################
 alias vim="nvim "
 alias vi="nvim "
 alias vimdiff="nvim -d "
-alias svim="nvim -u $CONFIG/slim-vim/init.vim"
 alias view="nvim -u $CONFIG/slim-vim/init.vim -R "
-alias tvim="NVIM_RPLUGIN_MANIFEST=$XDG_DATA_HOME/latex-vim/rplugin.vim nvim -u $CONFIG/latex-vim/init.vim"
-alias jvim="NVIM_RPLUGIN_MANIFEST=$XDG_DATA_HOME/js-vim/rplugin.vim nvim -u $CONFIG/js-vim/init.vim"
-alias rvim="NVIM_RPLUGIN_MANIFEST=$XDG_DATA_HOME/rust-vim/rplugin.vim nvim -u $CONFIG/rust-vim/init.vim"
 
 ##############################
 # Others
 ##############################
-alias magit="vim -c MagitOnly"
 {%@@ if profile == "Earl-Grey.local" @@%}
 alias aria2c-rpc="aria2c --enable-rpc --rpc-listen-all -d './Downloads' "
 {%@@ endif @@%}
-{%@@ if profile == "Oolong" @@%}
-alias say='echo "$1" | espeak -s 150 2>/dev/null'
-alias say-zh='echo "$1" | espeak -s 150 -v zh 2>/dev/null'
-alias say-ms='echo "$1" | espeak -s 150 -v ms 2>/dev/null'
+{%@@ if profile == "sencha" @@%}
 alias popup-nowplaying="while true ; do /usr/bin/mpc idle >> /dev/null ; $HOME/.bin/tmpshow-nowplaying.sh ; done"
 {%@@ endif @@%}
-alias slack-term="TERM=xterm slack-term"
-alias icat="kitty +kitten icat "
 alias cat="bat -pp "
-alias venv="python -m venv "
-alias dotdrop="$HOME/dotfiles/dotdrop/dotdrop.sh --cfg=$HOME/dotfiles/config.yaml"
+alias dotdrop="dotdrop --cfg=$HOME/Documents/dotfiles/config.yaml "
+alias lzd="lazydocker "
+alias lzg="lazygit "
 
 ##############################
 # Games

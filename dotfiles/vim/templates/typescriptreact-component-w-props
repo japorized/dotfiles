@@ -1,6 +1,0 @@
-import React from 'react';
-
-interface IProps {}
-
-export default class MyComponent extends React.Component<IProps> {
-}

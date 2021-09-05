@@ -62,10 +62,10 @@ hi SpellCap         ctermbg=NONE ctermfg=NONE cterm=UNDERCURL   guibg=NONE    gu
 hi SpellLocal       ctermbg=NONE ctermfg=NONE cterm=UNDERCURL   guibg=NONE    guifg=NONE    gui=UNDERCURL
 hi SpellRare        ctermbg=NONE ctermfg=NONE cterm=UNDERCURL   guibg=NONE    guifg=NONE    gui=UNDERCURL
 
-hi ErrorMsg         ctermbg=1    ctermfg=0    cterm=NONE        guibg={color1} guifg={color0} gui=NONE
-hi WarningMsg       ctermbg=NONE ctermfg=1    cterm=NONE        guibg=NONE    guifg={color1} gui=NONE
-hi MoreMsg          ctermbg=NONE ctermfg=3    cterm=NONE        guibg=NONE    guifg={color3} gui=NONE
-hi Question         ctermbg=NONE ctermfg=3    cterm=NONE        guibg=NONE    guifg={color3} gui=NONE
+hi ErrorMsg         ctermbg=NONE ctermfg=1    cterm=NONE        guibg={color1} guifg={color0} gui=NONE
+hi WarningMsg       ctermbg=NONE ctermfg=3    cterm=NONE        guibg=NONE    guifg={color1} gui=NONE
+hi MoreMsg          ctermbg=NONE ctermfg=4    cterm=NONE        guibg=NONE    guifg={color3} gui=NONE
+hi Question         ctermbg=NONE ctermfg=5    cterm=NONE        guibg=NONE    guifg={color3} gui=NONE
 
 hi TabLine          ctermbg=NONE ctermfg=15   cterm=NONE        guibg=NONE    guifg={color15} gui=NONE
 hi TabLineSel       ctermbg=3    ctermfg=0    cterm=NONE        guibg={color3} guifg={color0} gui=NONE
@@ -145,3 +145,6 @@ hi link QuickFixLine       TabLineSel
 hi link qfFileName         Function
 hi link qfLineNr           String
 hi link qfSeparator        Comment
+
+hi ErrorHl      ctermbg=1    ctermfg=0    cterm=UNDERCURL
+hi WarningHl    ctermbg=3    ctermfg=0    cterm=UNDERCURL

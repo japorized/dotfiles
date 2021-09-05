@@ -5,14 +5,14 @@
 # Gradients
 #-------------------------------------
 # Backgrounds
-# Background 1: Button, Launcher, Separator, Tooltip
+# Background 1: Button, Executor, Launcher, Systray, Tooltip
 rounded = 0
 border_width = 0
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
 background_color = {color0} 100
-border_color = #000000 30
+border_color = #000000 0
 background_color_hover = {color14} 60
 border_color_hover = #000000 30
 background_color_pressed = {color6} 60
@@ -67,41 +67,56 @@ background_color = {color0} 100
 border_color = #000000 30
 background_color_hover = {color14} 60
 border_color_hover = #000000 30
-background_color_pressed = {color6} 60
-border_color_pressed = {color6} 30
+background_color_pressed = #6bc8e3 60
+border_color_pressed = #6bc8e3 30
+
+# Background 6: Panel, Separator
+rounded = 0
+border_width = 0
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #1f1c1c 0
+border_color = #000000 0
+gradient_id = 0
+background_color_hover = #458091 60
+border_color_hover = #000000 30
+background_color_pressed = #6bc8e3 60
+border_color_pressed = #6bc8e3 30
 
 #-------------------------------------
 # Panel
-panel_items = PP:PPPPPPPPPPF:S
-panel_size = 70% 40
-panel_margin = 0 0
-panel_padding = 8 4 4
-panel_background_id = 5
+panel_items = P:EEEEEEEFE:F:SE
+panel_size = 100% 40
+panel_margin = 15 0
+panel_padding = 0 5 5
+panel_background_id = 6
 wm_menu = 1
-panel_dock = 0
-panel_position = center right vertical
-panel_layer = top
+panel_dock = 1
+panel_pivot_struts = 1
+panel_position = top center horizontal
+panel_layer = normal
 panel_monitor = all
 panel_shrink = 0
-autohide = 1
+autohide = 0
 autohide_show_timeout = 0.4
 autohide_hide_timeout = 1
-autohide_height = 0
+autohide_height = 1
 strut_policy = none
-panel_window_name = tint2
-disable_transparency = 1
+panel_window_name = top-bar
+disable_transparency = 0
 mouse_effects = 1
 font_shadow = 0
-mouse_hover_icon_asb = 100 0 10
+mouse_hover_icon_asb = 100 0 8
 mouse_pressed_icon_asb = 100 0 0
 scale_relative_to_dpi = 0
 scale_relative_to_screen_height = 0
 
 #-------------------------------------
 # Taskbar
-taskbar_mode = single_desktop
+taskbar_mode = multi_desktop
 taskbar_hide_if_empty = 0
-taskbar_padding = 4 4 8
+taskbar_padding = 4 0 8
 taskbar_background_id = 0
 taskbar_active_background_id = 0
 taskbar_name = 1
@@ -127,7 +142,7 @@ urgent_nb_of_blink = 100000
 task_maximum_size = 150 35
 task_padding = 2 2 4
 task_tooltip = 1
-task_thumbnail = 0
+task_thumbnail = 1
 task_thumbnail_size = 210
 task_font_color = {color0} 0
 task_background_id = 2
@@ -143,7 +158,7 @@ mouse_scroll_down = iconify
 #-------------------------------------
 # System tray (notification area)
 systray_padding = 18 4 2
-systray_background_id = 0
+systray_background_id = 1
 systray_sort = ascending
 systray_icon_size = 24
 systray_icon_asb = 100 0 0
@@ -201,8 +216,8 @@ ac_disconnected_cmd =
 #-------------------------------------
 # Separator 1
 separator = new
-separator_background_id = 1
-separator_color = {color0} 80
+separator_background_id = 6
+separator_color = {color0} 0
 separator_style = line
 separator_size = 2
 separator_padding = 4 4
@@ -210,223 +225,226 @@ separator_padding = 4 4
 #-------------------------------------
 # Separator 2
 separator = new
-separator_background_id = 1
-separator_color = {color0} 71
+separator_background_id = 6
+separator_color = {color0} 0
 separator_style = line
 separator_size = 2
 separator_padding = 4 4
 
 #-------------------------------------
+# Separator 2
+separator = new
+separator_background_id = 6
+separator_color = {color0} 0
+separator_style = line
+separator_size = 2
+separator_padding = 50 4
+
+#-------------------------------------
+# Executor 1
+execp = new
+execp_command = bspwm-indicate I 
+execp_interval = 1
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_tooltip = Workspace I
+execp_lclick_command = xdotool key super+1
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font_color = {color15} 100
+execp_padding = 10 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 2
+execp = new
+execp_command = bspwm-indicate II 
+execp_interval = 1
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_tooltip = Workspace II
+execp_lclick_command = xdotool key super+2
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font_color = {color15} 100
+execp_padding = 10 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 3
+execp = new
+execp_command = bspwm-indicate III 
+execp_interval = 1
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_tooltip = Workspace III
+execp_lclick_command = xdotool key super+3
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font_color = {color15} 100
+execp_padding = 10 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 4
+execp = new
+execp_command = bspwm-indicate IV 
+execp_interval = 1
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_tooltip = Workspace IV
+execp_lclick_command = xdotool key super+4
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font_color = {color15} 100
+execp_padding = 10 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 5
+execp = new
+execp_command = bspwm-indicate V 
+execp_interval = 1
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_tooltip = Workspace V
+execp_lclick_command = xdotool key super+5
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font_color = {color15} 100
+execp_padding = 10 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 6
+execp = new
+execp_command = bspwm-indicate VI 
+execp_interval = 1
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_tooltip = Workspace VI
+execp_lclick_command = xdotool key super+6
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font_color = {color15} 100
+execp_padding = 10 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 7
+execp = new
+execp_command = bspwm-indicate VII 
+execp_interval = 1
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_tooltip = Workspace VII
+execp_lclick_command = xdotool key super+7
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font_color = {color15} 100
+execp_padding = 10 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 8
+execp = new
+execp_command = fancydatetime.sh
+execp_interval = 1
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_tooltip = Show calendar
+execp_lclick_command = gsimplecal
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font_color = {color15} 100
+execp_padding = 20 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
+# Executor 9
+execp = new
+execp_command = fancybattery.sh -p
+execp_interval = 5
+execp_has_icon = 0
+execp_cache_icon = 0
+execp_continuous = 0
+execp_markup = 1
+execp_tooltip = Power Manager
+execp_lclick_command = xfce4-power-manager-settings
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font_color = {color15} 100
+execp_padding = 20 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+#-------------------------------------
 # Button 1
 button = new
 button_text = 
-button_tooltip = rofi
+button_tooltip = Rofi show
 button_lclick_command = rofi -show
 button_rclick_command = 
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
-
-#-------------------------------------
-# Button 2
-button = new
-button_text = 
-button_tooltip = Search (DuckduckGo)
-button_lclick_command = /home/japorized/.bin/duck
-button_rclick_command = 
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
-
-#-------------------------------------
-# Button 3
-button = new
-button_text = 
-button_tooltip = Trello
-button_lclick_command = surf-open.sh https://trello.com
-button_rclick_command = 
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
-
-#-------------------------------------
-# Button 4
-button = new
-button_text = 
-button_tooltip = TickTick
-button_lclick_command = surf-open.sh https://www.ticktick.com
-button_rclick_command =
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
-
-#-------------------------------------
-# Button 5
-# button = new
-# button_text = 
-# button_tooltip = geary
-# button_lclick_command = geary
-# button_rclick_command =
-# button_mclick_command = 
-# button_uwheel_command = 
-# button_dwheel_command = 
-# button_font = Hack Nerd Font 9
-# button_font_color = {color15} 100
-# button_padding = 12 0
-# button_background_id = 1
-# button_centered = 1
-# button_max_icon_size = 0
-
-#-------------------------------------
-# Button 6
-# button = new
-# button_text = 
-# button_tooltip = vim
-# button_lclick_command = /usr/bin/nvim-qt --stylesheet $HOME/.config/nvim/nvim-qt.qss
-# button_rclick_command = /usr/bin/nvim-qt --stylesheet $HOME/.config/nvim/nvim-qt.qss -- -u $HOME/.config/latex-vim/init.vim
-# button_mclick_command = /usr/bin/nvim-qt --stylesheet $HOME/.config/nvim/nvim-qt.qss -- -u $HOME/.SpaceVim/init.vim
-# button_uwheel_command = 
-# button_dwheel_command = 
-# button_font = Hack Nerd Font 12
-# button_font_color = {color15} 100
-# button_padding = 12 0
-# button_background_id = 1
-# button_centered = 1
-# button_max_icon_size = 0
-
-#-------------------------------------
-# Button 7
-# button = new
-# button_text = 
-# button_tooltip = Simplenote
-# button_lclick_command = /usr/bin/nvim-qt -- "+:SimplenoteList"
-# button_rclick_command = /home/japorized/.bin/surf https://app.simplenote.com
-# button_mclick_command = firefox https://app.simplenote.com
-# button_uwheel_command = 
-# button_dwheel_command = 
-# button_font = Hack Nerd Font 9
-# button_font_color = {color15} 100
-# button_padding = 12 0
-# button_background_id = 1
-# button_centered = 1
-# button_max_icon_size = 0
-
-#-------------------------------------
-# Button 8
-# button = new
-# button_text = 
-# button_tooltip = Music
-# button_lclick_command = melody
-# button_rclick_command = urxvt -e /home/japorized/.bin/urxvt-ncmpcpp
-# button_mclick_command = 
-# button_uwheel_command = 
-# button_dwheel_command = 
-# button_font = Hack Nerd Font 9
-# button_font_color = {color15} 100
-# button_padding = 12 0
-# button_background_id = 1
-# button_centered = 1
-# button_max_icon_size = 0
-
-#-------------------------------------
-# Button 9
-# button = new
-# button_text = 
-# button_tooltip = Firefox
-# button_lclick_command = firefox
-# button_rclick_command = 
-# button_mclick_command = 
-# button_uwheel_command = 
-# button_dwheel_command = 
-# button_font = Hack Nerd Font 9
-# button_font_color = {color15} 100
-# button_padding = 12 0
-# button_background_id = 1
-# button_centered = 1
-# button_max_icon_size = 0
-
-#-------------------------------------
-# Button 10
-button = new
-button_text = 
-button_tooltip = Steam
-button_lclick_command = steam
-button_rclick_command = 
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
-
-#-------------------------------------
-# Button 11
-button = new
-button_text = 
-button_tooltip = Telegram
-button_lclick_command = telegram-desktop
-button_rclick_command = /home/japorized/.bin/web-telegram
-button_mclick_command = surf-open.sh web.telegram.org
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
-
-#-------------------------------------
-# Button 12
-button = new
-button_text = 
-button_tooltip = Slack
-button_lclick_command = surf-open.sh https://guideanalytics.slack.com
-button_rclick_command = 
-button_mclick_command = 
-button_uwheel_command = 
-button_dwheel_command = 
-button_font = Hack Nerd Font 9
-button_font_color = {color15} 100
-button_padding = 12 0
-button_background_id = 1
-button_centered = 1
-button_max_icon_size = 0
-
-#-------------------------------------
-# Button 13
-button = new
-button_text = 
-button_tooltip = gnvim
-button_lclick_command = gnvim
-button_rclick_command = gnvim -- -u $HOME/.config/latex-vim/init.vim
 button_mclick_command = 
 button_uwheel_command = 
 button_dwheel_command = 

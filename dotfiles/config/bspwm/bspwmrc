@@ -36,7 +36,7 @@ bspc subscribe node_manage | while read -a msg ; do
 done
 
 # desktop-env-like stuff
-ffplay -nodisp -loglevel quiet -vn -autoexit $XDG_DATA_HOME/sounds/Morning_Maze.m4a &
+ffplay -nodisp -loglevel quiet -vn -autoexit $XDG_DATA_HOME/sounds/links/startup.mp3 &
 ~/.fehbg &
 
 # autostart programs

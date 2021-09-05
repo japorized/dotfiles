@@ -37,7 +37,7 @@ systemctl --user import-environment DISPLAY
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-xset r rate 270 30
+xset r rate 220 30
 xset dpms 0 0 1800
 xset b off
 xset b 0 0 0

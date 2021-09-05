@@ -2,10 +2,12 @@
 
 window {
   background-color: @background;
+  width: 80px;
   border: 0;
   margin: 0 20px 0 0;
   padding: 1.2ch;
   border-radius: 5px;
+  location: east;
 }
 
 mainbox {
@@ -36,12 +38,13 @@ textbox-prompt-colon {
 }
 
 listview {
-  fixed-height: 0;
   border: 2px 0px 0px;
   border-color: @border-color;
   spacing: 2px;
   scrollbar: true;
   padding: 2px 0px 0px;
+  column: 1;
+  cycle: true;
 }
 
 element {
@@ -50,11 +53,6 @@ element {
   horizontal-align: 0.5;
   vertical-align: 0.5;
   children: [ element-text ];
-}
-
-element-text {
-  horizontal-align: 0.5;
-  vertical-align: 0.5;
 }
 
 element.alternate.normal,
@@ -84,6 +82,13 @@ element.selected.normal {
 element.selected.urgent {
   background-color: @selected-urgent-background;
   text-color: @selected-urgent-foreground;
+}
+
+element-text {
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  background-color: inherit;
+  text-color: inherit;
 }
 
 scrollbar {

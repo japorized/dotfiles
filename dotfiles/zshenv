@@ -39,30 +39,15 @@ export NNN_SHOW_HIDDEN=1
 export FFF_FAV1=~/Documents/TeX_Notes
 export FFF_FAV2=~/Documents/Projects
 
+# completions
+export fpath=($HOME/.bin/fpath $HOME/.zfunc $fpath)
+
 # node
 export PATH=$HOME/.bin:$HOME/.node_modules/bin:$PATH
-export fpath=($fpath $HOME/.bin/fpath)
-
-# Habitica
-source $HOME/.habitica-api
 
 # nodenv
 export NODENV_ROOT=$XDG_DATA_HOME/nodenv
 export PATH=$PATH:$HOME/.nodenv/bin
-
-# rustup and cargo
-export fpath=($fpath $HOME/.zfunc)
-
-# python pyenv
-export PATH=$(pyenv root)/shims:$PATH
-if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
-  source "${VIRTUAL_ENV}/bin/activate"
-fi
-
-# neovim configuration paths
-export RUSTVIM_CONFIG_HOME=$XDG_CONFIG_HOME/rust-vim
-export LATEXVIM_CONFIG_HOME=$XDG_CONFIG_HOME/latex-vim
-export VSVIM_CONFIG_HOME=$XDG_CONFIG_HOME/vs-vim
 
 # asdf-vm
 export ASDF_CONFIG_FILE=$XDG_CONFIG_HOME/asdf-vm/asdfrc
@@ -73,3 +58,5 @@ export SUBS_FILE=$XDG_DATA_HOME/subs/subs.txt
 
 # Go
 export GOPATH=$XDG_DATA_HOME/go
+
+export GNUPGHOME=$XDG_DATA_HOME/gnupg

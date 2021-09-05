@@ -12,7 +12,8 @@ bspc rule -a plank layer=above
 bspc rule -a Wrapper-1.0 state=floating
 bspc rule -a Wrapper-2.0 state=floating
 bspc rule -a Xfce4-panel state=floating
-bspc rule -a Dockx manage=off
 bspc rule -a Lollypop state=floating
 bspc rule -a Evolution-alarm-notify state=floating
+bspc rule -a zoom state=floating
 bspc rule -a Slack desktop='^1'
+bspc rule -a Polybar state=floating layer=below

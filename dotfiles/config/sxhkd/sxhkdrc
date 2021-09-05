@@ -6,19 +6,19 @@
 
 # Desc: increase brightness by 5%
 {XF86MonBrightnessUp}
-  /usr/bin/light -A 5
+  lightctl -u 5
 
 # Desc: increase brightness by 15%
 {shift + XF86MonBrightnessUp}
-  /usr/bin/light -A 15
+  lightctl -u 15
 
 # Desc: decrease brightness by 5%
 {XF86MonBrightnessDown}
-  /usr/bin/light -U 5
+  lightctl -d 5
 
 # Desc: decrease brightness by 15%
 {shift + XF86MonBrightnessDown}
-  /usr/bin/light -U 15
+  lightctl -d 15
 
 # Desc: go to next on mpd
 {XF86AudioNext}
@@ -57,7 +57,7 @@
 # Category: Application shortcuts
 # Desc: start a new terminal session
 super + Return
-  termite
+  alacritty
 
 # Desc: start a new Kitty session
 super + alt + Return
@@ -65,16 +65,35 @@ super + alt + Return
 
 # Desc: toggle quake-like dropdown terminal
 shift + super + Return
-  tdrop -ma -w -2 -s " dropdown" termite
+  tdrop -ma -w -2 -s " dropdown" alacritty
 
 # Desc: toggle notification do not disturb
-alt + grave
-  xfconf-query -c xfce4-notifyd -p /do-not-disturb -T && \
+ctrl + super + grave
+  dunstctl set-paused toggle && \
     notify-send --icon "notification" \
-      "Notification Center" "$(get_xfce4_notifyd_dnd_status)"
+      "Do Not Disturb" "$(if ($(dunstctl is-paused)); then echo 'On'; else echo 'Off'; fi)"
+  # xfconf-query -c xfce4-notifyd -p /do-not-disturb -T && \
+  #   notify-send --icon "notification" \
+  #     "Notification Center" "$(get_xfce4_notifyd_dnd_status)"
+
+# Desc: show last history item for notification
+ctrl + grave
+  dunstctl history-pop
+
+# Desc: close last notification
+ctrl + alt + grave
+  dunstctl close
+
+# Desc: close all notifications
+ctrl + alt + shift + grave
+  dunstctl close-all
+
+# Desc: show notification action context menu
+ctrl + shift + grave
+  dunstctl context
 
 # Desc: start program launcher
-alt + space
+super + space
   rofi -show run
 
 # Desc: start file searcher
@@ -119,7 +138,8 @@ super + a ; S
 
 # Desc: temporarily show datetime and battery lemonbars
 super + i ; c
-  sh -c "~/.bin/show-lemonbar datetime battery"
+  tmp-lift-window top-bar
+  # sh -c "~/.bin/show-lemonbar datetime battery"
 
 # Desc: show useful information using rofi and lemonbar
 super + i ; g
@@ -131,7 +151,8 @@ super + i ; i
 
 # Desc: show nowplaying info
 super + i ; n
-  sh -c "~/.bin/show-lemonbar nowplaying"
+  tmp-lift-window lollypop-controls
+  # sh -c "~/.bin/show-lemonbar nowplaying"
 
 # Desc: show bspwm window info
 super + i ; W
@@ -209,8 +230,8 @@ super + Escape
   pkill -USR1 -x sxhkd
 
 # Desc: quit bspwm
-super + alt + Escape
-  sh -c "$HOME/.bin/cleandesktop.sh && bspc quit"
+# super + alt + Escape
+#   sh -c "$HOME/.bin/cleandesktop.sh && bspc quit"
 
 # Desc: restart bspwm
 shift + super + alt + r

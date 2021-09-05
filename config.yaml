@@ -1,10 +1,7 @@
 actions:
   pre:
     beets-install: pip3 install --user beets
-    nvim-python: pip3 install --user neovim-remote
-    vim-pathogen: mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim
-      https://tpo.pe/pathogen.vim
-    wpgtk-install: pip3 install --user wpgtk pywal colorz colorthief
+    tmux-tpm-install: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 config:
   backup: true
   banner: true
@@ -21,48 +18,30 @@ dotfiles:
   d_bspwm:
     dst: ~/.config/bspwm
     src: config/bspwm
-  d_chunkwm:
-    dst: ~/.config/chunkwm
-    src: config/chunkwm
   d_hammerspoon:
     dst: ~/.config/hammerspoon
     src: config/hammerspoon
   d_lemonbar:
     dst: ~/.config/lemonbar
     src: config/lemonbar
-  d_mysnippets:
-    dst: ~/.vim/mysnippets
-    src: vim/mysnippets
   d_ncmpcpp:
     dst: ~/.config/ncmpcpp
     src: config/ncmpcpp
-  d_nvim:
-    actions:
-    - nvim-python
-    dst: ~/.config/nvim
-    src: config/nvim
     cmpignore:
-    - ./ginit.vim
+      - error.log
+      - patterns.list
   d_rofi:
     dst: ~/.config/rofi
     src: config/rofi
     cmpignore:
     - colors.rasi
+    - '*.bak'
   d_schemes:
     dst: ~/.config/wpg/schemes
     src: config/wpg/schemes
-  d_slim-vim:
-    dst: ~/.config/slim-vim
-    src: config/slim-vim
-  d_snippets:
-    dst: ~/.vim/snippets
-    src: vim/snippets
-  d_sxhkdrc:
+  d_sxhkd:
     dst: ~/.config/sxhkd
     src: config/sxhkd
-  d_templates:
-    dst: ~/.vim/templates
-    src: vim/templates
   d_wpg_templates:
     dst: ~/.config/wpg/templates
     src: config/wpg/templates
@@ -72,21 +51,15 @@ dotfiles:
   f_aliases:
     dst: ~/.aliases
     src: aliases
-  f_aria2.conf:
-    dst: ~/.config/aria2/aria2.conf
-    src: config/aria2/aria2.conf
-  f_compton.conf:
-    dst: ~/.config/compton.conf
-    src: config/compton.conf
-  f_config.conf:
-    dst: ~/.config/neofetch/config.conf
-    src: config/neofetch/config.conf
-  f_config.yaml:
+  d_aria2:
+    dst: ~/.config/aria2
+    src: config/aria2
+  f_beets-config.yaml:
     actions:
     - beets-install
     dst: ~/.config/beets/config.yaml
     src: config/beets/config.yaml
-  f_default.custom.yaml:
+  f_fcitx_rime_default:
     dst: ~/.config/fcitx/rime/default.custom.yaml
     src: config/fcitx/rime/default.custom.yaml
   f_dmenuextended_preferences.txt:
@@ -101,9 +74,9 @@ dotfiles:
   f_geoclue-agent.service:
     dst: ~/.config/systemd/user/geoclue-agent.service
     src: config/systemd/user/geoclue-agent.service
-  f_keymap:
-    dst: ~/.w3m/keymap
-    src: w3m/keymap
+  d_w3m:
+    dst: ~/.w3m
+    src: w3m
   f_libinput-gestures.conf:
     dst: ~/.config/libinput-gestures.conf
     src: config/libinput-gestures.conf
@@ -125,17 +98,11 @@ dotfiles:
   f_tmux.conf:
     dst: ~/.tmux.conf
     src: tmux.conf
+    actions:
+      - tmux-tpm-install
   f_user-dirs.dirs:
     dst: ~/.config/user-dirs.dirs
     src: config/user-dirs.dirs
-  f_vimrc:
-    actions:
-    - vim-pathogen
-    dst: ~/.vimrc
-    src: vimrc
-  f_w3m_config:
-    dst: ~/.w3m/config
-    src: w3m/config
   f_xinitrc:
     dst: ~/.xinitrc
     src: xinitrc
@@ -154,74 +121,69 @@ dotfiles:
   f_starship.toml:
     src: config/starship.toml
     dst: ~/.config/starship.toml
+  f_picom.conf:
+    src: config/picom.conf
+    dst: ~/.config/picom.conf
+  d_chpwd:
+    src: data/chpwd
+    dst: ~/.data/chpwd
 profiles:
+  terminal-music:
+    dotfiles:
+      - f_mpd.conf
+      - d_ncmpcpp
+  general-unix:
+    dotfiles:
+      - f_zshrc
+      - f_zshenv
+      - d_aria2
+      - f_tmux.conf
+      - f_aliases
+      - f_functions
+      - d_w3m
+      - d_chpwd
+      - f_starship.toml
+      - f_scimrc
+  linux:
+    dotfiles:
+      - f_fonts.conf
+      - f_geoclue-agent.service
+  bspwm:
+    dotfiles:
+      - d_bspwm
+      - d_lemonbar
+      - d_sxhkd
+  wpg:
+    dotfiles:
+      - d_wpg_templates
+      - d_schemes
+  linux-x11:
+    dotfiles:
+      - d_rofi
+      - f_picom.conf
+      - f_xinitrc
+      - f_xprofile
+      - f_xserverrc
+      - f_dmenuextended_preferences.txt
+      - f_fcitx_rime_default
+      - f_libinput-gestures.conf
+      - f_redshift.service
+      - f_user-dirs.dirs
+  macos:
+    dotfiles:
+      - d_hammerspoon
+      - d_übersicht
+      - f_skhdrc
   Earl-Grey.local:
-    dotfiles:
-    - d_templates
-    - d_ncmpcpp
-    - f_keymap
-    - f_vimrc
-    - f_w3m_config
-    - f_zshrc
-    - f_aliases
-    - f_tmux.conf
-    - f_mpd.conf
-    - d_hammerspoon
-    - d_snippets
-    - d_mysnippets
-    - f_scimrc
-    - d_nvim
-    - f_functions
-    - d_chunkwm
-    - d_übersicht
-    - f_preferences.sublime-settings
-    - f_skhdrc
+    include:
+      - terminal-music
+      - general-unix
+      - macos
   sencha:
-    dotfiles:
-    - f_vimrc
-    - f_zshrc
-    - d_templates
-    - f_w3m_config
-    - f_keymap
-    - f_aliases
-    - f_functions
-    - f_tmux.conf
-    - f_mpd.conf
-    - d_sxhkdrc
-    - d_lemonbar
-    - f_aria2.conf
-    - f_config.yaml
-    - f_config.conf
-    - f_libinput-gestures.conf
-    - d_bspwm
-    - f_preferences.sublime-settings
-    - d_mysnippets
-    - d_nvim
-    - f_scimrc
-    - f_xinitrc
-    - f_xserverrc
-    - f_xprofile
-    - d_ncmpcpp
-    - f_zshenv
-    - f_user-dirs.dirs
-    - d_schemes
-    - f_dmenuextended_preferences.txt
-    - f_redshift.service
-    - f_geoclue-agent.service
-    - f_default.custom.yaml
-    - f_fonts.conf
-    - d_rofi
-    - d_slim-vim
-    - d_wpg_templates
-    - f_compton.conf
-    - f_starship.toml
-  ubuntu1604-002:
-    dotfiles:
-    - f_vimrc
-    - d_templates
-    - f_w3m_config
-    - f_aliases
-    - f_tmux.conf
-    - d_snippets
-    - f_functions
-    - f_keymap
+    include:
+      - terminal-music
+      - general-unix
+      - linux
+      - bspwm
+      - wpg
+      - linux-x11

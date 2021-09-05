@@ -2,12 +2,16 @@
     "alias_applications": true,
     "alias_display_format": "{name}",
     "exclude_items": [],
-    "filebrowser":"thunar",
+    "filebrowser": "thunar",
     "fileopener": "xdg-open",
     "filter_binaries": false,
     "follow_symlinks": false,
     "frequently_used": 0,
-    "global_ignore_folders": [ "node_modules", ".node_modules" ],
+    "global_ignore_folders": [
+        "target",
+        "node_modules",
+        ".node_modules"
+    ],
     "ignore_folders": [],
     "include_applications": false,
     "include_binaries": false,
@@ -37,7 +41,8 @@
     "path_shellCommand": "~/.dmenuEextended_shellCommand.sh",
     "prompt": "Open:",
     "scan_hidden_folders": true,
-    "terminal": "kitty",
+    "terminal": "alacritty",
+    "terminal_editor": "nvim",
     "valid_extensions": [
         "py",
         "svg",
@@ -70,6 +75,7 @@
         "sublime-project"
     ],
     "watch_folders": [
+        "~/Cloud",
         "~/Documents",
         "~/Nextcloud",
         "~/Pictures",

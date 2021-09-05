@@ -1,0 +1,33 @@
+function show_git_status() {
+  if [ -d "$(pwd)/.git" ]; then
+    local rst="$(tput sgr0)"
+    local wht="$(tput setaf 7)"
+
+    echo "${wht}  Branches${rst}"
+    git --no-pager branch --color | head -n 5
+
+    echo
+
+    local current_branch="$(git --no-pager branch --show-current)"
+
+    local gst="$(git -c color.status=always status --short)"
+    local changed_lines="$(echo -n "$gst" | wc -l)"
+    if [ "$changed_lines" -ne 0 ]; then
+      echo "${wht} Status —  ${current_branch}${rst}"
+      echo "${wht}   $changed_lines files changed${rst}"
+      if [ "$changed_lines" -ge 11 ]; then
+        echo $gst | head -n 5
+        echo "   ..."
+        echo $gst | tail -n 5
+      else
+        echo $gst
+      fi
+
+      echo
+    fi
+
+    echo "${wht}  Git log${rst}"
+    git --no-pager log --oneline --decorate --graph --color -7 \
+      || echo "No history yet? Go make some! 👊"
+  fi
+}

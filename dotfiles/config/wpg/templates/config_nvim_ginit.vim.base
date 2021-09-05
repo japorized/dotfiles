@@ -170,6 +170,7 @@ hi   ALEWarningSign               guibg=NONE             guifg={color3}
 hi   ALEError                     guibg=NONE             guifg={color1}
 hi   ALEWarning                   guibg=NONE             guifg={color3}
 
-GuiFont! Hack\ Nerd\ Font:h12
+set guifont=Hack\ Nerd\ Font:h15
+GuiFont! Hack\ Nerd\ Font:h13
 GuiPopupmenu 0
 GuiTabline 0

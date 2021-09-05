@@ -1,29 +1,32 @@
 add_newline = true
-prompt_order = [
-  "hostname",
-  "directory",
-  "git_branch",
-  "git_state",
-  "git_status",
-  "nodejs",
-  "ruby",
-  "rust",
-  "python",
-  "golang",
-  "java",
-  "package",
-  "nix_shell",
-  "cmd_duration",
-  "line_break",
-  "jobs",
-  "character"
-]
+format = """\
+  $hostname\
+  $directory\
+  $git_branch\
+  $git_state\
+  $git_status\
+  ${custom.deno}\
+  ${custom.node}\
+  $ruby\
+  $rust\
+  $julia\
+  $golang\
+  $lua\
+  $python\
+  $java\
+  $docker_context\
+  $package\
+  $nix_shell\
+  $cmd_duration\
+  $line_break\
+  $jobs\
+  $character\
+"""
 
 [character]
-symbol = "∴"
-vicmd_symbol = "∵"
-# symbol = "λ"
-# vicmd_symbol = "ξ"
+success_symbol = "[∴](bold green)"
+error_symbol = "[∴](bold red)"
+vicmd_symbol = "[∵](bold purple)"
 
 [directory]
 style = "bold purple"
@@ -32,8 +35,7 @@ style = "bold purple"
 symbol = " "
 
 [git_status]
-prefix = "{ "
-suffix = " } "
+format = "([{ $all_status$ahead_behind }]($style) )"
 conflicted = "↯"
 deleted = "−"
 diverged = "∇"
@@ -43,11 +45,13 @@ staged = "■"
 stashed = "∃"
 untracked = "∉"
 
-[ruby]
-# symbol = ' '
+[custom.deno]
+command = """ sed "s/deno //g" <<< "$(deno -V)" """
+files = ["mod.ts", "deps.ts", "mod.js", "deps.js"]
+format = "🦕 [$output](bold green) "
 
-[python]
-# symbol = ' '
-
-[rust]
-# symbol = '🦀 '
+[custom.node]
+command = """ sed "s/v//g" <<< "$(node -v)" """
+directories = ["node_modules"]
+files = ["package.json"]
+format = "[⬢ $output](bold green) "

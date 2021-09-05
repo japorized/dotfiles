@@ -1,13 +1,22 @@
 #!/usr/bin/env dash
 
+run_if_inactive() {
+  pidof $1 > /dev/null || $@
+}
+
 xmodmap ~/.Xmodmap
-xfce4-panel &
-fcitx &
-sxhkd &
-tint2 &
-tint2 -c ~/.config/tint2/lollypop-controls &
-xss-lock -- slock &
-xfce4-power-manager &
+run_if_inactive xfce4-clipman &
+run_if_inactive fcitx &
+run_if_inactive sxhkd &
+run_if_inactive xss-lock -- slock &
+run_if_inactive xfce4-power-manager &
 libinput-gestures-setup start &
-plank &
-pasystray &
+run_if_inactive plank &
+run_if_inactive pasystray &
+run_if_inactive blueman-applet &
+run_if_inactive picom &
+
+# kill existing polybars before running
+killall polybar
+polybar wm &
+polybar date_battery &
