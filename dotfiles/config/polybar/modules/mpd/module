@@ -1,0 +1,5 @@
+[module/mpd]
+type = custom/script
+exec = $XDG_CONFIG_HOME/polybar/modules/mpd/nowplaying.sh
+interval = 1
+; vim:ft=dosini

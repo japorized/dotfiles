@@ -1,0 +1,7 @@
+[module/datetime]
+type = custom/script
+exec = $XDG_CONFIG_HOME/polybar/modules/datetime/print-fancy-datetime
+interval = 1
+click-left = gsimplecal
+
+; vim:ft=dosini

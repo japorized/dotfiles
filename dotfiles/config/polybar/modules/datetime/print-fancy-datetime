@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+. "$HOME/.cache/wpgtk.color"
+
+Clock() {
+    DATETIME=$(date +"%b %d, %H:%M:%S")
+    DAY=$(date "+%a")
+    case $DAY in
+      "Sun")
+        DAY="%{F${color6}}日%{F-}"
+        ;;
+      "Mon")
+        DAY="%{F${color5}}月%{F-}"
+        ;;
+      "Tue")
+        DAY="%{F${color1}}火%{F-}"
+        ;;
+      "Wed")
+        DAY="%{F${color4}}水%{F-}"
+        ;;
+      "Thu")
+        DAY="%{F${color2}}木%{F-}"
+        ;;
+      "Fri")
+        DAY="%{F${color3}}金%{F-}"
+        ;;
+      "Sat")
+        DAY="土"
+        ;;
+    esac
+
+    echo -n "%{F$color1}%{F-} $DATETIME ($DAY)"
+}
+
+Clock

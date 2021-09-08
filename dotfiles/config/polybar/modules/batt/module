@@ -1,0 +1,7 @@
+[module/batt]
+type = custom/script
+exec = fancybattery.sh
+interval = 10
+click-left = xfce4-power-manager-settings
+
+; vim:ft=dosini

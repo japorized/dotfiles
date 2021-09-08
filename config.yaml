@@ -28,8 +28,8 @@ dotfiles:
     dst: ~/.config/ncmpcpp
     src: config/ncmpcpp
     cmpignore:
-      - error.log
-      - patterns.list
+    - error.log
+    - patterns.list
   d_rofi:
     dst: ~/.config/rofi
     src: config/rofi
@@ -99,7 +99,7 @@ dotfiles:
     dst: ~/.tmux.conf
     src: tmux.conf
     actions:
-      - tmux-tpm-install
+    - tmux-tpm-install
   f_user-dirs.dirs:
     dst: ~/.config/user-dirs.dirs
     src: config/user-dirs.dirs
@@ -127,63 +127,67 @@ dotfiles:
   d_chpwd:
     src: data/chpwd
     dst: ~/.data/chpwd
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
 profiles:
   terminal-music:
     dotfiles:
-      - f_mpd.conf
-      - d_ncmpcpp
+    - f_mpd.conf
+    - d_ncmpcpp
   general-unix:
     dotfiles:
-      - f_zshrc
-      - f_zshenv
-      - d_aria2
-      - f_tmux.conf
-      - f_aliases
-      - f_functions
-      - d_w3m
-      - d_chpwd
-      - f_starship.toml
-      - f_scimrc
+    - f_zshrc
+    - f_zshenv
+    - d_aria2
+    - f_tmux.conf
+    - f_aliases
+    - f_functions
+    - d_w3m
+    - d_chpwd
+    - f_starship.toml
+    - f_scimrc
   linux:
     dotfiles:
-      - f_fonts.conf
-      - f_geoclue-agent.service
+    - f_fonts.conf
+    - f_geoclue-agent.service
   bspwm:
     dotfiles:
-      - d_bspwm
-      - d_lemonbar
-      - d_sxhkd
+    - d_bspwm
+    - d_lemonbar
+    - d_sxhkd
   wpg:
     dotfiles:
-      - d_wpg_templates
-      - d_schemes
+    - d_wpg_templates
+    - d_schemes
   linux-x11:
     dotfiles:
-      - d_rofi
-      - f_picom.conf
-      - f_xinitrc
-      - f_xprofile
-      - f_xserverrc
-      - f_dmenuextended_preferences.txt
-      - f_fcitx_rime_default
-      - f_libinput-gestures.conf
-      - f_redshift.service
-      - f_user-dirs.dirs
+    - d_rofi
+    - f_picom.conf
+    - f_xinitrc
+    - f_xprofile
+    - f_xserverrc
+    - f_dmenuextended_preferences.txt
+    - f_fcitx_rime_default
+    - f_libinput-gestures.conf
+    - f_redshift.service
+    - f_user-dirs.dirs
+    - d_polybar
   macos:
     dotfiles:
-      - d_hammerspoon
-      - d_übersicht
-      - f_skhdrc
+    - d_hammerspoon
+    - d_übersicht
+    - f_skhdrc
   Earl-Grey.local:
     include:
-      - terminal-music
-      - general-unix
-      - macos
+    - terminal-music
+    - general-unix
+    - macos
   sencha:
     include:
-      - terminal-music
-      - general-unix
-      - linux
-      - bspwm
-      - wpg
-      - linux-x11
+    - terminal-music
+    - general-unix
+    - linux
+    - bspwm
+    - wpg
+    - linux-x11
