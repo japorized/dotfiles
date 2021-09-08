@@ -1,5 +1,7 @@
 alda
 ansifilter
+ant-bloody-gtk-theme
+ant-dracula-gtk-theme
 asciinema-rs
 asdf-vm
 auracle-git
