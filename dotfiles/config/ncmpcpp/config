@@ -110,11 +110,10 @@ mpd_port = 6600
 #mpd_connection_timeout = 5
 
 # Visualizer settings
-visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_data_source = /tmp/mpd.fifo
 visualizer_output_name = "mpd_fifo"
 ## If you set format to 44100:16:2, make it 'yes'.
 visualizer_in_stereo = no
-visualizer_sync_interval = 30
 ## Note: To enable spectrum frequency visualization you need to compile ncmpcpp
 ## with fftw3 support.
 ## Available values: spectrum, wave, wave_filled, ellipse.
@@ -155,7 +154,7 @@ system_encoding = "UTF-8"
 ## browser_sort_mode are "name", "mtime", "format" and "noop".
 ##
 
-browser_sort_mode = noop
+browser_sort_mode = none
 browser_sort_format = {%b - }{%a - }{%t}|{%f} {(%l)}
 
 ##### columns settings #####
