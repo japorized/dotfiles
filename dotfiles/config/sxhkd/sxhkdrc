@@ -151,8 +151,7 @@ super + i ; i
 
 # Desc: show nowplaying info
 super + i ; n
-  tmp-lift-window lollypop-controls
-  # sh -c "~/.bin/show-lemonbar nowplaying"
+  pop-polybar -d 15 nowplaying
 
 # Desc: show bspwm window info
 super + i ; W
