@@ -1,0 +1,7 @@
+[module/countdown]
+type = custom/script
+exec = $XDG_CONFIG_HOME/polybar/modules/countdown/countdown.sh
+click-right = cancel-countdown.sh
+tail = true
+
+; vim:ft=dosini

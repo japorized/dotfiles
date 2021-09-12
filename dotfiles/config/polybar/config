@@ -19,6 +19,7 @@
 include-file = $XDG_CONFIG_HOME/polybar/modules/datetime/module
 include-file = $XDG_CONFIG_HOME/polybar/modules/batt/module
 include-file = $XDG_CONFIG_HOME/polybar/modules/mpd/module
+include-file = $XDG_CONFIG_HOME/polybar/modules/countdown/module
 
 [global/wm]
 margin-top = 5
@@ -55,6 +56,14 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 override-redirect = true
+
+[bar/countdown]
+inherit = common
+width = 200
+height = 25
+offset-x = 100%:-200
+offset-y = 99%:-25
+modules-center = countdown
 
 [bar/nowplaying]
 inherit = common
