@@ -1,17 +1,23 @@
 configuration {
-	modi: "run,drun,window,filebrowser";
+	modi: "run,drun,window";
+	width: 50;
+	lines: 6;
 	font: "Hack Nerd Font 12";
 	location: 0;
+	padding: 30;
 	yoffset: -20;
 	xoffset: 0;
 	show-icons: true;
 	terminal: "st";
-	theme: "~/.config/rofi/themes/rofi-default.rasi";
-
-  filebrowser {
-    directory: "/home/japorized";
-    sorting-method: "name";
-    directories-first: true;
-  }
+	line-margin: 10;
+	separator-style: "none";
+	hide-scrollbar: true;
+	fullscreen: false;
+	fake-transparency: true;
+	color-normal: "#210136, #fef5fe, #210136, #7622ff, #fef5fe";
+	color-urgent: "#210136, #d93872, #210136, #ff0eb4, #fef5fe";
+	color-active: "#210136, #f4bf75, #210136, #ff74f1, #fef5fe";
+	color-window: "#210136, #7622ff, #40138b";
 }
-/* vim:ft=css */
+
+@theme "~/.config/rofi/themes/rofi-default.rasi"
